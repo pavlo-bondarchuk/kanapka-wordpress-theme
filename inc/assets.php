@@ -52,6 +52,14 @@ function kanapka_theme_enqueue_assets() {
 		true
 	);
 
+	wp_enqueue_script(
+		'kanapka-theme-header-actions',
+		get_theme_file_uri( '/assets/js/components/header-actions.js' ),
+		array(),
+		kanapka_theme_asset_version( '/assets/js/components/header-actions.js' ),
+		true
+	);
+
 	if ( is_front_page() ) {
 		wp_enqueue_style(
 			'kanapka-theme-front-page',
@@ -71,4 +79,3 @@ function kanapka_theme_enqueue_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_enqueue_assets' );
-

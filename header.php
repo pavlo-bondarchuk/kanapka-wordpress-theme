@@ -18,7 +18,12 @@
 <header class="site-header" data-site-header>
 	<div class="site-header__inner container">
 		<div class="site-branding">
-			<?php if ( has_custom_logo() ) : ?>
+			<?php $header_logo_id = absint( kanapka_theme_get_option( 'kanapka_header_logo', 0 ) ); ?>
+			<?php if ( $header_logo_id ) : ?>
+				<a class="site-branding__custom" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php echo wp_get_attachment_image( $header_logo_id, 'medium', false, array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+				</a>
+			<?php elseif ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
 				<a class="site-branding__fallback" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -52,17 +57,19 @@
 
 		<div class="header-actions">
 			<div class="header-contact">
-				<span><?php esc_html_e( 'Order support', 'kanapka-theme' ); ?></span>
+				<span><?php echo esc_html( kanapka_theme_get_option( 'kanapka_header_order_label', __( 'Order support', 'kanapka-theme' ) ) ); ?></span>
 				<?php $phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
 				<?php $phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_one ) ); ?>"><?php echo esc_html( $phone_one ); ?></a>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_two ) ); ?>"><?php echo esc_html( $phone_two ); ?></a>
+				<?php $work_hours = kanapka_theme_get_multiline_option( 'kanapka_header_work_hours', '' ); ?>
+				<?php if ( $work_hours ) : ?>
+					<small class="header-contact__hours"><?php echo nl2br( esc_html( $work_hours ) ); ?></small>
+				<?php endif; ?>
 			</div>
 			<?php get_template_part( 'template-parts/header/language-switcher' ); ?>
 			<?php get_template_part( 'template-parts/header/cart-link' ); ?>
-			<a class="icon-button" href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" aria-label="<?php esc_attr_e( 'Search', 'kanapka-theme' ); ?>">
-				<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-			</a>
+			<?php get_template_part( 'template-parts/header/search-popup' ); ?>
 		</div>
 	</div>
 </header>

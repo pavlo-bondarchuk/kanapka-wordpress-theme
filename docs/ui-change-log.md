@@ -7,3 +7,7 @@
 - Kept mobile submenus in the navigation flow so child links remain available without hover.
 - Added a second SCF-driven category mega-menu mode alongside standard WordPress admin submenus.
 - Matched the legacy OXY category menu structure with a wide multi-column desktop panel and compact in-flow mobile category list.
+- Removed the hover gap from desktop dropdowns so submenu links remain reachable and clickable.
+- Added an SCF-configurable contacts submenu using the legacy OXY contact, address and working-hours data.
+- Consolidated logo, order label, phones, working hours, email and both generated menus into the first Header and navigation settings tab.
+- Replaced direct cart and search navigation with accessible click popups; the WooCommerce mini-cart refreshes through fragments and opens after AJAX add-to-cart.

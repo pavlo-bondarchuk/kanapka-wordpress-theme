@@ -10,6 +10,52 @@
             "placement": "top"
         },
         {
+            "key": "field_kanapka_header_logo",
+            "label": "Header logo",
+            "name": "kanapka_header_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp,svg"
+        },
+        {
+            "key": "field_kanapka_order_label",
+            "label": "Order support label",
+            "name": "kanapka_header_order_label",
+            "type": "text",
+            "default_value": "Прийом замовлень"
+        },
+        {
+            "key": "field_kanapka_header_phone_one",
+            "label": "Primary phone",
+            "name": "kanapka_header_phone_one",
+            "type": "text",
+            "default_value": "(066) 691-72-72"
+        },
+        {
+            "key": "field_kanapka_header_phone_two",
+            "label": "Secondary phone",
+            "name": "kanapka_header_phone_two",
+            "type": "text",
+            "default_value": "(093) 691-72-72"
+        },
+        {
+            "key": "field_kanapka_header_work_hours",
+            "label": "Working hours",
+            "name": "kanapka_header_work_hours",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "default_value": "Прийом замовлень online 24/7\nМенеджером з 9:00 до 18:00"
+        },
+        {
+            "key": "field_kanapka_contact_email",
+            "label": "Contact email",
+            "name": "kanapka_contact_email",
+            "type": "email"
+        },
+        {
             "key": "field_kanapka_mega_enabled",
             "label": "Enable category mega-menu",
             "name": "kanapka_mega_menu_enabled",
@@ -87,31 +133,63 @@
             "return_format": "value"
         },
         {
-            "key": "field_kanapka_contacts_tab",
-            "label": "Contacts",
-            "name": "",
-            "type": "tab",
-            "placement": "top"
+            "key": "field_kanapka_contact_menu_enabled",
+            "label": "Enable contacts submenu",
+            "name": "kanapka_contact_menu_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
         },
         {
-            "key": "field_kanapka_header_phone_one",
-            "label": "Primary phone",
-            "name": "kanapka_header_phone_one",
+            "key": "field_kanapka_contact_menu_parent_page",
+            "label": "Show contacts submenu under page",
+            "name": "kanapka_contact_menu_parent_page",
+            "type": "post_object",
+            "post_type": ["page"],
+            "return_format": "id",
+            "ui": 1,
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_kanapka_contact_column_title",
+            "label": "Contacts column title",
+            "name": "kanapka_contact_column_title",
             "type": "text",
-            "default_value": "(066) 691-72-72"
+            "default_value": "Контакти"
         },
         {
-            "key": "field_kanapka_header_phone_two",
-            "label": "Secondary phone",
-            "name": "kanapka_header_phone_two",
+            "key": "field_kanapka_contact_address_one",
+            "label": "Address line one",
+            "name": "kanapka_contact_address_one",
             "type": "text",
-            "default_value": "(093) 691-72-72"
+            "default_value": "м. Київ"
         },
         {
-            "key": "field_kanapka_contact_email",
-            "label": "Contact email",
-            "name": "kanapka_contact_email",
-            "type": "email"
+            "key": "field_kanapka_contact_address_two",
+            "label": "Address line two",
+            "name": "kanapka_contact_address_two",
+            "type": "text"
+        },
+        {
+            "key": "field_kanapka_contact_hours_title",
+            "label": "Working hours heading",
+            "name": "kanapka_contact_hours_title",
+            "type": "text",
+            "default_value": "Замовлення приймаються"
+        },
+        {
+            "key": "field_kanapka_contact_button_label",
+            "label": "Contact button label",
+            "name": "kanapka_contact_button_label",
+            "type": "text",
+            "default_value": "Контактна форма"
+        },
+        {
+            "key": "field_kanapka_contact_button_url",
+            "label": "Contact button URL",
+            "name": "kanapka_contact_button_url",
+            "type": "url"
         }
     ],
     "location": [[{"param": "options_page", "operator": "==", "value": "kanapka-theme-settings"}]],
@@ -123,5 +201,5 @@
     "active": true,
     "description": "Navigation and contact settings for the Kanapka theme.",
     "show_in_rest": 0,
-    "modified": 1783692000
+    "modified": 1783696800
 }

@@ -39,6 +39,10 @@ class Kanapka_Theme_Nav_Walker extends Walker_Nav_Menu {
 			$output .= kanapka_theme_get_category_mega_menu();
 		}
 
+		if ( 0 === $depth && kanapka_theme_menu_item_has_contact_menu( $item ) ) {
+			$output .= kanapka_theme_get_contact_mega_menu();
+		}
+
 		parent::end_el( $output, $item, $depth, $args );
 	}
 }
@@ -60,6 +64,22 @@ function kanapka_theme_menu_item_has_mega_menu( $item ) {
 }
 
 /**
+ * Determine whether a menu item owns the configured contact panel.
+ *
+ * @param WP_Post $item Menu item.
+ * @return bool
+ */
+function kanapka_theme_menu_item_has_contact_menu( $item ) {
+	if ( ! kanapka_theme_get_option( 'kanapka_contact_menu_enabled', false ) ) {
+		return false;
+	}
+
+	$parent_page = absint( kanapka_theme_get_option( 'kanapka_contact_menu_parent_page', 0 ) );
+
+	return $parent_page && $parent_page === absint( $item->object_id );
+}
+
+/**
  * Add a stable CSS class to the menu item that owns the mega-menu.
  *
  * @param array   $classes Menu item classes.
@@ -69,6 +89,10 @@ function kanapka_theme_menu_item_has_mega_menu( $item ) {
 function kanapka_theme_mega_menu_item_class( $classes, $item ) {
 	if ( kanapka_theme_menu_item_has_mega_menu( $item ) ) {
 		$classes[] = 'menu-item-has-mega-menu';
+	}
+
+	if ( kanapka_theme_menu_item_has_contact_menu( $item ) ) {
+		$classes[] = 'menu-item-has-contact-menu';
 	}
 
 	return array_unique( $classes );
@@ -114,6 +138,18 @@ function kanapka_theme_get_category_mega_menu() {
 			'child_max'  => $child_max,
 		)
 	);
+
+	return (string) ob_get_clean();
+}
+
+/**
+ * Build the contact panel from SCF header settings.
+ *
+ * @return string
+ */
+function kanapka_theme_get_contact_mega_menu() {
+	ob_start();
+	get_template_part( 'template-parts/header/contact-mega-menu' );
 
 	return (string) ob_get_clean();
 }

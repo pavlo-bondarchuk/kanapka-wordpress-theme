@@ -22,3 +22,17 @@ function kanapka_theme_product_thumbnail_size( $size ) {
 }
 add_filter( 'woocommerce_get_image_size_thumbnail', 'kanapka_theme_product_thumbnail_size' );
 
+/**
+ * Keep the complete mini-cart popup synchronized after AJAX cart updates.
+ *
+ * @param array $fragments WooCommerce fragments.
+ * @return array
+ */
+function kanapka_theme_mini_cart_fragments( $fragments ) {
+	ob_start();
+	get_template_part( 'template-parts/header/cart-link' );
+	$fragments['div.kanapka-mini-cart-fragment'] = (string) ob_get_clean();
+
+	return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'kanapka_theme_mini_cart_fragments' );
