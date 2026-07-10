@@ -12,6 +12,7 @@ $kanapka_theme_modules = array(
 	'assets',
 	'menus',
 	'images',
+	'home',
 	'accessibility',
 	'seo',
 	'woocommerce',
@@ -21,4 +22,3 @@ $kanapka_theme_modules = array(
 foreach ( $kanapka_theme_modules as $kanapka_theme_module ) {
 	require_once get_theme_file_path( '/inc/' . $kanapka_theme_module . '.php' );
 }
-
