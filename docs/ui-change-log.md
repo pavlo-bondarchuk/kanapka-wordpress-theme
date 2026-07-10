@@ -22,3 +22,8 @@
 ## 2026-07-10 — Align mega-menu items in flex rows
 
 - Replaced the category grid with a wrapping flex row while retaining three equal desktop columns and one mobile column.
+
+## 2026-07-10 — Consolidate mega-menu styles
+
+- Moved all category mega-menu rules into the header stylesheet and removed the duplicate stylesheet enqueue.
+- Increased category-card selector specificity so the general navigation-link rule no longer overrides its flex layout.

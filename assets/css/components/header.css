@@ -104,7 +104,8 @@
 }
 
 .menu-item-has-mega-menu:hover > .category-mega-menu,
-.menu-item-has-mega-menu:focus-within > .category-mega-menu {
+.menu-item-has-mega-menu:focus-within > .category-mega-menu,
+.menu-item-has-mega-menu.is-mega-menu-open > .category-mega-menu {
 	opacity: 1;
 	pointer-events: auto;
 	transform: translate(-50%, 0);
@@ -112,53 +113,41 @@
 }
 
 .category-mega-menu__grid {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	display: flex;
+	flex-flow: row wrap;
 	gap: var(--space-3) var(--space-5);
 }
 
-.category-mega-menu__group {
-	min-width: 0;
-}
-
-.category-mega-menu__heading {
-	display: flex !important;
+.primary-navigation a.category-mega-menu__item {
+	display: flex;
+	flex: 0 0 calc(33.333333% - var(--space-4));
 	align-items: center;
 	gap: var(--space-3);
 	min-height: 3rem;
-	padding: var(--space-3) var(--space-4) !important;
+	padding: var(--space-3) var(--space-4);
 	border-radius: var(--radius-sm);
 	background: var(--color-surface-soft);
-	color: var(--color-brand-900) !important;
-	font-weight: 750 !important;
+	color: var(--color-brand-900);
+	font-weight: 750;
+	text-decoration: none;
 }
 
-.category-mega-menu__heading img {
+.primary-navigation a.category-mega-menu__item:hover,
+.primary-navigation a.category-mega-menu__item:focus-visible {
+	background: var(--color-brand-100);
+	color: var(--color-brand-900);
+}
+
+.category-mega-menu__item img {
 	width: 3rem;
 	height: 3rem;
 	flex: 0 0 3rem;
 	object-fit: contain;
 }
 
-.category-mega-menu ul {
-	margin: 0;
-	padding: var(--space-2) var(--space-4) var(--space-3);
-	list-style: none;
-}
-
-.category-mega-menu li + li {
-	border-top: 0.0625rem solid var(--color-line);
-}
-
-.category-mega-menu li a {
-	padding: 0.6rem 0 !important;
-	color: var(--color-muted);
-	font-size: var(--font-size-sm);
-	font-weight: 550;
-}
-
-.category-mega-menu a::after {
+.primary-navigation .category-mega-menu a.category-mega-menu__item::after {
 	display: none;
+	content: none;
 }
 
 .primary-navigation__menu > .menu-item-has-contact-menu {
@@ -529,12 +518,11 @@
 	}
 
 	.category-mega-menu__grid {
-		grid-template-columns: 1fr;
 		gap: var(--space-2);
 	}
 
-	.category-mega-menu__group ul {
-		display: none;
+	.primary-navigation a.category-mega-menu__item {
+		flex-basis: 100%;
 	}
 
 	.primary-navigation__menu > .menu-item-has-contact-menu {
