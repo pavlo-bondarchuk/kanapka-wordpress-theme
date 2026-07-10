@@ -36,7 +36,14 @@
 
 @media (min-width: 68.0625rem) {
 	.primary-navigation__menu > .menu-item-has-mega-menu {
-		position: relative;
+		position: static;
+	}
+
+	.menu-item-has-mega-menu.is-mega-menu-open > .category-mega-menu {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate(-50%, 0);
+		visibility: visible;
 	}
 }
 

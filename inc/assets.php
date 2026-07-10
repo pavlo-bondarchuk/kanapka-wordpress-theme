@@ -60,6 +60,14 @@ function kanapka_theme_enqueue_assets() {
 	);
 
 	wp_enqueue_script(
+		'kanapka-theme-mega-menu',
+		get_theme_file_uri( '/assets/js/components/mega-menu.js' ),
+		array(),
+		kanapka_theme_asset_version( '/assets/js/components/mega-menu.js' ),
+		true
+	);
+
+	wp_enqueue_script(
 		'kanapka-theme-header-actions',
 		get_theme_file_uri( '/assets/js/components/header-actions.js' ),
 		array(),

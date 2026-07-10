@@ -13,3 +13,8 @@
 - Replaced direct cart and search navigation with accessible click popups; the WooCommerce mini-cart refreshes through fragments and opens after AJAX add-to-cart.
 - Changed category mega-menu ordering to a row-flowing three-column grid: left to right across each row, then top to bottom.
 - Bound the category mega-menu to its own parent menu item so the pointer never crosses a gap before reaching a category link.
+
+# 2026-07-10 — Center category mega menu
+
+- Centered the desktop category mega menu against the full site header.
+- Kept the panel available while the pointer crosses the gap below the navigation.

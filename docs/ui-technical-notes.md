@@ -13,4 +13,9 @@
 - Header cart and search icons are disclosure buttons, not navigation links. Keep destinations inside their popups and synchronize mini-cart markup with WooCommerce fragments.
 - Auto-open the cart only in response to a successful add-to-cart event; retain Escape, outside-click and explicit close behavior for every header popup.
 - When mirroring a legacy mega-menu whose sequence is read left-to-right across rows, use CSS Grid with explicit `grid-auto-flow: row`; CSS multi-column layout fills down each column and changes the visible order.
-- A mega-menu positioned against the entire header creates a dead hover area when its trigger is vertically centered. On desktop, position the panel against its own top-level menu item instead.
+- A mega-menu positioned against the entire header can create a dead hover area when its trigger is vertically centered; preserve header-relative alignment and bridge that gap with a short delayed-close state.
+
+# Category mega menu alignment
+
+- Center wide mega-menu panels against the shared header container, not the narrow trigger item.
+- Bridge physical pointer gaps with a short hover-intent state so links remain reachable without changing panel alignment.
