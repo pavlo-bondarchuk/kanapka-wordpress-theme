@@ -32,3 +32,4 @@
 
 - Style the current WooCommerce mini-cart DOM instead of copying its plugin template; keep fragment replacement, remove links and standard button hooks intact.
 - On small screens, constrain the entire cart panel to the viewport and stack its primary actions instead of compressing labels.
+- When a mini-cart design needs both unit price and line total, extend `woocommerce_widget_cart_item_quantity` and calculate the total through the WooCommerce cart API rather than duplicating the displayed unit price.

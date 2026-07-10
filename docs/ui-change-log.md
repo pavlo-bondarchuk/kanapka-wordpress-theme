@@ -32,3 +32,7 @@
 
 - Styled the WooCommerce mini-cart as a responsive header panel with product thumbnails, readable item controls, subtotal hierarchy and distinct cart and checkout actions.
 - Added the live cart item count below the panel title without overriding the WooCommerce mini-cart template.
+
+## 2026-07-10 — Match mini-cart item pricing layout
+
+- Placed quantity and unit price directly below each product title and added the WooCommerce-calculated line total at the right edge of the same row.
