@@ -37,3 +37,4 @@
 ## Language switcher integration
 
 - Prefer the active translation plugin's public switcher output so language URLs, current state and exclusions stay synchronized; retain a non-plugin fallback for safe theme activation.
+- When only compact labels are required, scope `weglot_get_name_with_language_entry` around the header shortcode instead of rebuilding Weglot URLs or changing its ordering.

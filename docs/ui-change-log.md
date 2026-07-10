@@ -40,3 +40,7 @@
 ## 2026-07-10 — Connect header language switcher to Weglot
 
 - Rendered the active Weglot switcher in the header while retaining WPML and locale fallbacks when Weglot is unavailable.
+
+## 2026-07-10 — Shorten header language labels
+
+- Kept the standard Weglot switcher output and shortened only its Russian and Ukrainian labels to `RU` and `UA`.
