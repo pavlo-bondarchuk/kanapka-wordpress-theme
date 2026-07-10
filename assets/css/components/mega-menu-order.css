@@ -1,0 +1,42 @@
+/*
+ * Preserve the production sequence: left to right across a row, then top to bottom.
+ */
+.category-mega-menu__grid {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--space-3) var(--space-5);
+}
+
+.category-mega-menu__item {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	min-height: 3rem;
+	padding: var(--space-3) var(--space-4);
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-soft);
+	color: var(--color-brand-900);
+	font-weight: 750;
+	text-decoration: none;
+}
+
+.category-mega-menu__item:hover,
+.category-mega-menu__item:focus-visible {
+	background: var(--color-brand-100);
+	color: var(--color-brand-900);
+}
+
+.category-mega-menu__item img {
+	width: 3rem;
+	height: 3rem;
+	flex: 0 0 3rem;
+	object-fit: contain;
+}
+
+@media (max-width: 68rem) {
+	.category-mega-menu__grid {
+		grid-template-columns: 1fr;
+		gap: var(--space-2);
+	}
+}

@@ -12,3 +12,4 @@
 - Never leave a non-interactive vertical gap between a top-level item and a hover submenu; align the popup directly to the trigger boundary so users can move into and click its links.
 - Header cart and search icons are disclosure buttons, not navigation links. Keep destinations inside their popups and synchronize mini-cart markup with WooCommerce fragments.
 - Auto-open the cart only in response to a successful add-to-cart event; retain Escape, outside-click and explicit close behavior for every header popup.
+- When mirroring a legacy mega-menu whose sequence is read left-to-right across rows, use CSS Grid with explicit `grid-auto-flow: row`; CSS multi-column layout fills down each column and changes the visible order.
