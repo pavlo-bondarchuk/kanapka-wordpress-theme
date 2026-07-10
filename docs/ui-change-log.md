@@ -12,3 +12,4 @@
 - Consolidated logo, order label, phones, working hours, email and both generated menus into the first Header and navigation settings tab.
 - Replaced direct cart and search navigation with accessible click popups; the WooCommerce mini-cart refreshes through fragments and opens after AJAX add-to-cart.
 - Changed category mega-menu ordering to a row-flowing three-column grid: left to right across each row, then top to bottom.
+- Bound the category mega-menu to its own parent menu item so the pointer never crosses a gap before reaching a category link.

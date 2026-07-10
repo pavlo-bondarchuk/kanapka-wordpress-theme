@@ -34,6 +34,12 @@
 	object-fit: contain;
 }
 
+@media (min-width: 68.0625rem) {
+	.primary-navigation__menu > .menu-item-has-mega-menu {
+		position: relative;
+	}
+}
+
 @media (max-width: 68rem) {
 	.category-mega-menu__grid {
 		grid-template-columns: 1fr;
