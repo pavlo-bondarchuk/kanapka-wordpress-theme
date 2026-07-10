@@ -36,3 +36,7 @@
 ## 2026-07-10 — Match mini-cart item pricing layout
 
 - Placed quantity and unit price directly below each product title and added the WooCommerce-calculated line total at the right edge of the same row.
+
+## 2026-07-10 — Connect header language switcher to Weglot
+
+- Rendered the active Weglot switcher in the header while retaining WPML and locale fallbacks when Weglot is unavailable.
