@@ -1,0 +1,4 @@
+.home-section + .home-section {
+	border-top: 0.0625rem solid var(--color-line);
+}
+

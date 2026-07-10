@@ -1,0 +1,22 @@
+.woocommerce .products {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+	gap: var(--space-5);
+	margin: 0;
+	padding: 0;
+}
+
+.woocommerce .products::before,
+.woocommerce .products::after {
+	display: none;
+}
+
+.woocommerce .products .product {
+	width: auto;
+	margin: 0;
+}
+
+.woocommerce img {
+	height: auto;
+}
+

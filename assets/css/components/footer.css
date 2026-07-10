@@ -1,0 +1,6 @@
+.site-footer {
+	margin-top: var(--space-section);
+	background: var(--color-brand-900);
+	color: #fff;
+}
+

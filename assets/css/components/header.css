@@ -1,0 +1,7 @@
+.site-header {
+	position: relative;
+	z-index: 100;
+	border-bottom: 0.0625rem solid var(--color-line);
+	background: rgb(255 255 255 / 96%);
+}
+
