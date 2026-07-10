@@ -18,7 +18,18 @@ $cart_count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
 	</button>
 	<div id="header-mini-cart" class="header-popover header-mini-cart" hidden data-header-popup-panel>
 		<div class="header-popover__heading">
-			<strong><?php esc_html_e( 'Cart', 'kanapka-theme' ); ?></strong>
+			<div class="header-mini-cart__heading">
+				<strong><?php esc_html_e( 'Cart', 'kanapka-theme' ); ?></strong>
+				<span>
+					<?php
+					printf(
+						/* translators: %s is the number of products in the cart. */
+						esc_html( _n( '%s product', '%s products', $cart_count, 'kanapka-theme' ) ),
+						esc_html( number_format_i18n( $cart_count ) )
+					);
+					?>
+				</span>
+			</div>
 			<button type="button" aria-label="<?php esc_attr_e( 'Close cart', 'kanapka-theme' ); ?>" data-header-popup-close>&times;</button>
 		</div>
 		<div class="header-mini-cart__content widget_shopping_cart_content">
@@ -26,4 +37,3 @@ $cart_count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
 		</div>
 	</div>
 </div>
-

@@ -27,3 +27,8 @@
 ## Header stylesheet ownership
 
 - Keep header mega-menu rules in the header component stylesheet and verify them against later generic navigation-link selectors using computed styles.
+
+## Mini-cart styling
+
+- Style the current WooCommerce mini-cart DOM instead of copying its plugin template; keep fragment replacement, remove links and standard button hooks intact.
+- On small screens, constrain the entire cart panel to the viewport and stack its primary actions instead of compressing labels.

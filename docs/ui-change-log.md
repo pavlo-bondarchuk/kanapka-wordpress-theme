@@ -27,3 +27,8 @@
 
 - Moved all category mega-menu rules into the header stylesheet and removed the duplicate stylesheet enqueue.
 - Increased category-card selector specificity so the general navigation-link rule no longer overrides its flex layout.
+
+## 2026-07-10 — Refine mini-cart presentation
+
+- Styled the WooCommerce mini-cart as a responsive header panel with product thumbnails, readable item controls, subtotal hierarchy and distinct cart and checkout actions.
+- Added the live cart item count below the panel title without overriding the WooCommerce mini-cart template.
