@@ -81,6 +81,7 @@
 		--shadow-md: 0 1rem 2.5rem rgb(15 39 78 / 13%);
 
 		--container: 74rem;
+		--header-container: 86.25rem;
 		--container-gutter: clamp(1rem, 4vw, 2rem);
 		--header-height: 6.5rem;
 		--transition: 180ms ease;

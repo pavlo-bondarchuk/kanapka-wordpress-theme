@@ -44,3 +44,7 @@
 ## 2026-07-10 — Shorten header language labels
 
 - Kept the standard Weglot switcher output and shortened only its Russian and Ukrainian labels to `RU` and `UA`.
+
+## 2026-07-10 — Widen header container
+
+- Increased only the header inner container from the shared `74rem` width to a dedicated responsive `86.25rem` maximum.

@@ -10,6 +10,7 @@
 	grid-template-columns: minmax(10rem, 14rem) 1fr auto;
 	align-items: center;
 	gap: clamp(1rem, 3vw, 2.5rem);
+	width: min(100% - (2 * var(--container-gutter)), var(--header-container));
 	min-height: var(--header-height);
 }
 
