@@ -49,6 +49,63 @@
 	gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
+.primary-navigation__menu > .menu-item-has-children {
+	position: relative;
+}
+
+.primary-navigation__menu > .menu-item-has-children > .sub-menu {
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 50%;
+	width: max-content;
+	min-width: 13rem;
+	max-width: min(20rem, 80vw);
+	padding: var(--space-2);
+	border: 0.0625rem solid var(--color-line);
+	border-radius: var(--radius-sm);
+	background: var(--color-surface);
+	box-shadow: var(--shadow-md);
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -0.375rem);
+	transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+	visibility: hidden;
+}
+
+.primary-navigation__menu > .menu-item-has-children > .sub-menu::before {
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+	left: 0;
+	height: 0.625rem;
+	content: "";
+}
+
+.primary-navigation__menu > .menu-item-has-children:hover > .sub-menu,
+.primary-navigation__menu > .menu-item-has-children:focus-within > .sub-menu {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, 0);
+	visibility: visible;
+}
+
+.primary-navigation .sub-menu a {
+	padding: 0.7rem 0.875rem;
+	border-radius: calc(var(--radius-sm) - 0.2rem);
+	font-weight: 600;
+	white-space: normal;
+}
+
+.primary-navigation .sub-menu a:hover,
+.primary-navigation .sub-menu a:focus-visible {
+	background: var(--color-brand-100);
+	color: var(--color-brand-900);
+}
+
+.primary-navigation .sub-menu a::after {
+	display: none;
+}
+
 .primary-navigation a {
 	position: relative;
 	display: block;
@@ -185,6 +242,26 @@
 		align-items: stretch;
 		flex-direction: column;
 		gap: 0;
+	}
+
+	.primary-navigation__menu > .menu-item-has-children > .sub-menu {
+		position: static;
+		width: auto;
+		min-width: 0;
+		max-width: none;
+		padding: 0 0 0 var(--space-4);
+		border: 0;
+		border-left: 0.125rem solid var(--color-brand-100);
+		border-radius: 0;
+		box-shadow: none;
+		opacity: 1;
+		pointer-events: auto;
+		transform: none;
+		visibility: visible;
+	}
+
+	.primary-navigation__menu > .menu-item-has-children > .sub-menu::before {
+		display: none;
 	}
 
 	.header-contact {
