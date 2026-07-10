@@ -21,9 +21,8 @@
 			<?php if ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
-				<a class="site-branding__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<span><?php bloginfo( 'name' ); ?></span>
-					<small><?php bloginfo( 'description' ); ?></small>
+				<a class="site-branding__fallback" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/kanapka-logo.png' ) ); ?>" width="257" height="64" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 				</a>
 			<?php endif; ?>
 		</div>
@@ -64,4 +63,3 @@
 		</div>
 	</div>
 </header>
-

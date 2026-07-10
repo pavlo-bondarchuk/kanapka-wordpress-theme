@@ -14,18 +14,19 @@
 		</div>
 		<?php
 		$footer_menus = array(
-			'footer-1' => __( 'Company', 'kanapka-theme' ),
-			'footer-2' => __( 'Catalogue', 'kanapka-theme' ),
-			'footer-3' => __( 'Customers', 'kanapka-theme' ),
+			'footer-1' => array( 'title' => __( 'Company', 'kanapka-theme' ), 'menu' => 'Footer menu 1' ),
+			'footer-2' => array( 'title' => __( 'Catalogue', 'kanapka-theme' ), 'menu' => 'Footer menu 2' ),
+			'footer-3' => array( 'title' => __( 'Customers', 'kanapka-theme' ), 'menu' => 'Footer menu 3' ),
 		);
-		foreach ( $footer_menus as $location => $title ) :
+		foreach ( $footer_menus as $location => $footer_menu ) :
 			?>
-			<nav class="footer-navigation" aria-label="<?php echo esc_attr( $title ); ?>">
-				<h2><?php echo esc_html( $title ); ?></h2>
+			<nav class="footer-navigation" aria-label="<?php echo esc_attr( $footer_menu['title'] ); ?>">
+				<h2><?php echo esc_html( $footer_menu['title'] ); ?></h2>
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => $location,
+						'menu'           => $footer_menu['menu'],
 						'container'      => false,
 						'fallback_cb'    => false,
 						'depth'          => 1,
@@ -48,4 +49,3 @@
 <?php wp_footer(); ?>
 </body>
 </html>
-
