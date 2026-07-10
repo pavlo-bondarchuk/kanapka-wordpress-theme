@@ -18,3 +18,7 @@
 
 - Centered the desktop category mega menu against the full site header.
 - Kept the panel available while the pointer crosses the gap below the navigation.
+
+## 2026-07-10 — Align mega-menu items in flex rows
+
+- Replaced the category grid with a wrapping flex row while retaining three equal desktop columns and one mobile column.

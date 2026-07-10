@@ -19,3 +19,7 @@
 
 - Center wide mega-menu panels against the shared header container, not the narrow trigger item.
 - Bridge physical pointer gaps with a short hover-intent state so links remain reachable without changing panel alignment.
+
+## Category mega-menu item flow
+
+- Use a wrapping flex row with an explicit calculated basis when category cards must remain aligned in equal horizontal rows.
