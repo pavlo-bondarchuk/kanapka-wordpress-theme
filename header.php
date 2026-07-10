@@ -44,6 +44,7 @@
 					'menu_class'     => 'primary-navigation__menu',
 					'fallback_cb'    => false,
 					'depth'          => 2,
+					'walker'         => new Kanapka_Theme_Nav_Walker(),
 				)
 			);
 			?>
@@ -52,8 +53,10 @@
 		<div class="header-actions">
 			<div class="header-contact">
 				<span><?php esc_html_e( 'Order support', 'kanapka-theme' ); ?></span>
-				<a href="tel:+380666917272">(066) 691-72-72</a>
-				<a href="tel:+380936917272">(093) 691-72-72</a>
+				<?php $phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
+				<?php $phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
+				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_one ) ); ?>"><?php echo esc_html( $phone_one ); ?></a>
+				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_two ) ); ?>"><?php echo esc_html( $phone_two ); ?></a>
 			</div>
 			<?php get_template_part( 'template-parts/header/language-switcher' ); ?>
 			<?php get_template_part( 'template-parts/header/cart-link' ); ?>

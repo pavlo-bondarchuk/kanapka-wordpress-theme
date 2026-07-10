@@ -37,9 +37,12 @@
 		<?php endforeach; ?>
 		<div class="site-footer__contact">
 			<h2><?php esc_html_e( 'Contacts', 'kanapka-theme' ); ?></h2>
-			<a href="tel:+380666917272">(066) 691-72-72</a>
-			<a href="tel:+380936917272">(093) 691-72-72</a>
-			<a href="mailto:<?php echo esc_attr( antispambot( get_option( 'admin_email' ) ) ); ?>"><?php echo esc_html( antispambot( get_option( 'admin_email' ) ) ); ?></a>
+			<?php $footer_phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
+			<?php $footer_phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
+			<?php $contact_email = kanapka_theme_get_option( 'kanapka_contact_email', get_option( 'admin_email' ) ); ?>
+			<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $footer_phone_one ) ); ?>"><?php echo esc_html( $footer_phone_one ); ?></a>
+			<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $footer_phone_two ) ); ?>"><?php echo esc_html( $footer_phone_two ); ?></a>
+			<a href="mailto:<?php echo esc_attr( antispambot( $contact_email ) ); ?>"><?php echo esc_html( antispambot( $contact_email ) ); ?></a>
 		</div>
 	</div>
 	<div class="site-footer__legal container">

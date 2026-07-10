@@ -1,0 +1,127 @@
+{
+    "key": "group_kanapka_theme_settings",
+    "title": "Kanapka Theme Settings",
+    "fields": [
+        {
+            "key": "field_kanapka_navigation_tab",
+            "label": "Header and navigation",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_mega_enabled",
+            "label": "Enable category mega-menu",
+            "name": "kanapka_mega_menu_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_kanapka_mega_parent_page",
+            "label": "Show mega-menu under page",
+            "name": "kanapka_mega_menu_parent_page",
+            "type": "post_object",
+            "post_type": ["page"],
+            "return_format": "id",
+            "ui": 1,
+            "multiple": 0,
+            "allow_null": 0,
+            "instructions": "Choose the page used by the top-level WordPress menu item, usually the Shop page."
+        },
+        {
+            "key": "field_kanapka_mega_base_category",
+            "label": "Base product category",
+            "name": "kanapka_mega_menu_base_category",
+            "type": "taxonomy",
+            "taxonomy": "product_cat",
+            "field_type": "select",
+            "return_format": "id",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "instructions": "Leave empty to show all top-level product categories."
+        },
+        {
+            "key": "field_kanapka_mega_show_images",
+            "label": "Show category images",
+            "name": "kanapka_mega_menu_show_images",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_kanapka_mega_child_limit",
+            "label": "Child category limit",
+            "name": "kanapka_mega_menu_child_limit",
+            "type": "number",
+            "default_value": 0,
+            "min": 0,
+            "step": 1,
+            "instructions": "Use 0 to show every child category."
+        },
+        {
+            "key": "field_kanapka_mega_orderby",
+            "label": "Order categories by",
+            "name": "kanapka_mega_menu_orderby",
+            "type": "select",
+            "choices": {
+                "menu_order": "Menu order",
+                "name": "Name",
+                "slug": "Slug",
+                "count": "Product count",
+                "term_id": "Category ID"
+            },
+            "default_value": "menu_order",
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_kanapka_mega_order",
+            "label": "Sort direction",
+            "name": "kanapka_mega_menu_order",
+            "type": "select",
+            "choices": {"ASC": "Ascending", "DESC": "Descending"},
+            "default_value": "ASC",
+            "return_format": "value"
+        },
+        {
+            "key": "field_kanapka_contacts_tab",
+            "label": "Contacts",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_header_phone_one",
+            "label": "Primary phone",
+            "name": "kanapka_header_phone_one",
+            "type": "text",
+            "default_value": "(066) 691-72-72"
+        },
+        {
+            "key": "field_kanapka_header_phone_two",
+            "label": "Secondary phone",
+            "name": "kanapka_header_phone_two",
+            "type": "text",
+            "default_value": "(093) 691-72-72"
+        },
+        {
+            "key": "field_kanapka_contact_email",
+            "label": "Contact email",
+            "name": "kanapka_contact_email",
+            "type": "email"
+        }
+    ],
+    "location": [[{"param": "options_page", "operator": "==", "value": "kanapka-theme-settings"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Navigation and contact settings for the Kanapka theme.",
+    "show_in_rest": 0,
+    "modified": 1783692000
+}
