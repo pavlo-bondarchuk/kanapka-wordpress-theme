@@ -313,9 +313,13 @@
 	width: 2.75rem;
 	height: 2.75rem;
 	place-items: center;
+	-webkit-appearance: none;
+	appearance: none;
 	border: 0.0625rem solid var(--color-line);
 	border-radius: 50%;
+	background: #efefef;
 	color: var(--color-brand-900);
+	cursor: pointer;
 	text-decoration: none;
 }
 
@@ -365,8 +369,11 @@
 	height: 2rem;
 	place-items: center;
 	padding: 0;
+	-webkit-appearance: none;
+	appearance: none;
 	border: 0;
-	background: transparent;
+	border-radius: 50%;
+	background: #efefef;
 	color: var(--color-muted);
 	font-size: 1.5rem;
 	cursor: pointer;

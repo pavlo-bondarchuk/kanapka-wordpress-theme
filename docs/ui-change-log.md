@@ -53,3 +53,7 @@
 
 - Arranged each mini-cart item into image, product-information and action/line-total columns, with the quantity row directly below the linked title.
 - Added a visible translated remove label only inside the header mini-cart without overriding the WooCommerce template.
+
+## 2026-07-11 — Normalize circular button backgrounds
+
+- Set an explicit `#efefef` background and native-appearance reset for header icon buttons and circular popover close buttons.

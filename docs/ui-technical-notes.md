@@ -46,3 +46,7 @@
 ## Mini-cart item grid
 
 - Scope product-name and remove-link filters to the header mini-cart render, then use those semantic wrappers as stable CSS Grid children; do not affect cart-page markup.
+
+## Native button normalization
+
+- Explicitly set appearance, border, radius and background on circular buttons so Safari, Chrome and other browsers do not supply visually different native surfaces.
