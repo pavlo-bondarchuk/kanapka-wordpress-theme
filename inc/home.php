@@ -291,6 +291,94 @@ function kanapka_theme_get_home_services() {
 }
 
 /**
+ * Return homepage order benefit cards.
+ *
+ * @return array
+ */
+function kanapka_theme_get_home_order_benefits() {
+	$title  = sanitize_text_field( kanapka_theme_get_home_field( 'kanapka_home_benefits_title', '' ) );
+	$rows   = kanapka_theme_get_home_field( 'kanapka_home_benefits_items', array() );
+	$items  = array();
+	$icons  = array( 'leaf', 'utensils', 'delivery', 'percent', 'star', 'cart', 'users', 'sparkles' );
+	$colors = array( 'green', 'red', 'blue', 'orange', 'sky' );
+	$default_sequence = array(
+		array( 'icon' => 'leaf', 'color' => 'green' ),
+		array( 'icon' => 'utensils', 'color' => 'red' ),
+		array( 'icon' => 'delivery', 'color' => 'sky' ),
+		array( 'icon' => 'percent', 'color' => 'orange' ),
+		array( 'icon' => 'star', 'color' => 'red' ),
+		array( 'icon' => 'cart', 'color' => 'blue' ),
+	);
+
+	if ( is_array( $rows ) ) {
+		foreach ( $rows as $index => $row ) {
+			$item_title = sanitize_text_field( $row['title'] ?? '' );
+			$item_text  = sanitize_text_field( $row['text'] ?? '' );
+			$icon       = sanitize_key( $row['icon'] ?? '' );
+			$color      = sanitize_key( $row['color'] ?? '' );
+			$defaults   = $default_sequence[ $index % count( $default_sequence ) ];
+
+			if ( ! $item_title && ! $item_text ) {
+				continue;
+			}
+
+			$items[] = array(
+				'icon'  => in_array( $icon, $icons, true ) ? $icon : $defaults['icon'],
+				'color' => in_array( $color, $colors, true ) ? $color : $defaults['color'],
+				'title' => $item_title,
+				'text'  => $item_text,
+			);
+		}
+	}
+
+	if ( $title || $items ) {
+		return compact( 'title', 'items' );
+	}
+
+	return array(
+		'title' => __( 'Оцініть переваги замовлення страв для фуршету в офіс у нашій компанії!', 'kanapka-theme' ),
+		'items' => array(
+			array(
+				'icon'  => 'leaf',
+				'color' => 'green',
+				'title' => __( 'Свіжі продукти', 'kanapka-theme' ),
+				'text'  => __( 'Ми використовуємо тільки свіжі та якісні інгредієнти', 'kanapka-theme' ),
+			),
+			array(
+				'icon'  => 'utensils',
+				'color' => 'red',
+				'title' => __( 'Вражаючий асортимент', 'kanapka-theme' ),
+				'text'  => __( 'Великий вибір канапе, закусок та наборів', 'kanapka-theme' ),
+			),
+			array(
+				'icon'  => 'delivery',
+				'color' => 'sky',
+				'title' => __( 'Безкоштовна доставка від 5000 грн', 'kanapka-theme' ),
+				'text'  => __( 'По Києву й області у зручний час', 'kanapka-theme' ),
+			),
+			array(
+				'icon'  => 'percent',
+				'color' => 'orange',
+				'title' => __( 'Знижка 10% при самовивозі', 'kanapka-theme' ),
+				'text'  => __( 'Забирайте замовлення самостійно та заощаджуйте', 'kanapka-theme' ),
+			),
+			array(
+				'icon'  => 'star',
+				'color' => 'red',
+				'title' => __( '18 років на ринку', 'kanapka-theme' ),
+				'text'  => __( 'Досвід, якому довіряють клієнти', 'kanapka-theme' ),
+			),
+			array(
+				'icon'  => 'cart',
+				'color' => 'blue',
+				'title' => __( 'Зручне онлайн-замовлення', 'kanapka-theme' ),
+				'text'  => __( 'Оформлюйте замовлення легко на сайті в кілька кліків', 'kanapka-theme' ),
+			),
+		),
+	);
+}
+
+/**
  * Resolve a legacy brand thumbnail attachment ID.
  *
  * @param int $term_id Brand term ID.

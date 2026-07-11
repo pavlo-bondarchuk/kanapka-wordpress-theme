@@ -125,3 +125,9 @@
 - Registered the legacy `brands` taxonomy in the new theme so the existing brand records remain available.
 - Reused legacy brand thumbnail storage with term-meta fallbacks so logos render without adding new admin fields.
 - Added lightweight front-page logo slider controls and responsive logo track styling.
+
+## 2026-07-11 — Replace homepage order benefits
+
+- Replaced the static numbered "Чому клієнти обирають Kanapka" section with an editable homepage benefits section after "Під ключ".
+- Added an SCF "Переваги" tab with title and repeater fields for icon, color, title and text.
+- Styled the block as six inline icon/text benefits per desktop row, tablet grid rows and one-item scroll-snap slides on mobile.

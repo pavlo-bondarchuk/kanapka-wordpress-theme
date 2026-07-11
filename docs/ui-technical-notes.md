@@ -104,3 +104,9 @@
 - The new theme must register the legacy `brands` taxonomy because the previous theme owned that registration.
 - Brand logo sections should filter out terms without images and return before rendering the section wrapper when no usable logos exist.
 - Use a native horizontal logo slider with explicit arrows so the brand list stays lightweight and consistent with other homepage sliders.
+
+## Homepage order benefits
+
+- Homepage order benefits belong in the page-level SCF group after turnkey services and should replace the old numbered "Чому клієнти" grid.
+- Render six compact icon/text benefits per desktop row, 3-4 per tablet row, and one benefit per mobile scroll-snap slide.
+- Keep fallback benefit content Ukrainian and render icons through the shared PHP SVG helper.

@@ -551,6 +551,172 @@
                     "parent_repeater": "field_kanapka_home_services"
                 }
             ]
+        },
+        {
+            "key": "field_kanapka_home_benefits_tab",
+            "label": "Переваги",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_kanapka_home_benefits_title",
+            "label": "Заголовок",
+            "name": "kanapka_home_benefits_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Заголовок блоку переваг після секції «Під ключ».",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Оцініть переваги замовлення страв для фуршету в офіс у нашій компанії!",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_kanapka_home_benefits_items",
+            "label": "Список переваг",
+            "name": "kanapka_home_benefits_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "На десктопі показується по 6 у ряд, на мобільному — один елемент у слайді.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "button_label": "Додати перевагу",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_kanapka_home_benefit_title",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_home_benefit_icon",
+                    "label": "Іконка",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "leaf": "Листок",
+                        "utensils": "Прибори",
+                        "delivery": "Доставка",
+                        "percent": "Відсоток",
+                        "star": "Зірка",
+                        "cart": "Кошик",
+                        "users": "Люди",
+                        "sparkles": "Іскри"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_kanapka_home_benefits_items"
+                },
+                {
+                    "key": "field_kanapka_home_benefit_color",
+                    "label": "Колір",
+                    "name": "color",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "green": "Зелений",
+                        "red": "Червоний",
+                        "blue": "Синій",
+                        "orange": "Помаранчевий",
+                        "sky": "Блакитний"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_kanapka_home_benefits_items"
+                },
+                {
+                    "key": "field_kanapka_home_benefit_title",
+                    "label": "Заголовок",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_benefits_items"
+                },
+                {
+                    "key": "field_kanapka_home_benefit_text",
+                    "label": "Текст",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 2,
+                    "new_lines": "br",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_kanapka_home_benefits_items"
+                }
+            ]
         }
     ],
     "location": [
@@ -576,5 +742,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1783785725
+    "modified": 1783797200
 }
