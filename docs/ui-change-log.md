@@ -112,3 +112,9 @@
 - Reworked the "Часто замовляють" block from a fixed product grid into a horizontally scrollable product slider.
 - Added previous and next controls around the product carousel and loaded a small front-page-only slider script.
 - Tuned the product card spacing, media area and responsive column widths so five cards are visible on desktop.
+
+## 2026-07-11 — Make turnkey services editable
+
+- Moved the "Організуємо все під ключ" cards into a homepage SCF repeater with title, text, link button and image fields.
+- Reworked the front-end section so empty service data renders no section markup.
+- Styled the service cards as image-backed promo tiles with three cards per desktop row and responsive wrapping.

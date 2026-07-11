@@ -253,3 +253,39 @@ function kanapka_theme_get_home_seo_section() {
 		),
 	);
 }
+
+/**
+ * Return homepage turnkey service cards.
+ *
+ * @return array
+ */
+function kanapka_theme_get_home_services() {
+	$rows     = kanapka_theme_get_home_field( 'kanapka_home_services', array() );
+	$services = array();
+
+	if ( ! is_array( $rows ) ) {
+		return $services;
+	}
+
+	foreach ( $rows as $row ) {
+		$title    = sanitize_text_field( $row['title'] ?? '' );
+		$text     = sanitize_text_field( $row['text'] ?? '' );
+		$button   = is_array( $row['button'] ?? null ) ? $row['button'] : array();
+		$image_id = absint( $row['image'] ?? 0 );
+
+		if ( ! $title && ! $text && ! $button && ! $image_id ) {
+			continue;
+		}
+
+		$services[] = array(
+			'title'         => $title,
+			'text'          => $text,
+			'button_label'  => sanitize_text_field( $button['title'] ?? '' ),
+			'button_url'    => esc_url_raw( $button['url'] ?? '' ),
+			'button_target' => '_blank' === ( $button['target'] ?? '' ) ? '_blank' : '_self',
+			'image_id'      => $image_id,
+		);
+	}
+
+	return $services;
+}

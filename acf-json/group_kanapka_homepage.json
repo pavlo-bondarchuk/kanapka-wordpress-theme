@@ -425,6 +425,132 @@
                     "parent_repeater": "field_kanapka_home_seo_benefits"
                 }
             ]
+        },
+        {
+            "key": "field_kanapka_home_services_tab",
+            "label": "Під ключ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_kanapka_home_services",
+            "label": "Картки послуг",
+            "name": "kanapka_home_services",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Картки блоку «Організуємо все під ключ». На фронті виводяться по 3 в ряд з перенесенням.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Додати картку",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_kanapka_home_service_title",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_home_service_title",
+                    "label": "Заголовок",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_services"
+                },
+                {
+                    "key": "field_kanapka_home_service_text",
+                    "label": "Текст",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "new_lines": "br",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_kanapka_home_services"
+                },
+                {
+                    "key": "field_kanapka_home_service_button",
+                    "label": "Кнопка",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Оберіть текст кнопки, URL і спосіб відкриття.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_kanapka_home_services"
+                },
+                {
+                    "key": "field_kanapka_home_service_image",
+                    "label": "Картинка",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp,avif",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "parent_repeater": "field_kanapka_home_services"
+                }
+            ]
         }
     ],
     "location": [
@@ -450,5 +576,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1783781400
+    "modified": 1783785725
 }

@@ -91,3 +91,9 @@
 
 - Product sliders should use lightweight native horizontal scrolling with snap points and explicit arrow controls instead of adding a carousel dependency.
 - Keep the frequent-orders carousel at five visible desktop cards, then reduce visible cards through `grid-auto-columns` at breakpoints.
+
+## Homepage turnkey services
+
+- Homepage-only promo service cards belong in the homepage SCF group as a repeater; do not hardcode card content in the template.
+- Repeater-driven sections should return before printing the section wrapper when no validated rows exist.
+- Turnkey service cards should use image-backed promo tiles in a three-column desktop grid that wraps naturally for additional rows.
