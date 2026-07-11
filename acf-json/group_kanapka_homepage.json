@@ -260,12 +260,14 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "Content fields for the WordPress page assigned as the homepage.",
     "show_in_rest": 0,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1783765173
+    "modified": 1783773774
 }
