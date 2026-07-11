@@ -36,7 +36,10 @@ $render_benefit_icon = static function ( $icon ) {
 	<div class="home-hero__viewport">
 		<div class="home-hero__track">
 			<?php foreach ( $slides as $index => $slide ) : ?>
-				<?php $is_active = 0 === $index; ?>
+				<?php
+				$is_active          = 0 === $index;
+				$is_primary_heading = 0 === $index;
+				?>
 				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'slide', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d of %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
 					<?php
 					if ( $slide['image_id'] ) {
@@ -56,7 +59,7 @@ $render_benefit_icon = static function ( $icon ) {
 					?>
 					<div class="home-hero__content container">
 						<div class="home-hero__copy">
-							<?php if ( 0 === $index ) : ?>
+							<?php if ( $is_primary_heading ) : ?>
 								<h1 id="home-hero-title"><?php echo esc_html( $slide['title'] ); ?></h1>
 							<?php else : ?>
 								<h2><?php echo esc_html( $slide['title'] ); ?></h2>

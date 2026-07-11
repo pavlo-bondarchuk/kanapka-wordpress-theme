@@ -65,7 +65,7 @@
 .home-hero__copy h2 {
 	margin: 0;
 	color: var(--color-brand-900);
-	font-size: clamp(2.4rem, 5.2vw, 4.75rem);
+	font-size: 3.875rem;
 	line-height: 1.08;
 	text-wrap: balance;
 }

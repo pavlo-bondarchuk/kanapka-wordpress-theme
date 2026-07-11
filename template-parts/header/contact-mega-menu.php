@@ -15,16 +15,16 @@ $button_url  = kanapka_theme_get_option( 'kanapka_contact_button_url', '' );
 ?>
 <div class="contact-mega-menu" aria-label="<?php esc_attr_e( 'Contact information', 'kanapka-theme' ); ?>">
 	<div class="contact-mega-menu__column">
-		<h2><?php echo esc_html( kanapka_theme_get_option( 'kanapka_contact_column_title', __( 'Contacts', 'kanapka-theme' ) ) ); ?></h2>
+		<div class="contact-mega-menu__label"><?php echo esc_html( kanapka_theme_get_option( 'kanapka_contact_column_title', __( 'Contacts', 'kanapka-theme' ) ) ); ?></div>
 		<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_one ) ); ?>"><?php echo esc_html( $phone_one ); ?></a>
 		<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_two ) ); ?>"><?php echo esc_html( $phone_two ); ?></a>
 		<a href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
 	</div>
 	<div class="contact-mega-menu__column">
-		<h2><?php esc_html_e( 'Address', 'kanapka-theme' ); ?></h2>
+		<div class="contact-mega-menu__label"><?php esc_html_e( 'Address', 'kanapka-theme' ); ?></div>
 		<address><?php echo esc_html( $address_one ); ?><br><?php echo esc_html( $address_two ); ?></address>
 		<?php if ( $hours ) : ?>
-			<h2><?php echo esc_html( kanapka_theme_get_option( 'kanapka_contact_hours_title', __( 'Orders are accepted', 'kanapka-theme' ) ) ); ?></h2>
+			<div class="contact-mega-menu__label"><?php echo esc_html( kanapka_theme_get_option( 'kanapka_contact_hours_title', __( 'Orders are accepted', 'kanapka-theme' ) ) ); ?></div>
 			<p><?php echo nl2br( esc_html( $hours ) ); ?></p>
 		<?php endif; ?>
 		<?php if ( $button_url ) : ?>

@@ -71,3 +71,9 @@
 
 - Replaced separate button label and URL inputs with one SCF Link field that keeps the label, destination and target together.
 - Updated the hero CTA markup to support safe new-tab links while retaining existing saved button values during migration.
+
+## 2026-07-11 — Correct homepage heading hierarchy
+
+- Set hero slide headings to exactly `62px` on desktop while retaining the existing responsive mobile size.
+- Kept the first slide as the page's only `h1` and rendered every subsequent slide title as `h2`.
+- Replaced contact submenu heading tags with neutral styled labels so submenu content cannot precede the page `h1` in the document outline.

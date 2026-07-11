@@ -63,3 +63,8 @@
 ## CTA field structure
 
 - Use one SCF Link field for each CTA so its label, URL and target remain atomic; normalize legacy label and URL keys until existing content is resaved.
+
+## Page heading order
+
+- A homepage carousel may contain only one `h1`, owned by its first slide; later slide titles use `h2`.
+- Decorative labels inside header dropdowns must use neutral elements and dedicated classes, not heading tags that appear before the page heading.
