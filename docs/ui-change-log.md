@@ -102,3 +102,7 @@
 - Anchored the SEO card image to the bottom-right of its column and limited the collapsed copy to four lines.
 - Changed the benefit row to show five visible items on desktop and scroll horizontally when more items are added.
 - Localized the SEO section SCF field labels and instructions to Ukrainian.
+
+## 2026-07-11 — Add SEO benefit scroll hint
+
+- Preserved the manually adjusted homepage SEO card styles and added a right-side fade over the benefits strip to make horizontal scrolling more discoverable.

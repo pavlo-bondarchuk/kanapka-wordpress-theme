@@ -31,17 +31,19 @@ if ( ! $section['title'] && ! $section['text'] ) {
 			</figure>
 		<?php endif; ?>
 		<?php if ( $section['benefits'] ) : ?>
-			<ul class="home-seo__benefits">
-				<?php foreach ( $section['benefits'] as $benefit ) : ?>
-					<li>
-						<span class="home-seo__benefit-icon"><?php echo kanapka_theme_ui_icon( $benefit['icon'], 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?></span>
-						<span>
-							<strong><?php echo esc_html( $benefit['title'] ); ?></strong>
-							<?php if ( $benefit['text'] ) : ?><small><?php echo esc_html( $benefit['text'] ); ?></small><?php endif; ?>
-						</span>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+			<div class="home-seo__benefits-wrap">
+				<ul class="home-seo__benefits">
+					<?php foreach ( $section['benefits'] as $benefit ) : ?>
+						<li>
+							<span class="home-seo__benefit-icon"><?php echo kanapka_theme_ui_icon( $benefit['icon'], 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?></span>
+							<span>
+								<strong><?php echo esc_html( $benefit['title'] ); ?></strong>
+								<?php if ( $benefit['text'] ) : ?><small><?php echo esc_html( $benefit['text'] ); ?></small><?php endif; ?>
+							</span>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		<?php endif; ?>
 	</div>
 </section>
