@@ -1,0 +1,351 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kanapka Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-11 12:51+0000\n"
+"PO-Revision-Date: 2026-07-11 13:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: Українська\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.6; wp-7.0.1; php-8.3.30\n"
+"X-Domain: kanapka-theme"
+
+#: template-parts/front-page/hero.php:43
+#, php-format
+msgid "%1$d of %2$d"
+msgstr "%1$d з %2$d"
+
+#. %s is the number of products in the cart.
+#: template-parts/header/cart-link.php:27
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] "%s продукт"
+msgstr[1] "%s продукти"
+msgstr[2] "%s продуктів"
+
+#: template-parts/front-page/services.php:11
+msgid "A complete celebration menu prepared and delivered on time."
+msgstr "Повне святкове меню, підготовлене і доставлене вчасно."
+
+#: template-parts/front-page/services.php:9
+msgid "A flexible menu for business and private events."
+msgstr "Гнучке меню для ділових і приватних заходів."
+
+#: template-parts/front-page/benefits.php:10
+msgid "A varied menu"
+msgstr "Різноманітне меню"
+
+#: template-parts/header/contact-mega-menu.php:24
+msgid "Address"
+msgstr "Адреса"
+
+#: template-parts/front-page/services.php:11
+msgid "Banquets"
+msgstr "Банкети"
+
+#: inc/home.php:136
+msgid "Browse catalogue"
+msgstr "Переглянути каталог"
+
+#: template-parts/front-page/services.php:9
+msgid "Buffet catering"
+msgstr "Харчування по системі \"шведський стіл\""
+
+#: template-parts/front-page/delivery-intro.php:12
+msgid "Canapé, appetizer and buffet delivery in Kyiv"
+msgstr "Доставка канапе, закусок і шведського столу по Києву"
+
+#: inc/home.php:135
+msgid ""
+"Canapés, appetizers and buffet sets made from fresh ingredients and "
+"delivered at the right time."
+msgstr ""
+"Канапки, закуски та фуршетні набори готуються зі свіжих продуктів і "
+"доставляються в потрібний час."
+
+#: template-parts/front-page/hero.php:35
+msgid "carousel"
+msgstr "карусель"
+
+#: template-parts/header/cart-link.php:22
+msgid "Cart"
+msgstr "Кошик "
+
+#: template-parts/header/cart-link.php:15
+msgid "Cart, %d items"
+msgstr "Кількість товарів у кошику, %d"
+
+#: footer.php:18
+msgid "Catalogue"
+msgstr "Каталог"
+
+#: template-parts/front-page/hero.php:101
+msgid "Choose slide"
+msgstr "Виберіть слайд"
+
+#: template-parts/front-page/benefits.php:12
+msgid "Clear discounts"
+msgstr "Чіткі знижки"
+
+#: template-parts/front-page/delivery-intro.php:18
+msgid "Clear portions and prices"
+msgstr "Чіткі порції і ціни"
+
+#: template-parts/header/cart-link.php:33
+msgid "Close cart"
+msgstr "Закрити кошик"
+
+#: template-parts/header/search-popup.php:15
+msgid "Close search"
+msgstr "Закрити пошук"
+
+#: template-parts/front-page/services.php:10
+msgid "Coffee breaks"
+msgstr "Перерви на каву"
+
+#: footer.php:17
+msgid "Company"
+msgstr "Компанія"
+
+#: template-parts/header/contact-mega-menu.php:31
+msgid "Contact form"
+msgstr "Контактна форма"
+
+#: template-parts/header/contact-mega-menu.php:16
+msgid "Contact information"
+msgstr "Контактна інформація"
+
+#: footer.php:39 template-parts/header/contact-mega-menu.php:18
+msgid "Contacts"
+msgstr "Контакти"
+
+#: template-parts/front-page/services.php:10
+msgid "Convenient sets for conferences, meetings and presentations."
+msgstr "Зручні набори для проведення конференцій, нарад і презентацій."
+
+#: footer.php:19
+msgid "Customers"
+msgstr "Клієнти"
+
+#: template-parts/front-page/hero.php:88
+msgid "Delivery benefits"
+msgstr "Переваги доставки"
+
+#: template-parts/front-page/benefits.php:14
+msgid "Easy online ordering"
+msgstr "Простий онлайн-замовлення"
+
+#: inc/home.php:177 template-parts/front-page/benefits.php:11
+msgid "Fast delivery"
+msgstr "Швидка доставка"
+
+#: template-parts/front-page/hero.php:35
+msgid "Featured offers"
+msgstr "Рекомендовані пропозиції"
+
+#: inc/menus.php:17
+msgid "Footer column one"
+msgstr "Перший стовпець нижнього колонтитула"
+
+#: inc/menus.php:19
+msgid "Footer column three"
+msgstr "Третій стовпець нижнього колонтитула"
+
+#: inc/menus.php:18
+msgid "Footer column two"
+msgstr "Другий стовпець нижнього колонтитула"
+
+#: inc/home.php:173
+msgid "For qualifying Kyiv orders"
+msgstr "Для кваліфікаційних замовлень з Києва"
+
+#: inc/home.php:172
+msgid "Free delivery"
+msgstr "Безкоштовна доставка"
+
+#: template-parts/front-page/popular-products.php:17
+msgid "Frequently ordered"
+msgstr "Часто замовляються"
+
+#: template-parts/front-page/delivery-intro.php:16
+msgid "Fresh preparation"
+msgstr "Свіже приготування"
+
+#: inc/home.php:182 template-parts/front-page/benefits.php:9
+msgid "Fresh products"
+msgstr "Свіжі продукти"
+
+#: template-parts/front-page/hero.php:103
+msgid "Go to slide %d"
+msgstr "Перейти до слайда %d"
+
+#: template-parts/front-page/delivery-intro.php:19
+msgid "Help choosing a menu"
+msgstr "Допомога у виборі меню"
+
+#. URI of the theme
+msgid "https://kanapka.kiev.ua/"
+msgstr ""
+
+#. Author of the theme
+msgid "Kanapka"
+msgstr "Kanapka"
+
+#: template-parts/front-page/delivery-intro.php:11
+msgid "Kanapka catering"
+msgstr "Канапка кейтеринг"
+
+#. Name of the theme
+msgid "Kanapka Theme"
+msgstr "Тема Канапки"
+
+#: inc/scf.php:20
+msgid "Kanapka Theme Settings"
+msgstr "Налаштування теми Kanapka"
+
+#: template-parts/header/contact-mega-menu.php:11
+msgid "Kyiv"
+msgstr "Київ"
+
+#: template-parts/header/language-switcher.php:33
+msgid "Language"
+msgstr "Мова"
+
+#: template-parts/front-page/services.php:23
+msgid "Learn more"
+msgstr "Дізнатися більше"
+
+#. Description of the theme
+msgid "Lightweight modular WooCommerce theme for Kanapka."
+msgstr "Легка модульна тема WooCommerce для Kanapka."
+
+#: template-parts/front-page/hero.php:83
+msgid "Next slide"
+msgstr "Наступний слайд"
+
+#: inc/home.php:178
+msgid "On the order day"
+msgstr "У день замовлення"
+
+#: template-parts/front-page/delivery-intro.php:13
+msgid ""
+"Order ready-made sets for an office meeting, birthday, reception or family "
+"celebration. We prepare food shortly before dispatch and deliver it in "
+"presentation-ready packaging."
+msgstr ""
+"Замовте готові набори для зустрічі в офісі, дня народження, фуршету або "
+"сімейного торжества. Ми готуємо їжу незадовго до відправлення та доставляємо "
+"її в упаковці, готової презентації."
+
+#: header.php:60
+msgid "Order support"
+msgstr "Підтримка замовлення"
+
+#: template-parts/header/contact-mega-menu.php:27
+msgid "Orders are accepted"
+msgstr "Замовлення приймаються"
+
+#: template-parts/front-page/category-strip.php:14
+msgid "Popular categories"
+msgstr "Популярні категорії"
+
+#: inc/home.php:183
+msgid "Premium quality"
+msgstr "Преміальна якість"
+
+#: template-parts/front-page/hero.php:80
+msgid "Previous slide"
+msgstr "Попередній слайд"
+
+#: inc/accessibility.php:19 inc/menus.php:16
+msgid "Primary navigation"
+msgstr "Основна навігація"
+
+#: template-parts/front-page/category-catalogue.php:17
+msgid "Product catalogue"
+msgstr "Каталог продукції"
+
+#: template-parts/header/category-mega-menu.php:11
+msgid "Product categories"
+msgstr "Категорії продуктів"
+
+#: inc/home.php:134
+msgid "Ready-made sets for every celebration"
+msgstr "Готові набори для будь-якого торжества"
+
+#: template-parts/front-page/delivery-intro.php:17
+msgid "Reliable delivery"
+msgstr "Надійна доставка"
+
+#: template-parts/header/search-popup.php:9
+#: template-parts/header/search-popup.php:21
+msgid "Search"
+msgstr "Пошук"
+
+#: template-parts/header/search-popup.php:14
+#: template-parts/header/search-popup.php:18
+msgid "Search products"
+msgstr "Пошук товарів"
+
+#: header.php:17
+msgid "Skip to content"
+msgstr "Перейти до вмісту"
+
+#: template-parts/front-page/hero.php:43
+msgid "slide"
+msgstr "ковзання"
+
+#: inc/scf.php:21
+msgid "Theme Settings"
+msgstr "Параметри теми"
+
+#: header.php:36
+msgid "Toggle navigation"
+msgstr "Перемикати навігацію"
+
+#: template-parts/front-page/category-catalogue.php:18
+msgid "View all categories"
+msgstr "Переглянути всі категорії"
+
+#: template-parts/front-page/services.php:16
+msgid "We organise everything"
+msgstr "Ми все організуємо"
+
+#: template-parts/header/search-popup.php:19
+msgid "What are you looking for?"
+msgstr "Що ти шукаєш?"
+
+#: template-parts/front-page/benefits.php:19
+msgid "Why customers choose Kanapka"
+msgstr "Чому клієнти обирають Kanapka"
+
+#: template-parts/front-page/benefits.php:13
+msgid "Years of experience"
+msgstr "Багаторічний досвід роботи"
+
+#: inc/scf.php:97
+msgid "Замовлення приймаються"
+msgstr "Замовлення приймаються"
+
+#: inc/scf.php:94
+msgid "Контакти"
+msgstr "Контакти"
+
+#: inc/scf.php:98
+msgid "Контактна форма"
+msgstr "Контактна форма"
+
+#: inc/scf.php:90
+msgid "Прийом замовлень"
+msgstr "Прийом замовлень"
+
+#: inc/scf.php:95
+msgid "м. Київ"
+msgstr "м. Київ"
