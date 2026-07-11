@@ -118,3 +118,10 @@
 - Moved the "Організуємо все під ключ" cards into a homepage SCF repeater with title, text, link button and image fields.
 - Reworked the front-end section so empty service data renders no section markup.
 - Styled the service cards as image-backed promo tiles with three cards per desktop row and responsive wrapping.
+
+## 2026-07-11 — Add client brand slider
+
+- Added a "Наші клієнти" slider below the turnkey services section using the existing `brands` taxonomy data.
+- Registered the legacy `brands` taxonomy in the new theme so the existing brand records remain available.
+- Reused legacy brand thumbnail storage with term-meta fallbacks so logos render without adding new admin fields.
+- Added lightweight front-page logo slider controls and responsive logo track styling.

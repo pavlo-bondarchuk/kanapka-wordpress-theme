@@ -289,3 +289,104 @@ function kanapka_theme_get_home_services() {
 
 	return $services;
 }
+
+/**
+ * Resolve a legacy brand thumbnail attachment ID.
+ *
+ * @param int $term_id Brand term ID.
+ * @return int
+ */
+function kanapka_theme_get_brand_logo_id( $term_id ) {
+	$term_id = absint( $term_id );
+
+	if ( ! $term_id ) {
+		return 0;
+	}
+
+	if ( function_exists( 'wcm_sds_brands_thumbnail_id' ) ) {
+		return absint( wcm_sds_brands_thumbnail_id( $term_id ) );
+	}
+
+	$meta_keys = array( 'thumbnail_id', 'brand_thumbnail_id', 'image' );
+
+	foreach ( $meta_keys as $meta_key ) {
+		$image_id = absint( get_term_meta( $term_id, $meta_key, true ) );
+
+		if ( $image_id ) {
+			return $image_id;
+		}
+	}
+
+	global $wpdb;
+
+	$table = $wpdb->prefix . 'wcm_sds_brands';
+
+	if ( $table !== $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ) ) { // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		return 0;
+	}
+
+	return absint(
+		$wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->prepare(
+				"SELECT wsb.meta_value
+				FROM {$wpdb->prefix}wcm_sds_brands wsb
+				LEFT JOIN {$wpdb->term_taxonomy} tt ON wsb.term_taxonomy_id = tt.term_taxonomy_id
+				WHERE tt.term_id = %d
+				AND tt.taxonomy = 'brands'
+				AND wsb.meta_key = 'thumbnail_id'
+				LIMIT 1",
+				$term_id
+			)
+		)
+	);
+}
+
+/**
+ * Return visible homepage client brand logos.
+ *
+ * @param int $limit Maximum number of brands.
+ * @return array
+ */
+function kanapka_theme_get_home_client_brands( $limit = 24 ) {
+	if ( ! taxonomy_exists( 'brands' ) ) {
+		return array();
+	}
+
+	$terms = get_terms(
+		array(
+			'taxonomy'   => 'brands',
+			'hide_empty' => false,
+			'number'     => absint( $limit ),
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+		)
+	);
+
+	if ( is_wp_error( $terms ) || ! $terms ) {
+		return array();
+	}
+
+	$brands = array();
+
+	foreach ( $terms as $term ) {
+		$image_id = kanapka_theme_get_brand_logo_id( $term->term_id );
+
+		if ( ! $image_id ) {
+			continue;
+		}
+
+		$link = get_term_link( $term, 'brands' );
+
+		if ( is_wp_error( $link ) ) {
+			$link = '';
+		}
+
+		$brands[] = array(
+			'name'     => $term->name,
+			'url'      => $link,
+			'image_id' => $image_id,
+		);
+	}
+
+	return $brands;
+}

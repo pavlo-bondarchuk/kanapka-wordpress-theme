@@ -14,8 +14,8 @@ get_header();
 	<?php get_template_part( 'template-parts/front-page/delivery-intro' ); ?>
 	<?php get_template_part( 'template-parts/front-page/popular-products' ); ?>
 	<?php get_template_part( 'template-parts/front-page/services' ); ?>
+	<?php get_template_part( 'template-parts/front-page/client-brands' ); ?>
 	<?php get_template_part( 'template-parts/front-page/benefits' ); ?>
 </main>
 <?php
 get_footer();
-

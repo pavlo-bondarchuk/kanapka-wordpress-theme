@@ -661,7 +661,7 @@
 
 .service-card__image {
 	position: absolute;
-	inset: 0;
+	left: 50%;
 	z-index: -2;
 	width: 100%;
 	height: 100%;
@@ -716,6 +716,108 @@
 	transform: translateY(-0.0625rem);
 }
 
+.client-brands {
+	overflow: hidden;
+}
+
+.client-brands__carousel {
+	position: relative;
+	margin-inline: calc(var(--space-7) * -1);
+	padding-inline: var(--space-7);
+}
+
+.client-brands__viewport {
+	overflow: hidden;
+}
+
+.client-brands__track {
+	--client-brand-gap: var(--space-5);
+
+	display: grid;
+	grid-auto-columns: calc((100% - (var(--client-brand-gap) * 5)) / 6);
+	grid-auto-flow: column;
+	gap: var(--client-brand-gap);
+	margin: 0;
+	padding: 0;
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	list-style: none;
+}
+
+.client-brands__track::-webkit-scrollbar {
+	display: none;
+}
+
+.client-brands__item {
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
+.client-brands__link {
+	display: grid;
+	min-height: 4.5rem;
+	place-items: center;
+	padding: var(--space-2);
+	color: inherit;
+	text-decoration: none;
+}
+
+.client-brands__link img {
+	display: block;
+	width: 100%;
+	max-width: 11rem;
+	max-height: 4.5rem;
+	object-fit: contain;
+	filter: saturate(0.96);
+	transition: filter var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.client-brands__link:hover img {
+	filter: saturate(1.08);
+	opacity: 0.92;
+	transform: translateY(-0.0625rem);
+}
+
+.client-brands__arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	display: grid;
+	width: 3.25rem;
+	height: 3.25rem;
+	place-items: center;
+	padding: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: rgb(99 113 137 / 72%);
+	cursor: pointer;
+	transform: translateY(-50%);
+	transition: color var(--transition), opacity var(--transition);
+}
+
+.client-brands__arrow:hover {
+	color: var(--color-brand-800);
+}
+
+.client-brands__arrow:disabled {
+	opacity: 0.25;
+	cursor: default;
+}
+
+.client-brands__arrow--previous {
+	left: 0;
+}
+
+.client-brands__arrow--next {
+	right: 0;
+}
+
 .benefit-grid {
 	display: grid;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -755,6 +857,10 @@
 
 	.service-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.client-brands__track {
+		grid-auto-columns: calc((100% - (var(--client-brand-gap) * 3)) / 4);
 	}
 }
 
@@ -861,6 +967,20 @@
 	}
 
 	.popular-products__arrow {
+		width: 2.75rem;
+		height: 2.75rem;
+	}
+
+	.client-brands__carousel {
+		margin-inline: calc(var(--space-4) * -1);
+		padding-inline: var(--space-4);
+	}
+
+	.client-brands__track {
+		grid-auto-columns: calc((100% - var(--client-brand-gap)) / 2);
+	}
+
+	.client-brands__arrow {
 		width: 2.75rem;
 		height: 2.75rem;
 	}

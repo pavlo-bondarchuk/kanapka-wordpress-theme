@@ -97,3 +97,10 @@
 - Homepage-only promo service cards belong in the homepage SCF group as a repeater; do not hardcode card content in the template.
 - Repeater-driven sections should return before printing the section wrapper when no validated rows exist.
 - Turnkey service cards should use image-backed promo tiles in a three-column desktop grid that wraps naturally for additional rows.
+
+## Homepage client brands
+
+- Client logos should come from the existing `brands` taxonomy and legacy brand thumbnail storage; do not add duplicate SCF fields for this data.
+- The new theme must register the legacy `brands` taxonomy because the previous theme owned that registration.
+- Brand logo sections should filter out terms without images and return before rendering the section wrapper when no usable logos exist.
+- Use a native horizontal logo slider with explicit arrows so the brand list stays lightweight and consistent with other homepage sliders.
