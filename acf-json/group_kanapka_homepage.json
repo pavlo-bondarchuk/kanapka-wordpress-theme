@@ -247,7 +247,7 @@
         },
         {
             "key": "field_kanapka_home_seo_tab",
-            "label": "SEO section",
+            "label": "SEO-блок",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -265,7 +265,7 @@
         },
         {
             "key": "field_kanapka_home_seo_title",
-            "label": "Title",
+            "label": "Заголовок",
             "name": "kanapka_home_seo_title",
             "aria-label": "",
             "type": "text",
@@ -285,11 +285,11 @@
         },
         {
             "key": "field_kanapka_home_seo_text",
-            "label": "Text",
+            "label": "Текст",
             "name": "kanapka_home_seo_text",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Long SEO text. It is shown collapsed on the front end with a read-more control.",
+            "instructions": "Великий SEO-текст. На сайті спочатку показується скорочено з кнопкою розгортання.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -305,7 +305,7 @@
         },
         {
             "key": "field_kanapka_home_seo_image",
-            "label": "Image",
+            "label": "Картинка",
             "name": "kanapka_home_seo_image",
             "aria-label": "",
             "type": "image",
@@ -330,11 +330,11 @@
         },
         {
             "key": "field_kanapka_home_seo_benefits",
-            "label": "Benefits",
+            "label": "Переваги",
             "name": "kanapka_home_seo_benefits",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Short benefit row displayed under the SEO text.",
+            "instructions": "Короткий ряд переваг під SEO-текстом.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -343,15 +343,15 @@
                 "id": ""
             },
             "layout": "row",
-            "button_label": "Add benefit",
+            "button_label": "Додати перевагу",
             "min": 0,
-            "max": 6,
+            "max": 0,
             "collapsed": "field_kanapka_home_seo_benefit_title",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_kanapka_home_seo_benefit_icon",
-                    "label": "Icon",
+                    "label": "Іконка",
                     "name": "icon",
                     "aria-label": "",
                     "type": "select",
@@ -364,12 +364,12 @@
                         "id": ""
                     },
                     "choices": {
-                        "leaf": "Leaf",
-                        "users": "Users",
-                        "delivery": "Delivery truck",
-                        "clock": "Clock",
-                        "briefcase": "Briefcase",
-                        "sparkles": "Sparkles"
+                        "leaf": "Листок",
+                        "users": "Люди",
+                        "delivery": "Доставка",
+                        "clock": "Годинник",
+                        "briefcase": "Портфель",
+                        "sparkles": "Блиск"
                     },
                     "default_value": "sparkles",
                     "return_format": "value",
@@ -384,7 +384,7 @@
                 },
                 {
                     "key": "field_kanapka_home_seo_benefit_title",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -405,7 +405,7 @@
                 },
                 {
                     "key": "field_kanapka_home_seo_benefit_text",
-                    "label": "Text",
+                    "label": "Текст",
                     "name": "text",
                     "aria-label": "",
                     "type": "text",

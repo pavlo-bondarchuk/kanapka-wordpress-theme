@@ -95,3 +95,10 @@
 - Added a homepage SCF tab for the SEO section with title, long text, image and benefit repeater fields.
 - Reworked the post-catalogue SEO text as a styled responsive card with image, benefit icons and a collapsed text preview.
 - Added a lightweight read-more control that expands the full SEO text and can collapse it again.
+
+## 2026-07-11 — Refine homepage SEO card layout
+
+- Fixed the SEO section data mapping so benefit rows no longer overwrite the main section title or text.
+- Anchored the SEO card image to the bottom-right of its column and limited the collapsed copy to four lines.
+- Changed the benefit row to show five visible items on desktop and scroll horizontally when more items are added.
+- Localized the SEO section SCF field labels and instructions to Ukrainian.

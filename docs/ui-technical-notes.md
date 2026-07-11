@@ -83,3 +83,5 @@
 
 - Keep long SEO copy fully present in the DOM, then visually collapse it with CSS and an explicit read-more control so the user gets a compact layout without losing crawlable text.
 - Store homepage-only marketing copy in the homepage SCF group, not global theme options, and keep the block modular under the catalogue section.
+- Do not reuse generic `$title` or `$text` variables inside nested repeater normalization when the parent section already uses the same variable names; benefit rows must not overwrite the section heading or body.
+- The homepage SEO benefit strip should expose five visible desktop items and rely on horizontal scrolling for additional benefits instead of wrapping into a second row.

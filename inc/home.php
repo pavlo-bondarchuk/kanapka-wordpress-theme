@@ -199,19 +199,19 @@ function kanapka_theme_get_home_seo_section() {
 	$icons    = array( 'leaf', 'users', 'delivery', 'clock', 'briefcase', 'sparkles' );
 
 	if ( is_array( $rows ) ) {
-		foreach ( array_slice( $rows, 0, 6 ) as $row ) {
-			$icon = sanitize_key( $row['icon'] ?? '' );
-			$title = sanitize_text_field( $row['title'] ?? '' );
-			$text  = sanitize_text_field( $row['text'] ?? '' );
+		foreach ( $rows as $row ) {
+			$icon          = sanitize_key( $row['icon'] ?? '' );
+			$benefit_title = sanitize_text_field( $row['title'] ?? '' );
+			$benefit_text  = sanitize_text_field( $row['text'] ?? '' );
 
-			if ( ! $title && ! $text ) {
+			if ( ! $benefit_title && ! $benefit_text ) {
 				continue;
 			}
 
 			$benefits[] = array(
 				'icon'  => in_array( $icon, $icons, true ) ? $icon : 'sparkles',
-				'title' => $title,
-				'text'  => $text,
+				'title' => $benefit_title,
+				'text'  => $benefit_text,
 			);
 		}
 	}
