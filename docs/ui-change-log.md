@@ -62,3 +62,7 @@
 
 - Replaced the static hero with a full-width responsive image slider, container-aligned content, arrows, pagination, autoplay and hover/focus pause behavior.
 - Added an SCF hero tab with slide and shared-benefit repeaters; the benefit row is rendered once over the complete slider.
+
+## 2026-07-11 — Move hero fields to the homepage
+
+- Moved the hero SCF tab out of global Theme Settings into a dedicated field group shown only on the page assigned as the WordPress homepage.

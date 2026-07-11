@@ -8,6 +8,29 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Read a field stored on the WordPress page assigned as the homepage.
+ *
+ * @param string $name    Field name.
+ * @param mixed  $default Fallback value.
+ * @return mixed
+ */
+function kanapka_theme_get_home_field( $name, $default = '' ) {
+	if ( ! function_exists( 'get_field' ) ) {
+		return $default;
+	}
+
+	$front_page_id = absint( get_option( 'page_on_front' ) );
+
+	if ( ! $front_page_id ) {
+		return $default;
+	}
+
+	$value = get_field( $name, $front_page_id );
+
+	return null === $value || false === $value || '' === $value ? $default : $value;
+}
+
+/**
  * Get visible product categories for the homepage.
  *
  * @param int $limit Maximum number of categories.
@@ -78,7 +101,7 @@ function kanapka_theme_get_hero_image_id() {
  * @return array
  */
 function kanapka_theme_get_home_hero_slides() {
-	$rows   = kanapka_theme_get_option( 'kanapka_home_hero_slides', array() );
+	$rows   = kanapka_theme_get_home_field( 'kanapka_home_hero_slides', array() );
 	$slides = array();
 
 	if ( is_array( $rows ) ) {
@@ -120,7 +143,7 @@ function kanapka_theme_get_home_hero_slides() {
  * @return array
  */
 function kanapka_theme_get_home_hero_benefits() {
-	$rows     = kanapka_theme_get_option( 'kanapka_home_hero_benefits', array() );
+	$rows     = kanapka_theme_get_home_field( 'kanapka_home_hero_benefits', array() );
 	$benefits = array();
 	$icons    = array( 'delivery', 'clock', 'leaf' );
 

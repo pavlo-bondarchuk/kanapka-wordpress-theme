@@ -55,3 +55,7 @@
 
 - Render full-width hero artwork as responsive images with `srcset`, not CSS backgrounds, then layer container-aligned copy and one shared benefit row above it.
 - Autoplay must pause on pointer hover, keyboard focus, hidden documents and reduced-motion preference; shared slider content must live outside the per-slide loop.
+
+## Page field ownership
+
+- Store page-specific section content on that WordPress page through a dedicated SCF field group; reserve Theme Settings options for values shared across the site.

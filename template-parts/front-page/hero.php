@@ -8,7 +8,7 @@
 $slides         = kanapka_theme_get_home_hero_slides();
 $benefits       = kanapka_theme_get_home_hero_benefits();
 $slide_count    = count( $slides );
-$autoplay_delay = max( 3000, min( 15000, absint( kanapka_theme_get_option( 'kanapka_home_hero_delay', 6000 ) ) ) );
+$autoplay_delay = max( 3000, min( 15000, absint( kanapka_theme_get_home_field( 'kanapka_home_hero_delay', 6000 ) ) ) );
 
 if ( ! $slides ) {
 	return;
