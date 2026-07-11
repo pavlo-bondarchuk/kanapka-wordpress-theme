@@ -8,6 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $kanapka_theme_modules = array(
+	'legacy-compat',
 	'setup',
 	'assets',
 	'menus',
