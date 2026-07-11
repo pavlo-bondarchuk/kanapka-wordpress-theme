@@ -1,6 +1,7 @@
 @layer reset, tokens, base, layout, components, utilities;
 
 @layer reset {
+
 	*,
 	*::before,
 	*::after {
@@ -58,7 +59,7 @@
 		--font-size-base: 1rem;
 		--font-size-lg: 1.125rem;
 		--font-size-xl: clamp(1.25rem, 2vw, 1.5rem);
-		--font-size-2xl: clamp(1.75rem, 3.2vw, 2.5rem);
+		--font-size-2xl: clamp(1.75rem, 3vw, 2rem);
 		--font-size-hero: clamp(2rem, 4.5vw, 3.75rem);
 		--line-height-tight: 1.15;
 		--line-height-base: 1.6;
@@ -71,7 +72,7 @@
 		--space-6: 2rem;
 		--space-7: 3rem;
 		--space-8: 4rem;
-		--space-section: clamp(3rem, 7vw, 6rem);
+		--space-section: clamp(3rem, 7vw, 3rem);
 
 		--radius-sm: 0.5rem;
 		--radius-md: 0.875rem;
@@ -174,6 +175,7 @@
 }
 
 @layer components {
+
 	.button,
 	button.button,
 	a.button {
@@ -214,6 +216,7 @@
 }
 
 @layer utilities {
+
 	.screen-reader-text,
 	.skip-link:not(:focus) {
 		position: absolute;
@@ -239,6 +242,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
