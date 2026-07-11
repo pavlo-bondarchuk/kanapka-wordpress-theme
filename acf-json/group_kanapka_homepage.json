@@ -6,58 +6,125 @@
             "key": "field_kanapka_home_hero_tab",
             "label": "Homepage hero",
             "name": "",
+            "aria-label": "",
             "type": "tab",
-            "placement": "top"
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_kanapka_home_hero_slides",
             "label": "Hero slides",
             "name": "kanapka_home_hero_slides",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "Each image fills the complete slider. Keep important details away from the text area on the left.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "button_label": "Add slide",
             "min": 0,
             "max": 8,
             "collapsed": "field_kanapka_home_hero_slide_title",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_kanapka_home_hero_slide_image",
                     "label": "Background image",
                     "name": "image",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
                     "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
-                    "mime_types": "jpg,jpeg,png,webp,avif"
+                    "mime_types": "jpg,jpeg,png,webp,avif",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "parent_repeater": "field_kanapka_home_hero_slides"
                 },
                 {
                     "key": "field_kanapka_home_hero_slide_title",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
-                    "required": 1
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_hero_slides"
                 },
                 {
                     "key": "field_kanapka_home_hero_slide_text",
                     "label": "Text",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "rows": 3,
-                    "new_lines": "br"
+                    "new_lines": "br",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_kanapka_home_hero_slides"
                 },
                 {
-                    "key": "field_kanapka_home_hero_slide_button_label",
-                    "label": "Button label",
-                    "name": "button_label",
-                    "type": "text"
-                },
-                {
-                    "key": "field_kanapka_home_hero_slide_button_url",
-                    "label": "Button URL",
-                    "name": "button_url",
-                    "type": "url"
+                    "key": "field_kanapka_home_hero_slide_button",
+                    "label": "Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Choose the button label, URL and target.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_kanapka_home_hero_slides"
                 }
             ]
         },
@@ -65,63 +132,140 @@
             "key": "field_kanapka_home_hero_delay",
             "label": "Autoplay interval",
             "name": "kanapka_home_hero_delay",
+            "aria-label": "",
             "type": "number",
             "instructions": "Time between slides in milliseconds.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 6000,
             "min": 3000,
             "max": 15000,
             "step": 500,
-            "append": "ms"
+            "append": "ms",
+            "placeholder": "",
+            "prepend": ""
         },
         {
             "key": "field_kanapka_home_hero_benefits",
             "label": "Shared slider benefits",
             "name": "kanapka_home_hero_benefits",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "This single row of benefits is displayed over every slide and is not duplicated per slide.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "row",
             "button_label": "Add benefit",
             "min": 0,
             "max": 3,
             "collapsed": "field_kanapka_home_hero_benefit_title",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_kanapka_home_hero_benefit_icon",
                     "label": "Icon",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "choices": {
                         "delivery": "Delivery truck",
                         "clock": "Clock",
                         "leaf": "Leaf"
                     },
                     "default_value": "delivery",
-                    "return_format": "value"
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_kanapka_home_hero_benefits"
                 },
                 {
                     "key": "field_kanapka_home_hero_benefit_title",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
-                    "required": 1
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_hero_benefits"
                 },
                 {
                     "key": "field_kanapka_home_hero_benefit_text",
                     "label": "Text",
                     "name": "text",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_hero_benefits"
                 }
             ]
         }
     ],
-    "location": [[{"param": "page_type", "operator": "==", "value": "front_page"}]],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
     "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
+    "hide_on_screen": "",
     "active": true,
     "description": "Content fields for the WordPress page assigned as the homepage.",
     "show_in_rest": 0,
-    "modified": 1783764294
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1783765173
 }

@@ -65,7 +65,7 @@ $render_benefit_icon = static function ( $icon ) {
 								<div class="home-hero__text"><?php echo wp_kses_post( wpautop( $slide['text'] ) ); ?></div>
 							<?php endif; ?>
 							<?php if ( $slide['button_label'] && $slide['button_url'] ) : ?>
-								<a class="button home-hero__button" href="<?php echo esc_url( $slide['button_url'] ); ?>"><?php echo esc_html( $slide['button_label'] ); ?></a>
+								<a class="button home-hero__button" href="<?php echo esc_url( $slide['button_url'] ); ?>"<?php if ( '_blank' === $slide['button_target'] ) : ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php echo esc_html( $slide['button_label'] ); ?></a>
 							<?php endif; ?>
 						</div>
 					</div>

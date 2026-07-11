@@ -59,3 +59,7 @@
 ## Page field ownership
 
 - Store page-specific section content on that WordPress page through a dedicated SCF field group; reserve Theme Settings options for values shared across the site.
+
+## CTA field structure
+
+- Use one SCF Link field for each CTA so its label, URL and target remain atomic; normalize legacy label and URL keys until existing content is resaved.

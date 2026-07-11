@@ -107,17 +107,19 @@ function kanapka_theme_get_home_hero_slides() {
 	if ( is_array( $rows ) ) {
 		foreach ( $rows as $row ) {
 			$image_id = absint( $row['image'] ?? 0 );
+			$button   = is_array( $row['button'] ?? null ) ? $row['button'] : array();
 
 			if ( ! $image_id ) {
 				continue;
 			}
 
 			$slides[] = array(
-				'image_id'    => $image_id,
-				'title'       => sanitize_text_field( $row['title'] ?? '' ),
-				'text'        => wp_kses_post( $row['text'] ?? '' ),
-				'button_label' => sanitize_text_field( $row['button_label'] ?? '' ),
-				'button_url'   => esc_url_raw( $row['button_url'] ?? '' ),
+				'image_id'      => $image_id,
+				'title'         => sanitize_text_field( $row['title'] ?? '' ),
+				'text'          => wp_kses_post( $row['text'] ?? '' ),
+				'button_label'  => sanitize_text_field( $button['title'] ?? ( $row['button_label'] ?? '' ) ),
+				'button_url'    => esc_url_raw( $button['url'] ?? ( $row['button_url'] ?? '' ) ),
+				'button_target' => '_blank' === ( $button['target'] ?? '' ) ? '_blank' : '_self',
 			);
 		}
 	}
@@ -128,11 +130,12 @@ function kanapka_theme_get_home_hero_slides() {
 
 	return array(
 		array(
-			'image_id'    => kanapka_theme_get_hero_image_id(),
-			'title'       => __( 'Ready-made sets for every celebration', 'kanapka-theme' ),
-			'text'        => __( 'Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time.', 'kanapka-theme' ),
-			'button_label' => __( 'Browse catalogue', 'kanapka-theme' ),
-			'button_url'   => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
+			'image_id'      => kanapka_theme_get_hero_image_id(),
+			'title'         => __( 'Ready-made sets for every celebration', 'kanapka-theme' ),
+			'text'          => __( 'Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time.', 'kanapka-theme' ),
+			'button_label'  => __( 'Browse catalogue', 'kanapka-theme' ),
+			'button_url'    => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
+			'button_target' => '_self',
 		),
 	);
 }

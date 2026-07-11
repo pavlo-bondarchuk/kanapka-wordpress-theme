@@ -66,3 +66,8 @@
 ## 2026-07-11 — Move hero fields to the homepage
 
 - Moved the hero SCF tab out of global Theme Settings into a dedicated field group shown only on the page assigned as the WordPress homepage.
+
+## 2026-07-11 — Combine the hero button fields
+
+- Replaced separate button label and URL inputs with one SCF Link field that keeps the label, destination and target together.
+- Updated the hero CTA markup to support safe new-tab links while retaining existing saved button values during migration.
