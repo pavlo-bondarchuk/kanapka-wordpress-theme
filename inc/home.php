@@ -72,3 +72,89 @@ function kanapka_theme_get_hero_image_id() {
 	return $products ? (int) $products[0]->get_image_id() : 0;
 }
 
+/**
+ * Return normalized homepage hero slides with a safe legacy fallback.
+ *
+ * @return array
+ */
+function kanapka_theme_get_home_hero_slides() {
+	$rows   = kanapka_theme_get_option( 'kanapka_home_hero_slides', array() );
+	$slides = array();
+
+	if ( is_array( $rows ) ) {
+		foreach ( $rows as $row ) {
+			$image_id = absint( $row['image'] ?? 0 );
+
+			if ( ! $image_id ) {
+				continue;
+			}
+
+			$slides[] = array(
+				'image_id'    => $image_id,
+				'title'       => sanitize_text_field( $row['title'] ?? '' ),
+				'text'        => wp_kses_post( $row['text'] ?? '' ),
+				'button_label' => sanitize_text_field( $row['button_label'] ?? '' ),
+				'button_url'   => esc_url_raw( $row['button_url'] ?? '' ),
+			);
+		}
+	}
+
+	if ( $slides ) {
+		return $slides;
+	}
+
+	return array(
+		array(
+			'image_id'    => kanapka_theme_get_hero_image_id(),
+			'title'       => __( 'Ready-made sets for every celebration', 'kanapka-theme' ),
+			'text'        => __( 'Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time.', 'kanapka-theme' ),
+			'button_label' => __( 'Browse catalogue', 'kanapka-theme' ),
+			'button_url'   => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
+		),
+	);
+}
+
+/**
+ * Return the shared hero benefit row.
+ *
+ * @return array
+ */
+function kanapka_theme_get_home_hero_benefits() {
+	$rows     = kanapka_theme_get_option( 'kanapka_home_hero_benefits', array() );
+	$benefits = array();
+	$icons    = array( 'delivery', 'clock', 'leaf' );
+
+	if ( is_array( $rows ) ) {
+		foreach ( array_slice( $rows, 0, 3 ) as $row ) {
+			$icon = sanitize_key( $row['icon'] ?? '' );
+
+			$benefits[] = array(
+				'icon'  => in_array( $icon, $icons, true ) ? $icon : 'delivery',
+				'title' => sanitize_text_field( $row['title'] ?? '' ),
+				'text'  => sanitize_text_field( $row['text'] ?? '' ),
+			);
+		}
+	}
+
+	if ( $benefits ) {
+		return $benefits;
+	}
+
+	return array(
+		array(
+			'icon'  => 'delivery',
+			'title' => __( 'Free delivery', 'kanapka-theme' ),
+			'text'  => __( 'For qualifying Kyiv orders', 'kanapka-theme' ),
+		),
+		array(
+			'icon'  => 'clock',
+			'title' => __( 'Fast delivery', 'kanapka-theme' ),
+			'text'  => __( 'On the order day', 'kanapka-theme' ),
+		),
+		array(
+			'icon'  => 'leaf',
+			'title' => __( 'Fresh products', 'kanapka-theme' ),
+			'text'  => __( 'Premium quality', 'kanapka-theme' ),
+		),
+	);
+}

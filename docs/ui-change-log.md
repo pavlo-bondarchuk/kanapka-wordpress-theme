@@ -57,3 +57,8 @@
 ## 2026-07-11 — Normalize circular button backgrounds
 
 - Set an explicit `#efefef` background and native-appearance reset for header icon buttons and circular popover close buttons.
+
+## 2026-07-11 — Build configurable homepage hero slider
+
+- Replaced the static hero with a full-width responsive image slider, container-aligned content, arrows, pagination, autoplay and hover/focus pause behavior.
+- Added an SCF hero tab with slide and shared-benefit repeaters; the benefit row is rendered once over the complete slider.

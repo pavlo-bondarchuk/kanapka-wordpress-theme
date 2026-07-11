@@ -190,6 +190,117 @@
             "label": "Contact button URL",
             "name": "kanapka_contact_button_url",
             "type": "url"
+        },
+        {
+            "key": "field_kanapka_home_hero_tab",
+            "label": "Homepage hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_home_hero_slides",
+            "label": "Hero slides",
+            "name": "kanapka_home_hero_slides",
+            "type": "repeater",
+            "instructions": "Each image fills the complete slider. Keep important details away from the text area on the left.",
+            "layout": "block",
+            "button_label": "Add slide",
+            "min": 0,
+            "max": 8,
+            "collapsed": "field_kanapka_home_hero_slide_title",
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_home_hero_slide_image",
+                    "label": "Background image",
+                    "name": "image",
+                    "type": "image",
+                    "required": 1,
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp,avif"
+                },
+                {
+                    "key": "field_kanapka_home_hero_slide_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_kanapka_home_hero_slide_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "rows": 3,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_kanapka_home_hero_slide_button_label",
+                    "label": "Button label",
+                    "name": "button_label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_kanapka_home_hero_slide_button_url",
+                    "label": "Button URL",
+                    "name": "button_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_kanapka_home_hero_delay",
+            "label": "Autoplay interval",
+            "name": "kanapka_home_hero_delay",
+            "type": "number",
+            "instructions": "Time between slides in milliseconds.",
+            "default_value": 6000,
+            "min": 3000,
+            "max": 15000,
+            "step": 500,
+            "append": "ms"
+        },
+        {
+            "key": "field_kanapka_home_hero_benefits",
+            "label": "Shared slider benefits",
+            "name": "kanapka_home_hero_benefits",
+            "type": "repeater",
+            "instructions": "This single row of benefits is displayed over every slide and is not duplicated per slide.",
+            "layout": "row",
+            "button_label": "Add benefit",
+            "min": 0,
+            "max": 3,
+            "collapsed": "field_kanapka_home_hero_benefit_title",
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_home_hero_benefit_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "select",
+                    "choices": {
+                        "delivery": "Delivery truck",
+                        "clock": "Clock",
+                        "leaf": "Leaf"
+                    },
+                    "default_value": "delivery",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_kanapka_home_hero_benefit_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_kanapka_home_hero_benefit_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text"
+                }
+            ]
         }
     ],
     "location": [[{"param": "options_page", "operator": "==", "value": "kanapka-theme-settings"}]],
@@ -199,7 +310,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "description": "Navigation and contact settings for the Kanapka theme.",
+    "description": "Header, navigation and homepage settings for the Kanapka theme.",
     "show_in_rest": 0,
-    "modified": 1783696800
+    "modified": 1783762237
 }

@@ -75,6 +75,14 @@ function kanapka_theme_enqueue_assets() {
 			array( 'kanapka-theme-main' ),
 			kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-hero-slider',
+			get_theme_file_uri( '/assets/js/components/hero-slider.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/hero-slider.js' ),
+			true
+		);
 	}
 
 	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {

@@ -50,3 +50,8 @@
 ## Native button normalization
 
 - Explicitly set appearance, border, radius and background on circular buttons so Safari, Chrome and other browsers do not supply visually different native surfaces.
+
+## Homepage hero slider
+
+- Render full-width hero artwork as responsive images with `srcset`, not CSS backgrounds, then layer container-aligned copy and one shared benefit row above it.
+- Autoplay must pause on pointer hover, keyboard focus, hidden documents and reduced-motion preference; shared slider content must live outside the per-slide loop.
