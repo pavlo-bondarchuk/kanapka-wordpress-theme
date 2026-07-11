@@ -89,3 +89,9 @@
 - Limited the desktop category strip to five visible compact cards with horizontal overflow for the remaining categories.
 - Made compact category media square with a white background so product images keep their intended clean white canvas.
 - Added a lightweight right-arrow control that scrolls the category strip and loops back to the beginning at the end.
+
+## 2026-07-11 — Add editable homepage SEO section
+
+- Added a homepage SCF tab for the SEO section with title, long text, image and benefit repeater fields.
+- Reworked the post-catalogue SEO text as a styled responsive card with image, benefit icons and a collapsed text preview.
+- Added a lightweight read-more control that expands the full SEO text and can collapse it again.

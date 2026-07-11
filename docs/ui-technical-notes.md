@@ -78,3 +78,8 @@
 
 - Do not let compact category strips auto-fit every item into one desktop row; cap the visible desktop count and scroll the remaining cards with a simple control.
 - Category thumbnails with white product cutouts should sit on white square media boxes, not grey placeholders that show around the image edges.
+
+## Homepage SEO text
+
+- Keep long SEO copy fully present in the DOM, then visually collapse it with CSS and an explicit read-more control so the user gets a compact layout without losing crawlable text.
+- Store homepage-only marketing copy in the homepage SCF group, not global theme options, and keep the block modular under the catalogue section.

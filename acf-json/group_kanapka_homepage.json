@@ -244,6 +244,187 @@
                     "parent_repeater": "field_kanapka_home_hero_benefits"
                 }
             ]
+        },
+        {
+            "key": "field_kanapka_home_seo_tab",
+            "label": "SEO section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_kanapka_home_seo_title",
+            "label": "Title",
+            "name": "kanapka_home_seo_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_kanapka_home_seo_text",
+            "label": "Text",
+            "name": "kanapka_home_seo_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Long SEO text. It is shown collapsed on the front end with a read-more control.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 10,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kanapka_home_seo_image",
+            "label": "Image",
+            "name": "kanapka_home_seo_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp,avif",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_kanapka_home_seo_benefits",
+            "label": "Benefits",
+            "name": "kanapka_home_seo_benefits",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Short benefit row displayed under the SEO text.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "button_label": "Add benefit",
+            "min": 0,
+            "max": 6,
+            "collapsed": "field_kanapka_home_seo_benefit_title",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_home_seo_benefit_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "leaf": "Leaf",
+                        "users": "Users",
+                        "delivery": "Delivery truck",
+                        "clock": "Clock",
+                        "briefcase": "Briefcase",
+                        "sparkles": "Sparkles"
+                    },
+                    "default_value": "sparkles",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_kanapka_home_seo_benefits"
+                },
+                {
+                    "key": "field_kanapka_home_seo_benefit_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": true,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_seo_benefits"
+                },
+                {
+                    "key": "field_kanapka_home_seo_benefit_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_kanapka_home_seo_benefits"
+                }
+            ]
         }
     ],
     "location": [
@@ -269,5 +450,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1783773774
+    "modified": 1783781400
 }

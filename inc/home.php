@@ -184,3 +184,72 @@ function kanapka_theme_get_home_hero_benefits() {
 		),
 	);
 }
+
+/**
+ * Return the homepage SEO section content.
+ *
+ * @return array
+ */
+function kanapka_theme_get_home_seo_section() {
+	$title    = sanitize_text_field( kanapka_theme_get_home_field( 'kanapka_home_seo_title', '' ) );
+	$text     = wp_kses_post( kanapka_theme_get_home_field( 'kanapka_home_seo_text', '' ) );
+	$image_id = absint( kanapka_theme_get_home_field( 'kanapka_home_seo_image', 0 ) );
+	$rows     = kanapka_theme_get_home_field( 'kanapka_home_seo_benefits', array() );
+	$benefits = array();
+	$icons    = array( 'leaf', 'users', 'delivery', 'clock', 'briefcase', 'sparkles' );
+
+	if ( is_array( $rows ) ) {
+		foreach ( array_slice( $rows, 0, 6 ) as $row ) {
+			$icon = sanitize_key( $row['icon'] ?? '' );
+			$title = sanitize_text_field( $row['title'] ?? '' );
+			$text  = sanitize_text_field( $row['text'] ?? '' );
+
+			if ( ! $title && ! $text ) {
+				continue;
+			}
+
+			$benefits[] = array(
+				'icon'  => in_array( $icon, $icons, true ) ? $icon : 'sparkles',
+				'title' => $title,
+				'text'  => $text,
+			);
+		}
+	}
+
+	if ( $title || $text || $image_id || $benefits ) {
+		return compact( 'title', 'text', 'image_id', 'benefits' );
+	}
+
+	return array(
+		'title'    => __( 'Доставка канапе, закусок та фуршетних наборів у Києві', 'kanapka-theme' ),
+		'text'     => __( 'Замовляйте готові набори для офісної зустрічі, дня народження, фуршету чи сімейного свята. Ми готуємо страви незадовго до відправлення і доставляємо їх у презентабельному пакуванні.', 'kanapka-theme' ),
+		'image_id' => kanapka_theme_get_hero_image_id(),
+		'benefits' => array(
+			array(
+				'icon'  => 'leaf',
+				'title' => __( 'Тільки свіжі продукти', 'kanapka-theme' ),
+				'text'  => '',
+			),
+			array(
+				'icon'  => 'users',
+				'title' => __( 'Індивідуальний підхід', 'kanapka-theme' ),
+				'text'  => '',
+			),
+			array(
+				'icon'  => 'delivery',
+				'title' => __( 'Пунктуальна доставка', 'kanapka-theme' ),
+				'text'  => '',
+			),
+			array(
+				'icon'  => 'sparkles',
+				'title' => __( 'Професійна команда', 'kanapka-theme' ),
+				'text'  => '',
+			),
+			array(
+				'icon'  => 'briefcase',
+				'title' => __( 'Великий вибір і вигідні ціни', 'kanapka-theme' ),
+				'text'  => '',
+			),
+		),
+	);
+}
