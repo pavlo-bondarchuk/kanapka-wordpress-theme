@@ -86,3 +86,8 @@
 - Do not reuse generic `$title` or `$text` variables inside nested repeater normalization when the parent section already uses the same variable names; benefit rows must not overwrite the section heading or body.
 - The homepage SEO benefit strip should expose five visible desktop items and rely on horizontal scrolling for additional benefits instead of wrapping into a second row.
 - Horizontal benefit strips with hidden overflow need a non-interactive edge fade so users can see that more items continue off-canvas.
+
+## Homepage product sliders
+
+- Product sliders should use lightweight native horizontal scrolling with snap points and explicit arrow controls instead of adding a carousel dependency.
+- Keep the frequent-orders carousel at five visible desktop cards, then reduce visible cards through `grid-auto-columns` at breakpoints.

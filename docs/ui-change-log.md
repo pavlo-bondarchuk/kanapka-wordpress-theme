@@ -106,3 +106,9 @@
 ## 2026-07-11 — Add SEO benefit scroll hint
 
 - Preserved the manually adjusted homepage SEO card styles and added a right-side fade over the benefits strip to make horizontal scrolling more discoverable.
+
+## 2026-07-11 — Turn frequent orders into a slider
+
+- Reworked the "Часто замовляють" block from a fixed product grid into a horizontally scrollable product slider.
+- Added previous and next controls around the product carousel and loaded a small front-page-only slider script.
+- Tuned the product card spacing, media area and responsive column widths so five cards are visible on desktop.
