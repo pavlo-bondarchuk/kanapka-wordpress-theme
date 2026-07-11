@@ -33,7 +33,13 @@ $cart_count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
 			<button type="button" aria-label="<?php esc_attr_e( 'Close cart', 'kanapka-theme' ); ?>" data-header-popup-close>&times;</button>
 		</div>
 		<div class="header-mini-cart__content widget_shopping_cart_content">
-			<?php woocommerce_mini_cart(); ?>
+			<?php
+			add_filter( 'woocommerce_cart_item_name', 'kanapka_theme_mini_cart_product_name', 10, 1 );
+			add_filter( 'woocommerce_cart_item_remove_link', 'kanapka_theme_mini_cart_remove_link', 10, 1 );
+			woocommerce_mini_cart();
+			remove_filter( 'woocommerce_cart_item_name', 'kanapka_theme_mini_cart_product_name', 10 );
+			remove_filter( 'woocommerce_cart_item_remove_link', 'kanapka_theme_mini_cart_remove_link', 10 );
+			?>
 		</div>
 	</div>
 </div>

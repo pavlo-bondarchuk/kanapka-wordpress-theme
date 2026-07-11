@@ -50,6 +50,31 @@ function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item ) {
 add_filter( 'woocommerce_widget_cart_item_quantity', 'kanapka_theme_mini_cart_item_quantity', 10, 2 );
 
 /**
+ * Wrap a mini-cart product name for the header grid.
+ *
+ * @param string $product_name Product name markup.
+ * @return string
+ */
+function kanapka_theme_mini_cart_product_name( $product_name ) {
+	return '<span class="header-mini-cart__product-name">' . wp_kses_post( $product_name ) . '</span>';
+}
+
+/**
+ * Add a visible label to the header mini-cart remove control.
+ *
+ * @param string $remove_link Remove-link markup.
+ * @return string
+ */
+function kanapka_theme_mini_cart_remove_link( $remove_link ) {
+	$remove_content = sprintf(
+		'<span class="header-mini-cart__remove-label">%1$s</span><span aria-hidden="true">&times;</span>',
+		esc_html__( 'Remove', 'woocommerce' )
+	);
+
+	return str_replace( '&times;</a>', $remove_content . '</a>', $remove_link );
+}
+
+/**
  * Keep the complete mini-cart popup synchronized after AJAX cart updates.
  *
  * @param array $fragments WooCommerce fragments.

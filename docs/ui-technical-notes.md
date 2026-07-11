@@ -42,3 +42,7 @@
 ## Header container width
 
 - Use a dedicated design token when the header needs more horizontal room than page content; keep the same responsive gutters and avoid inline max-width overrides.
+
+## Mini-cart item grid
+
+- Scope product-name and remove-link filters to the header mini-cart render, then use those semantic wrappers as stable CSS Grid children; do not affect cart-page markup.

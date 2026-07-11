@@ -48,3 +48,8 @@
 ## 2026-07-10 — Widen header container
 
 - Increased only the header inner container from the shared `74rem` width to a dedicated responsive `86.25rem` maximum.
+
+## 2026-07-11 — Build three-column mini-cart items
+
+- Arranged each mini-cart item into image, product-information and action/line-total columns, with the quantity row directly below the linked title.
+- Added a visible translated remove label only inside the header mini-cart without overriding the WooCommerce template.
