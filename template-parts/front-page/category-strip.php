@@ -11,7 +11,7 @@ if ( ! $categories ) {
 	return;
 }
 ?>
-<section class="category-strip container" aria-label="<?php esc_attr_e( 'Popular categories', 'kanapka-theme' ); ?>">
+<section class="category-strip container" aria-label="<?php esc_attr_e( 'Популярні категорії', 'kanapka-theme' ); ?>">
 	<div class="category-strip__track">
 		<?php
 		foreach ( $categories as $category ) {
@@ -20,4 +20,3 @@ if ( ! $categories ) {
 		?>
 	</div>
 </section>
-

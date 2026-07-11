@@ -17,8 +17,8 @@ function kanapka_theme_register_options_page() {
 
 	acf_add_options_page(
 		array(
-			'page_title' => __( 'Kanapka Theme Settings', 'kanapka-theme' ),
-			'menu_title' => __( 'Theme Settings', 'kanapka-theme' ),
+			'page_title' => __( 'Налаштування теми Kanapka', 'kanapka-theme' ),
+			'menu_title' => __( 'Налаштування теми', 'kanapka-theme' ),
 			'menu_slug'  => 'kanapka-theme-settings',
 			'capability' => 'manage_options',
 			'redirect'   => false,

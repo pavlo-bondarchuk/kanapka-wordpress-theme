@@ -131,9 +131,9 @@ function kanapka_theme_get_home_hero_slides() {
 	return array(
 		array(
 			'image_id'      => kanapka_theme_get_hero_image_id(),
-			'title'         => __( 'Ready-made sets for every celebration', 'kanapka-theme' ),
-			'text'          => __( 'Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time.', 'kanapka-theme' ),
-			'button_label'  => __( 'Browse catalogue', 'kanapka-theme' ),
+			'title'         => __( 'Готові набори для будь-якого свята', 'kanapka-theme' ),
+			'text'          => __( 'Канапе, закуски та фуршетні набори зі свіжих продуктів з доставкою в потрібний час.', 'kanapka-theme' ),
+			'button_label'  => __( 'Перейти в каталог', 'kanapka-theme' ),
 			'button_url'    => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
 			'button_target' => '_self',
 		),
@@ -169,18 +169,18 @@ function kanapka_theme_get_home_hero_benefits() {
 	return array(
 		array(
 			'icon'  => 'delivery',
-			'title' => __( 'Free delivery', 'kanapka-theme' ),
-			'text'  => __( 'For qualifying Kyiv orders', 'kanapka-theme' ),
+			'title' => __( 'Безкоштовна доставка', 'kanapka-theme' ),
+			'text'  => __( 'Для замовлень по Києву', 'kanapka-theme' ),
 		),
 		array(
 			'icon'  => 'clock',
-			'title' => __( 'Fast delivery', 'kanapka-theme' ),
-			'text'  => __( 'On the order day', 'kanapka-theme' ),
+			'title' => __( 'Швидка доставка', 'kanapka-theme' ),
+			'text'  => __( 'У день замовлення', 'kanapka-theme' ),
 		),
 		array(
 			'icon'  => 'leaf',
-			'title' => __( 'Fresh products', 'kanapka-theme' ),
-			'text'  => __( 'Premium quality', 'kanapka-theme' ),
+			'title' => __( 'Свіжі продукти', 'kanapka-theme' ),
+			'text'  => __( 'Преміальна якість', 'kanapka-theme' ),
 		),
 	);
 }

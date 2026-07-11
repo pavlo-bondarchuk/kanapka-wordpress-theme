@@ -68,7 +68,7 @@ function kanapka_theme_mini_cart_product_name( $product_name ) {
 function kanapka_theme_mini_cart_remove_link( $remove_link ) {
 	$remove_content = sprintf(
 		'<span class="header-mini-cart__remove-label">%1$s</span><span aria-hidden="true">&times;</span>',
-		esc_html__( 'Remove', 'woocommerce' )
+		esc_html__( 'Видалити', 'kanapka-theme' )
 	);
 
 	return str_replace( '&times;</a>', $remove_content . '</a>', $remove_link );

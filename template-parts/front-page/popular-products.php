@@ -14,7 +14,7 @@ if ( ! $products ) {
 <section class="home-section section" aria-labelledby="popular-products-title">
 	<div class="container">
 		<div class="section-heading">
-			<h2 id="popular-products-title"><?php esc_html_e( 'Frequently ordered', 'kanapka-theme' ); ?></h2>
+			<h2 id="popular-products-title"><?php esc_html_e( 'Часто замовляють', 'kanapka-theme' ); ?></h2>
 		</div>
 		<div class="product-card-grid">
 			<?php
@@ -25,4 +25,3 @@ if ( ! $products ) {
 		</div>
 	</div>
 </section>
-

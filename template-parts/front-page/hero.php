@@ -13,26 +13,8 @@ $autoplay_delay = max( 3000, min( 15000, absint( kanapka_theme_get_home_field( '
 if ( ! $slides ) {
 	return;
 }
-
-/**
- * Render a local hero benefit icon.
- *
- * @param string $icon Icon key.
- */
-$render_benefit_icon = static function ( $icon ) {
-	$paths = array(
-		'delivery' => '<path d="M3 6h11v10H3zM14 10h4l3 3v3h-7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
-		'clock'    => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-		'leaf'     => '<path d="M20 4C11 4 5 8 5 15c0 3 2 5 5 5 7 0 10-7 10-16Z"/><path d="M4 21c3-6 7-9 12-12"/>',
-	);
-	?>
-	<svg aria-hidden="true" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-		<?php echo $paths[ $icon ] ?? $paths['delivery']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG paths. ?>
-	</svg>
-	<?php
-};
 ?>
-<section class="home-hero" aria-roledescription="<?php esc_attr_e( 'carousel', 'kanapka-theme' ); ?>" aria-label="<?php esc_attr_e( 'Featured offers', 'kanapka-theme' ); ?>" data-hero-slider data-autoplay-delay="<?php echo esc_attr( $autoplay_delay ); ?>">
+<section class="home-hero" aria-roledescription="<?php esc_attr_e( 'карусель', 'kanapka-theme' ); ?>" aria-label="<?php esc_attr_e( 'Рекомендовані пропозиції', 'kanapka-theme' ); ?>" data-hero-slider data-autoplay-delay="<?php echo esc_attr( $autoplay_delay ); ?>">
 	<div class="home-hero__viewport">
 		<div class="home-hero__track">
 			<?php foreach ( $slides as $index => $slide ) : ?>
@@ -40,7 +22,7 @@ $render_benefit_icon = static function ( $icon ) {
 				$is_active          = 0 === $index;
 				$is_primary_heading = 0 === $index;
 				?>
-				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'slide', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d of %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
+				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'слайд', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d з %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
 					<?php
 					if ( $slide['image_id'] ) {
 						echo wp_get_attachment_image(
@@ -77,18 +59,18 @@ $render_benefit_icon = static function ( $icon ) {
 		</div>
 
 		<?php if ( $slide_count > 1 ) : ?>
-			<button class="home-hero__arrow home-hero__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous slide', 'kanapka-theme' ); ?>" data-hero-previous>
-				<svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			<button class="home-hero__arrow home-hero__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Попередній слайд', 'kanapka-theme' ); ?>" data-hero-previous>
+				<?php echo kanapka_theme_ui_icon( 'chevron-left', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
-			<button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next slide', 'kanapka-theme' ); ?>" data-hero-next>
-				<svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			<button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Наступний слайд', 'kanapka-theme' ); ?>" data-hero-next>
+				<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 		<?php endif; ?>
 
-		<div class="home-hero__benefits container" aria-label="<?php esc_attr_e( 'Delivery benefits', 'kanapka-theme' ); ?>">
+		<div class="home-hero__benefits container" aria-label="<?php esc_attr_e( 'Переваги доставки', 'kanapka-theme' ); ?>">
 			<?php foreach ( $benefits as $benefit ) : ?>
 				<div class="home-hero__benefit">
-					<span class="home-hero__benefit-icon"><?php $render_benefit_icon( $benefit['icon'] ); ?></span>
+					<span class="home-hero__benefit-icon"><?php echo kanapka_theme_ui_icon( $benefit['icon'], 36 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?></span>
 					<span class="home-hero__benefit-copy">
 						<strong><?php echo esc_html( $benefit['title'] ); ?></strong>
 						<?php if ( $benefit['text'] ) : ?><small><?php echo esc_html( $benefit['text'] ); ?></small><?php endif; ?>
@@ -98,9 +80,9 @@ $render_benefit_icon = static function ( $icon ) {
 		</div>
 
 		<?php if ( $slide_count > 1 ) : ?>
-			<div class="home-hero__pagination" aria-label="<?php esc_attr_e( 'Choose slide', 'kanapka-theme' ); ?>" data-hero-pagination>
+			<div class="home-hero__pagination" aria-label="<?php esc_attr_e( 'Вибір слайда', 'kanapka-theme' ); ?>" data-hero-pagination>
 				<?php foreach ( $slides as $index => $slide ) : ?>
-					<button type="button" aria-label="<?php echo esc_attr( sprintf( __( 'Go to slide %d', 'kanapka-theme' ), $index + 1 ) ); ?>" aria-current="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-hero-dot="<?php echo esc_attr( $index ); ?>"></button>
+					<button type="button" aria-label="<?php echo esc_attr( sprintf( __( 'Перейти до слайда %d', 'kanapka-theme' ), $index + 1 ) ); ?>" aria-current="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-hero-dot="<?php echo esc_attr( $index ); ?>"></button>
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>

@@ -8,7 +8,7 @@
 $categories = $args['categories'] ?? array();
 $show_image = ! empty( $args['show_image'] );
 ?>
-<div class="category-mega-menu" aria-label="<?php esc_attr_e( 'Product categories', 'kanapka-theme' ); ?>">
+<div class="category-mega-menu" aria-label="<?php esc_attr_e( 'Категорії товарів', 'kanapka-theme' ); ?>">
 	<div class="category-mega-menu__grid">
 		<?php foreach ( $categories as $category ) : ?>
 			<?php

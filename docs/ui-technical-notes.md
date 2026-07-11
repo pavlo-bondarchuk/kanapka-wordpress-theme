@@ -68,3 +68,8 @@
 
 - A homepage carousel may contain only one `h1`, owned by its first slide; later slide titles use `h2`.
 - Decorative labels inside header dropdowns must use neutral elements and dedicated classes, not heading tags that appear before the page heading.
+
+## Theme icon and language ownership
+
+- Keep theme UI icons behind one PHP helper so header and homepage components do not duplicate inline SVG paths.
+- Use Ukrainian as the source language for visible theme fallback text; translation files may still contain legacy English keys, but new template strings should not rely on runtime translation for Ukrainian output.

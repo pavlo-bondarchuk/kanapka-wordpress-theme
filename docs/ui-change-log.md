@@ -77,3 +77,9 @@
 - Set hero slide headings to exactly `62px` on desktop while retaining the existing responsive mobile size.
 - Kept the first slide as the page's only `h1` and rendered every subsequent slide title as `h2`.
 - Replaced contact submenu heading tags with neutral styled labels so submenu content cannot precede the page `h1` in the document outline.
+
+## 2026-07-11 — Centralize theme SVG icons and Ukrainian UI text
+
+- Added a shared `kanapka_theme_ui_icon()` helper for theme-owned SVG icons.
+- Replaced local inline SVG markup in the header cart, search popup and homepage hero with the shared icon helper.
+- Converted visible theme fallback labels and front-page section copy to Ukrainian source strings.
