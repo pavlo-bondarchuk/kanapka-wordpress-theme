@@ -208,17 +208,58 @@
 }
 
 .category-strip__track {
+	--category-strip-gap: var(--space-3);
+
 	display: grid;
-	grid-auto-columns: minmax(8.5rem, 1fr);
+	grid-auto-columns: calc((100% - (var(--category-strip-gap) * 4)) / 5);
 	grid-auto-flow: column;
-	gap: var(--space-3);
+	gap: var(--category-strip-gap);
 	padding: var(--space-4);
 	border: 0.0625rem solid var(--color-line);
 	border-radius: var(--radius-lg);
 	background: var(--color-surface);
 	box-shadow: var(--shadow-md);
 	overflow-x: auto;
+	scrollbar-width: none;
+	scroll-behavior: smooth;
 	scroll-snap-type: x proximity;
+}
+
+.category-strip__track::-webkit-scrollbar {
+	display: none;
+}
+
+.category-strip__arrow {
+	position: absolute;
+	top: 50%;
+	right: calc(var(--space-4) * -1);
+	z-index: 2;
+	display: grid;
+	width: 3.5rem;
+	height: 3.5rem;
+	place-items: center;
+	-webkit-appearance: none;
+	appearance: none;
+	border: 0.0625rem solid var(--color-line);
+	border-radius: 50%;
+	background: #fff;
+	color: var(--color-brand-700);
+	box-shadow: var(--shadow-sm);
+	cursor: pointer;
+	transform: translateY(-50%);
+	transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.category-strip__arrow:hover,
+.category-strip__arrow:focus-visible {
+	border-color: var(--color-brand-200);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-50%) translateX(0.125rem);
+}
+
+.category-strip__arrow svg {
+	width: 1.75rem;
+	height: 1.75rem;
 }
 
 .category-card {
@@ -245,7 +286,7 @@
 	display: grid;
 	min-height: 8rem;
 	place-items: center;
-	background: var(--color-surface-soft);
+	background: #fff;
 }
 
 .category-card__media img {
@@ -271,7 +312,15 @@
 }
 
 .category-card--compact .category-card__media {
-	min-height: 6rem;
+	aspect-ratio: 1;
+	min-height: 0;
+}
+
+.category-card--compact .category-card__media img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1;
+	object-fit: contain;
 }
 
 .category-grid {
@@ -508,6 +557,14 @@
 	.product-card {
 		scroll-snap-align: start;
 	}
+
+	.category-strip__track {
+		grid-auto-columns: calc((100% - (var(--category-strip-gap) * 2)) / 3);
+	}
+
+	.category-strip__arrow {
+		right: var(--space-2);
+	}
 }
 
 @media (max-width: 34rem) {
@@ -538,6 +595,10 @@
 
 	.home-hero__pagination {
 		bottom: 1.5rem;
+	}
+
+	.category-strip__track {
+		grid-auto-columns: calc((100% - var(--category-strip-gap)) / 2);
 	}
 
 	.category-grid,

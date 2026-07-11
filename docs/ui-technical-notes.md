@@ -73,3 +73,8 @@
 
 - Keep theme UI icons behind one PHP helper so header and homepage components do not duplicate inline SVG paths.
 - Use Ukrainian as the source language for visible theme fallback text; translation files may still contain legacy English keys, but new template strings should not rely on runtime translation for Ukrainian output.
+
+## Compact category strip
+
+- Do not let compact category strips auto-fit every item into one desktop row; cap the visible desktop count and scroll the remaining cards with a simple control.
+- Category thumbnails with white product cutouts should sit on white square media boxes, not grey placeholders that show around the image edges.

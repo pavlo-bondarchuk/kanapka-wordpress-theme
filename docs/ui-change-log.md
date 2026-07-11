@@ -83,3 +83,9 @@
 - Added a shared `kanapka_theme_ui_icon()` helper for theme-owned SVG icons.
 - Replaced local inline SVG markup in the header cart, search popup and homepage hero with the shared icon helper.
 - Converted visible theme fallback labels and front-page section copy to Ukrainian source strings.
+
+## 2026-07-11 — Refine homepage category strip
+
+- Limited the desktop category strip to five visible compact cards with horizontal overflow for the remaining categories.
+- Made compact category media square with a white background so product images keep their intended clean white canvas.
+- Added a lightweight right-arrow control that scrolls the category strip and loops back to the beginning at the end.
