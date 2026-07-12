@@ -15,9 +15,12 @@
 		next.addEventListener( 'click', () => {
 			const maxScroll = track.scrollWidth - track.clientWidth;
 			const isAtEnd = track.scrollLeft >= maxScroll - 8;
+			const items = Array.from( track.children );
+			const nextPageEdge = track.scrollLeft + track.clientWidth - 8;
+			const nextItem = items.find( ( item ) => item.offsetLeft >= nextPageEdge );
 
 			track.scrollTo( {
-				left: isAtEnd ? 0 : Math.min( track.scrollLeft + track.clientWidth, maxScroll ),
+				left: isAtEnd ? 0 : Math.min( nextItem ? nextItem.offsetLeft : maxScroll, maxScroll ),
 				behavior: 'smooth',
 			} );
 		} );

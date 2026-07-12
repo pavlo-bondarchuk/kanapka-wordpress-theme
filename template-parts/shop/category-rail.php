@@ -29,10 +29,15 @@ if ( ! $categories ) {
 			}
 			?>
 			<a class="catalogue-category-rail__item" href="<?php echo esc_url( $category_url ); ?>">
-				<?php if ( $thumbnail_id ) : ?>
-					<?php echo wp_get_attachment_image( $thumbnail_id, 'kanapka-category', false, array( 'alt' => $category->name, 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 34vw, 120px' ) ); ?>
-				<?php endif; ?>
-				<span><?php echo esc_html( $category->name ); ?></span>
+				<span class="catalogue-category-rail__media">
+					<?php if ( $thumbnail_id ) : ?>
+						<?php echo wp_get_attachment_image( $thumbnail_id, 'kanapka-category', false, array( 'alt' => $category->name, 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 72vw, 240px' ) ); ?>
+					<?php endif; ?>
+				</span>
+				<span class="catalogue-category-rail__body">
+					<strong><?php echo esc_html( $category->name ); ?></strong>
+					<small><?php echo esc_html( number_format_i18n( $category->count ) ); ?></small>
+				</span>
 			</a>
 		<?php endforeach; ?>
 	</div>
