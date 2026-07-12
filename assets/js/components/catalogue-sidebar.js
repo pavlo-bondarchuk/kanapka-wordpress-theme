@@ -48,4 +48,37 @@
 			label.textContent = nextExpanded ? hideLabel : showLabel;
 		} );
 	} );
+
+	document.querySelectorAll( '[data-price-range-filter]' ).forEach( ( filter ) => {
+		const range = filter.querySelector( '[data-price-range]' );
+		const rangeMin = filter.querySelector( '[data-price-range-min]' );
+		const rangeMax = filter.querySelector( '[data-price-range-max]' );
+		const inputMin = filter.querySelector( '[data-price-input-min]' );
+		const inputMax = filter.querySelector( '[data-price-input-max]' );
+
+		if ( ! range || ! rangeMin || ! rangeMax || ! inputMin || ! inputMax ) {
+			return;
+		}
+
+		const limit = Number.parseInt( rangeMax.max, 10 ) || 1;
+		const clamp = ( value ) => Math.min( limit, Math.max( 0, Number.parseInt( value, 10 ) || 0 ) );
+		const render = ( minValue, maxValue ) => {
+			const min = Math.min( clamp( minValue ), clamp( maxValue ) );
+			const max = Math.max( clamp( minValue ), clamp( maxValue ) );
+
+			rangeMin.value = min;
+			rangeMax.value = max;
+			inputMin.value = min;
+			inputMax.value = max;
+			range.style.setProperty( '--range-start', `${ ( min / limit ) * 100 }%` );
+			range.style.setProperty( '--range-end', `${ ( max / limit ) * 100 }%` );
+		};
+
+		rangeMin.addEventListener( 'input', () => render( Math.min( Number( rangeMin.value ), Number( rangeMax.value ) ), rangeMax.value ) );
+		rangeMax.addEventListener( 'input', () => render( rangeMin.value, Math.max( Number( rangeMax.value ), Number( rangeMin.value ) ) ) );
+		inputMin.addEventListener( 'input', () => render( Math.min( clamp( inputMin.value ), Number( inputMax.value ) ), inputMax.value ) );
+		inputMax.addEventListener( 'input', () => render( inputMin.value, Math.max( clamp( inputMax.value ), Number( inputMin.value ) ) ) );
+
+		render( inputMin.value, inputMax.value );
+	} );
 }() );

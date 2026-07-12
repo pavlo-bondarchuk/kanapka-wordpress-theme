@@ -285,7 +285,7 @@
 	text-transform: uppercase;
 }
 
-.catalogue-price-filter input,
+.catalogue-price-filter input[type="number"],
 .catalogue-toolbar select {
 	width: 100%;
 	min-height: 2.75rem;
@@ -294,6 +294,88 @@
 	border-radius: var(--radius-sm);
 	background: #fff;
 	color: var(--color-ink);
+}
+
+.catalogue-price-filter__range {
+	position: relative;
+	grid-column: 1 / -1;
+	height: 2rem;
+	margin-block: var(--space-1) var(--space-2);
+}
+
+.catalogue-price-filter__rail {
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	left: 0.5rem;
+	height: 0.25rem;
+	border-radius: 999px;
+	background: var(--color-line);
+	transform: translateY(-50%);
+}
+
+.catalogue-price-filter__rail span {
+	position: absolute;
+	top: 0;
+	right: calc(100% - var(--range-end));
+	bottom: 0;
+	left: var(--range-start);
+	border-radius: inherit;
+	background: var(--color-brand-700);
+}
+
+.catalogue-price-filter__range input[type="range"] {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 1.5rem;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	pointer-events: none;
+	transform: translateY(-50%);
+	appearance: none;
+}
+
+.catalogue-price-filter__range input[type="range"]::-webkit-slider-runnable-track {
+	height: 0.25rem;
+	background: transparent;
+}
+
+.catalogue-price-filter__range input[type="range"]::-webkit-slider-thumb {
+	width: 1.125rem;
+	height: 1.125rem;
+	margin-top: -0.4375rem;
+	border: 0.1875rem solid var(--color-brand-700);
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: var(--shadow-sm);
+	cursor: grab;
+	pointer-events: auto;
+	appearance: none;
+}
+
+.catalogue-price-filter__range input[type="range"]::-moz-range-track {
+	height: 0.25rem;
+	background: transparent;
+}
+
+.catalogue-price-filter__range input[type="range"]::-moz-range-thumb {
+	width: 0.8125rem;
+	height: 0.8125rem;
+	border: 0.1875rem solid var(--color-brand-700);
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: var(--shadow-sm);
+	cursor: grab;
+	pointer-events: auto;
+}
+
+.catalogue-price-filter__range input[type="range"]:focus-visible::-webkit-slider-thumb {
+	outline: 0.1875rem solid var(--color-brand-100);
 }
 
 .catalogue-price-filter .button,

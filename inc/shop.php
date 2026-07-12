@@ -133,6 +133,42 @@ function kanapka_theme_get_shop_new_products( $limit = 4 ) {
 }
 
 /**
+ * Get the maximum published product price for the catalogue slider.
+ *
+ * @return int
+ */
+function kanapka_theme_get_catalogue_max_price() {
+	$cache_key = 'kanapka_catalogue_max_price';
+	$max_price = wp_cache_get( $cache_key, 'kanapka-theme' );
+
+	if ( false !== $max_price ) {
+		return (int) $max_price;
+	}
+
+	global $wpdb;
+
+	$max_price = (int) ceil(
+		(float) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT MAX(CAST(price.meta_value AS DECIMAL(20, 4)))
+				FROM {$wpdb->postmeta} price
+				INNER JOIN {$wpdb->posts} product ON product.ID = price.post_id
+				WHERE price.meta_key = %s
+				AND product.post_type IN ('product', 'product_variation')
+				AND product.post_status = 'publish'
+				AND price.meta_value <> ''",
+				'_price'
+			)
+		)
+	);
+	$max_price = max( 1, $max_price );
+
+	wp_cache_set( $cache_key, $max_price, 'kanapka-theme', HOUR_IN_SECONDS );
+
+	return $max_price;
+}
+
+/**
  * Get an SEO meta description from common SEO plugins.
  *
  * @param int $post_id Post ID.

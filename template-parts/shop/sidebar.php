@@ -9,6 +9,9 @@ $categories = kanapka_theme_get_shop_categories();
 $new_items  = kanapka_theme_get_shop_new_products( 4 );
 $min_price  = isset( $_GET['min_price'] ) ? wc_format_decimal( wp_unslash( $_GET['min_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET['max_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$price_limit = kanapka_theme_get_catalogue_max_price();
+$selected_min_price = '' !== $min_price ? max( 0, (int) $min_price ) : 0;
+$selected_max_price = '' !== $max_price ? min( $price_limit, (int) $max_price ) : $price_limit;
 $visible_category_limit = 8;
 ?>
 <aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Фільтри каталогу', 'kanapka-theme' ); ?>">
@@ -49,14 +52,19 @@ $visible_category_limit = 8;
 
 	<section class="catalogue-panel">
 		<h2><?php esc_html_e( 'Фільтр за ціною', 'kanapka-theme' ); ?></h2>
-		<form class="catalogue-price-filter" method="get">
+		<form class="catalogue-price-filter" method="get" data-price-range-filter>
+			<div class="catalogue-price-filter__range" style="--range-start: 0%; --range-end: 100%;" data-price-range>
+				<div class="catalogue-price-filter__rail" aria-hidden="true"><span data-price-range-fill></span></div>
+				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_min_price ); ?>" aria-label="<?php esc_attr_e( 'Мінімальна ціна', 'kanapka-theme' ); ?>" data-price-range-min>
+				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_max_price ); ?>" aria-label="<?php esc_attr_e( 'Максимальна ціна', 'kanapka-theme' ); ?>" data-price-range-max>
+			</div>
 			<label>
 				<span><?php esc_html_e( 'від', 'kanapka-theme' ); ?></span>
-				<input type="number" name="min_price" min="0" step="1" value="<?php echo esc_attr( $min_price ); ?>" placeholder="0">
+				<input type="number" name="min_price" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_min_price ); ?>" data-price-input-min>
 			</label>
 			<label>
 				<span><?php esc_html_e( 'до', 'kanapka-theme' ); ?></span>
-				<input type="number" name="max_price" min="0" step="1" value="<?php echo esc_attr( $max_price ); ?>" placeholder="1000">
+				<input type="number" name="max_price" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_max_price ); ?>" data-price-input-max>
 			</label>
 			<button class="button" type="submit"><?php esc_html_e( 'Застосувати', 'kanapka-theme' ); ?></button>
 			<?php if ( '' !== $min_price || '' !== $max_price ) : ?>
