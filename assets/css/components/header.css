@@ -523,6 +523,25 @@
 	background: var(--color-brand-100);
 }
 
+.header-mini-cart .woocommerce-mini-cart-item.is-removing {
+	opacity: 0.55;
+	pointer-events: none;
+}
+
+.header-mini-cart .remove_from_cart_button.is-loading {
+	cursor: wait;
+}
+
+.header-mini-cart .remove_from_cart_button.is-loading svg {
+	animation: kanapka-mini-cart-spin 750ms linear infinite;
+}
+
+@keyframes kanapka-mini-cart-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .header-mini-cart .variation {
 	grid-column: 2;
 	grid-row: 2;

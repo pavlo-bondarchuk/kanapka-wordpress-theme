@@ -2,6 +2,7 @@
 	'use strict';
 
 	const popupSelector = '[data-header-popup]';
+	const cartConfig = window.kanapkaCartActions || {};
 
 	const closePopup = (popup, restoreFocus = false) => {
 		if (!popup) {
@@ -54,6 +55,51 @@
 	document.addEventListener('click', (event) => {
 		const button = event.target.closest('[data-header-popup-button]');
 		const closeButton = event.target.closest('[data-header-popup-close]');
+		const removeButton = event.target.closest('.header-mini-cart .remove_from_cart_button');
+
+		if (removeButton && cartConfig.wcAjaxUrl) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+
+			if (removeButton.classList.contains('is-loading')) {
+				return;
+			}
+
+			const item = removeButton.closest('.woocommerce-mini-cart-item');
+			const originalMarkup = removeButton.innerHTML;
+			const endpoint = cartConfig.wcAjaxUrl.replace('%%endpoint%%', 'remove_from_cart');
+			const body = new URLSearchParams({ cart_item_key: removeButton.dataset.cart_item_key || '' });
+
+			removeButton.classList.add('is-loading');
+			removeButton.setAttribute('aria-disabled', 'true');
+			removeButton.innerHTML = cartConfig.loaderIcon || originalMarkup;
+			item?.classList.add('is-removing');
+
+			window.fetch(endpoint, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+				body,
+			}).then((response) => response.json()).then((result) => {
+				if (result.error || !result.fragments) {
+					throw new Error('Invalid cart response');
+				}
+
+				Object.entries(result.fragments).forEach(([selector, html]) => {
+					document.querySelectorAll(selector).forEach((element) => {
+						element.outerHTML = html;
+					});
+				});
+
+				openUpdatedCart();
+			}).catch(() => {
+				removeButton.innerHTML = originalMarkup;
+				removeButton.classList.remove('is-loading');
+				removeButton.removeAttribute('aria-disabled');
+				item?.classList.remove('is-removing');
+			});
+
+			return;
+		}
 
 		if (button) {
 			const popup = button.closest(popupSelector);
