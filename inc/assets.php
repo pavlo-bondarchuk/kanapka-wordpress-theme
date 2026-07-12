@@ -72,8 +72,10 @@ function kanapka_theme_enqueue_assets() {
 		'kanapka-theme-header-actions',
 		'kanapkaCartActions',
 		array(
-			'wcAjaxUrl'  => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( '%%endpoint%%' ) : '',
-			'loaderIcon' => kanapka_theme_ui_icon( 'loader-circle', 16 ),
+			'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
+			'wcAjaxUrl'    => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( '%%endpoint%%' ) : '',
+			'quantityNonce' => wp_create_nonce( 'kanapka_mini_cart_quantity' ),
+			'loaderIcon'   => kanapka_theme_ui_icon( 'loader-circle', 16 ),
 		)
 	);
 

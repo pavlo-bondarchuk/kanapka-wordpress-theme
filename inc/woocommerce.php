@@ -139,9 +139,10 @@ add_action( 'wp_footer', 'kanapka_theme_product_quick_view_dialog' );
  *
  * @param string $quantity_html Existing quantity markup.
  * @param array  $cart_item     Cart item data.
+ * @param string $cart_item_key Cart item key.
  * @return string
  */
-function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item ) {
+function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item, $cart_item_key ) {
 	$product  = isset( $cart_item['data'] ) ? $cart_item['data'] : null;
 	$quantity = isset( $cart_item['quantity'] ) ? (int) $cart_item['quantity'] : 0;
 
@@ -151,15 +152,64 @@ function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item ) {
 
 	$unit_price = WC()->cart->get_product_price( $product );
 	$line_total = WC()->cart->get_product_subtotal( $product, $quantity );
+	$max_quantity = $product->get_max_purchase_quantity();
+	$max_attribute = $max_quantity > 0 ? sprintf( ' max="%d"', $max_quantity ) : '';
 
 	return sprintf(
-		'<span class="header-mini-cart__item-meta"><span class="quantity">%1$s &times; %2$s</span><span class="header-mini-cart__line-total">%3$s</span></span>',
-		esc_html( number_format_i18n( $quantity ) ),
+		'<span class="header-mini-cart__item-meta"><label><span class="screen-reader-text">%1$s</span><input class="header-mini-cart__quantity" type="number" min="1" step="1" value="%2$d"%3$s inputmode="numeric" data-mini-cart-quantity data-cart-item-key="%4$s" data-previous-quantity="%2$d"></label><span class="header-mini-cart__unit-price">&times; %5$s</span><span class="header-mini-cart__line-total">%6$s</span></span>',
+		esc_html( sprintf( __( 'Кількість товару: %s', 'kanapka-theme' ), $product->get_name() ) ),
+		$quantity,
+		$max_attribute,
+		esc_attr( $cart_item_key ),
 		wp_kses_post( $unit_price ),
 		wp_kses_post( $line_total )
 	);
 }
-add_filter( 'woocommerce_widget_cart_item_quantity', 'kanapka_theme_mini_cart_item_quantity', 10, 2 );
+add_filter( 'woocommerce_widget_cart_item_quantity', 'kanapka_theme_mini_cart_item_quantity', 10, 3 );
+
+/**
+ * Update one mini-cart item and return recalculated cart fragments.
+ */
+function kanapka_theme_update_mini_cart_quantity() {
+	check_ajax_referer( 'kanapka_mini_cart_quantity', 'nonce' );
+
+	$cart_item_key = isset( $_POST['cart_item_key'] ) ? wc_clean( wp_unslash( $_POST['cart_item_key'] ) ) : '';
+	$quantity      = isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : 0;
+	$cart_item     = WC()->cart ? WC()->cart->get_cart_item( $cart_item_key ) : null;
+	$product       = is_array( $cart_item ) && isset( $cart_item['data'] ) ? $cart_item['data'] : null;
+
+	if ( ! $product instanceof WC_Product || $quantity < 1 ) {
+		wp_send_json_error( array( 'message' => __( 'Не вдалося оновити кількість товару.', 'kanapka-theme' ) ), 400 );
+	}
+
+	$max_quantity = $product->get_max_purchase_quantity();
+
+	if ( $max_quantity > 0 && $quantity > $max_quantity ) {
+		$quantity = $max_quantity;
+	}
+
+	if ( ! WC()->cart->set_quantity( $cart_item_key, $quantity, true ) ) {
+		wp_send_json_error( array( 'message' => __( 'Не вдалося оновити кількість товару.', 'kanapka-theme' ) ), 400 );
+	}
+
+	ob_start();
+	woocommerce_mini_cart();
+	$mini_cart = ob_get_clean();
+	$fragments = apply_filters(
+		'woocommerce_add_to_cart_fragments',
+		array( 'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>' )
+	);
+
+	wp_send_json_success(
+		array(
+			'cart_item_key' => $cart_item_key,
+			'quantity'      => $quantity,
+			'fragments'     => $fragments,
+		)
+	);
+}
+add_action( 'wp_ajax_kanapka_update_mini_cart_quantity', 'kanapka_theme_update_mini_cart_quantity' );
+add_action( 'wp_ajax_nopriv_kanapka_update_mini_cart_quantity', 'kanapka_theme_update_mini_cart_quantity' );
 
 /**
  * Wrap a mini-cart product name for the header grid.
