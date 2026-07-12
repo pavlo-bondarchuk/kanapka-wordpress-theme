@@ -16,12 +16,17 @@ if ( empty( $section['title'] ) && empty( $section['items'] ) ) {
 		<?php if ( ! empty( $section['title'] ) ) : ?>
 			<div class="section-heading">
 				<h2 id="order-benefits-title"><?php echo esc_html( $section['title'] ); ?></h2>
+				<?php if ( ! empty( $section['items'] ) ) : ?>
+					<button class="order-benefits__next" type="button" aria-label="<?php esc_attr_e( 'Показати наступну перевагу', 'kanapka-theme' ); ?>" data-order-benefits-next>
+						<?php echo kanapka_theme_ui_icon( 'chevron-right', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+					</button>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $section['items'] ) ) : ?>
 			<div class="order-benefits__viewport">
-				<ul class="order-benefits__grid">
+				<ul class="order-benefits__grid" data-order-benefits-track>
 					<?php foreach ( $section['items'] as $benefit ) : ?>
 						<li class="order-benefits__item order-benefits__item--<?php echo esc_attr( $benefit['color'] ); ?>">
 							<span class="order-benefits__icon" aria-hidden="true">

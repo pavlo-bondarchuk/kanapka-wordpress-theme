@@ -115,6 +115,14 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/logo-slider.js' ),
 			true
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
+			true
+		);
 	}
 
 	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
@@ -155,6 +163,14 @@ function kanapka_theme_enqueue_assets() {
 			get_theme_file_uri( '/assets/js/components/logo-slider.js' ),
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/logo-slider.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
 			true
 		);
 

@@ -815,7 +815,15 @@
 }
 
 .order-benefits .section-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
 	margin-bottom: var(--space-5);
+}
+
+.order-benefits__next {
+	display: none;
 }
 
 .order-benefits .section-heading h2 {
@@ -1053,6 +1061,21 @@
 }
 
 @media (max-width: 30rem) {
+	.order-benefits__next {
+		display: grid;
+		width: 2.75rem;
+		height: 2.75rem;
+		flex: 0 0 auto;
+		place-items: center;
+		padding: 0;
+		border: 0.0625rem solid var(--color-line);
+		border-radius: 50%;
+		background: var(--color-brand-100);
+		color: var(--color-brand-800);
+		box-shadow: var(--shadow-sm);
+		cursor: pointer;
+	}
+
 	.catalogue-category-rail {
 		padding-right: 3.5rem;
 	}
