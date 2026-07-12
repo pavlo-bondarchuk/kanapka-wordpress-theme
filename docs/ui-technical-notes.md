@@ -110,3 +110,8 @@
 - Homepage order benefits belong in the page-level SCF group after turnkey services and should replace the old numbered "Чому клієнти" grid.
 - Render six compact icon/text benefits per desktop row, 3-4 per tablet row, and one benefit per mobile scroll-snap slide.
 - Keep fallback benefit content Ukrainian and render icons through the shared PHP SVG helper.
+
+## Mobile navigation
+
+- Mobile menus with nested content should lock the page through a body class, keep the panel fixed between the header and viewport bottom, and scroll inside the menu.
+- Do not show all mobile submenus by default; add explicit arrow toggle buttons and reveal each submenu or generated mega-menu only when its parent has an open state.

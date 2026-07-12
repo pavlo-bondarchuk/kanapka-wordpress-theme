@@ -131,3 +131,9 @@
 - Replaced the static numbered "Чому клієнти обирають Kanapka" section with an editable homepage benefits section after "Під ключ".
 - Added an SCF "Переваги" tab with title and repeater fields for icon, color, title and text.
 - Styled the block as six inline icon/text benefits per desktop row, tablet grid rows and one-item scroll-snap slides on mobile.
+
+## 2026-07-12 — Make mobile navigation scrollable
+
+- Locked the page with a body class while the mobile menu is open and restored the previous scroll position on close.
+- Changed the mobile navigation panel to a fixed-height viewport panel with its own vertical scrolling.
+- Added mobile submenu toggle buttons so standard submenus, category mega-menu and contacts mega-menu open only by clicking their arrow control.
