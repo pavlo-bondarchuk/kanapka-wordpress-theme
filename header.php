@@ -20,8 +20,8 @@
 		<div class="site-branding">
 			<?php $header_logo_id = absint( kanapka_theme_get_option( 'kanapka_header_logo', 0 ) ); ?>
 			<?php if ( $header_logo_id ) : ?>
-				<a class="site-branding__custom" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php echo wp_get_attachment_image( $header_logo_id, 'medium', false, array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+				<a class="site-branding__custom" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+					<?php echo wp_get_attachment_image( $header_logo_id, 'medium', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
 				</a>
 			<?php elseif ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
