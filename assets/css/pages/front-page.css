@@ -82,7 +82,7 @@
 }
 
 .home-hero__button {
-	min-width: min(18rem, 100%);
+	min-width: fit-content;
 	margin-top: var(--space-6);
 }
 
@@ -982,7 +982,7 @@
 	}
 
 	.home-hero__arrow {
-		top: 48%;
+		top: 68%;
 		width: 3rem;
 		height: 3rem;
 	}
