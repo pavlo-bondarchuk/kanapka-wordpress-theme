@@ -12,6 +12,11 @@ $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET
 $visible_category_limit = 8;
 ?>
 <aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Фільтри каталогу', 'kanapka-theme' ); ?>">
+	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php esc_attr_e( 'Відкрити фільтри каталогу', 'kanapka-theme' ); ?>" data-close-label="<?php esc_attr_e( 'Закрити фільтри каталогу', 'kanapka-theme' ); ?>">
+		<span><?php esc_html_e( 'Фільтри каталогу', 'kanapka-theme' ); ?></span>
+		<?php echo kanapka_theme_ui_icon( 'chevron-right', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+	</button>
+	<div class="catalogue-sidebar__content" id="catalogue-sidebar-content" data-catalogue-sidebar-content>
 	<?php if ( $categories ) : ?>
 		<section class="catalogue-panel">
 			<h2><?php esc_html_e( 'Категорії', 'kanapka-theme' ); ?></h2>
@@ -78,4 +83,5 @@ $visible_category_limit = 8;
 			</ul>
 		</section>
 	<?php endif; ?>
+	</div>
 </aside>

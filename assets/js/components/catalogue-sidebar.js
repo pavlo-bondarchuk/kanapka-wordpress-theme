@@ -4,6 +4,27 @@
 ( function () {
 	'use strict';
 
+	document.querySelectorAll( '.catalogue-sidebar' ).forEach( ( sidebar ) => {
+		const toggle = sidebar.querySelector( '[data-catalogue-sidebar-toggle]' );
+		const content = sidebar.querySelector( '[data-catalogue-sidebar-content]' );
+
+		if ( ! toggle || ! content ) {
+			return;
+		}
+
+		sidebar.classList.add( 'is-collapsible' );
+
+		const setExpanded = ( isExpanded ) => {
+			toggle.setAttribute( 'aria-expanded', String( isExpanded ) );
+			toggle.setAttribute( 'aria-label', isExpanded ? toggle.dataset.closeLabel : toggle.dataset.openLabel );
+		};
+
+		setExpanded( false );
+		toggle.addEventListener( 'click', () => {
+			setExpanded( toggle.getAttribute( 'aria-expanded' ) !== 'true' );
+		} );
+	} );
+
 	document.querySelectorAll( '[data-catalogue-category-toggle]' ).forEach( ( toggle ) => {
 		const panel = toggle.closest( '.catalogue-panel' );
 		const label = toggle.querySelector( '[data-catalogue-category-toggle-label]' );
