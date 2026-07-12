@@ -455,7 +455,7 @@
 
 .product-card__media {
 	display: block;
-	padding: var(--space-3) var(--space-3) 0;
+	padding: 0;
 	background: var(--color-surface);
 }
 
@@ -640,6 +640,7 @@
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	scrollbar-width: none;
+	padding-block: 5px;
 }
 
 .product-card-grid {
