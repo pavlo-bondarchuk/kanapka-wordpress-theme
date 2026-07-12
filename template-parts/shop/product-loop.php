@@ -31,7 +31,7 @@
 			$product = wc_get_product( get_the_ID() );
 
 			if ( $product ) {
-				get_template_part( 'template-parts/components/product-card', null, array( 'product' => $product ) );
+				get_template_part( 'template-parts/components/product-card', null, array( 'product' => $product, 'show_quantity' => true ) );
 			}
 		endwhile;
 		?>
