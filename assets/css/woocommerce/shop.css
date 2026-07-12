@@ -295,7 +295,7 @@
 	display: grid;
 	min-height: 11rem;
 	place-items: center;
-	padding: var(--space-3);
+	padding: 0;
 }
 
 .catalogue-category-card__media img {
