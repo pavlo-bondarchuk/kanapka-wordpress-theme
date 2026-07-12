@@ -8,6 +8,30 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Keep WooCommerce markup, but let the theme own all frontend presentation.
+ *
+ * @param array $styles Registered WooCommerce frontend styles.
+ * @return array
+ */
+function kanapka_theme_disable_woocommerce_styles( $styles ) {
+	unset( $styles['woocommerce-general'], $styles['woocommerce-layout'], $styles['woocommerce-smallscreen'] );
+
+	return $styles;
+}
+add_filter( 'woocommerce_enqueue_styles', 'kanapka_theme_disable_woocommerce_styles' );
+
+/**
+ * Remove WooCommerce styles that may still be enqueued by extensions.
+ */
+function kanapka_theme_dequeue_woocommerce_styles() {
+	wp_dequeue_style( 'woocommerce-general' );
+	wp_dequeue_style( 'woocommerce-layout' );
+	wp_dequeue_style( 'woocommerce-smallscreen' );
+	wp_dequeue_style( 'woocommerce-inline' );
+}
+add_action( 'wp_enqueue_scripts', 'kanapka_theme_dequeue_woocommerce_styles', 100 );
+
+/**
  * Set image dimensions that match the design card ratio.
  *
  * @param array $size Existing image size.
