@@ -39,6 +39,11 @@
 	pointer-events: none;
 }
 
+.home-hero__slide > picture {
+	position: absolute;
+	inset: 0;
+}
+
 .home-hero__image {
 	position: absolute;
 	inset: 0;
