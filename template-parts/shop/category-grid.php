@@ -6,7 +6,7 @@
  * @package Kanapka_Theme
  */
 
-$categories = kanapka_theme_get_shop_categories();
+$categories = kanapka_theme_get_shop_category_tree();
 
 if (! $categories) {
 	return;
@@ -25,7 +25,7 @@ if (! $categories) {
 			continue;
 		}
 		?>
-		<article class="catalogue-category-card card">
+		<article class="catalogue-category-card card<?php echo $category->kanapka_depth > 0 ? ' catalogue-category-card--child' : ''; ?>" data-category-depth="<?php echo esc_attr( $category->kanapka_depth ); ?>">
 			<a href="<?php echo esc_url($category_url); ?>">
 				<span class="catalogue-category-card__media">
 					<?php if ($thumbnail_id) : ?>

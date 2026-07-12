@@ -42,6 +42,49 @@ function kanapka_theme_get_shop_categories( $limit = 0 ) {
 }
 
 /**
+ * Get all product categories in parent-first display order.
+ *
+ * @return WP_Term[]
+ */
+function kanapka_theme_get_shop_category_tree() {
+	if ( ! taxonomy_exists( 'product_cat' ) ) {
+		return array();
+	}
+
+	$categories = get_terms(
+		array(
+			'taxonomy'   => 'product_cat',
+			'hide_empty' => true,
+			'orderby'    => 'menu_order',
+			'order'      => 'ASC',
+		)
+	);
+
+	if ( is_wp_error( $categories ) ) {
+		return array();
+	}
+
+	$children_by_parent = array();
+
+	foreach ( $categories as $category ) {
+		$children_by_parent[ $category->parent ][] = $category;
+	}
+
+	$ordered_categories = array();
+	$append_children     = static function ( $parent_id, $depth ) use ( &$append_children, &$children_by_parent, &$ordered_categories ) {
+		foreach ( $children_by_parent[ $parent_id ] ?? array() as $category ) {
+			$category->kanapka_depth = $depth;
+			$ordered_categories[]    = $category;
+			$append_children( $category->term_id, $depth + 1 );
+		}
+	};
+
+	$append_children( 0, 0 );
+
+	return $ordered_categories;
+}
+
+/**
  * Get direct child categories for a product category term.
  *
  * @param int $parent_id Parent product category ID.
