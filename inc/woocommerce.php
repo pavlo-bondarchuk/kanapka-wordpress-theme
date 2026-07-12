@@ -74,6 +74,67 @@ add_filter( 'woocommerce_catalog_orderby', 'kanapka_theme_catalogue_orderby_labe
 add_filter( 'woocommerce_default_catalog_orderby_options', 'kanapka_theme_catalogue_orderby_labels' );
 
 /**
+ * Return the current product markup for the shared quick view dialog.
+ */
+function kanapka_theme_product_quick_view() {
+	check_ajax_referer( 'kanapka_product_quick_view', 'nonce' );
+
+	$product_id = isset( $_POST['product_id'] ) ? absint( wp_unslash( $_POST['product_id'] ) ) : 0;
+	$product    = wc_get_product( $product_id );
+
+	if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
+		wp_send_json_error( array( 'message' => __( 'Товар не знайдено.', 'kanapka-theme' ) ), 404 );
+	}
+
+	$categories = wc_get_product_category_list( $product_id, ', ' );
+	$description = $product->get_short_description();
+
+	ob_start();
+	?>
+	<div class="product-quick-view__layout">
+		<a class="product-quick-view__media" href="<?php echo esc_url( $product->get_permalink() ); ?>">
+			<?php echo $product->get_image( 'large', array( 'alt' => $product->get_name(), 'sizes' => '(max-width: 640px) 92vw, 560px' ) ); ?>
+		</a>
+		<div class="product-quick-view__summary">
+			<h2 id="product-quick-view-title"><?php echo esc_html( $product->get_name() ); ?></h2>
+			<div class="product-quick-view__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></div>
+			<?php if ( $description ) : ?>
+				<div class="product-quick-view__description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
+			<?php endif; ?>
+			<?php if ( $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' ) ) : ?>
+				<div class="product-quick-view__cart">
+					<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Кількість товару', 'kanapka-theme' ); ?>" data-quick-view-quantity>
+					<a class="button add_to_cart_button ajax_add_to_cart product_type_simple" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product_id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" rel="nofollow" data-quick-view-add-to-cart><?php echo esc_html( $product->add_to_cart_text() ); ?></a>
+				</div>
+			<?php else : ?>
+				<a class="button" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Обрати варіант', 'kanapka-theme' ); ?></a>
+			<?php endif; ?>
+			<?php if ( $categories ) : ?>
+				<div class="product-quick-view__categories"><strong><?php esc_html_e( 'Категорії:', 'kanapka-theme' ); ?></strong> <?php echo wp_kses_post( $categories ); ?></div>
+			<?php endif; ?>
+			<a class="product-quick-view__details" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Детальніше про товар', 'kanapka-theme' ); ?></a>
+		</div>
+	</div>
+	<?php
+
+	wp_send_json_success( array( 'html' => (string) ob_get_clean() ) );
+}
+add_action( 'wp_ajax_kanapka_product_quick_view', 'kanapka_theme_product_quick_view' );
+add_action( 'wp_ajax_nopriv_kanapka_product_quick_view', 'kanapka_theme_product_quick_view' );
+
+/**
+ * Render one reusable quick view dialog on product listing pages.
+ */
+function kanapka_theme_product_quick_view_dialog() {
+	if ( ! is_front_page() && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
+		return;
+	}
+
+	get_template_part( 'template-parts/components/product-quick-view' );
+}
+add_action( 'wp_footer', 'kanapka_theme_product_quick_view_dialog' );
+
+/**
  * Add a line total beside the quantity in mini-cart items.
  *
  * @param string $quantity_html Existing quantity markup.

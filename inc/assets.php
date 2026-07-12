@@ -76,6 +76,13 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
 		);
 
+		wp_enqueue_style(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/css/components/product-quick-view.css' ),
+			array( 'kanapka-theme-front-page' ),
+			kanapka_theme_asset_version( '/assets/css/components/product-quick-view.css' )
+		);
+
 		wp_enqueue_script(
 			'kanapka-theme-hero-slider',
 			get_theme_file_uri( '/assets/js/components/hero-slider.js' ),
@@ -123,6 +130,16 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
 			true
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/js/components/product-quick-view.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/product-quick-view.js' ),
+			true
+		);
+
+		wp_localize_script( 'kanapka-theme-product-quick-view', 'kanapkaQuickView', kanapka_theme_quick_view_script_data() );
 	}
 
 	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
@@ -140,6 +157,13 @@ function kanapka_theme_enqueue_assets() {
 			get_theme_file_uri( '/assets/css/woocommerce/shop.css' ),
 			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce' ),
 			kanapka_theme_asset_version( '/assets/css/woocommerce/shop.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/css/components/product-quick-view.css' ),
+			array( 'kanapka-theme-shop' ),
+			kanapka_theme_asset_version( '/assets/css/components/product-quick-view.css' )
 		);
 
 		wp_enqueue_script(
@@ -175,6 +199,16 @@ function kanapka_theme_enqueue_assets() {
 		);
 
 		wp_enqueue_script(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/js/components/product-quick-view.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/product-quick-view.js' ),
+			true
+		);
+
+		wp_localize_script( 'kanapka-theme-product-quick-view', 'kanapkaQuickView', kanapka_theme_quick_view_script_data() );
+
+		wp_enqueue_script(
 			'kanapka-theme-catalogue-sidebar',
 			get_theme_file_uri( '/assets/js/components/catalogue-sidebar.js' ),
 			array(),
@@ -192,3 +226,19 @@ function kanapka_theme_enqueue_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_enqueue_assets' );
+
+/**
+ * Data shared by the quick view script on every product listing surface.
+ *
+ * @return array
+ */
+function kanapka_theme_quick_view_script_data() {
+	return array(
+		'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
+		'wcAjaxUrl'    => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( '%%endpoint%%' ) : '',
+		'nonce'        => wp_create_nonce( 'kanapka_product_quick_view' ),
+		'loadingLabel' => __( 'Завантаження…', 'kanapka-theme' ),
+		'errorLabel'   => __( 'Не вдалося завантажити товар.', 'kanapka-theme' ),
+		'addedLabel'   => __( 'Додано в кошик', 'kanapka-theme' ),
+	);
+}
