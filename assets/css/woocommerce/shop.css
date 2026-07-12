@@ -354,6 +354,12 @@
 	color: var(--color-ink);
 }
 
+.catalogue-toolbar__left {
+	display: flex;
+	align-items: center;
+	gap: var(--space-5);
+}
+
 .catalogue-view-switcher button {
 	display: grid;
 	width: 2.5rem;
@@ -904,8 +910,11 @@
 }
 
 @media (max-width: 48rem) {
-	.catalogue-toolbar__count {
-		order: 3;
+	.catalogue-toolbar__left {
+		width: 100%;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: var(--space-3);
 	}
 
 	.catalogue-product-grid[data-view="list"] .product-card {

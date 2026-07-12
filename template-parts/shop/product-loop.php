@@ -7,16 +7,18 @@
 
 ?>
 <div class="catalogue-toolbar">
-	<div class="catalogue-view-switcher" aria-label="<?php esc_attr_e( 'Вигляд товарів', 'kanapka-theme' ); ?>" data-catalogue-view-switcher>
-		<span><?php esc_html_e( 'Відобразити:', 'kanapka-theme' ); ?></span>
-		<button type="button" aria-label="<?php esc_attr_e( 'Відобразити списком', 'kanapka-theme' ); ?>" aria-pressed="false" data-catalogue-view="list">
-			<?php echo kanapka_theme_ui_icon( 'view-list', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-		</button>
-		<button type="button" aria-label="<?php esc_attr_e( 'Відобразити сіткою', 'kanapka-theme' ); ?>" aria-pressed="true" data-catalogue-view="grid">
-			<?php echo kanapka_theme_ui_icon( 'view-grid', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-		</button>
+	<div class="catalogue-toolbar__left">
+		<div class="catalogue-view-switcher" aria-label="<?php esc_attr_e( 'Вигляд товарів', 'kanapka-theme' ); ?>" data-catalogue-view-switcher>
+			<span><?php esc_html_e( 'Відобразити:', 'kanapka-theme' ); ?></span>
+			<button type="button" aria-label="<?php esc_attr_e( 'Відобразити списком', 'kanapka-theme' ); ?>" aria-pressed="false" data-catalogue-view="list">
+				<?php echo kanapka_theme_ui_icon( 'view-list', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+			</button>
+			<button type="button" aria-label="<?php esc_attr_e( 'Відобразити сіткою', 'kanapka-theme' ); ?>" aria-pressed="true" data-catalogue-view="grid">
+				<?php echo kanapka_theme_ui_icon( 'view-grid', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+			</button>
+		</div>
+		<div class="catalogue-toolbar__count"><?php woocommerce_result_count(); ?></div>
 	</div>
-	<div class="catalogue-toolbar__count"><?php woocommerce_result_count(); ?></div>
 	<?php woocommerce_catalog_ordering(); ?>
 </div>
 

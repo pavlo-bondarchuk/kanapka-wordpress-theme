@@ -47,6 +47,33 @@ function kanapka_theme_product_thumbnail_size( $size ) {
 add_filter( 'woocommerce_get_image_size_thumbnail', 'kanapka_theme_product_thumbnail_size' );
 
 /**
+ * Keep catalogue sorting labels short and scannable.
+ *
+ * @param array $options Available sorting options.
+ * @return array
+ */
+function kanapka_theme_catalogue_orderby_labels( $options ) {
+	$labels = array(
+		'menu_order' => __( 'За замовчуванням', 'kanapka-theme' ),
+		'popularity' => __( 'За популярністю', 'kanapka-theme' ),
+		'rating'     => __( 'За рейтингом', 'kanapka-theme' ),
+		'date'       => __( 'За новизною', 'kanapka-theme' ),
+		'price'      => __( 'За зростанням ціни', 'kanapka-theme' ),
+		'price-desc' => __( 'За спаданням ціни', 'kanapka-theme' ),
+	);
+
+	foreach ( $options as $key => $label ) {
+		if ( isset( $labels[ $key ] ) ) {
+			$options[ $key ] = $labels[ $key ];
+		}
+	}
+
+	return $options;
+}
+add_filter( 'woocommerce_catalog_orderby', 'kanapka_theme_catalogue_orderby_labels' );
+add_filter( 'woocommerce_default_catalog_orderby_options', 'kanapka_theme_catalogue_orderby_labels' );
+
+/**
  * Add a line total beside the quantity in mini-cart items.
  *
  * @param string $quantity_html Existing quantity markup.
