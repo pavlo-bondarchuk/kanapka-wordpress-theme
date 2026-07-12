@@ -115,6 +115,7 @@ function kanapka_theme_get_home_hero_slides() {
 
 			$slides[] = array(
 				'image_id'      => $image_id,
+				'mobile_image_id' => absint( $row['mobile_image'] ?? 0 ),
 				'title'         => sanitize_text_field( $row['title'] ?? '' ),
 				'text'          => wp_kses_post( $row['text'] ?? '' ),
 				'button_label'  => sanitize_text_field( $button['title'] ?? ( $row['button_label'] ?? '' ) ),

@@ -68,6 +68,32 @@
                     "parent_repeater": "field_kanapka_home_hero_slides"
                 },
                 {
+                    "key": "field_kanapka_home_hero_slide_mobile_image",
+                    "label": "Mobile background image",
+                    "name": "mobile_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Vertical image, recommended size 828 x 1280 px.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp,avif",
+                    "min_width": 414,
+                    "min_height": 640,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "parent_repeater": "field_kanapka_home_hero_slides"
+                },
+                {
                     "key": "field_kanapka_home_hero_slide_title",
                     "label": "Title",
                     "name": "title",
