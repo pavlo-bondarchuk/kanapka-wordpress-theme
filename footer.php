@@ -9,7 +9,12 @@
 <footer class="site-footer">
 	<div class="site-footer__inner container">
 		<div class="site-footer__brand">
-			<strong><?php bloginfo( 'name' ); ?></strong>
+			<?php $footer_logo_id = absint( kanapka_theme_get_option( 'kanapka_footer_logo', 0 ) ); ?>
+			<?php if ( $footer_logo_id ) : ?>
+				<?php echo wp_get_attachment_image( $footer_logo_id, 'medium', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => 'lazy', 'class' => 'site-footer__logo' ) ); ?>
+			<?php else : ?>
+				<strong><?php bloginfo( 'name' ); ?></strong>
+			<?php endif; ?>
 			<p><?php bloginfo( 'description' ); ?></p>
 		</div>
 		<?php
@@ -47,6 +52,10 @@
 	</div>
 	<div class="site-footer__legal container">
 		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></p>
+		<?php $payment_logos_id = absint( kanapka_theme_get_option( 'kanapka_footer_payment_logos', 0 ) ); ?>
+		<?php if ( $payment_logos_id ) : ?>
+			<?php echo wp_get_attachment_image( $payment_logos_id, 'medium', false, array( 'alt' => __( 'Платіжні системи', 'kanapka-theme' ), 'loading' => 'lazy', 'class' => 'site-footer__payment-logos' ) ); ?>
+		<?php endif; ?>
 	</div>
 </footer>
 <?php wp_footer(); ?>

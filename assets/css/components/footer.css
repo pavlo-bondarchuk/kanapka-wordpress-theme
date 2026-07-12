@@ -46,6 +46,14 @@
 	font-size: var(--font-size-xl);
 }
 
+.site-footer__logo {
+	display: block;
+	width: auto;
+	max-width: 10rem;
+	height: auto;
+	margin-bottom: var(--space-3);
+}
+
 .site-footer__contact {
 	display: flex;
 	align-items: flex-start;
@@ -53,9 +61,20 @@
 }
 
 .site-footer__legal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
 	padding-block: var(--space-4);
 	border-top: 0.0625rem solid rgb(255 255 255 / 15%);
 	font-size: var(--font-size-xs);
+}
+
+.site-footer__payment-logos {
+	display: block;
+	width: auto;
+	max-width: 14rem;
+	height: auto;
 }
 
 @media (max-width: 64rem) {
@@ -67,5 +86,10 @@
 @media (max-width: 36rem) {
 	.site-footer__inner {
 		grid-template-columns: 1fr;
+	}
+
+	.site-footer__legal {
+		align-items: flex-start;
+		flex-direction: column;
 	}
 }

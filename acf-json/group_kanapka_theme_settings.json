@@ -190,6 +190,33 @@
             "label": "Contact button URL",
             "name": "kanapka_contact_button_url",
             "type": "url"
+        },
+        {
+            "key": "field_kanapka_footer_tab",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_footer_logo",
+            "label": "Footer logo",
+            "name": "kanapka_footer_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp,svg"
+        },
+        {
+            "key": "field_kanapka_footer_payment_logos",
+            "label": "Payment logos",
+            "name": "kanapka_footer_payment_logos",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp,svg"
         }
     ],
     "location": [[{"param": "options_page", "operator": "==", "value": "kanapka-theme-settings"}]],
