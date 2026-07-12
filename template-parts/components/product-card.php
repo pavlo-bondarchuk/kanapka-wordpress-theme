@@ -17,6 +17,9 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 	</a>
 	<div class="product-card__body">
 		<h3><a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></h3>
+		<?php if ( $product->get_short_description() ) : ?>
+			<div class="product-card__summary"><?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?></div>
+		<?php endif; ?>
 		<div class="product-card__meta">
 			<span class="product-card__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
