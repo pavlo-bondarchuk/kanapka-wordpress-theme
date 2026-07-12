@@ -51,6 +51,32 @@
 	background: var(--color-brand-900);
 }
 
+[data-kanapka-add-to-cart] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+}
+
+[data-kanapka-add-to-cart].is-loading {
+	cursor: wait;
+	opacity: 0.85;
+}
+
+[data-kanapka-add-to-cart].is-loading svg {
+	animation: kanapka-cart-button-spin 750ms linear infinite;
+}
+
+[data-kanapka-add-to-cart].is-added {
+	background: var(--color-success);
+}
+
+@keyframes kanapka-cart-button-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 body.has-product-quick-view {
 	overflow: hidden;
 }

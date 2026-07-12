@@ -38,6 +38,8 @@ function kanapka_theme_ui_icon( $name, $size = 24 ) {
 		'star'          => '<path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9Z"/>',
 		'view-grid'     => '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
 		'view-list'     => '<rect x="3" y="4" width="6" height="6"/><path d="M13 7h8"/><rect x="3" y="14" width="6" height="6"/><path d="M13 17h8"/>',
+		'loader-circle' => '<path d="M21 12a9 9 0 1 1-6.219-8.56"/>',
+		'circle-check'  => '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
 	);
 
 	if ( ! isset( $icons[ $name ] ) ) {

@@ -17,6 +17,13 @@
 	let opener = null;
 	let controller = null;
 
+	const setCartButtonState = ( button, icon, label ) => {
+		button.innerHTML = icon || '';
+		const text = document.createElement( 'span' );
+		text.textContent = label;
+		button.append( text );
+	};
+
 	const closeModal = () => {
 		if ( controller ) {
 			controller.abort();
@@ -86,7 +93,7 @@
 
 	document.addEventListener( 'click', ( event ) => {
 		const trigger = event.target.closest( '[data-product-quick-view]' );
-		const addToCart = event.target.closest( '[data-quick-view-add-to-cart]' );
+		const addToCart = event.target.closest( '[data-kanapka-add-to-cart]' );
 
 		if ( trigger ) {
 			event.preventDefault();
@@ -94,15 +101,23 @@
 			return;
 		}
 
-		if ( addToCart && config.wcAjaxUrl ) {
+		if ( addToCart && addToCart.classList.contains( 'product_type_simple' ) && config.wcAjaxUrl ) {
 			event.preventDefault();
+			event.stopImmediatePropagation();
+
+			if ( addToCart.classList.contains( 'is-loading' ) ) {
+				return;
+			}
+
 			const productId = addToCart.dataset.product_id;
 			const quantity = addToCart.dataset.quantity || '1';
 			const endpoint = config.wcAjaxUrl.replace( '%%endpoint%%', 'add_to_cart' );
 			const body = new URLSearchParams( { product_id: productId, quantity } );
+			const originalMarkup = addToCart.innerHTML;
 
 			addToCart.classList.add( 'is-loading' );
 			addToCart.setAttribute( 'aria-disabled', 'true' );
+			setCartButtonState( addToCart, config.loadingIcon, config.loadingLabel || 'Завантаження…' );
 
 			window.fetch( endpoint, {
 				method: 'POST',
@@ -120,9 +135,10 @@
 					} );
 				} );
 
-				addToCart.textContent = config.addedLabel || 'Додано в кошик';
+				addToCart.classList.add( 'is-added' );
+				setCartButtonState( addToCart, config.successIcon, config.addedLabel || 'Додано в кошик' );
 			} ).catch( () => {
-				window.location.href = addToCart.href;
+				addToCart.innerHTML = originalMarkup;
 			} ).finally( () => {
 				addToCart.classList.remove( 'is-loading' );
 				addToCart.removeAttribute( 'aria-disabled' );

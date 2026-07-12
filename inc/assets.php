@@ -240,5 +240,7 @@ function kanapka_theme_quick_view_script_data() {
 		'loadingLabel' => __( 'Завантаження…', 'kanapka-theme' ),
 		'errorLabel'   => __( 'Не вдалося завантажити товар.', 'kanapka-theme' ),
 		'addedLabel'   => __( 'Додано в кошик', 'kanapka-theme' ),
+		'loadingIcon'  => kanapka_theme_ui_icon( 'loader-circle', 18 ),
+		'successIcon'  => kanapka_theme_ui_icon( 'circle-check', 18 ),
 	);
 }

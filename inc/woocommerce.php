@@ -104,7 +104,7 @@ function kanapka_theme_product_quick_view() {
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' ) ) : ?>
 				<div class="product-quick-view__cart">
 					<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Кількість товару', 'kanapka-theme' ); ?>" data-quick-view-quantity>
-					<a class="button add_to_cart_button ajax_add_to_cart product_type_simple" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product_id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" rel="nofollow" data-quick-view-add-to-cart><?php echo esc_html( $product->add_to_cart_text() ); ?></a>
+					<a class="button add_to_cart_button product_type_simple" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product_id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" rel="nofollow" data-kanapka-add-to-cart data-quick-view-add-to-cart><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
 				</div>
 			<?php else : ?>
 				<a class="button" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Обрати варіант', 'kanapka-theme' ); ?></a>
