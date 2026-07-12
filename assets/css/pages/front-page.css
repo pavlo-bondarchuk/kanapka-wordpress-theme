@@ -543,6 +543,7 @@
 
 .product-card {
 	display: flex;
+	height: 100%;
 	flex-direction: column;
 	min-width: 0;
 	scroll-snap-align: start;
