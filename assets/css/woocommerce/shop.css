@@ -190,6 +190,30 @@
 	color: #fff;
 }
 
+.catalogue-sidebar__toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-1);
+	width: 100%;
+	margin-top: var(--space-3);
+	padding: 0.45rem 0.75rem;
+	border: 0;
+	background: transparent;
+	color: var(--color-brand-800);
+	font-size: var(--font-size-sm);
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.catalogue-sidebar__toggle svg {
+	transition: transform var(--transition);
+}
+
+.catalogue-sidebar__toggle[aria-expanded="true"] svg {
+	transform: rotate(-90deg);
+}
+
 .catalogue-price-filter {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -9,6 +9,7 @@ $categories = kanapka_theme_get_shop_categories();
 $new_items  = kanapka_theme_get_shop_new_products( 4 );
 $min_price  = isset( $_GET['min_price'] ) ? wc_format_decimal( wp_unslash( $_GET['min_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET['max_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$visible_category_limit = 8;
 ?>
 <aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Фільтри каталогу', 'kanapka-theme' ); ?>">
 	<?php if ( $categories ) : ?>
@@ -18,7 +19,7 @@ $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET
 				<a class="catalogue-sidebar__category<?php echo is_shop() ? ' is-active' : ''; ?>" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>">
 					<span><?php esc_html_e( 'Усі категорії', 'kanapka-theme' ); ?></span>
 				</a>
-				<?php foreach ( $categories as $category ) : ?>
+				<?php foreach ( $categories as $category_index => $category ) : ?>
 					<?php
 					$category_url = get_term_link( $category );
 
@@ -26,12 +27,18 @@ $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET
 						continue;
 					}
 					?>
-					<a class="catalogue-sidebar__category<?php echo is_product_category( $category->term_id ) ? ' is-active' : ''; ?>" href="<?php echo esc_url( $category_url ); ?>">
+					<a class="catalogue-sidebar__category<?php echo is_product_category( $category->term_id ) ? ' is-active' : ''; ?>" href="<?php echo esc_url( $category_url ); ?>"<?php echo $category_index >= $visible_category_limit ? ' hidden data-catalogue-category-extra' : ''; ?>>
 						<span><?php echo esc_html( $category->name ); ?></span>
 						<small><?php echo esc_html( number_format_i18n( $category->count ) ); ?></small>
 					</a>
 				<?php endforeach; ?>
 			</nav>
+			<?php if ( count( $categories ) > $visible_category_limit ) : ?>
+				<button class="catalogue-sidebar__toggle" type="button" aria-expanded="false" data-catalogue-category-toggle data-show-label="<?php esc_attr_e( 'Показати всі категорії', 'kanapka-theme' ); ?>" data-hide-label="<?php esc_attr_e( 'Згорнути', 'kanapka-theme' ); ?>">
+					<span data-catalogue-category-toggle-label><?php esc_html_e( 'Показати всі категорії', 'kanapka-theme' ); ?></span>
+					<?php echo kanapka_theme_ui_icon( 'chevron-right', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+				</button>
+			<?php endif; ?>
 		</section>
 	<?php endif; ?>
 

@@ -157,6 +157,14 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/logo-slider.js' ),
 			true
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-catalogue-sidebar',
+			get_theme_file_uri( '/assets/js/components/catalogue-sidebar.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/catalogue-sidebar.js' ),
+			true
+		);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_enqueue_assets' );
