@@ -5,13 +5,19 @@
  * @package Kanapka_Theme
  */
 
-$categories = kanapka_theme_get_shop_categories( 12 );
+$current_category = get_queried_object();
+
+if ( ! $current_category instanceof WP_Term || 'product_cat' !== $current_category->taxonomy ) {
+	return;
+}
+
+$categories = kanapka_theme_get_shop_child_categories( $current_category->term_id );
 
 if ( ! $categories ) {
 	return;
 }
 ?>
-<section class="catalogue-category-rail container" aria-label="<?php esc_attr_e( 'Популярні категорії', 'kanapka-theme' ); ?>" data-category-strip>
+<section class="catalogue-category-rail container" aria-label="<?php esc_attr_e( 'Підкатегорії', 'kanapka-theme' ); ?>" data-category-strip>
 	<div class="catalogue-category-rail__track" data-category-strip-track>
 		<?php foreach ( $categories as $category ) : ?>
 			<?php

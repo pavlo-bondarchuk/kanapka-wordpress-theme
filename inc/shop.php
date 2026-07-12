@@ -42,6 +42,32 @@ function kanapka_theme_get_shop_categories( $limit = 0 ) {
 }
 
 /**
+ * Get direct child categories for a product category term.
+ *
+ * @param int $parent_id Parent product category ID.
+ * @return WP_Term[]
+ */
+function kanapka_theme_get_shop_child_categories( $parent_id ) {
+	$parent_id = absint( $parent_id );
+
+	if ( ! $parent_id || ! taxonomy_exists( 'product_cat' ) ) {
+		return array();
+	}
+
+	$categories = get_terms(
+		array(
+			'taxonomy'   => 'product_cat',
+			'hide_empty' => true,
+			'parent'     => $parent_id,
+			'orderby'    => 'menu_order',
+			'order'      => 'ASC',
+		)
+	);
+
+	return is_wp_error( $categories ) ? array() : $categories;
+}
+
+/**
  * Get latest purchasable products for the catalogue sidebar.
  *
  * @param int $limit Product limit.
