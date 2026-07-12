@@ -64,6 +64,70 @@ function kanapka_theme_get_shop_new_products( $limit = 4 ) {
 }
 
 /**
+ * Get an SEO meta description from common SEO plugins.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function kanapka_theme_get_post_meta_description( $post_id ) {
+	$post_id = absint( $post_id );
+
+	if ( ! $post_id ) {
+		return '';
+	}
+
+	$meta_keys = array(
+		'_yoast_wpseo_metadesc',
+		'rank_math_description',
+		'_aioseo_description',
+	);
+
+	foreach ( $meta_keys as $meta_key ) {
+		$description = get_post_meta( $post_id, $meta_key, true );
+
+		if ( $description ) {
+			return trim( wp_strip_all_tags( $description ) );
+		}
+	}
+
+	return '';
+}
+
+/**
+ * Get a product category SEO meta description.
+ *
+ * @param WP_Term $term Product category term.
+ * @return string
+ */
+function kanapka_theme_get_term_meta_description( $term ) {
+	if ( ! $term instanceof WP_Term ) {
+		return '';
+	}
+
+	$yoast_taxonomy_meta = get_option( 'wpseo_taxonomy_meta', array() );
+	$yoast_description   = $yoast_taxonomy_meta[ $term->taxonomy ][ $term->term_id ]['wpseo_desc'] ?? '';
+
+	if ( $yoast_description ) {
+		return trim( wp_strip_all_tags( $yoast_description ) );
+	}
+
+	$term_meta_keys = array(
+		'rank_math_description',
+		'_aioseo_description',
+	);
+
+	foreach ( $term_meta_keys as $meta_key ) {
+		$description = get_term_meta( $term->term_id, $meta_key, true );
+
+		if ( $description ) {
+			return trim( wp_strip_all_tags( $description ) );
+		}
+	}
+
+	return '';
+}
+
+/**
  * Apply a simple GET-based price filter to product archives.
  *
  * @param WP_Query $query Main query.
