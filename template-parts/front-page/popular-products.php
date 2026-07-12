@@ -24,7 +24,7 @@ if ( ! $products ) {
 				<div class="product-card-grid" data-product-slider-track>
 					<?php
 					foreach ( $products as $product ) {
-						get_template_part( 'template-parts/components/product-card', null, array( 'product' => $product ) );
+						get_template_part( 'template-parts/components/product-card', null, array( 'product' => $product, 'show_quantity' => true ) );
 					}
 					?>
 				</div>

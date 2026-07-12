@@ -24,6 +24,20 @@
 		button.append( text );
 	};
 
+	document.addEventListener( 'input', ( event ) => {
+		const quantity = event.target.closest( '[data-product-card-quantity]' );
+
+		if ( ! quantity ) {
+			return;
+		}
+
+		const addToCart = quantity.closest( '.product-card' )?.querySelector( '[data-kanapka-add-to-cart]' );
+
+		if ( addToCart ) {
+			addToCart.dataset.quantity = Math.max( 1, Number.parseInt( quantity.value, 10 ) || 1 );
+		}
+	} );
+
 	const closeModal = () => {
 		if ( controller ) {
 			controller.abort();

@@ -6,6 +6,7 @@
  */
 
 $product = $args['product'] ?? null;
+$show_quantity = ! empty( $args['show_quantity'] );
 
 if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 	return;
@@ -27,7 +28,12 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 			<div class="product-card__summary"><?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?></div>
 		<?php endif; ?>
 		<div class="product-card__meta">
-			<span class="product-card__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
+			<div class="product-card__purchase-row">
+				<span class="product-card__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
+				<?php if ( $show_quantity && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() ) : ?>
+					<input class="product-card__quantity" type="number" min="1" step="1" value="1" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Кількість товару: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>" data-product-card-quantity>
+				<?php endif; ?>
+			</div>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
 				<a class="button product-card__button add_to_cart_button product_type_<?php echo esc_attr( $product->get_type() ); ?>" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-kanapka-add-to-cart rel="nofollow"><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
 			<?php endif; ?>
