@@ -167,6 +167,10 @@
 	text-decoration: none;
 }
 
+.catalogue-sidebar__category[hidden] {
+	display: none;
+}
+
 .catalogue-sidebar__category small {
 	display: grid;
 	min-width: 1.6rem;
