@@ -125,5 +125,38 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/css/woocommerce/base.css' )
 		);
 	}
+
+	if ( function_exists( 'kanapka_theme_is_catalogue_archive' ) && kanapka_theme_is_catalogue_archive() ) {
+		wp_enqueue_style(
+			'kanapka-theme-shop',
+			get_theme_file_uri( '/assets/css/woocommerce/shop.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/shop.css' )
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-category-strip',
+			get_theme_file_uri( '/assets/js/components/category-strip.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/category-strip.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-product-slider',
+			get_theme_file_uri( '/assets/js/components/product-slider.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/product-slider.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-logo-slider',
+			get_theme_file_uri( '/assets/js/components/logo-slider.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/logo-slider.js' ),
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_enqueue_assets' );

@@ -16,6 +16,7 @@ $kanapka_theme_modules = array(
 	'images',
 	'brands',
 	'home',
+	'shop',
 	'accessibility',
 	'seo',
 	'woocommerce',
