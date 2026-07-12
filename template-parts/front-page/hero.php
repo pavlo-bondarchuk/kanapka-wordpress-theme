@@ -21,12 +21,11 @@ if ( ! $slides ) {
 				<?php
 				$is_active          = 0 === $index;
 				$is_primary_heading = 0 === $index;
-				$mobile_image_id    = ! empty( $slide['mobile_image_id'] ) ? absint( $slide['mobile_image_id'] ) : absint( $slide['image_id'] );
 				?>
 				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'слайд', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d з %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
 					<?php
 					if ( $slide['image_id'] ) {
-						$mobile_srcset = wp_get_attachment_image_srcset( $mobile_image_id, 'kanapka-hero-mobile' );
+						$mobile_srcset = wp_get_attachment_image_srcset( $slide['image_id'], 'kanapka-hero-mobile' );
 						?>
 						<picture>
 							<?php if ( $mobile_srcset ) : ?>
