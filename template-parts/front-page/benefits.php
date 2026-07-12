@@ -16,11 +16,6 @@ if ( empty( $section['title'] ) && empty( $section['items'] ) ) {
 		<?php if ( ! empty( $section['title'] ) ) : ?>
 			<div class="section-heading">
 				<h2 id="order-benefits-title"><?php echo esc_html( $section['title'] ); ?></h2>
-				<?php if ( ! empty( $section['items'] ) ) : ?>
-					<button class="order-benefits__next" type="button" aria-label="<?php esc_attr_e( 'Показати наступну перевагу', 'kanapka-theme' ); ?>" data-order-benefits-next>
-						<?php echo kanapka_theme_ui_icon( 'chevron-right', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-					</button>
-				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
@@ -43,6 +38,9 @@ if ( empty( $section['title'] ) && empty( $section['items'] ) ) {
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<button class="order-benefits__next" type="button" aria-label="<?php esc_attr_e( 'Показати наступну перевагу', 'kanapka-theme' ); ?>" data-order-benefits-next>
+					<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+				</button>
 			</div>
 		<?php endif; ?>
 	</div>

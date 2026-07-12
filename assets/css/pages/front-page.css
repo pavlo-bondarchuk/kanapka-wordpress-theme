@@ -828,10 +828,6 @@
 }
 
 .order-benefits .section-heading {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: var(--space-4);
 	margin-bottom: var(--space-5);
 }
 
@@ -846,6 +842,7 @@
 }
 
 .order-benefits__viewport {
+	position: relative;
 	overflow: visible;
 }
 
@@ -1085,18 +1082,21 @@
 
 @media (max-width: 34rem) {
 	.order-benefits__next {
+		position: absolute;
+		top: 50%;
+		right: 0.25rem;
+		z-index: 2;
 		display: grid;
-		width: 2.75rem;
-		height: 2.75rem;
-		flex: 0 0 auto;
+		width: 2rem;
+		height: 3.5rem;
 		place-items: center;
 		padding: 0;
-		border: 0.0625rem solid var(--color-line);
-		border-radius: 50%;
-		background: var(--color-brand-100);
+		border: 0;
+		background: transparent;
 		color: var(--color-brand-800);
-		box-shadow: var(--shadow-sm);
 		cursor: pointer;
+		filter: drop-shadow(0 0.0625rem 0.125rem #fff);
+		transform: translateY(-50%);
 	}
 
 
