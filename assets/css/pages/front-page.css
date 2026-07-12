@@ -521,6 +521,8 @@
 
 .popular-products__viewport {
 	overflow: hidden;
+	margin-block: -0.75rem;
+	padding-block: 0.75rem;
 }
 
 .product-card-grid {

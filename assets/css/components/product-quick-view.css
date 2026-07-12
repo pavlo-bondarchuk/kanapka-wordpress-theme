@@ -113,6 +113,10 @@ body.has-product-quick-view {
 	font-weight: 700;
 }
 
+.product-quick-view__status[hidden] {
+	display: none;
+}
+
 .product-quick-view__layout {
 	display: grid;
 	grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
