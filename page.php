@@ -19,7 +19,7 @@ get_header();
 				<?php the_content(); ?>
 			</div>
 			<?php if ( function_exists( 'WC' ) && WC()->cart && ! WC()->cart->is_empty() ) : ?>
-				<?php get_template_part( 'template-parts/cart/benefits' ); ?>
+				<?php get_template_part( 'template-parts/front-page/benefits' ); ?>
 				<?php get_template_part( 'template-parts/cart/assurance' ); ?>
 			<?php endif; ?>
 		<?php else : ?>

@@ -7,17 +7,17 @@
 
 $items = array(
 	array(
-		'icon'  => 'clock',
+		'icon'  => 'clock-arrow-up',
 		'title' => __( 'Швидке підтвердження замовлення', 'kanapka-theme' ),
 		'text'  => __( 'Менеджер зв’яжеться з вами для уточнення деталей', 'kanapka-theme' ),
 	),
 	array(
-		'icon'  => 'briefcase',
+		'icon'  => 'hand-coins',
 		'title' => __( 'Безпечна оплата', 'kanapka-theme' ),
 		'text'  => __( 'Оплата готівкою, карткою або безготівково', 'kanapka-theme' ),
 	),
 	array(
-		'icon'  => 'badge-check',
+		'icon'  => 'salad',
 		'title' => __( 'Свіжі продукти щодня', 'kanapka-theme' ),
 		'text'  => __( 'Гарантуємо свіжість та високу якість страв', 'kanapka-theme' ),
 	),

@@ -156,3 +156,10 @@
 - Preserved WooCommerce cart, shipping, fee, tax, coupon and plugin hooks so installed commerce extensions continue to integrate through standard output.
 - Reused the shared quantity control, SVG icon helper, homepage benefit data, theme buttons and container system.
 - Added responsive product cards, compact checkout assurances, cart clearing, update actions and empty-cart presentation.
+
+## 2026-07-13 — Refine cart actions, icons and benefits
+
+- Moved the clear-cart and update-cart actions to opposite edges of the cart table footer.
+- Replaced cart action and sidebar assurance artwork with the requested Lucide `trash-2`, `refresh-cw`, `clock-arrow-up`, `hand-coins` and `salad` paths.
+- Made action and assurance SVGs non-shrinking and expanded the shipping row across the complete totals card width.
+- Removed the duplicate cart-benefits component and rendered the existing catalogue `order-benefits` section on the cart page.

@@ -134,3 +134,5 @@
 - Preserve the standard WooCommerce hooks and field names in cart template overrides so plugin notices, shipping methods and recalculation continue to work.
 - Reuse shared theme data and components for cart benefits, icons, buttons and quantity controls instead of duplicating homepage or product UI.
 - Before 768px, replace the tabular cart row with a one-column-friendly product card and move totals below the cart instead of allowing horizontal overflow.
+- Cart footer actions must occupy opposite edges on desktop, and action/assurance SVGs must use the shared Lucide-backed icon helper with `flex-shrink: 0`.
+- Reuse the catalogue `order-benefits` template on the cart page rather than maintaining parallel benefit markup and data mapping.
