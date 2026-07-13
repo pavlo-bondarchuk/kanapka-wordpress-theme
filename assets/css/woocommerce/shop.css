@@ -67,7 +67,7 @@
 
 .catalogue-category-rail__track {
 	--category-rail-gap: var(--space-3);
-
+	padding-block: 5px;
 	display: grid;
 	grid-auto-columns: calc((100% - (var(--category-rail-gap) * 3)) / 4);
 	grid-auto-flow: column;
