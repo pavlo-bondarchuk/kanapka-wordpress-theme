@@ -171,3 +171,7 @@
 - Added debounced AJAX cart updates for manual quantity edits and the shared minus/plus controls.
 - Replaced the cart body with the recalculated WooCommerce response and refreshed header cart fragments after each successful update.
 - Hid the fallback update button only after the AJAX behavior initializes, keeping the standard form action available if JavaScript fails.
+
+## 2026-07-13 — Remove the duplicate empty-cart message
+
+- Removed the clear-cart success notice because the standard WooCommerce empty-cart state already communicates the result and provides the return-to-shop action.
