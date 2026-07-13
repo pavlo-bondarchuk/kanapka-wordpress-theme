@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-13 12:47+0000\n"
+"POT-Creation-Date: 2026-07-13 13:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Kyiv"
 msgstr ""
 
-#: template-parts/header/language-switcher.php:35
+#: template-parts/header/language-switcher.php:36
 msgid "Language"
 msgstr ""
 
@@ -519,10 +519,6 @@ msgstr ""
 msgid "Professional team"
 msgstr ""
 
-#: template-parts/components/product-card.php:22
-msgid "Quick view"
-msgstr ""
-
 #: inc/home.php:134
 msgid "Ready-made sets for every celebration"
 msgstr ""
@@ -537,6 +533,10 @@ msgstr ""
 
 #: template-parts/shop/sidebar.php:71
 msgid "Reset filter"
+msgstr ""
+
+#: template-parts/header/language-switcher.php:12
+msgid "Russian"
 msgstr ""
 
 #: template-parts/header/search-popup.php:9
@@ -640,8 +640,16 @@ msgstr ""
 msgid "Try changing the filters or return to all categories."
 msgstr ""
 
+#: template-parts/header/language-switcher.php:13
+msgid "Ukrainian"
+msgstr ""
+
 #: inc/brands.php:28
 msgid "Update brand"
+msgstr ""
+
+#: template-parts/components/product-card.php:22
+msgid "View"
 msgstr ""
 
 #: template-parts/single-product/content.php:44

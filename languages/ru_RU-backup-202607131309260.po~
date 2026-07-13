@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-13 12:47+0000\n"
-"PO-Revision-Date: 2026-07-13 13:09+0000\n"
+"PO-Revision-Date: 2026-07-13 13:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -549,7 +549,7 @@ msgstr "Сброс фильтра"
 
 #: template-parts/header/language-switcher.php:12
 msgid "Russian"
-msgstr "Русский"
+msgstr ""
 
 #: template-parts/header/search-popup.php:9
 #: template-parts/header/search-popup.php:21
@@ -655,7 +655,7 @@ msgstr "Попробуйте изменить фильтры или вернут
 
 #: template-parts/header/language-switcher.php:13
 msgid "Ukrainian"
-msgstr "Українська"
+msgstr ""
 
 #: inc/brands.php:28
 msgid "Update brand"
