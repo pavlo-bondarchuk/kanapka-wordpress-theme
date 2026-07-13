@@ -120,10 +120,19 @@ function kanapka_theme_remarketing_params() {
 
 /** Output analytics loaders and the page-specific data layer. */
 function kanapka_theme_analytics_head() {
-	$settings = kanapka_theme_analytics_settings();
-	$params   = kanapka_theme_remarketing_params();
+	$settings            = kanapka_theme_analytics_settings();
+	$google_data_enabled = ( $settings['gtm_enabled'] && $settings['gtm_id'] )
+		|| ( $settings['ga4_enabled'] && $settings['ga4_id'] )
+		|| ( $settings['ua_enabled'] && $settings['ua_id'] )
+		|| ( $settings['google_ads_enabled'] && $settings['google_ads_id'] );
+
+	if ( $google_data_enabled ) {
+		$params = kanapka_theme_remarketing_params();
+		?>
+		<script>window.dataLayer=window.dataLayer||[];window.google_tag_params=<?php echo wp_json_encode( $params ); ?>;</script>
+		<?php
+	}
 	?>
-	<script>window.dataLayer=window.dataLayer||[];window.google_tag_params=<?php echo wp_json_encode( $params ); ?>;</script>
 	<?php if ( $settings['gtm_enabled'] && $settings['gtm_id'] ) : ?>
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',<?php echo wp_json_encode( $settings['gtm_id'] ); ?>);</script>
 	<?php endif; ?>
