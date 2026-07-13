@@ -51,7 +51,8 @@
 .language-switcher--top-bar a,
 .language-switcher--top-bar .wgcurrent,
 .language-switcher--top-bar span[aria-current="page"],
-.language-switcher--top-bar .wgcurrent a {
+.language-switcher--top-bar .wgcurrent a,
+.country-selector.weglot-inline label {
 	display: flex;
 	align-items: center;
 	min-height: 2rem;
