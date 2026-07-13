@@ -210,6 +210,14 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
 			true
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-cart',
+			get_theme_file_uri( '/assets/js/components/cart.js' ),
+			array( 'kanapka-theme-quantity-control' ),
+			kanapka_theme_asset_version( '/assets/js/components/cart.js' ),
+			true
+		);
 	}
 
 	if ( function_exists( 'kanapka_theme_is_catalogue_archive' ) && kanapka_theme_is_catalogue_archive() ) {

@@ -165,3 +165,9 @@
 - Removed the duplicate cart-benefits component and rendered the existing catalogue `order-benefits` section on the cart page.
 - Kept the cart action row and `td.actions` in the table layout at full width, moving flex alignment into an inner action container so the buttons sit at the left and right edges.
 - Removed notice styling from the outer WooCommerce notices wrapper so each message has only one blue left border.
+
+## 2026-07-13 — Update cart quantities without reloading
+
+- Added debounced AJAX cart updates for manual quantity edits and the shared minus/plus controls.
+- Replaced the cart body with the recalculated WooCommerce response and refreshed header cart fragments after each successful update.
+- Hid the fallback update button only after the AJAX behavior initializes, keeping the standard form action available if JavaScript fails.

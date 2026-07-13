@@ -138,3 +138,4 @@
 - Reuse the catalogue `order-benefits` template on the cart page rather than maintaining parallel benefit markup and data mapping.
 - Do not apply flex directly to a colspan cart-table cell: keep the row and cell in table layout at full width, then use a nested flex container for edge-aligned actions.
 - Style the individual WooCommerce notice, not both `.woocommerce-notices-wrapper` and its child, to avoid duplicated borders and padding.
+- Cart quantity changes should submit the standard cart form through debounced AJAX, replace the WooCommerce cart wrapper from the server response and refresh cart fragments. Hide `Update cart` only while this enhancement is active so the native POST remains the no-JavaScript fallback.
