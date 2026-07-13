@@ -253,6 +253,56 @@ function kanapka_theme_enqueue_assets() {
 			true
 		);
 	}
+
+	if ( function_exists( 'is_product' ) && is_product() ) {
+		wp_enqueue_style(
+			'kanapka-theme-front-page',
+			get_theme_file_uri( '/assets/css/pages/front-page.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce' ),
+			kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-single-product',
+			get_theme_file_uri( '/assets/css/woocommerce/single-product.css' ),
+			array( 'kanapka-theme-front-page' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/single-product.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/css/components/product-quick-view.css' ),
+			array( 'kanapka-theme-single-product' ),
+			kanapka_theme_asset_version( '/assets/css/components/product-quick-view.css' )
+		);
+
+		foreach ( array( 'product-slider', 'logo-slider', 'order-benefits' ) as $component ) {
+			wp_enqueue_script(
+				'kanapka-theme-' . $component,
+				get_theme_file_uri( '/assets/js/components/' . $component . '.js' ),
+				array(),
+				kanapka_theme_asset_version( '/assets/js/components/' . $component . '.js' ),
+				true
+			);
+		}
+
+		wp_enqueue_script(
+			'kanapka-theme-product-quick-view',
+			get_theme_file_uri( '/assets/js/components/product-quick-view.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/product-quick-view.js' ),
+			true
+		);
+		wp_localize_script( 'kanapka-theme-product-quick-view', 'kanapkaQuickView', kanapka_theme_quick_view_script_data() );
+
+		wp_enqueue_script(
+			'kanapka-theme-single-product',
+			get_theme_file_uri( '/assets/js/components/single-product.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/single-product.js' ),
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_enqueue_assets' );
 

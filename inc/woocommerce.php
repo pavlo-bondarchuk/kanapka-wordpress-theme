@@ -126,7 +126,7 @@ add_action( 'wp_ajax_nopriv_kanapka_product_quick_view', 'kanapka_theme_product_
  * Render one reusable quick view dialog on product listing pages.
  */
 function kanapka_theme_product_quick_view_dialog() {
-	if ( ! is_front_page() && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
+	if ( ! is_front_page() && ! is_product() && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
 		return;
 	}
 
