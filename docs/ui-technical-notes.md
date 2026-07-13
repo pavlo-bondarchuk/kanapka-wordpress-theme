@@ -121,3 +121,9 @@
 - In a compact header grid, make the branding track `minmax(0, 1fr)` and its image fluid; keep navigation and action controls as intrinsic fixed-size columns so they never leave the viewport.
 - Do not hide cart or search merely to compensate for a non-shrinking logo; first reduce branding width, gaps and only the smallest control dimensions at the narrowest breakpoint.
 - Catalogue list cards may stay horizontal on tablets, but must become one-column cards before their price, quantity and purchase action begin to compress or overflow.
+
+## Quantity controls
+
+- Every customer-facing product quantity input must have persistent visible minus and plus buttons; browser-native number spinners are not an acceptable primary control.
+- Keep one shared quantity-step behavior that clamps against `min`, `max` and `step`, then dispatches normal input and change events so WooCommerce and custom AJAX handlers remain synchronized.
+- Scale the same three-part control for product cards, quick view, mini-cart and cart forms instead of inventing unrelated quantity UI in each surface.

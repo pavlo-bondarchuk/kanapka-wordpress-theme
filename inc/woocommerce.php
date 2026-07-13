@@ -47,6 +47,39 @@ function kanapka_theme_product_thumbnail_size( $size ) {
 add_filter( 'woocommerce_get_image_size_thumbnail', 'kanapka_theme_product_thumbnail_size' );
 
 /**
+ * Render one side of the shared visible quantity control.
+ *
+ * @param string $direction Either decrease or increase.
+ * @param int    $icon_size Icon size in pixels.
+ * @return string
+ */
+function kanapka_theme_quantity_step_button( $direction, $icon_size = 16 ) {
+	$is_increase = 'increase' === $direction;
+	$label       = $is_increase ? __( 'Increase quantity', 'kanapka-theme' ) : __( 'Decrease quantity', 'kanapka-theme' );
+	$attribute   = $is_increase ? 'data-quantity-increase' : 'data-quantity-decrease';
+	$icon        = $is_increase ? 'plus' : 'minus';
+
+	return sprintf(
+		'<button type="button" aria-label="%1$s" %2$s>%3$s</button>',
+		esc_attr( $label ),
+		$attribute,
+		kanapka_theme_ui_icon( $icon, $icon_size )
+	);
+}
+
+/** Add a visible decrease button to standard WooCommerce quantity fields. */
+function kanapka_theme_before_woocommerce_quantity_input() {
+	echo kanapka_theme_quantity_step_button( 'decrease', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup.
+}
+add_action( 'woocommerce_before_quantity_input_field', 'kanapka_theme_before_woocommerce_quantity_input' );
+
+/** Add a visible increase button to standard WooCommerce quantity fields. */
+function kanapka_theme_after_woocommerce_quantity_input() {
+	echo kanapka_theme_quantity_step_button( 'increase', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup.
+}
+add_action( 'woocommerce_after_quantity_input_field', 'kanapka_theme_after_woocommerce_quantity_input' );
+
+/**
  * Keep catalogue sorting labels short and scannable.
  *
  * @param array $options Available sorting options.
@@ -103,7 +136,11 @@ function kanapka_theme_product_quick_view() {
 			<?php endif; ?>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' ) ) : ?>
 				<div class="product-quick-view__cart">
-					<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Product quantity', 'kanapka-theme' ); ?>" data-quick-view-quantity>
+					<div class="quantity-control quantity-control--quick-view" data-quantity-control>
+						<?php echo kanapka_theme_quantity_step_button( 'decrease', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup. ?>
+						<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Product quantity', 'kanapka-theme' ); ?>" data-quick-view-quantity>
+						<?php echo kanapka_theme_quantity_step_button( 'increase', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup. ?>
+					</div>
 					<a class="button add_to_cart_button product_type_simple" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product_id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" rel="nofollow" data-kanapka-add-to-cart data-quick-view-add-to-cart><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
 				</div>
 			<?php else : ?>
@@ -156,11 +193,13 @@ function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item, $car
 	$max_attribute = $max_quantity > 0 ? sprintf( ' max="%d"', $max_quantity ) : '';
 
 	return sprintf(
-		'<span class="header-mini-cart__item-meta"><label><span class="screen-reader-text">%1$s</span><input class="header-mini-cart__quantity" type="number" min="1" step="1" value="%2$d"%3$s inputmode="numeric" data-mini-cart-quantity data-cart-item-key="%4$s" data-previous-quantity="%2$d"></label><span class="header-mini-cart__unit-price">&times; %5$s</span><span class="header-mini-cart__line-total">%6$s</span></span>',
+		'<span class="header-mini-cart__item-meta"><span class="quantity-control quantity-control--mini-cart" data-quantity-control>%1$s<label><span class="screen-reader-text">%2$s</span><input class="header-mini-cart__quantity" type="number" min="1" step="1" value="%3$d"%4$s inputmode="numeric" data-mini-cart-quantity data-cart-item-key="%5$s" data-previous-quantity="%3$d"></label>%6$s</span><span class="header-mini-cart__unit-price">&times; %7$s</span><span class="header-mini-cart__line-total">%8$s</span></span>',
+		kanapka_theme_quantity_step_button( 'decrease', 14 ),
 		esc_html( sprintf( __( 'Product quantity: %s', 'kanapka-theme' ), $product->get_name() ) ),
 		$quantity,
 		$max_attribute,
 		esc_attr( $cart_item_key ),
+		kanapka_theme_quantity_step_button( 'increase', 14 ),
 		wp_kses_post( $unit_price ),
 		wp_kses_post( $line_total )
 	);

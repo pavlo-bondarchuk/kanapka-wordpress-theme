@@ -31,7 +31,11 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 			<div class="product-card__purchase-row">
 				<span class="product-card__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
 				<?php if ( $show_quantity && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() ) : ?>
-					<input class="product-card__quantity" type="number" min="1" step="1" value="1" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Product quantity: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>" data-product-card-quantity>
+					<div class="quantity-control quantity-control--compact" data-quantity-control>
+						<?php echo kanapka_theme_quantity_step_button( 'decrease', 14 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup. ?>
+						<input class="product-card__quantity" type="number" min="1" step="1" value="1" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Product quantity: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>" data-product-card-quantity>
+						<?php echo kanapka_theme_quantity_step_button( 'increase', 14 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Controlled theme markup. ?>
+					</div>
 				<?php endif; ?>
 			</div>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>

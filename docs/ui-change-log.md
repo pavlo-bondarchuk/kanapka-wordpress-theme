@@ -143,3 +143,9 @@
 - Allowed the header logo column to shrink while preserving the navigation, cart and search control sizes at 320–414px widths.
 - Reduced only the narrowest header gaps and icon-button boxes instead of hiding a header action.
 - Reworked catalogue list cards so their purchase controls use a structured grid on tablets and stack below a full-width product card on mobile.
+
+## 2026-07-13 — Add visible quantity steppers everywhere
+
+- Added reusable, always-visible minus and plus controls to product cards, quick view, the header mini-cart and standard WooCommerce quantity inputs.
+- Reused the theme SVG icon helper and matched each stepper size to its card, modal, mini-cart or cart context.
+- Added one shared delegated script that respects input minimum, maximum and step values and triggers the existing cart synchronization flows.

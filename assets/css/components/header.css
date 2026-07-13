@@ -688,21 +688,17 @@
 	line-height: 1.4;
 }
 
-.header-mini-cart__quantity {
-	width: 3.5rem;
-	height: 2.25rem;
-	padding: 0.35rem;
-	border: 0.0625rem solid var(--color-line);
-	border-radius: var(--radius-sm);
-	background: #fff;
-	color: var(--color-ink);
-	font-weight: 700;
-	text-align: center;
+.quantity-control .header-mini-cart__quantity {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	border-inline: 0.0625rem solid var(--color-line);
+	border-radius: 0;
 }
 
-.header-mini-cart__quantity:focus-visible {
-	border-color: var(--color-brand-700);
-	outline: 0.125rem solid var(--color-brand-100);
+.header-mini-cart__item-meta .quantity-control {
+	justify-self: start;
 }
 
 .header-mini-cart__unit-price {
@@ -1025,6 +1021,16 @@ body.is-navigation-open {
 
 	.header-mini-cart__remove-label {
 		display: none;
+	}
+
+	.header-mini-cart__item-meta {
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+	}
+
+	.header-mini-cart__line-total {
+		grid-column: 2;
+		justify-self: end;
 	}
 }
 

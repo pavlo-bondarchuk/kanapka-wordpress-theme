@@ -77,6 +77,14 @@ function kanapka_theme_enqueue_assets() {
 		true
 	);
 
+	wp_enqueue_script(
+		'kanapka-theme-quantity-control',
+		get_theme_file_uri( '/assets/js/components/quantity-control.js' ),
+		array(),
+		kanapka_theme_asset_version( '/assets/js/components/quantity-control.js' ),
+		true
+	);
+
 	wp_localize_script(
 		'kanapka-theme-header-actions',
 		'kanapkaCartActions',
