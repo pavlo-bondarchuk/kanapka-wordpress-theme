@@ -263,7 +263,7 @@ function kanapka_theme_maybe_empty_cart() {
 	}
 
 	WC()->cart->empty_cart();
-	wc_add_notice( __( 'Кошик очищено.', 'kanapka-theme' ), 'success' );
+	wc_add_notice( __( 'Cart emptied.', 'kanapka-theme' ), 'success' );
 	wp_safe_redirect( wc_get_cart_url() );
 	exit;
 }

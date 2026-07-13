@@ -8,18 +8,18 @@
 $items = array(
 	array(
 		'icon'  => 'clock-arrow-up',
-		'title' => __( 'Швидке підтвердження замовлення', 'kanapka-theme' ),
-		'text'  => __( 'Менеджер зв’яжеться з вами для уточнення деталей', 'kanapka-theme' ),
+		'title' => __( 'Fast order confirmation', 'kanapka-theme' ),
+		'text'  => __( 'A manager will contact you to confirm the details', 'kanapka-theme' ),
 	),
 	array(
 		'icon'  => 'hand-coins',
-		'title' => __( 'Безпечна оплата', 'kanapka-theme' ),
-		'text'  => __( 'Оплата готівкою, карткою або безготівково', 'kanapka-theme' ),
+		'title' => __( 'Secure payment', 'kanapka-theme' ),
+		'text'  => __( 'Pay by cash, card or bank transfer', 'kanapka-theme' ),
 	),
 	array(
 		'icon'  => 'salad',
-		'title' => __( 'Свіжі продукти щодня', 'kanapka-theme' ),
-		'text'  => __( 'Гарантуємо свіжість та високу якість страв', 'kanapka-theme' ),
+		'title' => __( 'Fresh products every day', 'kanapka-theme' ),
+		'text'  => __( 'We guarantee fresh, high-quality dishes', 'kanapka-theme' ),
 	),
 );
 ?>

@@ -20,10 +20,10 @@ do_action( 'woocommerce_before_cart' );
 				<tr>
 					<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
 					<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
-					<th scope="col" class="product-name"><?php esc_html_e( 'Товар', 'kanapka-theme' ); ?></th>
-					<th scope="col" class="product-price"><?php esc_html_e( 'Ціна', 'kanapka-theme' ); ?></th>
-					<th scope="col" class="product-quantity"><?php esc_html_e( 'Кількість', 'kanapka-theme' ); ?></th>
-					<th scope="col" class="product-subtotal"><?php esc_html_e( 'Проміжний підсумок', 'kanapka-theme' ); ?></th>
+					<th scope="col" class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+					<th scope="col" class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+					<th scope="col" class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+					<th scope="col" class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_cart' );
 								<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<?php endif; ?>
 						</td>
-						<td scope="row" role="rowheader" class="product-name" data-title="<?php esc_attr_e( 'Товар', 'kanapka-theme' ); ?>">
+						<td scope="row" role="rowheader" class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 							<?php if ( $product_permalink ) : ?>
 								<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) ); ?>
 							<?php else : ?>
@@ -78,10 +78,10 @@ do_action( 'woocommerce_before_cart' );
 								<p class="backorder_notification"><?php esc_html_e( 'Available on backorder', 'woocommerce' ); ?></p>
 							<?php endif; ?>
 						</td>
-						<td class="product-price" data-title="<?php esc_attr_e( 'Ціна', 'kanapka-theme' ); ?>">
+						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
 							<?php echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</td>
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Кількість', 'kanapka-theme' ); ?>">
+						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 							<?php
 							$product_quantity = woocommerce_quantity_input(
 								array(
@@ -98,7 +98,7 @@ do_action( 'woocommerce_before_cart' );
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							?>
 						</td>
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Проміжний підсумок', 'kanapka-theme' ); ?>">
+						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
 							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</td>
 					</tr>
@@ -118,12 +118,12 @@ do_action( 'woocommerce_before_cart' );
 						<div class="cart-actions">
 							<button type="submit" class="button cart-action cart-action--empty" name="kanapka_empty_cart" value="1">
 								<?php echo kanapka_theme_ui_icon( 'trash', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								<span><?php esc_html_e( 'Очистити кошик', 'kanapka-theme' ); ?></span>
+								<span><?php esc_html_e( 'Clear cart', 'kanapka-theme' ); ?></span>
 							</button>
 							<?php do_action( 'woocommerce_cart_actions' ); ?>
 							<button type="submit" class="button cart-action cart-action--update" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
 								<?php echo kanapka_theme_ui_icon( 'refresh', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								<span><?php esc_html_e( 'Оновити кошик', 'kanapka-theme' ); ?></span>
+								<span><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></span>
 							</button>
 						</div>
 						<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
@@ -136,7 +136,7 @@ do_action( 'woocommerce_before_cart' );
 	</form>
 
 	<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
-	<aside class="cart-collaterals card" aria-label="<?php esc_attr_e( 'Підсумок кошика', 'kanapka-theme' ); ?>">
+	<aside class="cart-collaterals card" aria-label="<?php esc_attr_e( 'Cart totals', 'woocommerce' ); ?>">
 		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 		<?php get_template_part( 'template-parts/cart/sidebar-benefits' ); ?>
 	</aside>
