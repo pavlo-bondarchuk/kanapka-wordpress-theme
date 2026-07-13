@@ -144,3 +144,9 @@
 - After cart AJAX succeeds, request `get_refreshed_fragments` directly and replace every returned selector so the theme header count and mini-cart markup cannot remain stale.
 - Cart recommendations should reuse the shared product-card markup and slider behavior, exclude current cart products and show four cards per desktop viewport.
 - Reuse the exact classic WooCommerce `You may also like&hellip;` msgid with the `woocommerce` text domain; punctuation and HTML entities are part of the translation key.
+
+## WooCommerce checkout ownership
+
+- Preserve the standard checkout field, order-review and payment hooks because delivery-date, minimum-order and gateway plugins depend on them.
+- A theme may move the existing `.woocommerce-checkout-payment` node into a visual slot, but it must keep the same node and listen for `updated_checkout` so WooCommerce can continue replacing it through AJAX.
+- Checkout review overrides must retain cart visibility/name/thumbnail/subtotal filters and all review-order hooks around products, shipping, fees, taxes and totals.

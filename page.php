@@ -7,10 +7,23 @@
 
 get_header();
 ?>
-<main id="main-content" class="site-main<?php echo function_exists( 'is_cart' ) && is_cart() ? ' cart-page' : ' container'; ?>">
+<?php $is_checkout_page = function_exists( 'is_checkout' ) && is_checkout() && ( ! function_exists( 'is_wc_endpoint_url' ) || ! is_wc_endpoint_url() ); ?>
+<main id="main-content" class="site-main<?php echo function_exists( 'is_cart' ) && is_cart() ? ' cart-page' : ( $is_checkout_page ? ' checkout-page' : ' container' ); ?>">
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
-		<?php if ( function_exists( 'is_cart' ) && is_cart() ) : ?>
+		<?php if ( $is_checkout_page ) : ?>
+			<header class="checkout-page__header container">
+				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
+				<h1><?php the_title(); ?></h1>
+				<p><?php esc_html_e( 'Complete your details and confirm your order. We will contact you to clarify the details.', 'kanapka-theme' ); ?></p>
+			</header>
+			<div class="checkout-page__content container">
+				<?php the_content(); ?>
+			</div>
+			<?php if ( function_exists( 'WC' ) && WC()->cart && ! WC()->cart->is_empty() ) : ?>
+				<?php get_template_part( 'template-parts/front-page/benefits' ); ?>
+			<?php endif; ?>
+		<?php elseif ( function_exists( 'is_cart' ) && is_cart() ) : ?>
 			<header class="cart-page__header container">
 				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
 				<h1><?php the_title(); ?></h1>

@@ -183,3 +183,10 @@
 - Added a four-card-wide recommendation slider below the cart by reusing the existing product card and product slider components while excluding products already in the cart.
 - Confirmed that the cart questions block uses the two current phone values from Theme Settings.
 - Switched the recommendation heading to WooCommerce's exact classic `You may also like&hellip;` source string so existing plugin translations are reused.
+
+## 2026-07-13 — Rebuild the WooCommerce checkout body
+
+- Added a responsive checkout page shell with breadcrumbs, explanatory copy, a customer-details card and a sticky order-summary card.
+- Kept standard WooCommerce checkout hooks and AJAX behavior while moving the live payment block into the details card.
+- Rebuilt the order review with product images, quantity badges, shipping methods and clear totals, and reused the existing order-benefits component below checkout.
+- Styled standard and plugin-added checkout fields, Select2 controls, payment methods, notices, validation and mobile stacking without removing commerce fields.
