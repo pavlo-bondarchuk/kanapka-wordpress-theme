@@ -8,8 +8,8 @@
 $variant = isset( $args['variant'] ) ? sanitize_html_class( $args['variant'] ) : 'default';
 
 $language_labels = array(
-	'ru' => 'Русский',
-	'uk' => 'Українська',
+	'ru' => 'Russian',
+	'uk' => 'Ukrainian',
 );
 
 $shorten_weglot_name = static function ( $name, $language ) use ( $language_labels ) {
