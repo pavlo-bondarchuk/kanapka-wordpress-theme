@@ -14,6 +14,7 @@ function kanapka_theme_register_menus() {
 	register_nav_menus(
 		array(
 			'primary'  => __( 'Основна навігація', 'kanapka-theme' ),
+			'top-bar'  => __( 'Верхня смуга', 'kanapka-theme' ),
 			'footer-1' => __( 'Перший стовпець футера', 'kanapka-theme' ),
 			'footer-2' => __( 'Другий стовпець футера', 'kanapka-theme' ),
 			'footer-3' => __( 'Третій стовпець футера', 'kanapka-theme' ),
@@ -21,6 +22,38 @@ function kanapka_theme_register_menus() {
 	);
 }
 add_action( 'after_setup_theme', 'kanapka_theme_register_menus' );
+
+/**
+ * Remove the legacy Weglot placeholder from the old top menu.
+ *
+ * The current theme renders its language switcher beside the menu so it stays
+ * available even when the legacy placeholder integration is not active.
+ *
+ * @param WP_Post[] $items Menu items.
+ * @param stdClass  $args  Menu arguments.
+ * @return WP_Post[]
+ */
+function kanapka_theme_remove_legacy_top_bar_language_item( $items, $args ) {
+	if ( empty( $args->theme_location ) || 'top-bar' !== $args->theme_location ) {
+		return $items;
+	}
+
+	return array_values(
+		array_filter(
+			$items,
+			static function ( $item ) {
+				$url     = isset( $item->url ) ? strtolower( trim( $item->url ) ) : '';
+				$classes = isset( $item->classes ) ? (array) $item->classes : array();
+				$item_id = isset( $item->ID ) ? (string) $item->ID : '';
+
+				return '#weglot_switcher' !== $url
+					&& ! in_array( 'menu-item-weglot', $classes, true )
+					&& 0 !== strpos( $item_id, 'weglot-' );
+			}
+		)
+	);
+}
+add_filter( 'wp_nav_menu_objects', 'kanapka_theme_remove_legacy_top_bar_language_item', 10, 2 );
 
 /**
  * Render the standard WordPress submenu and append an optional category mega-menu.

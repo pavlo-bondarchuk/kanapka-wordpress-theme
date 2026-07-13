@@ -16,6 +16,25 @@
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#main-content"><?php esc_html_e( 'Перейти до вмісту', 'kanapka-theme' ); ?></a>
 <header class="site-header" data-site-header>
+	<div class="header-top-bar">
+		<div class="header-top-bar__inner container">
+			<?php get_template_part( 'template-parts/header/language-switcher', null, array( 'variant' => 'top-bar' ) ); ?>
+			<nav class="header-top-navigation" aria-label="<?php esc_attr_e( 'Додаткова навігація', 'kanapka-theme' ); ?>">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'top-bar',
+						'menu'           => 'Top Horizontal Menu',
+						'container'      => false,
+						'menu_class'     => 'header-top-navigation__menu',
+						'fallback_cb'    => false,
+						'depth'          => 1,
+					)
+				);
+				?>
+			</nav>
+		</div>
+	</div>
 	<div class="site-header__inner container">
 		<div class="site-branding">
 			<?php $header_logo_id = absint( kanapka_theme_get_option( 'kanapka_header_logo', 0 ) ); ?>
@@ -67,7 +86,6 @@
 					<small class="header-contact__hours"><?php echo nl2br( esc_html( $work_hours ) ); ?></small>
 				<?php endif; ?>
 			</div>
-			<?php get_template_part( 'template-parts/header/language-switcher' ); ?>
 			<?php get_template_part( 'template-parts/header/cart-link' ); ?>
 			<?php get_template_part( 'template-parts/header/search-popup' ); ?>
 		</div>
