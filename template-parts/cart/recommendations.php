@@ -21,7 +21,7 @@ if ( ! $products ) {
 <section class="home-section section popular-products cart-recommendations" aria-labelledby="cart-recommendations-title" data-product-slider>
 	<div class="container">
 		<div class="section-heading">
-			<h2 id="cart-recommendations-title"><?php esc_html_e( 'You may also like', 'woocommerce' ); ?></h2>
+			<h2 id="cart-recommendations-title"><?php echo wp_kses_post( __( 'You may also like&hellip;', 'woocommerce' ) ); ?></h2>
 		</div>
 		<div class="popular-products__carousel">
 			<button class="popular-products__arrow popular-products__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous products', 'kanapka-theme' ); ?>" data-product-slider-previous>

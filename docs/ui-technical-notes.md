@@ -143,3 +143,4 @@
 - Cart shipping rows must make their table body, row and method list full-width; replacing only the `th` and `td` display values can leave the row constrained by table sizing.
 - After cart AJAX succeeds, request `get_refreshed_fragments` directly and replace every returned selector so the theme header count and mini-cart markup cannot remain stale.
 - Cart recommendations should reuse the shared product-card markup and slider behavior, exclude current cart products and show four cards per desktop viewport.
+- Reuse the exact classic WooCommerce `You may also like&hellip;` msgid with the `woocommerce` text domain; punctuation and HTML entities are part of the translation key.

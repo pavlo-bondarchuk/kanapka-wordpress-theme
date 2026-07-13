@@ -182,3 +182,4 @@
 - Made cart quantity AJAX explicitly request and replace WooCommerce fragments so the complete header mini-cart updates with the cart body.
 - Added a four-card-wide recommendation slider below the cart by reusing the existing product card and product slider components while excluding products already in the cart.
 - Confirmed that the cart questions block uses the two current phone values from Theme Settings.
+- Switched the recommendation heading to WooCommerce's exact classic `You may also like&hellip;` source string so existing plugin translations are reused.
