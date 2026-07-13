@@ -274,6 +274,30 @@ function kanapka_theme_enqueue_assets() {
 		);
 	}
 
+	if ( function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'order-received' ) ) {
+		wp_enqueue_style(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/css/components/order-benefits.css' ),
+			array( 'kanapka-theme-main' ),
+			kanapka_theme_asset_version( '/assets/css/components/order-benefits.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-order-received',
+			get_theme_file_uri( '/assets/css/woocommerce/order-received.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce', 'kanapka-theme-order-benefits' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/order-received.css' )
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
+			true
+		);
+	}
+
 	if ( function_exists( 'kanapka_theme_is_catalogue_archive' ) && kanapka_theme_is_catalogue_archive() ) {
 		wp_enqueue_style(
 			'kanapka-theme-shop',

@@ -190,3 +190,10 @@
 - Kept standard WooCommerce checkout hooks and AJAX behavior while moving the live payment block into the details card.
 - Rebuilt the order review with product images, quantity badges, shipping methods and clear totals, and reused the existing order-benefits component below checkout.
 - Styled standard and plugin-added checkout fields, Select2 controls, payment methods, notices, validation and mobile stacking without removing commerce fields.
+
+## 2026-07-13 — Redesign the order-received page
+
+- Rebuilt the successful-order view with a confirmation banner, structured order information, styled WooCommerce order details and customer addresses.
+- Added a responsive next-steps card with shared theme icons, shop and homepage actions, and an email confirmation note.
+- Preserved payment-specific and general WooCommerce thank-you hooks so gateways and order extensions continue to render their output.
+- Reused the existing order-benefits component between the confirmation content and footer.

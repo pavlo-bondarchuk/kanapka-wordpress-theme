@@ -150,3 +150,4 @@
 - Preserve the standard checkout field, order-review and payment hooks because delivery-date, minimum-order and gateway plugins depend on them.
 - A theme may move the existing `.woocommerce-checkout-payment` node into a visual slot, but it must keep the same node and listen for `updated_checkout` so WooCommerce can continue replacing it through AJAX.
 - Checkout review overrides must retain cart visibility/name/thumbnail/subtotal filters and all review-order hooks around products, shipping, fees, taxes and totals.
+- Treat `order-received` as a separate checkout endpoint with its own page shell and assets; preserve both payment-specific and general thank-you hooks inside the redesigned content column.
