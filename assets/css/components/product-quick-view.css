@@ -51,6 +51,10 @@
 	background: var(--color-brand-900);
 }
 
+.product-card__quick-view svg {
+	flex-shrink: 0;
+}
+
 [data-kanapka-add-to-cart] {
 	display: inline-flex;
 	align-items: center;

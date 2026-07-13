@@ -19,7 +19,7 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 		</a>
 		<button class="product-card__quick-view" type="button" data-product-quick-view="<?php echo esc_attr( $product->get_id() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Preview product: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>">
 			<?php echo kanapka_theme_ui_icon( 'search', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-			<span><?php esc_html_e( 'Quick view', 'kanapka-theme' ); ?></span>
+			<span><?php esc_html_e( 'View', 'kanapka-theme' ); ?></span>
 		</button>
 	</div>
 	<div class="product-card__body">
