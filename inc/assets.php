@@ -188,6 +188,15 @@ function kanapka_theme_enqueue_assets() {
 		);
 	}
 
+	if ( function_exists( 'is_cart' ) && is_cart() ) {
+		wp_enqueue_style(
+			'kanapka-theme-cart',
+			get_theme_file_uri( '/assets/css/woocommerce/cart.css' ),
+			array( 'kanapka-theme-woocommerce' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/cart.css' )
+		);
+	}
+
 	if ( function_exists( 'kanapka_theme_is_catalogue_archive' ) && kanapka_theme_is_catalogue_archive() ) {
 		wp_enqueue_style(
 			'kanapka-theme-shop',

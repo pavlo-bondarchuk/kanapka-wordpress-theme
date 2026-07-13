@@ -149,3 +149,10 @@
 - Added reusable, always-visible minus and plus controls to product cards, quick view, the header mini-cart and standard WooCommerce quantity inputs.
 - Reused the theme SVG icon helper and matched each stepper size to its card, modal, mini-cart or cart context.
 - Added one shared delegated script that respects input minimum, maximum and step values and triggers the existing cart synchronization flows.
+
+## 2026-07-13 — Rebuild the WooCommerce cart body
+
+- Rebuilt the cart body as a responsive product table and sticky totals card while leaving the existing header and footer unchanged.
+- Preserved WooCommerce cart, shipping, fee, tax, coupon and plugin hooks so installed commerce extensions continue to integrate through standard output.
+- Reused the shared quantity control, SVG icon helper, homepage benefit data, theme buttons and container system.
+- Added responsive product cards, compact checkout assurances, cart clearing, update actions and empty-cart presentation.

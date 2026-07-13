@@ -250,6 +250,31 @@ function kanapka_theme_update_mini_cart_quantity() {
 add_action( 'wp_ajax_kanapka_update_mini_cart_quantity', 'kanapka_theme_update_mini_cart_quantity' );
 add_action( 'wp_ajax_nopriv_kanapka_update_mini_cart_quantity', 'kanapka_theme_update_mini_cart_quantity' );
 
+/** Empty the cart from the dedicated cart action. */
+function kanapka_theme_maybe_empty_cart() {
+	if ( empty( $_POST['kanapka_empty_cart'] ) || empty( $_POST['woocommerce-cart-nonce'] ) ) {
+		return;
+	}
+
+	$nonce = sanitize_text_field( wp_unslash( $_POST['woocommerce-cart-nonce'] ) );
+
+	if ( ! wp_verify_nonce( $nonce, 'woocommerce-cart' ) || ! function_exists( 'WC' ) || ! WC()->cart ) {
+		return;
+	}
+
+	WC()->cart->empty_cart();
+	wc_add_notice( __( 'Кошик очищено.', 'kanapka-theme' ), 'success' );
+	wp_safe_redirect( wc_get_cart_url() );
+	exit;
+}
+add_action( 'wp_loaded', 'kanapka_theme_maybe_empty_cart', 20 );
+
+/** Keep the cart body focused on products and totals from the approved layout. */
+function kanapka_theme_remove_cart_cross_sells() {
+	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+}
+add_action( 'wp', 'kanapka_theme_remove_cart_cross_sells' );
+
 /**
  * Wrap a mini-cart product name for the header grid.
  *

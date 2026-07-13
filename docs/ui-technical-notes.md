@@ -127,3 +127,10 @@
 - Every customer-facing product quantity input must have persistent visible minus and plus buttons; browser-native number spinners are not an acceptable primary control.
 - Keep one shared quantity-step behavior that clamps against `min`, `max` and `step`, then dispatches normal input and change events so WooCommerce and custom AJAX handlers remain synchronized.
 - Scale the same three-part control for product cards, quick view, mini-cart and cart forms instead of inventing unrelated quantity UI in each surface.
+
+## WooCommerce cart ownership
+
+- Keep shipping rates, minimum-order validation, coupons, fees and taxes in WooCommerce or their owning plugins; the theme owns only cart presentation and theme-specific convenience actions.
+- Preserve the standard WooCommerce hooks and field names in cart template overrides so plugin notices, shipping methods and recalculation continue to work.
+- Reuse shared theme data and components for cart benefits, icons, buttons and quantity controls instead of duplicating homepage or product UI.
+- Before 768px, replace the tabular cart row with a one-column-friendly product card and move totals below the cart instead of allowing horizontal overflow.
