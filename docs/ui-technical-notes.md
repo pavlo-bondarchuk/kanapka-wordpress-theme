@@ -136,3 +136,4 @@
 - Before 768px, replace the tabular cart row with a one-column-friendly product card and move totals below the cart instead of allowing horizontal overflow.
 - Cart footer actions must occupy opposite edges on desktop, and action/assurance SVGs must use the shared Lucide-backed icon helper with `flex-shrink: 0`.
 - Reuse the catalogue `order-benefits` template on the cart page rather than maintaining parallel benefit markup and data mapping.
+- Do not apply flex directly to a colspan cart-table cell: keep the row and cell in table layout at full width, then use a nested flex container for edge-aligned actions.

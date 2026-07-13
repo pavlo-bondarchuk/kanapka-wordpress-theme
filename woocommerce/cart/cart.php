@@ -115,15 +115,17 @@ do_action( 'woocommerce_before_cart' );
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php endif; ?>
-						<button type="submit" class="button cart-action cart-action--empty" name="kanapka_empty_cart" value="1">
-							<?php echo kanapka_theme_ui_icon( 'trash', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							<span><?php esc_html_e( 'Очистити кошик', 'kanapka-theme' ); ?></span>
-						</button>
-						<button type="submit" class="button cart-action cart-action--update" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
-							<?php echo kanapka_theme_ui_icon( 'refresh', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							<span><?php esc_html_e( 'Оновити кошик', 'kanapka-theme' ); ?></span>
-						</button>
-						<?php do_action( 'woocommerce_cart_actions' ); ?>
+						<div class="cart-actions">
+							<button type="submit" class="button cart-action cart-action--empty" name="kanapka_empty_cart" value="1">
+								<?php echo kanapka_theme_ui_icon( 'trash', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span><?php esc_html_e( 'Очистити кошик', 'kanapka-theme' ); ?></span>
+							</button>
+							<?php do_action( 'woocommerce_cart_actions' ); ?>
+							<button type="submit" class="button cart-action cart-action--update" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+								<?php echo kanapka_theme_ui_icon( 'refresh', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span><?php esc_html_e( 'Оновити кошик', 'kanapka-theme' ); ?></span>
+							</button>
+						</div>
 						<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 					</td>
 				</tr>
