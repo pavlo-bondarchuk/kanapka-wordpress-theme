@@ -197,3 +197,4 @@
 - Added a responsive next-steps card with shared theme icons, shop and homepage actions, and an email confirmation note.
 - Preserved payment-specific and general WooCommerce thank-you hooks so gateways and order extensions continue to render their output.
 - Reused the existing order-benefits component between the confirmation content and footer.
+- Replaced the payment-method icon in order information with the requested Lucide `credit-card` icon.

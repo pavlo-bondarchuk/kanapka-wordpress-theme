@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 							<div><dt><?php echo kanapka_theme_ui_icon( 'calendar', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Date:', 'woocommerce' ); ?></span></dt><dd><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></dd></div>
 							<?php if ( $order->get_billing_email() ) : ?><div><dt><?php echo kanapka_theme_ui_icon( 'mail', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Email:', 'woocommerce' ); ?></span></dt><dd><?php echo esc_html( $order->get_billing_email() ); ?></dd></div><?php endif; ?>
 							<div><dt><?php echo kanapka_theme_ui_icon( 'wallet', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Total:', 'woocommerce' ); ?></span></dt><dd><?php echo wp_kses_post( $order->get_formatted_order_total() ); ?></dd></div>
-							<?php if ( $order->get_payment_method_title() ) : ?><div><dt><?php echo kanapka_theme_ui_icon( 'hand-coins', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Payment method:', 'woocommerce' ); ?></span></dt><dd><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></dd></div><?php endif; ?>
+							<?php if ( $order->get_payment_method_title() ) : ?><div><dt><?php echo kanapka_theme_ui_icon( 'credit-card', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Payment method:', 'woocommerce' ); ?></span></dt><dd><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></dd></div><?php endif; ?>
 						</dl>
 					</section>
 
