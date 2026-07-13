@@ -200,10 +200,103 @@
 }
 
 .product-summary-card__actions {
+	position: relative;
 	margin-top: var(--space-5);
 	padding-block: var(--space-4);
 	border-block: 0.0625rem solid var(--color-line);
 }
+
+.product-share-popover[hidden] {
+	display: none;
+}
+
+.product-share-popover {
+	position: absolute;
+	bottom: calc(100% - 0.25rem);
+	left: 0;
+	z-index: 15;
+	width: min(21rem, calc(100vw - 2rem));
+	padding: var(--space-3);
+	border: 0.0625rem solid var(--color-line);
+	border-radius: var(--radius-md);
+	background: #fff;
+	box-shadow: 0 1.25rem 3rem rgb(7 34 74 / 18%);
+}
+
+.product-share-popover::after {
+	position: absolute;
+	top: 100%;
+	left: 1.5rem;
+	width: 0.75rem;
+	height: 0.75rem;
+	border-right: 0.0625rem solid var(--color-line);
+	border-bottom: 0.0625rem solid var(--color-line);
+	background: #fff;
+	content: "";
+	transform: translateY(-50%) rotate(45deg);
+}
+
+.product-share-popover__title {
+	margin: 0 0 var(--space-2);
+	color: var(--color-brand-900);
+	font-size: var(--font-size-sm);
+	font-weight: 800;
+}
+
+.product-share-popover__list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.375rem;
+}
+
+.product-share-popover__list a,
+.product-share-popover__list button {
+	display: flex;
+	min-width: 0;
+	align-items: center;
+	gap: 0.625rem;
+	padding: 0.55rem;
+	border: 0;
+	border-radius: var(--radius-sm);
+	background: transparent;
+	color: var(--color-text);
+	font: inherit;
+	font-size: var(--font-size-xs);
+	font-weight: 700;
+	text-align: left;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.product-share-popover__list a:hover,
+.product-share-popover__list button:hover,
+.product-share-popover__list a:focus-visible,
+.product-share-popover__list button:focus-visible {
+	background: var(--color-surface-soft);
+	outline: none;
+}
+
+.product-share-popover__brand {
+	display: grid;
+	width: 1.875rem;
+	height: 1.875rem;
+	flex: 0 0 auto;
+	place-items: center;
+	border-radius: 50%;
+	background: var(--color-brand-700);
+	color: #fff;
+	font-size: 0.75rem;
+	font-weight: 850;
+}
+
+.product-share-popover__brand.is-facebook { background: #1877f2; }
+.product-share-popover__brand.is-x { background: #111; }
+.product-share-popover__brand.is-linkedin { background: #0a66c2; }
+.product-share-popover__brand.is-pinterest { background: #e60023; }
+.product-share-popover__brand.is-telegram { background: #229ed9; }
+.product-share-popover__brand.is-whatsapp { background: #25d366; }
+.product-share-popover__brand.is-email { background: #637189; }
+.product-share-popover__brand.is-copy { background: var(--color-brand-700); }
 
 .product-summary-card__share {
 	display: inline-flex;

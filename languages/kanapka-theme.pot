@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-13T11:14:33+00:00\n"
+"POT-Creation-Date: 2026-07-13T11:52:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: kanapka-theme\n"
@@ -323,7 +323,7 @@ msgid "Product not found."
 msgstr ""
 
 #: inc/woocommerce.php:106
-#: template-parts/single-product/content.php:67
+#: template-parts/single-product/content.php:69
 msgid "Product quantity"
 msgstr ""
 
@@ -332,7 +332,7 @@ msgid "Select options"
 msgstr ""
 
 #: inc/woocommerce.php:113
-#: template-parts/single-product/content.php:87
+#: template-parts/single-product/content.php:106
 msgid "Categories:"
 msgstr ""
 
@@ -615,40 +615,56 @@ msgstr ""
 msgid "New products"
 msgstr ""
 
-#: template-parts/single-product/content.php:30
+#: template-parts/single-product/content.php:31
 msgid "Product gallery"
 msgstr ""
 
-#: template-parts/single-product/content.php:40
+#: template-parts/single-product/content.php:41
 msgid "Product images"
 msgstr ""
 
-#: template-parts/single-product/content.php:43
+#: template-parts/single-product/content.php:44
 #, php-format
 msgid "View product image %d"
 msgstr ""
 
-#: template-parts/single-product/content.php:53
+#: template-parts/single-product/content.php:54
 msgid "In stock"
 msgstr ""
 
-#: template-parts/single-product/content.php:53
+#: template-parts/single-product/content.php:54
 msgid "Out of stock"
 msgstr ""
 
-#: template-parts/single-product/content.php:66
+#: template-parts/single-product/content.php:67
 msgid "Decrease quantity"
 msgstr ""
 
-#: template-parts/single-product/content.php:68
+#: template-parts/single-product/content.php:70
 msgid "Increase quantity"
 msgstr ""
 
-#: template-parts/single-product/content.php:82
+#: template-parts/single-product/content.php:83
+msgid "Link copied"
+msgstr ""
+
+#: template-parts/single-product/content.php:87
 msgid "Share"
 msgstr ""
 
-#: template-parts/single-product/content.php:96
+#: template-parts/single-product/content.php:90
+msgid "Share product"
+msgstr ""
+
+#: template-parts/single-product/content.php:98
+msgid "Email"
+msgstr ""
+
+#: template-parts/single-product/content.php:99
+msgid "Copy link"
+msgstr ""
+
+#: template-parts/single-product/content.php:116
 msgid "Description"
 msgstr ""
 

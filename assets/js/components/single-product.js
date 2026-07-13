@@ -7,6 +7,40 @@
 	}
 
 	const mainImage = product.querySelector( '[data-product-gallery-main]' );
+	const shareMenu = product.querySelector( '[data-product-share-menu]' );
+	const shareToggle = shareMenu?.querySelector( '[data-product-share-toggle]' );
+	const sharePopover = shareMenu?.querySelector( '[data-product-share-popover]' );
+
+	const closeShareMenu = () => {
+		if ( ! sharePopover || ! shareToggle ) {
+			return;
+		}
+		sharePopover.hidden = true;
+		shareToggle.setAttribute( 'aria-expanded', 'false' );
+	};
+
+	const openShareWindow = ( url ) => {
+		window.open( url, 'kanapka-product-share', 'popup=yes,width=720,height=620,resizable=yes,scrollbars=yes' );
+	};
+
+	const getShareUrl = ( platform, data ) => {
+		const url = encodeURIComponent( data.url );
+		const title = encodeURIComponent( data.title );
+		const text = encodeURIComponent( `${ data.title } ${ data.url }` );
+		const image = encodeURIComponent( data.image || '' );
+
+		const urls = {
+			facebook: `https://www.facebook.com/sharer/sharer.php?u=${ url }`,
+			x: `https://twitter.com/intent/tweet?text=${ title }&url=${ url }`,
+			linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${ url }`,
+			pinterest: `https://pinterest.com/pin/create/button/?url=${ url }&media=${ image }&description=${ title }`,
+			telegram: `https://t.me/share/url?url=${ url }&text=${ title }`,
+			whatsapp: `https://wa.me/?text=${ text }`,
+			email: `mailto:?subject=${ title }&body=${ text }`,
+		};
+
+		return urls[ platform ] || '';
+	};
 	product.addEventListener( 'click', ( event ) => {
 		const thumbnail = event.target.closest( '[data-product-gallery-thumb]' );
 		if ( thumbnail && mainImage ) {
@@ -49,14 +83,59 @@
 			return;
 		}
 
-		const share = event.target.closest( '[data-product-share]' );
-		if ( share ) {
-			const data = { title: share.dataset.shareTitle, url: share.dataset.shareUrl };
-			if ( navigator.share ) {
-				navigator.share( data ).catch( () => {} );
-			} else if ( navigator.clipboard ) {
-				navigator.clipboard.writeText( data.url ).catch( () => {} );
+		if ( event.target.closest( '[data-product-share-toggle]' ) && sharePopover && shareToggle ) {
+			const opening = sharePopover.hidden;
+			sharePopover.hidden = ! opening;
+			shareToggle.setAttribute( 'aria-expanded', String( opening ) );
+			if ( opening ) {
+				sharePopover.querySelector( 'a, button' )?.focus();
 			}
+			return;
+		}
+
+		const shareItem = event.target.closest( '[data-share-platform]' );
+		if ( shareItem && shareMenu ) {
+			event.preventDefault();
+			const platform = shareItem.dataset.sharePlatform;
+			const data = {
+				title: shareMenu.dataset.shareTitle,
+				url: shareMenu.dataset.shareUrl,
+				image: shareMenu.dataset.shareImage,
+			};
+
+			if ( platform === 'copy' ) {
+				navigator.clipboard?.writeText( data.url ).then( () => {
+					const label = shareItem.querySelector( '[data-share-copy-label]' );
+					const status = shareMenu.querySelector( '[data-share-status]' );
+					if ( label ) {
+						label.textContent = shareMenu.dataset.copiedLabel || 'Copied';
+					}
+					if ( status ) {
+						status.textContent = shareMenu.dataset.copiedLabel || 'Copied';
+					}
+				} ).catch( () => {} );
+			} else {
+				const shareUrl = getShareUrl( platform, data );
+				if ( platform === 'email' ) {
+					window.location.href = shareUrl;
+				} else if ( shareUrl ) {
+					openShareWindow( shareUrl );
+				}
+				closeShareMenu();
+			}
+		}
+	} );
+
+	document.addEventListener( 'click', ( event ) => {
+		if ( shareMenu && ! shareMenu.contains( event.target ) ) {
+			closeShareMenu();
+		}
+	} );
+
+	document.addEventListener( 'keydown', ( event ) => {
+		if ( event.key === 'Escape' && sharePopover && ! sharePopover.hidden ) {
+			closeShareMenu();
+			shareToggle?.focus();
 		}
 	} );
 

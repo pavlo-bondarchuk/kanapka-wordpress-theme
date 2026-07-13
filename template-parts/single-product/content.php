@@ -76,11 +76,26 @@ $categories = wc_get_product_category_list( $product->get_id(), ', ' );
 				<div class="product-summary-card__native-cart"><?php woocommerce_template_single_add_to_cart(); ?></div>
 			<?php endif; ?>
 
-			<div class="product-summary-card__actions">
-				<button type="button" class="product-summary-card__share" data-product-share data-share-title="<?php echo esc_attr( $product->get_name() ); ?>" data-share-url="<?php echo esc_url( $product->get_permalink() ); ?>">
-					<?php echo kanapka_theme_ui_icon( 'share', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<span><?php esc_html_e( 'Share', 'kanapka-theme' ); ?></span>
+			<div class="product-summary-card__actions" data-product-share-menu data-share-title="<?php echo esc_attr($product->get_name()); ?>" data-share-url="<?php echo esc_url($product->get_permalink()); ?>" data-share-image="<?php echo esc_url($main_image_id ? wp_get_attachment_image_url($main_image_id, 'full') : ''); ?>" data-copied-label="<?php esc_attr_e('Link copied', 'kanapka-theme'); ?>">
+				<button type="button" class="product-summary-card__share" data-product-share-toggle aria-expanded="false" aria-controls="product-share-popover">
+					<?php echo kanapka_theme_ui_icon('share', 20); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					?>
+					<span><?php esc_html_e('Share', 'kanapka-theme'); ?></span>
 				</button>
+				<div class="product-share-popover" id="product-share-popover" data-product-share-popover hidden>
+					<p class="product-share-popover__title"><?php esc_html_e('Share product', 'kanapka-theme'); ?></p>
+					<div class="product-share-popover__list">
+						<a href="#" data-share-platform="facebook"><span class="product-share-popover__brand is-facebook" aria-hidden="true">f</span><span>Facebook</span></a>
+						<a href="#" data-share-platform="x"><span class="product-share-popover__brand is-x" aria-hidden="true">X</span><span>X</span></a>
+						<a href="#" data-share-platform="linkedin"><span class="product-share-popover__brand is-linkedin" aria-hidden="true">in</span><span>LinkedIn</span></a>
+						<a href="#" data-share-platform="pinterest"><span class="product-share-popover__brand is-pinterest" aria-hidden="true">P</span><span>Pinterest</span></a>
+						<a href="#" data-share-platform="telegram"><span class="product-share-popover__brand is-telegram" aria-hidden="true">T</span><span>Telegram</span></a>
+						<a href="#" data-share-platform="whatsapp"><span class="product-share-popover__brand is-whatsapp" aria-hidden="true">W</span><span>WhatsApp</span></a>
+						<a href="#" data-share-platform="email"><span class="product-share-popover__brand is-email" aria-hidden="true">@</span><span><?php esc_html_e('Email', 'kanapka-theme'); ?></span></a>
+						<button type="button" data-share-platform="copy"><span class="product-share-popover__brand is-copy" aria-hidden="true">↗</span><span data-share-copy-label><?php esc_html_e('Copy link', 'kanapka-theme'); ?></span></button>
+					</div>
+					<span class="screen-reader-text" aria-live="polite" data-share-status></span>
+				</div>
 			</div>
 
 			<?php if ( $categories ) : ?>
