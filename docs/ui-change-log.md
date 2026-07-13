@@ -137,3 +137,9 @@
 - Locked the page with a body class while the mobile menu is open and restored the previous scroll position on close.
 - Changed the mobile navigation panel to a fixed-height viewport panel with its own vertical scrolling.
 - Added mobile submenu toggle buttons so standard submenus, category mega-menu and contacts mega-menu open only by clicking their arrow control.
+
+## 2026-07-13 — Stabilize the mobile header and catalogue list cards
+
+- Allowed the header logo column to shrink while preserving the navigation, cart and search control sizes at 320–414px widths.
+- Reduced only the narrowest header gaps and icon-button boxes instead of hiding a header action.
+- Reworked catalogue list cards so their purchase controls use a structured grid on tablets and stack below a full-width product card on mobile.

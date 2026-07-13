@@ -115,3 +115,9 @@
 
 - Mobile menus with nested content should lock the page through a body class, keep the panel fixed between the header and viewport bottom, and scroll inside the menu.
 - Do not show all mobile submenus by default; add explicit arrow toggle buttons and reveal each submenu or generated mega-menu only when its parent has an open state.
+
+## Narrow header and catalogue list cards
+
+- In a compact header grid, make the branding track `minmax(0, 1fr)` and its image fluid; keep navigation and action controls as intrinsic fixed-size columns so they never leave the viewport.
+- Do not hide cart or search merely to compensate for a non-shrinking logo; first reduce branding width, gaps and only the smallest control dimensions at the narrowest breakpoint.
+- Catalogue list cards may stay horizontal on tablets, but must become one-column cards before their price, quantity and purchase action begin to compress or overflow.
