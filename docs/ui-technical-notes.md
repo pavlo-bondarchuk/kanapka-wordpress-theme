@@ -137,3 +137,4 @@
 - Cart footer actions must occupy opposite edges on desktop, and action/assurance SVGs must use the shared Lucide-backed icon helper with `flex-shrink: 0`.
 - Reuse the catalogue `order-benefits` template on the cart page rather than maintaining parallel benefit markup and data mapping.
 - Do not apply flex directly to a colspan cart-table cell: keep the row and cell in table layout at full width, then use a nested flex container for edge-aligned actions.
+- Style the individual WooCommerce notice, not both `.woocommerce-notices-wrapper` and its child, to avoid duplicated borders and padding.

@@ -164,3 +164,4 @@
 - Made action and assurance SVGs non-shrinking and expanded the shipping row across the complete totals card width.
 - Removed the duplicate cart-benefits component and rendered the existing catalogue `order-benefits` section on the cart page.
 - Kept the cart action row and `td.actions` in the table layout at full width, moving flex alignment into an inner action container so the buttons sit at the left and right edges.
+- Removed notice styling from the outer WooCommerce notices wrapper so each message has only one blue left border.
