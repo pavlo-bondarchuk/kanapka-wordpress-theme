@@ -99,8 +99,21 @@ function kanapka_theme_migrate_legacy_options() {
 		update_field( 'field_kanapka_contact_button_url', get_permalink( absint( $legacy_settings['oxy_menu_contacts_page'] ?? 0 ) ), 'option' );
 	}
 
+	if ( $migration_version < 3 ) {
+		update_field( 'field_kanapka_gtm_enabled', 0, 'option' );
+		update_field( 'field_kanapka_ga4_enabled', 0, 'option' );
+		update_field( 'field_kanapka_ua_enabled', 1, 'option' );
+		update_field( 'field_kanapka_ua_id', 'UA-58514353-1', 'option' );
+		update_field( 'field_kanapka_google_ads_enabled', 1, 'option' );
+		update_field( 'field_kanapka_google_ads_id', '967972312', 'option' );
+		update_field( 'field_kanapka_meta_pixel_enabled', 1, 'option' );
+		update_field( 'field_kanapka_meta_pixel_id', '1730975970565201', 'option' );
+		update_field( 'field_kanapka_yandex_metrika_enabled', 1, 'option' );
+		update_field( 'field_kanapka_yandex_metrika_id', '27891162', 'option' );
+	}
+
 	update_option( 'kanapka_theme_scf_migrated', 1, false );
-	update_option( 'kanapka_theme_scf_migration_version', 2, false );
+	update_option( 'kanapka_theme_scf_migration_version', 3, false );
 }
 add_action( 'acf/init', 'kanapka_theme_migrate_legacy_options', 20 );
 

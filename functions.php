@@ -21,6 +21,7 @@ $kanapka_theme_modules = array(
 	'seo',
 	'woocommerce',
 	'scf',
+	'analytics',
 );
 
 foreach ( $kanapka_theme_modules as $kanapka_theme_module ) {

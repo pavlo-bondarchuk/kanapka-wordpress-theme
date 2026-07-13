@@ -192,6 +192,107 @@
             "type": "url"
         },
         {
+            "key": "field_kanapka_analytics_tab",
+            "label": "Аналітика",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_gtm_enabled",
+            "label": "Увімкнути Google Tag Manager",
+            "name": "kanapka_gtm_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_kanapka_gtm_id",
+            "label": "Google Tag Manager ID",
+            "name": "kanapka_gtm_id",
+            "type": "text",
+            "placeholder": "GTM-XXXXXXX",
+            "instructions": "Формат: GTM-XXXXXXX"
+        },
+        {
+            "key": "field_kanapka_ga4_enabled",
+            "label": "Увімкнути Google Analytics 4",
+            "name": "kanapka_ga4_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_kanapka_ga4_id",
+            "label": "Google Analytics 4 ID",
+            "name": "kanapka_ga4_id",
+            "type": "text",
+            "placeholder": "G-XXXXXXXXXX",
+            "instructions": "Формат: G-XXXXXXXXXX"
+        },
+        {
+            "key": "field_kanapka_ua_enabled",
+            "label": "Увімкнути Universal Analytics (застарілий)",
+            "name": "kanapka_ua_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_kanapka_ua_id",
+            "label": "Universal Analytics ID",
+            "name": "kanapka_ua_id",
+            "type": "text",
+            "default_value": "UA-58514353-1",
+            "placeholder": "UA-XXXXXXXX-X"
+        },
+        {
+            "key": "field_kanapka_google_ads_enabled",
+            "label": "Увімкнути Google Ads remarketing",
+            "name": "kanapka_google_ads_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_kanapka_google_ads_id",
+            "label": "Google Ads Conversion ID",
+            "name": "kanapka_google_ads_id",
+            "type": "text",
+            "default_value": "967972312",
+            "instructions": "Вводьте лише числову частину без AW-."
+        },
+        {
+            "key": "field_kanapka_meta_pixel_enabled",
+            "label": "Увімкнути Meta Pixel",
+            "name": "kanapka_meta_pixel_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_kanapka_meta_pixel_id",
+            "label": "Meta Pixel ID",
+            "name": "kanapka_meta_pixel_id",
+            "type": "text",
+            "default_value": "1730975970565201"
+        },
+        {
+            "key": "field_kanapka_yandex_metrika_enabled",
+            "label": "Увімкнути Yandex Metrika",
+            "name": "kanapka_yandex_metrika_enabled",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_kanapka_yandex_metrika_id",
+            "label": "Yandex Metrika ID",
+            "name": "kanapka_yandex_metrika_id",
+            "type": "text",
+            "default_value": "27891162"
+        },
+        {
             "key": "field_kanapka_footer_tab",
             "label": "Footer",
             "name": "",
