@@ -7,6 +7,7 @@
 
 $product = $args['product'] ?? null;
 $show_quantity = ! empty( $args['show_quantity'] );
+$show_quick_view = ! isset( $args['show_quick_view'] ) || (bool) $args['show_quick_view'];
 
 if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 	return;
@@ -17,10 +18,12 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 		<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 			<?php echo $product->get_image( 'kanapka-product-card', array( 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 75vw, 260px' ) ); ?>
 		</a>
-		<button class="product-card__quick-view" type="button" data-product-quick-view="<?php echo esc_attr( $product->get_id() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Preview product: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>">
-			<?php echo kanapka_theme_ui_icon( 'search', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-			<span><?php esc_html_e( 'View', 'kanapka-theme' ); ?></span>
-		</button>
+		<?php if ( $show_quick_view ) : ?>
+			<button class="product-card__quick-view" type="button" data-product-quick-view="<?php echo esc_attr( $product->get_id() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Preview product: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>">
+				<?php echo kanapka_theme_ui_icon( 'search', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
+				<span><?php esc_html_e( 'View', 'kanapka-theme' ); ?></span>
+			</button>
+		<?php endif; ?>
 	</div>
 	<div class="product-card__body">
 		<h3><a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></h3>

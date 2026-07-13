@@ -190,9 +190,16 @@ function kanapka_theme_enqueue_assets() {
 
 	if ( function_exists( 'is_cart' ) && is_cart() ) {
 		wp_enqueue_style(
+			'kanapka-theme-front-page',
+			get_theme_file_uri( '/assets/css/pages/front-page.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce' ),
+			kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
+		);
+
+		wp_enqueue_style(
 			'kanapka-theme-cart',
 			get_theme_file_uri( '/assets/css/woocommerce/cart.css' ),
-			array( 'kanapka-theme-woocommerce' ),
+			array( 'kanapka-theme-front-page' ),
 			kanapka_theme_asset_version( '/assets/css/woocommerce/cart.css' )
 		);
 
@@ -208,6 +215,14 @@ function kanapka_theme_enqueue_assets() {
 			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-product-slider',
+			get_theme_file_uri( '/assets/js/components/product-slider.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/product-slider.js' ),
 			true
 		);
 

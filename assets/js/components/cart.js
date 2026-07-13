@@ -9,6 +9,35 @@
 	let requestController;
 
 	const getCartForm = ( element ) => element.closest( '.woocommerce-cart-form' );
+	const replaceFragments = ( fragments ) => {
+		Object.entries( fragments || {} ).forEach( ( [ selector, markup ] ) => {
+			document.querySelectorAll( selector ).forEach( ( element ) => {
+				element.outerHTML = markup;
+			} );
+		} );
+	};
+	const refreshMiniCart = async () => {
+		const endpoint = window.kanapkaCartActions?.wcAjaxUrl?.replace( '%%endpoint%%', 'get_refreshed_fragments' );
+
+		if ( ! endpoint ) {
+			return;
+		}
+
+		try {
+			const response = await fetch( endpoint, {
+				method: 'POST',
+				credentials: 'same-origin',
+			} );
+			const result = await response.json();
+
+			if ( response.ok && result.fragments ) {
+				replaceFragments( result.fragments );
+				window.jQuery?.( document.body ).trigger( 'wc_fragments_refreshed' );
+			}
+		} catch ( error ) {
+			// The cart body is already current; a later WooCommerce fragment refresh can retry the header.
+		}
+	};
 
 	const refreshCart = async ( form, changedInput ) => {
 		if ( ! form || ! changedInput.checkValidity() ) {
@@ -57,8 +86,9 @@
 
 			if ( window.jQuery ) {
 				window.jQuery( document.body ).trigger( 'updated_wc_div' );
-				window.jQuery( document.body ).trigger( 'wc_fragment_refresh' );
 			}
+
+			await refreshMiniCart();
 
 			document.body.dispatchEvent( new CustomEvent( 'kanapka_cart_updated' ) );
 		} catch ( error ) {

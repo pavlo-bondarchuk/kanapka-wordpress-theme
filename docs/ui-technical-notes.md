@@ -140,3 +140,6 @@
 - Style the individual WooCommerce notice, not both `.woocommerce-notices-wrapper` and its child, to avoid duplicated borders and padding.
 - Cart quantity changes should submit the standard cart form through debounced AJAX, replace the WooCommerce cart wrapper from the server response and refresh cart fragments. Hide `Update cart` only while this enhancement is active so the native POST remains the no-JavaScript fallback.
 - After a deliberate full-cart clear, show only the standard WooCommerce empty-cart state; do not add a second success notice that repeats the same information.
+- Cart shipping rows must make their table body, row and method list full-width; replacing only the `th` and `td` display values can leave the row constrained by table sizing.
+- After cart AJAX succeeds, request `get_refreshed_fragments` directly and replace every returned selector so the theme header count and mini-cart markup cannot remain stale.
+- Cart recommendations should reuse the shared product-card markup and slider behavior, exclude current cart products and show four cards per desktop viewport.

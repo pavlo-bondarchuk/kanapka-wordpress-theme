@@ -175,3 +175,10 @@
 ## 2026-07-13 — Remove the duplicate empty-cart message
 
 - Removed the clear-cart success notice because the standard WooCommerce empty-cart state already communicates the result and provides the return-to-shop action.
+
+## 2026-07-13 — Refine cart totals and add recommendations
+
+- Expanded every shipping method across the full totals-card width and changed sidebar assurance icons to borderless circles with a soft grey background.
+- Made cart quantity AJAX explicitly request and replace WooCommerce fragments so the complete header mini-cart updates with the cart body.
+- Added a four-card-wide recommendation slider below the cart by reusing the existing product card and product slider components while excluding products already in the cart.
+- Confirmed that the cart questions block uses the two current phone values from Theme Settings.
