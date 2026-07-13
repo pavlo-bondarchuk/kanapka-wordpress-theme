@@ -17,9 +17,9 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 		<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 			<?php echo $product->get_image( 'kanapka-product-card', array( 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 75vw, 260px' ) ); ?>
 		</a>
-		<button class="product-card__quick-view" type="button" data-product-quick-view="<?php echo esc_attr( $product->get_id() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Переглянути товар: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>">
+		<button class="product-card__quick-view" type="button" data-product-quick-view="<?php echo esc_attr( $product->get_id() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Preview product: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>">
 			<?php echo kanapka_theme_ui_icon( 'search', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
-			<span><?php esc_html_e( 'Переглянути', 'kanapka-theme' ); ?></span>
+			<span><?php esc_html_e( 'Quick view', 'kanapka-theme' ); ?></span>
 		</button>
 	</div>
 	<div class="product-card__body">
@@ -31,7 +31,7 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 			<div class="product-card__purchase-row">
 				<span class="product-card__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
 				<?php if ( $show_quantity && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() ) : ?>
-					<input class="product-card__quantity" type="number" min="1" step="1" value="1" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Кількість товару: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>" data-product-card-quantity>
+					<input class="product-card__quantity" type="number" min="1" step="1" value="1" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Product quantity: %s', 'kanapka-theme' ), $product->get_name() ) ); ?>" data-product-card-quantity>
 				<?php endif; ?>
 			</div>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>

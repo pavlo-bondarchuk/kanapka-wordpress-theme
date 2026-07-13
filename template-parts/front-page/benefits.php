@@ -38,7 +38,7 @@ if ( empty( $section['title'] ) && empty( $section['items'] ) ) {
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<button class="order-benefits__next" type="button" aria-label="<?php esc_attr_e( 'Показати наступну перевагу', 'kanapka-theme' ); ?>" data-order-benefits-next>
+				<button class="order-benefits__next" type="button" aria-label="<?php esc_attr_e( 'Show next benefit', 'kanapka-theme' ); ?>" data-order-benefits-next>
 					<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 				</button>
 			</div>

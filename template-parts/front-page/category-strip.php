@@ -11,7 +11,7 @@ if ( ! $categories ) {
 	return;
 }
 ?>
-<section class="category-strip container" aria-label="<?php esc_attr_e( 'Популярні категорії', 'kanapka-theme' ); ?>" data-category-strip>
+<section class="category-strip container" aria-label="<?php esc_attr_e( 'Popular categories', 'kanapka-theme' ); ?>" data-category-strip>
 	<div class="category-strip__track" data-category-strip-track>
 		<?php
 		foreach ( $categories as $category ) {
@@ -20,7 +20,7 @@ if ( ! $categories ) {
 		?>
 	</div>
 	<?php if ( count( $categories ) > 5 ) : ?>
-		<button class="category-strip__arrow" type="button" aria-label="<?php esc_attr_e( 'Показати наступні категорії', 'kanapka-theme' ); ?>" data-category-strip-next>
+		<button class="category-strip__arrow" type="button" aria-label="<?php esc_attr_e( 'Show next categories', 'kanapka-theme' ); ?>" data-category-strip-next>
 			<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 		</button>
 	<?php endif; ?>

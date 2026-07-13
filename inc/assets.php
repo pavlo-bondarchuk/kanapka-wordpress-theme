@@ -52,6 +52,15 @@ function kanapka_theme_enqueue_assets() {
 		true
 	);
 
+	wp_localize_script(
+		'kanapka-theme-navigation',
+		'kanapkaNavigation',
+		array(
+			'openSubmenuLabel'  => __( 'Open submenu', 'kanapka-theme' ),
+			'closeSubmenuLabel' => __( 'Close submenu', 'kanapka-theme' ),
+		)
+	);
+
 	wp_enqueue_script(
 		'kanapka-theme-mega-menu',
 		get_theme_file_uri( '/assets/js/components/mega-menu.js' ),
@@ -116,6 +125,15 @@ function kanapka_theme_enqueue_assets() {
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/home-seo.js' ),
 			true
+		);
+
+		wp_localize_script(
+			'kanapka-theme-home-seo',
+			'kanapkaHomeSeo',
+			array(
+				'showMoreLabel' => __( 'Show more', 'kanapka-theme' ),
+				'showLessLabel' => __( 'Show less', 'kanapka-theme' ),
+			)
 		);
 
 		wp_enqueue_script(
@@ -248,9 +266,9 @@ function kanapka_theme_quick_view_script_data() {
 		'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
 		'wcAjaxUrl'    => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( '%%endpoint%%' ) : '',
 		'nonce'        => wp_create_nonce( 'kanapka_product_quick_view' ),
-		'loadingLabel' => __( 'Завантаження…', 'kanapka-theme' ),
-		'errorLabel'   => __( 'Не вдалося завантажити товар.', 'kanapka-theme' ),
-		'addedLabel'   => __( 'Додано в кошик', 'kanapka-theme' ),
+		'loadingLabel' => __( 'Loading…', 'kanapka-theme' ),
+		'errorLabel'   => __( 'Could not load the product.', 'kanapka-theme' ),
+		'addedLabel'   => __( 'Added to cart', 'kanapka-theme' ),
 		'loadingIcon'  => kanapka_theme_ui_icon( 'loader-circle', 18 ),
 		'successIcon'  => kanapka_theme_ui_icon( 'circle-check', 18 ),
 	);

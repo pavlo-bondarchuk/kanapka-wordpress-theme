@@ -14,10 +14,10 @@ if ( ! $products ) {
 <section class="home-section section popular-products" aria-labelledby="popular-products-title" data-product-slider>
 	<div class="container">
 		<div class="section-heading">
-			<h2 id="popular-products-title"><?php esc_html_e( 'Часто замовляють', 'kanapka-theme' ); ?></h2>
+			<h2 id="popular-products-title"><?php esc_html_e( 'Frequently ordered', 'kanapka-theme' ); ?></h2>
 		</div>
 		<div class="popular-products__carousel">
-			<button class="popular-products__arrow popular-products__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Попередні товари', 'kanapka-theme' ); ?>" data-product-slider-previous>
+			<button class="popular-products__arrow popular-products__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous products', 'kanapka-theme' ); ?>" data-product-slider-previous>
 				<?php echo kanapka_theme_ui_icon( 'chevron-left', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 			<div class="popular-products__viewport">
@@ -29,7 +29,7 @@ if ( ! $products ) {
 					?>
 				</div>
 			</div>
-			<button class="popular-products__arrow popular-products__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Наступні товари', 'kanapka-theme' ); ?>" data-product-slider-next>
+			<button class="popular-products__arrow popular-products__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next products', 'kanapka-theme' ); ?>" data-product-slider-next>
 				<?php echo kanapka_theme_ui_icon( 'chevron-right', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 		</div>

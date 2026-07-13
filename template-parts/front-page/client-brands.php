@@ -14,10 +14,10 @@ if ( ! $brands ) {
 <section class="home-section section client-brands" aria-labelledby="client-brands-title" data-logo-slider>
 	<div class="container">
 		<div class="section-heading">
-			<h2 id="client-brands-title"><?php esc_html_e( 'Наші клієнти', 'kanapka-theme' ); ?></h2>
+			<h2 id="client-brands-title"><?php esc_html_e( 'Our clients', 'kanapka-theme' ); ?></h2>
 		</div>
 		<div class="client-brands__carousel">
-			<button class="client-brands__arrow client-brands__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Попередні клієнти', 'kanapka-theme' ); ?>" data-logo-slider-previous>
+			<button class="client-brands__arrow client-brands__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous clients', 'kanapka-theme' ); ?>" data-logo-slider-previous>
 				<?php echo kanapka_theme_ui_icon( 'chevron-left', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 			<div class="client-brands__viewport">
@@ -39,7 +39,7 @@ if ( ! $brands ) {
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<button class="client-brands__arrow client-brands__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Наступні клієнти', 'kanapka-theme' ); ?>" data-logo-slider-next>
+			<button class="client-brands__arrow client-brands__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next clients', 'kanapka-theme' ); ?>" data-logo-slider-next>
 				<?php echo kanapka_theme_ui_icon( 'chevron-right', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 		</div>

@@ -60,7 +60,7 @@
 		document.body.classList.add( 'has-product-quick-view' );
 		content.replaceChildren();
 		status.hidden = false;
-		status.textContent = config.loadingLabel || 'Завантаження…';
+		status.textContent = config.loadingLabel || 'Loading…';
 		dialog.focus();
 
 		controller = new AbortController();
@@ -98,7 +98,7 @@
 			content.querySelector( 'a, button, input' )?.focus();
 		} catch ( error ) {
 			if ( 'AbortError' !== error.name ) {
-				status.textContent = config.errorLabel || 'Не вдалося завантажити товар.';
+				status.textContent = config.errorLabel || 'Could not load the product.';
 			}
 		} finally {
 			controller = null;
@@ -131,7 +131,7 @@
 
 			addToCart.classList.add( 'is-loading' );
 			addToCart.setAttribute( 'aria-disabled', 'true' );
-			setCartButtonState( addToCart, config.loadingIcon, config.loadingLabel || 'Завантаження…' );
+			setCartButtonState( addToCart, config.loadingIcon, config.loadingLabel || 'Loading…' );
 
 			window.fetch( endpoint, {
 				method: 'POST',
@@ -150,7 +150,7 @@
 				} );
 
 				addToCart.classList.add( 'is-added' );
-				setCartButtonState( addToCart, config.successIcon, config.addedLabel || 'Додано в кошик' );
+				setCartButtonState( addToCart, config.successIcon, config.addedLabel || 'Added to cart' );
 			} ).catch( () => {
 				addToCart.innerHTML = originalMarkup;
 			} ).finally( () => {

@@ -19,9 +19,9 @@
 		</div>
 		<?php
 		$footer_menus = array(
-			'footer-1' => array( 'title' => __( 'Компанія', 'kanapka-theme' ), 'menu' => 'Footer menu 1' ),
-			'footer-2' => array( 'title' => __( 'Каталог', 'kanapka-theme' ), 'menu' => 'Footer menu 2' ),
-			'footer-3' => array( 'title' => __( 'Покупцям', 'kanapka-theme' ), 'menu' => 'Footer menu 3' ),
+			'footer-1' => array( 'title' => __( 'Company', 'kanapka-theme' ), 'menu' => 'Footer menu 1' ),
+			'footer-2' => array( 'title' => __( 'Catalogue', 'kanapka-theme' ), 'menu' => 'Footer menu 2' ),
+			'footer-3' => array( 'title' => __( 'For customers', 'kanapka-theme' ), 'menu' => 'Footer menu 3' ),
 		);
 		foreach ( $footer_menus as $location => $footer_menu ) :
 			?>
@@ -41,7 +41,7 @@
 			</nav>
 		<?php endforeach; ?>
 		<div class="site-footer__contact">
-			<h2><?php esc_html_e( 'Контакти', 'kanapka-theme' ); ?></h2>
+			<h2><?php esc_html_e( 'Contacts', 'kanapka-theme' ); ?></h2>
 			<?php $footer_phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
 			<?php $footer_phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
 			<?php $contact_email = kanapka_theme_get_option( 'kanapka_contact_email', get_option( 'admin_email' ) ); ?>
@@ -54,7 +54,7 @@
 		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></p>
 		<?php $payment_logos_id = absint( kanapka_theme_get_option( 'kanapka_footer_payment_logos', 0 ) ); ?>
 		<?php if ( $payment_logos_id ) : ?>
-			<?php echo wp_get_attachment_image( $payment_logos_id, 'medium', false, array( 'alt' => __( 'Платіжні системи', 'kanapka-theme' ), 'loading' => 'lazy', 'class' => 'site-footer__payment-logos' ) ); ?>
+			<?php echo wp_get_attachment_image( $payment_logos_id, 'medium', false, array( 'alt' => __( 'Payment methods', 'kanapka-theme' ), 'loading' => 'lazy', 'class' => 'site-footer__payment-logos' ) ); ?>
 		<?php endif; ?>
 	</div>
 </footer>

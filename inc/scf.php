@@ -17,8 +17,8 @@ function kanapka_theme_register_options_page() {
 
 	acf_add_options_page(
 		array(
-			'page_title' => __( 'Налаштування теми Kanapka', 'kanapka-theme' ),
-			'menu_title' => __( 'Налаштування теми', 'kanapka-theme' ),
+			'page_title' => __( 'Kanapka theme settings', 'kanapka-theme' ),
+			'menu_title' => __( 'Theme settings', 'kanapka-theme' ),
 			'menu_slug'  => 'kanapka-theme-settings',
 			'capability' => 'manage_options',
 			'redirect'   => false,
@@ -87,15 +87,15 @@ function kanapka_theme_migrate_legacy_options() {
 	}
 
 	if ( $migration_version < 2 ) {
-		update_field( 'field_kanapka_order_label', __( 'Прийом замовлень', 'kanapka-theme' ), 'option' );
-		update_field( 'field_kanapka_header_work_hours', get_option( 'oxy_contact_hours1', "Прийом замовлень online 24/7\nМенеджером з 9:00 до 18:00" ), 'option' );
+		update_field( 'field_kanapka_order_label', __( 'Order reception', 'kanapka-theme' ), 'option' );
+		update_field( 'field_kanapka_header_work_hours', get_option( 'oxy_contact_hours1', "Online orders accepted 24/7\nManager available from 9:00 to 18:00" ), 'option' );
 		update_field( 'field_kanapka_contact_menu_enabled', ! empty( $legacy_settings['oxy_menu_contacts_block_status'] ) ? 1 : 0, 'option' );
 		update_field( 'field_kanapka_contact_menu_parent_page', absint( $legacy_settings['oxy_menu_contacts_page'] ?? 0 ), 'option' );
-		update_field( 'field_kanapka_contact_column_title', $legacy_settings['oxy_contacts_title1'] ?? __( 'Контакти', 'kanapka-theme' ), 'option' );
-		update_field( 'field_kanapka_contact_address_one', $legacy_settings['oxy_contact_location1'] ?? __( 'м. Київ', 'kanapka-theme' ), 'option' );
+		update_field( 'field_kanapka_contact_column_title', $legacy_settings['oxy_contacts_title1'] ?? __( 'Contacts', 'kanapka-theme' ), 'option' );
+		update_field( 'field_kanapka_contact_address_one', $legacy_settings['oxy_contact_location1'] ?? __( 'Kyiv', 'kanapka-theme' ), 'option' );
 		update_field( 'field_kanapka_contact_address_two', $legacy_settings['oxy_contact_location2'] ?? '', 'option' );
-		update_field( 'field_kanapka_contact_hours_title', __( 'Замовлення приймаються', 'kanapka-theme' ), 'option' );
-		update_field( 'field_kanapka_contact_button_label', __( 'Контактна форма', 'kanapka-theme' ), 'option' );
+		update_field( 'field_kanapka_contact_hours_title', __( 'Orders are accepted', 'kanapka-theme' ), 'option' );
+		update_field( 'field_kanapka_contact_button_label', __( 'Contact form', 'kanapka-theme' ), 'option' );
 		update_field( 'field_kanapka_contact_button_url', get_permalink( absint( $legacy_settings['oxy_menu_contacts_page'] ?? 0 ) ), 'option' );
 	}
 

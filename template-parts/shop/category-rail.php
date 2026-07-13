@@ -17,7 +17,7 @@ if ( ! $categories ) {
 	return;
 }
 ?>
-<section class="catalogue-category-rail container" aria-label="<?php esc_attr_e( 'Підкатегорії', 'kanapka-theme' ); ?>" data-category-strip>
+<section class="catalogue-category-rail container" aria-label="<?php esc_attr_e( 'Subcategories', 'kanapka-theme' ); ?>" data-category-strip>
 	<div class="catalogue-category-rail__track" data-category-strip-track>
 		<?php foreach ( $categories as $category ) : ?>
 			<?php
@@ -41,7 +41,7 @@ if ( ! $categories ) {
 			</a>
 		<?php endforeach; ?>
 	</div>
-	<button class="catalogue-category-rail__arrow" type="button" aria-label="<?php esc_attr_e( 'Показати наступні категорії', 'kanapka-theme' ); ?>" data-category-strip-next>
+	<button class="catalogue-category-rail__arrow" type="button" aria-label="<?php esc_attr_e( 'Show next categories', 'kanapka-theme' ); ?>" data-category-strip-next>
 		<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 	</button>
 </section>

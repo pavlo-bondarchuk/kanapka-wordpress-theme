@@ -20,7 +20,7 @@ if ( ! $section['title'] && ! $section['text'] ) {
 					<?php echo wp_kses_post( wpautop( $section['text'] ) ); ?>
 				</div>
 				<button class="home-seo__toggle" type="button" aria-expanded="false" aria-controls="home-seo-text" data-home-seo-toggle>
-					<span data-home-seo-toggle-label><?php esc_html_e( 'Показати більше', 'kanapka-theme' ); ?></span>
+					<span data-home-seo-toggle-label><?php esc_html_e( 'Show more', 'kanapka-theme' ); ?></span>
 					<?php echo kanapka_theme_ui_icon( 'chevron-right', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 				</button>
 			<?php endif; ?>

@@ -14,18 +14,18 @@ $selected_min_price = '' !== $min_price ? max( 0, (int) $min_price ) : 0;
 $selected_max_price = '' !== $max_price ? min( $price_limit, (int) $max_price ) : $price_limit;
 $visible_category_limit = 8;
 ?>
-<aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Фільтри каталогу', 'kanapka-theme' ); ?>">
-	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php esc_attr_e( 'Відкрити фільтри каталогу', 'kanapka-theme' ); ?>" data-close-label="<?php esc_attr_e( 'Закрити фільтри каталогу', 'kanapka-theme' ); ?>">
-		<span><?php esc_html_e( 'Фільтри каталогу', 'kanapka-theme' ); ?></span>
+<aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Catalogue filters', 'kanapka-theme' ); ?>">
+	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php esc_attr_e( 'Open catalogue filters', 'kanapka-theme' ); ?>" data-close-label="<?php esc_attr_e( 'Close catalogue filters', 'kanapka-theme' ); ?>">
+		<span><?php esc_html_e( 'Catalogue filters', 'kanapka-theme' ); ?></span>
 		<?php echo kanapka_theme_ui_icon( 'chevron-right', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 	</button>
 	<div class="catalogue-sidebar__content" id="catalogue-sidebar-content" data-catalogue-sidebar-content>
 	<?php if ( $categories ) : ?>
 		<section class="catalogue-panel">
-			<h2><?php esc_html_e( 'Категорії', 'kanapka-theme' ); ?></h2>
-			<nav class="catalogue-sidebar__categories" aria-label="<?php esc_attr_e( 'Категорії товарів', 'kanapka-theme' ); ?>">
+			<h2><?php esc_html_e( 'Categories', 'kanapka-theme' ); ?></h2>
+			<nav class="catalogue-sidebar__categories" aria-label="<?php esc_attr_e( 'Product categories', 'kanapka-theme' ); ?>">
 				<a class="catalogue-sidebar__category<?php echo is_shop() ? ' is-active' : ''; ?>" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>">
-					<span><?php esc_html_e( 'Усі категорії', 'kanapka-theme' ); ?></span>
+					<span><?php esc_html_e( 'All categories', 'kanapka-theme' ); ?></span>
 				</a>
 				<?php foreach ( $categories as $category_index => $category ) : ?>
 					<?php
@@ -42,8 +42,8 @@ $visible_category_limit = 8;
 				<?php endforeach; ?>
 			</nav>
 			<?php if ( count( $categories ) > $visible_category_limit ) : ?>
-				<button class="catalogue-sidebar__toggle" type="button" aria-expanded="false" data-catalogue-category-toggle data-show-label="<?php esc_attr_e( 'Показати всі категорії', 'kanapka-theme' ); ?>" data-hide-label="<?php esc_attr_e( 'Згорнути', 'kanapka-theme' ); ?>">
-					<span data-catalogue-category-toggle-label><?php esc_html_e( 'Показати всі категорії', 'kanapka-theme' ); ?></span>
+				<button class="catalogue-sidebar__toggle" type="button" aria-expanded="false" data-catalogue-category-toggle data-show-label="<?php esc_attr_e( 'Show all categories', 'kanapka-theme' ); ?>" data-hide-label="<?php esc_attr_e( 'Show less', 'kanapka-theme' ); ?>">
+					<span data-catalogue-category-toggle-label><?php esc_html_e( 'Show all categories', 'kanapka-theme' ); ?></span>
 					<?php echo kanapka_theme_ui_icon( 'chevron-right', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 				</button>
 			<?php endif; ?>
@@ -51,31 +51,31 @@ $visible_category_limit = 8;
 	<?php endif; ?>
 
 	<section class="catalogue-panel">
-		<h2><?php esc_html_e( 'Фільтр за ціною', 'kanapka-theme' ); ?></h2>
+		<h2><?php esc_html_e( 'Filter by price', 'kanapka-theme' ); ?></h2>
 		<form class="catalogue-price-filter" method="get" data-price-range-filter>
 			<div class="catalogue-price-filter__range" style="--range-start: 0%; --range-end: 100%;" data-price-range>
 				<div class="catalogue-price-filter__rail" aria-hidden="true"><span data-price-range-fill></span></div>
-				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_min_price ); ?>" aria-label="<?php esc_attr_e( 'Мінімальна ціна', 'kanapka-theme' ); ?>" data-price-range-min>
-				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_max_price ); ?>" aria-label="<?php esc_attr_e( 'Максимальна ціна', 'kanapka-theme' ); ?>" data-price-range-max>
+				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_min_price ); ?>" aria-label="<?php esc_attr_e( 'Minimum price', 'kanapka-theme' ); ?>" data-price-range-min>
+				<input type="range" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_max_price ); ?>" aria-label="<?php esc_attr_e( 'Maximum price', 'kanapka-theme' ); ?>" data-price-range-max>
 			</div>
 			<label>
-				<span><?php esc_html_e( 'від', 'kanapka-theme' ); ?></span>
+				<span><?php esc_html_e( 'from', 'kanapka-theme' ); ?></span>
 				<input type="number" name="min_price" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_min_price ); ?>" data-price-input-min>
 			</label>
 			<label>
-				<span><?php esc_html_e( 'до', 'kanapka-theme' ); ?></span>
+				<span><?php esc_html_e( 'to', 'kanapka-theme' ); ?></span>
 				<input type="number" name="max_price" min="0" max="<?php echo esc_attr( $price_limit ); ?>" step="1" value="<?php echo esc_attr( $selected_max_price ); ?>" data-price-input-max>
 			</label>
-			<button class="button" type="submit"><?php esc_html_e( 'Застосувати', 'kanapka-theme' ); ?></button>
+			<button class="button" type="submit"><?php esc_html_e( 'Apply', 'kanapka-theme' ); ?></button>
 			<?php if ( '' !== $min_price || '' !== $max_price ) : ?>
-				<a class="catalogue-price-filter__reset" href="<?php echo esc_url( strtok( home_url( add_query_arg( array() ) ), '?' ) ); ?>"><?php esc_html_e( 'Скинути фільтр', 'kanapka-theme' ); ?></a>
+				<a class="catalogue-price-filter__reset" href="<?php echo esc_url( strtok( home_url( add_query_arg( array() ) ), '?' ) ); ?>"><?php esc_html_e( 'Reset filter', 'kanapka-theme' ); ?></a>
 			<?php endif; ?>
 		</form>
 	</section>
 
 	<?php if ( $new_items ) : ?>
 		<section class="catalogue-panel">
-			<h2><?php esc_html_e( 'Новинки', 'kanapka-theme' ); ?></h2>
+			<h2><?php esc_html_e( 'New products', 'kanapka-theme' ); ?></h2>
 			<ul class="catalogue-new-products">
 				<?php foreach ( $new_items as $product ) : ?>
 					<li>

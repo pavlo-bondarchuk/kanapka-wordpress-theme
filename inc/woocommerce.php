@@ -54,12 +54,12 @@ add_filter( 'woocommerce_get_image_size_thumbnail', 'kanapka_theme_product_thumb
  */
 function kanapka_theme_catalogue_orderby_labels( $options ) {
 	$labels = array(
-		'menu_order' => __( 'За замовчуванням', 'kanapka-theme' ),
-		'popularity' => __( 'За популярністю', 'kanapka-theme' ),
-		'rating'     => __( 'За рейтингом', 'kanapka-theme' ),
-		'date'       => __( 'За новизною', 'kanapka-theme' ),
-		'price'      => __( 'За зростанням ціни', 'kanapka-theme' ),
-		'price-desc' => __( 'За спаданням ціни', 'kanapka-theme' ),
+		'menu_order' => __( 'Default sorting', 'kanapka-theme' ),
+		'popularity' => __( 'Most popular', 'kanapka-theme' ),
+		'rating'     => __( 'Top rated', 'kanapka-theme' ),
+		'date'       => __( 'Newest first', 'kanapka-theme' ),
+		'price'      => __( 'Price: low to high', 'kanapka-theme' ),
+		'price-desc' => __( 'Price: high to low', 'kanapka-theme' ),
 	);
 
 	foreach ( $options as $key => $label ) {
@@ -83,7 +83,7 @@ function kanapka_theme_product_quick_view() {
 	$product    = wc_get_product( $product_id );
 
 	if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
-		wp_send_json_error( array( 'message' => __( 'Товар не знайдено.', 'kanapka-theme' ) ), 404 );
+		wp_send_json_error( array( 'message' => __( 'Product not found.', 'kanapka-theme' ) ), 404 );
 	}
 
 	$categories = wc_get_product_category_list( $product_id, ', ' );
@@ -103,16 +103,16 @@ function kanapka_theme_product_quick_view() {
 			<?php endif; ?>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' ) ) : ?>
 				<div class="product-quick-view__cart">
-					<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Кількість товару', 'kanapka-theme' ); ?>" data-quick-view-quantity>
+					<input class="product-quick-view__quantity" type="number" min="1" step="1" value="1" aria-label="<?php esc_attr_e( 'Product quantity', 'kanapka-theme' ); ?>" data-quick-view-quantity>
 					<a class="button add_to_cart_button product_type_simple" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product_id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" rel="nofollow" data-kanapka-add-to-cart data-quick-view-add-to-cart><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
 				</div>
 			<?php else : ?>
-				<a class="button" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Обрати варіант', 'kanapka-theme' ); ?></a>
+				<a class="button" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Select options', 'kanapka-theme' ); ?></a>
 			<?php endif; ?>
 			<?php if ( $categories ) : ?>
-				<div class="product-quick-view__categories"><strong><?php esc_html_e( 'Категорії:', 'kanapka-theme' ); ?></strong> <?php echo wp_kses_post( $categories ); ?></div>
+				<div class="product-quick-view__categories"><strong><?php esc_html_e( 'Categories:', 'kanapka-theme' ); ?></strong> <?php echo wp_kses_post( $categories ); ?></div>
 			<?php endif; ?>
-			<a class="product-quick-view__details" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Детальніше про товар', 'kanapka-theme' ); ?></a>
+			<a class="product-quick-view__details" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Product details', 'kanapka-theme' ); ?></a>
 		</div>
 	</div>
 	<?php
@@ -157,7 +157,7 @@ function kanapka_theme_mini_cart_item_quantity( $quantity_html, $cart_item, $car
 
 	return sprintf(
 		'<span class="header-mini-cart__item-meta"><label><span class="screen-reader-text">%1$s</span><input class="header-mini-cart__quantity" type="number" min="1" step="1" value="%2$d"%3$s inputmode="numeric" data-mini-cart-quantity data-cart-item-key="%4$s" data-previous-quantity="%2$d"></label><span class="header-mini-cart__unit-price">&times; %5$s</span><span class="header-mini-cart__line-total">%6$s</span></span>',
-		esc_html( sprintf( __( 'Кількість товару: %s', 'kanapka-theme' ), $product->get_name() ) ),
+		esc_html( sprintf( __( 'Product quantity: %s', 'kanapka-theme' ), $product->get_name() ) ),
 		$quantity,
 		$max_attribute,
 		esc_attr( $cart_item_key ),
@@ -179,7 +179,7 @@ function kanapka_theme_update_mini_cart_quantity() {
 	$product       = is_array( $cart_item ) && isset( $cart_item['data'] ) ? $cart_item['data'] : null;
 
 	if ( ! $product instanceof WC_Product || $quantity < 1 ) {
-		wp_send_json_error( array( 'message' => __( 'Не вдалося оновити кількість товару.', 'kanapka-theme' ) ), 400 );
+		wp_send_json_error( array( 'message' => __( 'Could not update the product quantity.', 'kanapka-theme' ) ), 400 );
 	}
 
 	$max_quantity = $product->get_max_purchase_quantity();
@@ -189,7 +189,7 @@ function kanapka_theme_update_mini_cart_quantity() {
 	}
 
 	if ( ! WC()->cart->set_quantity( $cart_item_key, $quantity, true ) ) {
-		wp_send_json_error( array( 'message' => __( 'Не вдалося оновити кількість товару.', 'kanapka-theme' ) ), 400 );
+		wp_send_json_error( array( 'message' => __( 'Could not update the product quantity.', 'kanapka-theme' ) ), 400 );
 	}
 
 	ob_start();
@@ -230,7 +230,7 @@ function kanapka_theme_mini_cart_product_name( $product_name ) {
 function kanapka_theme_mini_cart_remove_link( $remove_link ) {
 	$remove_content = sprintf(
 		'<span class="header-mini-cart__remove-label">%1$s</span><span aria-hidden="true">&times;</span>',
-		esc_html__( 'Видалити', 'kanapka-theme' )
+		esc_html__( 'Remove', 'kanapka-theme' )
 	);
 
 	return str_replace( '&times;</a>', $remove_content . '</a>', $remove_link );

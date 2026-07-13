@@ -13,7 +13,7 @@ if (! $categories) {
 }
 ?>
 <div class="catalogue-toolbar">
-	<p><?php echo esc_html(sprintf(_n('Показано %s категорію', 'Показано %s категорій', count($categories), 'kanapka-theme'), number_format_i18n(count($categories)))); ?></p>
+	<p><?php echo esc_html(sprintf(_n('Showing %s category', 'Showing %s categories', count($categories), 'kanapka-theme'), number_format_i18n(count($categories)))); ?></p>
 </div>
 <div class="catalogue-category-grid">
 	<?php foreach ($categories as $category) : ?>

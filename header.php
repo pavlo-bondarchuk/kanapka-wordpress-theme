@@ -14,12 +14,12 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<a class="skip-link" href="#main-content"><?php esc_html_e( 'Перейти до вмісту', 'kanapka-theme' ); ?></a>
+<a class="skip-link" href="#main-content"><?php esc_html_e( 'Skip to content', 'kanapka-theme' ); ?></a>
 <header class="site-header" data-site-header>
 	<div class="header-top-bar">
 		<div class="header-top-bar__inner container">
 			<?php get_template_part( 'template-parts/header/language-switcher', null, array( 'variant' => 'top-bar' ) ); ?>
-			<nav class="header-top-navigation" aria-label="<?php esc_attr_e( 'Додаткова навігація', 'kanapka-theme' ); ?>">
+			<nav class="header-top-navigation" aria-label="<?php esc_attr_e( 'Secondary navigation', 'kanapka-theme' ); ?>">
 				<?php
 				wp_nav_menu(
 					array(
@@ -52,7 +52,7 @@
 		</div>
 
 		<button class="navigation-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-navigation-toggle>
-			<span class="screen-reader-text"><?php esc_html_e( 'Перемкнути навігацію', 'kanapka-theme' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation', 'kanapka-theme' ); ?></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
@@ -76,7 +76,7 @@
 
 		<div class="header-actions">
 			<div class="header-contact">
-				<span><?php echo esc_html( kanapka_theme_get_option( 'kanapka_header_order_label', __( 'Прийом замовлень', 'kanapka-theme' ) ) ); ?></span>
+				<span><?php echo esc_html( kanapka_theme_get_option( 'kanapka_header_order_label', __( 'Order reception', 'kanapka-theme' ) ) ); ?></span>
 				<?php $phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
 				<?php $phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_one ) ); ?>"><?php echo esc_html( $phone_one ); ?></a>

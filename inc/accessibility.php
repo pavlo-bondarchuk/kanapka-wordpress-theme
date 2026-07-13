@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function kanapka_theme_nav_attributes( $attributes, $args ) {
 	if ( isset( $args->theme_location ) && 'primary' === $args->theme_location ) {
-		$attributes['aria-label'] = __( 'Основна навігація', 'kanapka-theme' );
+		$attributes['aria-label'] = __( 'Primary navigation', 'kanapka-theme' );
 	}
 
 	return $attributes;

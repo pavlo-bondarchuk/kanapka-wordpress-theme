@@ -1,281 +1,497 @@
-#, fuzzy
+# Copyright (C) 2026 Kanapka
+# This file is distributed under the same license as the Kanapka Theme theme.
 msgid ""
 msgstr ""
-"Project-Id-Version: Kanapka Theme\n"
+"Project-Id-Version: Kanapka Theme 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-11 12:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.6; wp-7.0.1; php-8.3.30\n"
-"X-Domain: kanapka-theme"
+"POT-Creation-Date: 2026-07-13T09:55:01+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: kanapka-theme\n"
 
-#: template-parts/front-page/hero.php:43
-#, php-format
-msgid "%1$d of %2$d"
-msgstr ""
-
-#. %s is the number of products in the cart.
-#: template-parts/header/cart-link.php:27
-#, php-format
-msgid "%s product"
-msgid_plural "%s products"
-msgstr[0] ""
-msgstr[1] ""
-
-#: template-parts/front-page/services.php:11
-msgid "A complete celebration menu prepared and delivered on time."
-msgstr ""
-
-#: template-parts/front-page/services.php:9
-msgid "A flexible menu for business and private events."
-msgstr ""
-
-#: template-parts/front-page/benefits.php:10
-msgid "A varied menu"
-msgstr ""
-
-#: template-parts/header/contact-mega-menu.php:24
-msgid "Address"
-msgstr ""
-
-#: template-parts/front-page/services.php:11
-msgid "Banquets"
-msgstr ""
-
-#: inc/home.php:136
-msgid "Browse catalogue"
-msgstr ""
-
-#: template-parts/front-page/services.php:9
-msgid "Buffet catering"
-msgstr ""
-
-#: template-parts/front-page/delivery-intro.php:12
-msgid "Canapé, appetizer and buffet delivery in Kyiv"
-msgstr ""
-
-#: inc/home.php:135
-msgid ""
-"Canapés, appetizers and buffet sets made from fresh ingredients and "
-"delivered at the right time."
-msgstr ""
-
-#: template-parts/front-page/hero.php:35
-msgid "carousel"
-msgstr ""
-
-#: template-parts/header/cart-link.php:22
-msgid "Cart"
-msgstr ""
-
-#: template-parts/header/cart-link.php:15
-msgid "Cart, %d items"
-msgstr ""
-
-#: footer.php:18
-msgid "Catalogue"
-msgstr ""
-
-#: template-parts/front-page/hero.php:101
-msgid "Choose slide"
-msgstr ""
-
-#: template-parts/front-page/benefits.php:12
-msgid "Clear discounts"
-msgstr ""
-
-#: template-parts/front-page/delivery-intro.php:18
-msgid "Clear portions and prices"
-msgstr ""
-
-#: template-parts/header/cart-link.php:33
-msgid "Close cart"
-msgstr ""
-
-#: template-parts/header/search-popup.php:15
-msgid "Close search"
-msgstr ""
-
-#: template-parts/front-page/services.php:10
-msgid "Coffee breaks"
-msgstr ""
-
-#: footer.php:17
-msgid "Company"
-msgstr ""
-
-#: template-parts/header/contact-mega-menu.php:31
-msgid "Contact form"
-msgstr ""
-
-#: template-parts/header/contact-mega-menu.php:16
-msgid "Contact information"
-msgstr ""
-
-#: footer.php:39 template-parts/header/contact-mega-menu.php:18
-msgid "Contacts"
-msgstr ""
-
-#: template-parts/front-page/services.php:10
-msgid "Convenient sets for conferences, meetings and presentations."
-msgstr ""
-
-#: footer.php:19
-msgid "Customers"
-msgstr ""
-
-#: template-parts/front-page/hero.php:88
-msgid "Delivery benefits"
-msgstr ""
-
-#: template-parts/front-page/benefits.php:14
-msgid "Easy online ordering"
-msgstr ""
-
-#: inc/home.php:177 template-parts/front-page/benefits.php:11
-msgid "Fast delivery"
-msgstr ""
-
-#: template-parts/front-page/hero.php:35
-msgid "Featured offers"
-msgstr ""
-
-#: inc/menus.php:17
-msgid "Footer column one"
-msgstr ""
-
-#: inc/menus.php:19
-msgid "Footer column three"
-msgstr ""
-
-#: inc/menus.php:18
-msgid "Footer column two"
-msgstr ""
-
-#: inc/home.php:173
-msgid "For qualifying Kyiv orders"
-msgstr ""
-
-#: inc/home.php:172
-msgid "Free delivery"
-msgstr ""
-
-#: template-parts/front-page/popular-products.php:17
-msgid "Frequently ordered"
-msgstr ""
-
-#: template-parts/front-page/delivery-intro.php:16
-msgid "Fresh preparation"
-msgstr ""
-
-#: inc/home.php:182 template-parts/front-page/benefits.php:9
-msgid "Fresh products"
-msgstr ""
-
-#: template-parts/front-page/hero.php:103
-msgid "Go to slide %d"
-msgstr ""
-
-#: template-parts/front-page/delivery-intro.php:19
-msgid "Help choosing a menu"
-msgstr ""
-
-#. URI of the theme
-msgid "https://kanapka.kiev.ua/"
-msgstr ""
-
-#. Author of the theme
-msgid "Kanapka"
-msgstr ""
-
-#: template-parts/front-page/delivery-intro.php:11
-msgid "Kanapka catering"
-msgstr ""
-
-#. Name of the theme
+#. Theme Name of the theme
+#: style.css
 msgid "Kanapka Theme"
 msgstr ""
 
-#: inc/scf.php:20
-msgid "Kanapka Theme Settings"
-msgstr ""
-
-#: template-parts/header/contact-mega-menu.php:11
-msgid "Kyiv"
-msgstr ""
-
-#: template-parts/header/language-switcher.php:33
-msgid "Language"
-msgstr ""
-
-#: template-parts/front-page/services.php:23
-msgid "Learn more"
+#. Theme URI of the theme
+#: style.css
+msgid "https://kanapka.kiev.ua/"
 msgstr ""
 
 #. Description of the theme
+#: style.css
 msgid "Lightweight modular WooCommerce theme for Kanapka."
 msgstr ""
 
-#: template-parts/front-page/hero.php:83
-msgid "Next slide"
+#. Author of the theme
+#: style.css
+msgid "Kanapka"
 msgstr ""
 
-#: inc/home.php:178
-msgid "On the order day"
+#: footer.php:22
+msgid "Company"
 msgstr ""
 
-#: template-parts/front-page/delivery-intro.php:13
-msgid ""
-"Order ready-made sets for an office meeting, birthday, reception or family "
-"celebration. We prepare food shortly before dispatch and deliver it in "
-"presentation-ready packaging."
+#: footer.php:23
+msgid "Catalogue"
 msgstr ""
 
-#: header.php:60
-msgid "Order support"
+#: footer.php:24
+msgid "For customers"
 msgstr ""
 
-#: template-parts/header/contact-mega-menu.php:27
-msgid "Orders are accepted"
+#: footer.php:44
+#: inc/scf.php:94
+#: template-parts/header/contact-mega-menu.php:18
+msgid "Contacts"
 msgstr ""
 
-#: template-parts/front-page/category-strip.php:14
-msgid "Popular categories"
+#: footer.php:57
+msgid "Payment methods"
 msgstr ""
 
-#: inc/home.php:183
-msgid "Premium quality"
+#: header.php:17
+msgid "Skip to content"
 msgstr ""
 
-#: template-parts/front-page/hero.php:80
-msgid "Previous slide"
+#: header.php:22
+msgid "Secondary navigation"
 msgstr ""
 
-#: inc/accessibility.php:19 inc/menus.php:16
+#: header.php:55
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:79
+#: inc/scf.php:90
+msgid "Order reception"
+msgstr ""
+
+#: inc/accessibility.php:19
+#: inc/menus.php:16
 msgid "Primary navigation"
 msgstr ""
 
-#: template-parts/front-page/category-catalogue.php:17
-msgid "Product catalogue"
+#: inc/assets.php:59
+msgid "Open submenu"
 msgstr ""
 
-#: template-parts/header/category-mega-menu.php:11
-msgid "Product categories"
+#: inc/assets.php:60
+msgid "Close submenu"
+msgstr ""
+
+#: inc/assets.php:134
+#: template-parts/front-page/delivery-intro.php:23
+msgid "Show more"
+msgstr ""
+
+#: inc/assets.php:135
+#: template-parts/shop/sidebar.php:45
+msgid "Show less"
+msgstr ""
+
+#: inc/assets.php:269
+#: template-parts/components/product-quick-view.php:12
+msgid "Loading…"
+msgstr ""
+
+#: inc/assets.php:270
+msgid "Could not load the product."
+msgstr ""
+
+#: inc/assets.php:271
+msgid "Added to cart"
+msgstr ""
+
+#: inc/brands.php:23
+#: inc/brands.php:31
+msgid "Brands"
+msgstr ""
+
+#: inc/brands.php:24
+msgid "Brand"
+msgstr ""
+
+#: inc/brands.php:25
+msgid "Search brands"
+msgstr ""
+
+#: inc/brands.php:26
+msgid "All brands"
+msgstr ""
+
+#: inc/brands.php:27
+msgid "Edit brand"
+msgstr ""
+
+#: inc/brands.php:28
+msgid "Update brand"
+msgstr ""
+
+#: inc/brands.php:29
+msgid "Add brand"
+msgstr ""
+
+#: inc/brands.php:30
+msgid "New brand name"
 msgstr ""
 
 #: inc/home.php:134
 msgid "Ready-made sets for every celebration"
 msgstr ""
 
-#: template-parts/front-page/delivery-intro.php:17
-msgid "Reliable delivery"
+#: inc/home.php:135
+msgid "Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time."
+msgstr ""
+
+#: inc/home.php:136
+msgid "Browse catalogue"
+msgstr ""
+
+#: inc/home.php:172
+msgid "Free delivery"
+msgstr ""
+
+#: inc/home.php:173
+msgid "For orders within Kyiv"
+msgstr ""
+
+#: inc/home.php:177
+msgid "Fast delivery"
+msgstr ""
+
+#: inc/home.php:178
+msgid "On the day of your order"
+msgstr ""
+
+#: inc/home.php:182
+#: inc/home.php:344
+msgid "Fresh ingredients"
+msgstr ""
+
+#: inc/home.php:183
+msgid "Premium quality"
+msgstr ""
+
+#: inc/home.php:224
+msgid "Canapé, appetizer and buffet set delivery in Kyiv"
+msgstr ""
+
+#: inc/home.php:225
+msgid "Order ready-made sets for an office meeting, birthday, buffet or family celebration. We prepare dishes shortly before dispatch and deliver them in presentable packaging."
+msgstr ""
+
+#: inc/home.php:230
+msgid "Only fresh ingredients"
+msgstr ""
+
+#: inc/home.php:235
+msgid "Personal approach"
+msgstr ""
+
+#: inc/home.php:240
+msgid "On-time delivery"
+msgstr ""
+
+#: inc/home.php:245
+msgid "Professional team"
+msgstr ""
+
+#: inc/home.php:250
+msgid "Wide selection and competitive prices"
+msgstr ""
+
+#: inc/home.php:339
+msgid "Discover the benefits of ordering office buffet catering from us!"
+msgstr ""
+
+#: inc/home.php:345
+msgid "We use only fresh, high-quality ingredients"
+msgstr ""
+
+#: inc/home.php:350
+msgid "Impressive selection"
+msgstr ""
+
+#: inc/home.php:351
+msgid "A wide selection of canapés, appetizers and sets"
+msgstr ""
+
+#: inc/home.php:356
+msgid "Free delivery on orders over UAH 5,000"
+msgstr ""
+
+#: inc/home.php:357
+msgid "Across Kyiv and the region at a convenient time"
+msgstr ""
+
+#: inc/home.php:362
+msgid "10% discount for collection"
+msgstr ""
+
+#: inc/home.php:363
+msgid "Collect your order and save"
+msgstr ""
+
+#: inc/home.php:368
+msgid "18 years on the market"
+msgstr ""
+
+#: inc/home.php:369
+msgid "Experience trusted by customers"
+msgstr ""
+
+#: inc/home.php:374
+msgid "Easy online ordering"
+msgstr ""
+
+#: inc/home.php:375
+msgid "Place your order online in just a few clicks"
+msgstr ""
+
+#: inc/menus.php:17
+msgid "Top bar"
+msgstr ""
+
+#: inc/menus.php:18
+msgid "First footer column"
+msgstr ""
+
+#: inc/menus.php:19
+msgid "Second footer column"
+msgstr ""
+
+#: inc/menus.php:20
+msgid "Third footer column"
+msgstr ""
+
+#: inc/scf.php:20
+msgid "Kanapka theme settings"
+msgstr ""
+
+#: inc/scf.php:21
+msgid "Theme settings"
+msgstr ""
+
+#: inc/scf.php:95
+#: template-parts/header/contact-mega-menu.php:11
+msgid "Kyiv"
+msgstr ""
+
+#: inc/scf.php:97
+#: template-parts/header/contact-mega-menu.php:27
+msgid "Orders are accepted"
+msgstr ""
+
+#: inc/scf.php:98
+#: template-parts/header/contact-mega-menu.php:31
+msgid "Contact form"
+msgstr ""
+
+#: inc/woocommerce.php:57
+msgid "Default sorting"
+msgstr ""
+
+#: inc/woocommerce.php:58
+msgid "Most popular"
+msgstr ""
+
+#: inc/woocommerce.php:59
+msgid "Top rated"
+msgstr ""
+
+#: inc/woocommerce.php:60
+msgid "Newest first"
+msgstr ""
+
+#: inc/woocommerce.php:61
+msgid "Price: low to high"
+msgstr ""
+
+#: inc/woocommerce.php:62
+msgid "Price: high to low"
+msgstr ""
+
+#: inc/woocommerce.php:86
+msgid "Product not found."
+msgstr ""
+
+#: inc/woocommerce.php:106
+msgid "Product quantity"
+msgstr ""
+
+#: inc/woocommerce.php:110
+msgid "Select options"
+msgstr ""
+
+#: inc/woocommerce.php:113
+msgid "Categories:"
+msgstr ""
+
+#: inc/woocommerce.php:115
+msgid "Product details"
+msgstr ""
+
+#: inc/woocommerce.php:160
+#: template-parts/components/product-card.php:34
+#, php-format
+msgid "Product quantity: %s"
+msgstr ""
+
+#: inc/woocommerce.php:182
+#: inc/woocommerce.php:192
+msgid "Could not update the product quantity."
+msgstr ""
+
+#: inc/woocommerce.php:233
+msgid "Remove"
+msgstr ""
+
+#: template-parts/components/product-card.php:20
+#, php-format
+msgid "Preview product: %s"
+msgstr ""
+
+#: template-parts/components/product-card.php:22
+msgid "Quick view"
+msgstr ""
+
+#: template-parts/components/product-quick-view.php:11
+msgid "Close product preview"
+msgstr ""
+
+#: template-parts/front-page/benefits.php:41
+msgid "Show next benefit"
+msgstr ""
+
+#: template-parts/front-page/category-catalogue.php:17
+#: template-parts/shop/hero.php:11
+#: woocommerce/archive-product.php:16
+msgid "Product catalogue"
+msgstr ""
+
+#: template-parts/front-page/category-catalogue.php:18
+#: template-parts/shop/sidebar.php:28
+msgid "All categories"
+msgstr ""
+
+#: template-parts/front-page/category-strip.php:14
+msgid "Popular categories"
+msgstr ""
+
+#: template-parts/front-page/category-strip.php:23
+#: template-parts/shop/category-rail.php:44
+msgid "Show next categories"
+msgstr ""
+
+#: template-parts/front-page/client-brands.php:17
+msgid "Our clients"
+msgstr ""
+
+#: template-parts/front-page/client-brands.php:20
+msgid "Previous clients"
+msgstr ""
+
+#: template-parts/front-page/client-brands.php:42
+msgid "Next clients"
+msgstr ""
+
+#: template-parts/front-page/hero.php:17
+msgid "carousel"
+msgstr ""
+
+#: template-parts/front-page/hero.php:17
+msgid "Featured offers"
+msgstr ""
+
+#: template-parts/front-page/hero.php:25
+msgid "slide"
+msgstr ""
+
+#: template-parts/front-page/hero.php:25
+#, php-format
+msgid "%1$d of %2$d"
+msgstr ""
+
+#: template-parts/front-page/hero.php:72
+msgid "Previous slide"
+msgstr ""
+
+#: template-parts/front-page/hero.php:75
+msgid "Next slide"
+msgstr ""
+
+#: template-parts/front-page/hero.php:80
+msgid "Delivery benefits"
+msgstr ""
+
+#: template-parts/front-page/hero.php:93
+msgid "Slide selection"
+msgstr ""
+
+#: template-parts/front-page/hero.php:95
+#, php-format
+msgid "Go to slide %d"
+msgstr ""
+
+#: template-parts/front-page/popular-products.php:17
+msgid "Frequently ordered"
+msgstr ""
+
+#: template-parts/front-page/popular-products.php:20
+msgid "Previous products"
+msgstr ""
+
+#: template-parts/front-page/popular-products.php:32
+msgid "Next products"
+msgstr ""
+
+#: template-parts/front-page/services.php:17
+msgid "We organise everything for you"
+msgstr ""
+
+#: template-parts/header/cart-link.php:16
+#, php-format
+msgid "Cart, %d products"
+msgstr ""
+
+#: template-parts/header/cart-link.php:23
+msgid "Cart"
+msgstr ""
+
+#. translators: %s is the number of products in the cart.
+#: template-parts/header/cart-link.php:28
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/header/cart-link.php:34
+msgid "Close cart"
+msgstr ""
+
+#: template-parts/header/category-mega-menu.php:11
+#: template-parts/shop/sidebar.php:26
+msgid "Product categories"
+msgstr ""
+
+#: template-parts/header/contact-mega-menu.php:16
+msgid "Contact information"
+msgstr ""
+
+#: template-parts/header/contact-mega-menu.php:24
+msgid "Address"
+msgstr ""
+
+#: template-parts/header/language-switcher.php:35
+msgid "Language"
 msgstr ""
 
 #: template-parts/header/search-popup.php:9
@@ -285,61 +501,114 @@ msgstr ""
 
 #: template-parts/header/search-popup.php:14
 #: template-parts/header/search-popup.php:18
-msgid "Search products"
+msgid "Product search"
 msgstr ""
 
-#: header.php:17
-msgid "Skip to content"
-msgstr ""
-
-#: template-parts/front-page/hero.php:43
-msgid "slide"
-msgstr ""
-
-#: inc/scf.php:21
-msgid "Theme Settings"
-msgstr ""
-
-#: header.php:36
-msgid "Toggle navigation"
-msgstr ""
-
-#: template-parts/front-page/category-catalogue.php:18
-msgid "View all categories"
-msgstr ""
-
-#: template-parts/front-page/services.php:16
-msgid "We organise everything"
+#: template-parts/header/search-popup.php:15
+msgid "Close search"
 msgstr ""
 
 #: template-parts/header/search-popup.php:19
 msgid "What are you looking for?"
 msgstr ""
 
-#: template-parts/front-page/benefits.php:19
-msgid "Why customers choose Kanapka"
+#: template-parts/shop/category-grid.php:16
+#, php-format
+msgid "Showing %s category"
+msgid_plural "Showing %s categories"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/shop/category-rail.php:20
+msgid "Subcategories"
 msgstr ""
 
-#: template-parts/front-page/benefits.php:13
-msgid "Years of experience"
+#: template-parts/shop/hero.php:23
+msgid "Fresh dishes for buffets, office events and celebrations. Choose a category and order online."
 msgstr ""
 
-#: inc/scf.php:97
-msgid "Замовлення приймаються"
+#: template-parts/shop/hero.php:37
+msgid "Fresh and delicious dishes for every event. Choose from dozens of categories."
 msgstr ""
 
-#: inc/scf.php:94
-msgid "Контакти"
+#: template-parts/shop/product-loop.php:11
+msgid "Product view"
 msgstr ""
 
-#: inc/scf.php:98
-msgid "Контактна форма"
+#: template-parts/shop/product-loop.php:12
+msgid "Display:"
 msgstr ""
 
-#: inc/scf.php:90
-msgid "Прийом замовлень"
+#: template-parts/shop/product-loop.php:13
+msgid "Display as a list"
 msgstr ""
 
-#: inc/scf.php:95
-msgid "м. Київ"
+#: template-parts/shop/product-loop.php:16
+msgid "Display as a grid"
+msgstr ""
+
+#: template-parts/shop/product-loop.php:42
+msgid "No products found"
+msgstr ""
+
+#: template-parts/shop/product-loop.php:43
+msgid "Try changing the filters or return to all categories."
+msgstr ""
+
+#: template-parts/shop/product-loop.php:44
+msgid "Go to catalogue"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:17
+#: template-parts/shop/sidebar.php:19
+msgid "Catalogue filters"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:18
+msgid "Open catalogue filters"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:18
+msgid "Close catalogue filters"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:25
+msgid "Categories"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:45
+#: template-parts/shop/sidebar.php:46
+msgid "Show all categories"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:54
+msgid "Filter by price"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:58
+msgid "Minimum price"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:59
+msgid "Maximum price"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:62
+msgid "from"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:66
+msgid "to"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:69
+msgid "Apply"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:71
+msgid "Reset filter"
+msgstr ""
+
+#: template-parts/shop/sidebar.php:78
+msgid "New products"
 msgstr ""

@@ -13,11 +13,11 @@ defined( 'ABSPATH' ) || exit;
 function kanapka_theme_register_menus() {
 	register_nav_menus(
 		array(
-			'primary'  => __( 'Основна навігація', 'kanapka-theme' ),
-			'top-bar'  => __( 'Верхня смуга', 'kanapka-theme' ),
-			'footer-1' => __( 'Перший стовпець футера', 'kanapka-theme' ),
-			'footer-2' => __( 'Другий стовпець футера', 'kanapka-theme' ),
-			'footer-3' => __( 'Третій стовпець футера', 'kanapka-theme' ),
+			'primary'  => __( 'Primary navigation', 'kanapka-theme' ),
+			'top-bar'  => __( 'Top bar', 'kanapka-theme' ),
+			'footer-1' => __( 'First footer column', 'kanapka-theme' ),
+			'footer-2' => __( 'Second footer column', 'kanapka-theme' ),
+			'footer-3' => __( 'Third footer column', 'kanapka-theme' ),
 		)
 	);
 }

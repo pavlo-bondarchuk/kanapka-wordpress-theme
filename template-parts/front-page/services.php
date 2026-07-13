@@ -14,7 +14,7 @@ if ( ! $services ) {
 <section class="home-section section turnkey-services" aria-labelledby="services-title">
 	<div class="container">
 		<div class="section-heading">
-			<h2 id="services-title"><?php esc_html_e( 'Організуємо все під ключ', 'kanapka-theme' ); ?></h2>
+			<h2 id="services-title"><?php esc_html_e( 'We organise everything for you', 'kanapka-theme' ); ?></h2>
 		</div>
 		<div class="service-grid">
 			<?php foreach ( $services as $service ) : ?>

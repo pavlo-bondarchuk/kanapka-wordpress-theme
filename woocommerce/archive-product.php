@@ -13,7 +13,7 @@ get_header();
 	<?php get_template_part( 'template-parts/shop/hero' ); ?>
 	<?php get_template_part( 'template-parts/shop/category-rail' ); ?>
 
-	<section class="catalogue-layout container" aria-label="<?php esc_attr_e( 'Каталог товарів', 'kanapka-theme' ); ?>">
+	<section class="catalogue-layout container" aria-label="<?php esc_attr_e( 'Product catalogue', 'kanapka-theme' ); ?>">
 		<?php get_template_part( 'template-parts/shop/sidebar' ); ?>
 		<div class="catalogue-content">
 			<?php

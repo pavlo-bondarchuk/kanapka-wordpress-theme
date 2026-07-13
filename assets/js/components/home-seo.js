@@ -3,6 +3,7 @@
  */
 ( function () {
 	'use strict';
+	const config = window.kanapkaHomeSeo || {};
 
 	document.querySelectorAll( '[data-home-seo]' ).forEach( ( section ) => {
 		const button = section.querySelector( '[data-home-seo-toggle]' );
@@ -18,7 +19,9 @@
 
 			button.setAttribute( 'aria-expanded', isExpanded ? 'false' : 'true' );
 			section.classList.toggle( 'is-expanded', ! isExpanded );
-			label.textContent = isExpanded ? 'Показати більше' : 'Згорнути';
+			label.textContent = isExpanded
+				? ( config.showMoreLabel || 'Show more' )
+				: ( config.showLessLabel || 'Show less' );
 		} );
 	} );
 }() );

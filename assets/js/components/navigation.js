@@ -9,8 +9,9 @@
 	const submenuParents = navigation
 		? navigation.querySelectorAll('.menu-item-has-children, .menu-item-has-mega-menu, .menu-item-has-contact-menu')
 		: [];
-	const submenuLabel = 'Відкрити підменю';
-	const submenuCloseLabel = 'Закрити підменю';
+	const config = window.kanapkaNavigation || {};
+	const submenuLabel = config.openSubmenuLabel || 'Open submenu';
+	const submenuCloseLabel = config.closeSubmenuLabel || 'Close submenu';
 	let scrollPosition = 0;
 
 	if (!button || !navigation) {

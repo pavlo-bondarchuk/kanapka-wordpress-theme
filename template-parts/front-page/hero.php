@@ -14,7 +14,7 @@ if ( ! $slides ) {
 	return;
 }
 ?>
-<section class="home-hero" aria-roledescription="<?php esc_attr_e( 'карусель', 'kanapka-theme' ); ?>" aria-label="<?php esc_attr_e( 'Рекомендовані пропозиції', 'kanapka-theme' ); ?>" data-hero-slider data-autoplay-delay="<?php echo esc_attr( $autoplay_delay ); ?>">
+<section class="home-hero" aria-roledescription="<?php esc_attr_e( 'carousel', 'kanapka-theme' ); ?>" aria-label="<?php esc_attr_e( 'Featured offers', 'kanapka-theme' ); ?>" data-hero-slider data-autoplay-delay="<?php echo esc_attr( $autoplay_delay ); ?>">
 	<div class="home-hero__viewport">
 		<div class="home-hero__track">
 			<?php foreach ( $slides as $index => $slide ) : ?>
@@ -22,7 +22,7 @@ if ( ! $slides ) {
 				$is_active          = 0 === $index;
 				$is_primary_heading = 0 === $index;
 				?>
-				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'слайд', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d з %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
+				<article class="home-hero__slide<?php echo $is_active ? ' is-active' : ''; ?>" aria-roledescription="<?php esc_attr_e( 'slide', 'kanapka-theme' ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%1$d of %2$d', 'kanapka-theme' ), $index + 1, $slide_count ) ); ?>" aria-hidden="<?php echo $is_active ? 'false' : 'true'; ?>" data-hero-slide>
 					<?php
 					if ( $slide['image_id'] ) {
 						$mobile_srcset = wp_get_attachment_image_srcset( $slide['image_id'], 'kanapka-hero-mobile' );
@@ -69,15 +69,15 @@ if ( ! $slides ) {
 		</div>
 
 		<?php if ( $slide_count > 1 ) : ?>
-			<button class="home-hero__arrow home-hero__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Попередній слайд', 'kanapka-theme' ); ?>" data-hero-previous>
+			<button class="home-hero__arrow home-hero__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous slide', 'kanapka-theme' ); ?>" data-hero-previous>
 				<?php echo kanapka_theme_ui_icon( 'chevron-left', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
-			<button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Наступний слайд', 'kanapka-theme' ); ?>" data-hero-next>
+			<button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next slide', 'kanapka-theme' ); ?>" data-hero-next>
 				<?php echo kanapka_theme_ui_icon( 'chevron-right', 28 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 			</button>
 		<?php endif; ?>
 
-		<div class="home-hero__benefits container" aria-label="<?php esc_attr_e( 'Переваги доставки', 'kanapka-theme' ); ?>">
+		<div class="home-hero__benefits container" aria-label="<?php esc_attr_e( 'Delivery benefits', 'kanapka-theme' ); ?>">
 			<?php foreach ( $benefits as $benefit ) : ?>
 				<div class="home-hero__benefit">
 					<span class="home-hero__benefit-icon"><?php echo kanapka_theme_ui_icon( $benefit['icon'], 36 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?></span>
@@ -90,9 +90,9 @@ if ( ! $slides ) {
 		</div>
 
 		<?php if ( $slide_count > 1 ) : ?>
-			<div class="home-hero__pagination" aria-label="<?php esc_attr_e( 'Вибір слайда', 'kanapka-theme' ); ?>" data-hero-pagination>
+			<div class="home-hero__pagination" aria-label="<?php esc_attr_e( 'Slide selection', 'kanapka-theme' ); ?>" data-hero-pagination>
 				<?php foreach ( $slides as $index => $slide ) : ?>
-					<button type="button" aria-label="<?php echo esc_attr( sprintf( __( 'Перейти до слайда %d', 'kanapka-theme' ), $index + 1 ) ); ?>" aria-current="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-hero-dot="<?php echo esc_attr( $index ); ?>"></button>
+					<button type="button" aria-label="<?php echo esc_attr( sprintf( __( 'Go to slide %d', 'kanapka-theme' ), $index + 1 ) ); ?>" aria-current="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-hero-dot="<?php echo esc_attr( $index ); ?>"></button>
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>

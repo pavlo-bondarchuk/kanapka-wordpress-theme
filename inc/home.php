@@ -131,9 +131,9 @@ function kanapka_theme_get_home_hero_slides() {
 	return array(
 		array(
 			'image_id'      => kanapka_theme_get_hero_image_id(),
-			'title'         => __( 'Готові набори для будь-якого свята', 'kanapka-theme' ),
-			'text'          => __( 'Канапе, закуски та фуршетні набори зі свіжих продуктів з доставкою в потрібний час.', 'kanapka-theme' ),
-			'button_label'  => __( 'Перейти в каталог', 'kanapka-theme' ),
+			'title'         => __( 'Ready-made sets for every celebration', 'kanapka-theme' ),
+			'text'          => __( 'Canapés, appetizers and buffet sets made from fresh ingredients and delivered at the right time.', 'kanapka-theme' ),
+			'button_label'  => __( 'Browse catalogue', 'kanapka-theme' ),
 			'button_url'    => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
 			'button_target' => '_self',
 		),
@@ -169,18 +169,18 @@ function kanapka_theme_get_home_hero_benefits() {
 	return array(
 		array(
 			'icon'  => 'delivery',
-			'title' => __( 'Безкоштовна доставка', 'kanapka-theme' ),
-			'text'  => __( 'Для замовлень по Києву', 'kanapka-theme' ),
+			'title' => __( 'Free delivery', 'kanapka-theme' ),
+			'text'  => __( 'For orders within Kyiv', 'kanapka-theme' ),
 		),
 		array(
 			'icon'  => 'clock',
-			'title' => __( 'Швидка доставка', 'kanapka-theme' ),
-			'text'  => __( 'У день замовлення', 'kanapka-theme' ),
+			'title' => __( 'Fast delivery', 'kanapka-theme' ),
+			'text'  => __( 'On the day of your order', 'kanapka-theme' ),
 		),
 		array(
 			'icon'  => 'leaf',
-			'title' => __( 'Свіжі продукти', 'kanapka-theme' ),
-			'text'  => __( 'Преміальна якість', 'kanapka-theme' ),
+			'title' => __( 'Fresh ingredients', 'kanapka-theme' ),
+			'text'  => __( 'Premium quality', 'kanapka-theme' ),
 		),
 	);
 }
@@ -221,33 +221,33 @@ function kanapka_theme_get_home_seo_section() {
 	}
 
 	return array(
-		'title'    => __( 'Доставка канапе, закусок та фуршетних наборів у Києві', 'kanapka-theme' ),
-		'text'     => __( 'Замовляйте готові набори для офісної зустрічі, дня народження, фуршету чи сімейного свята. Ми готуємо страви незадовго до відправлення і доставляємо їх у презентабельному пакуванні.', 'kanapka-theme' ),
+		'title'    => __( 'Canapé, appetizer and buffet set delivery in Kyiv', 'kanapka-theme' ),
+		'text'     => __( 'Order ready-made sets for an office meeting, birthday, buffet or family celebration. We prepare dishes shortly before dispatch and deliver them in presentable packaging.', 'kanapka-theme' ),
 		'image_id' => kanapka_theme_get_hero_image_id(),
 		'benefits' => array(
 			array(
 				'icon'  => 'leaf',
-				'title' => __( 'Тільки свіжі продукти', 'kanapka-theme' ),
+				'title' => __( 'Only fresh ingredients', 'kanapka-theme' ),
 				'text'  => '',
 			),
 			array(
 				'icon'  => 'users',
-				'title' => __( 'Індивідуальний підхід', 'kanapka-theme' ),
+				'title' => __( 'Personal approach', 'kanapka-theme' ),
 				'text'  => '',
 			),
 			array(
 				'icon'  => 'delivery',
-				'title' => __( 'Пунктуальна доставка', 'kanapka-theme' ),
+				'title' => __( 'On-time delivery', 'kanapka-theme' ),
 				'text'  => '',
 			),
 			array(
 				'icon'  => 'sparkles',
-				'title' => __( 'Професійна команда', 'kanapka-theme' ),
+				'title' => __( 'Professional team', 'kanapka-theme' ),
 				'text'  => '',
 			),
 			array(
 				'icon'  => 'briefcase',
-				'title' => __( 'Великий вибір і вигідні ціни', 'kanapka-theme' ),
+				'title' => __( 'Wide selection and competitive prices', 'kanapka-theme' ),
 				'text'  => '',
 			),
 		),
@@ -336,43 +336,43 @@ function kanapka_theme_get_home_order_benefits() {
 	}
 
 	return array(
-		'title' => __( 'Оцініть переваги замовлення страв для фуршету в офіс у нашій компанії!', 'kanapka-theme' ),
+		'title' => __( 'Discover the benefits of ordering office buffet catering from us!', 'kanapka-theme' ),
 		'items' => array(
 			array(
 				'icon'  => 'leaf',
 				'color' => 'green',
-				'title' => __( 'Свіжі продукти', 'kanapka-theme' ),
-				'text'  => __( 'Ми використовуємо тільки свіжі та якісні інгредієнти', 'kanapka-theme' ),
+				'title' => __( 'Fresh ingredients', 'kanapka-theme' ),
+				'text'  => __( 'We use only fresh, high-quality ingredients', 'kanapka-theme' ),
 			),
 			array(
 				'icon'  => 'utensils',
 				'color' => 'red',
-				'title' => __( 'Вражаючий асортимент', 'kanapka-theme' ),
-				'text'  => __( 'Великий вибір канапе, закусок та наборів', 'kanapka-theme' ),
+				'title' => __( 'Impressive selection', 'kanapka-theme' ),
+				'text'  => __( 'A wide selection of canapés, appetizers and sets', 'kanapka-theme' ),
 			),
 			array(
 				'icon'  => 'delivery',
 				'color' => 'sky',
-				'title' => __( 'Безкоштовна доставка від 5000 грн', 'kanapka-theme' ),
-				'text'  => __( 'По Києву й області у зручний час', 'kanapka-theme' ),
+				'title' => __( 'Free delivery on orders over UAH 5,000', 'kanapka-theme' ),
+				'text'  => __( 'Across Kyiv and the region at a convenient time', 'kanapka-theme' ),
 			),
 			array(
 				'icon'  => 'percent',
 				'color' => 'orange',
-				'title' => __( 'Знижка 10% при самовивозі', 'kanapka-theme' ),
-				'text'  => __( 'Забирайте замовлення самостійно та заощаджуйте', 'kanapka-theme' ),
+				'title' => __( '10% discount for collection', 'kanapka-theme' ),
+				'text'  => __( 'Collect your order and save', 'kanapka-theme' ),
 			),
 			array(
 				'icon'  => 'star',
 				'color' => 'red',
-				'title' => __( '18 років на ринку', 'kanapka-theme' ),
-				'text'  => __( 'Досвід, якому довіряють клієнти', 'kanapka-theme' ),
+				'title' => __( '18 years on the market', 'kanapka-theme' ),
+				'text'  => __( 'Experience trusted by customers', 'kanapka-theme' ),
 			),
 			array(
 				'icon'  => 'cart',
 				'color' => 'blue',
-				'title' => __( 'Зручне онлайн-замовлення', 'kanapka-theme' ),
-				'text'  => __( 'Оформлюйте замовлення легко на сайті в кілька кліків', 'kanapka-theme' ),
+				'title' => __( 'Easy online ordering', 'kanapka-theme' ),
+				'text'  => __( 'Place your order online in just a few clicks', 'kanapka-theme' ),
 			),
 		),
 	);
