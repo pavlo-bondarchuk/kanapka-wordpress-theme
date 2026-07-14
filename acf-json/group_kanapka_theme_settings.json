@@ -236,7 +236,7 @@
             "name": "kanapka_ua_enabled",
             "type": "true_false",
             "ui": 1,
-            "default_value": 1
+            "default_value": 0
         },
         {
             "key": "field_kanapka_ua_id",

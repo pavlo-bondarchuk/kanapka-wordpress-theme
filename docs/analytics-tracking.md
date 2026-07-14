@@ -13,6 +13,14 @@ Tracking is owned by `inc/analytics.php` in `kanapka-theme`. Account identifiers
 
 Universal Analytics no longer processes new data. Configure GA4 or GTM when current Google Analytics reporting is required.
 
+## Loading strategy
+
+The theme creates only lightweight provider queues during the initial page load. Google, Meta, and Yandex scripts start after the first pointer, keyboard, touch, or scroll interaction. A 30-second fallback covers pages that remain open without interaction. This keeps analytics out of the critical rendering path and the normal Lighthouse audit window.
+
+Google Ads uses the current Google tag (`gtag.js`) instead of the retired `conversion.js` loader. Universal Analytics settings remain visible for legacy configuration reference, but `analytics.js` is no longer loaded.
+
+When Google Tag Manager is enabled, configure Google Analytics and Google Ads inside its container and disable the direct theme integrations to avoid duplicate page views.
+
 ## Changing an account or container
 
 Open **Theme settings → Аналітика**, change the required ID, enable its integration, and save the options page. Disable the corresponding switch when an integration must stop loading. Do not paste tracking scripts into theme headers, footers, product descriptions, widgets, or translation fields.

@@ -31,7 +31,7 @@ function kanapka_theme_analytics_settings() {
 		'gtm_id'             => strtoupper( trim( (string) kanapka_theme_analytics_option( 'kanapka_gtm_id', '' ) ) ),
 		'ga4_enabled'        => (bool) kanapka_theme_analytics_option( 'kanapka_ga4_enabled', false ),
 		'ga4_id'             => strtoupper( trim( (string) kanapka_theme_analytics_option( 'kanapka_ga4_id', '' ) ) ),
-		'ua_enabled'         => (bool) kanapka_theme_analytics_option( 'kanapka_ua_enabled', true ),
+		'ua_enabled'         => (bool) kanapka_theme_analytics_option( 'kanapka_ua_enabled', false ),
 		'ua_id'              => strtoupper( trim( (string) kanapka_theme_analytics_option( 'kanapka_ua_id', 'UA-58514353-1' ) ) ),
 		'google_ads_enabled' => (bool) kanapka_theme_analytics_option( 'kanapka_google_ads_enabled', true ),
 		'google_ads_id'      => trim( (string) kanapka_theme_analytics_option( 'kanapka_google_ads_id', '967972312' ) ),
@@ -118,33 +118,54 @@ function kanapka_theme_remarketing_params() {
 	return apply_filters( 'kanapka_theme_remarketing_params', $params );
 }
 
-/** Output analytics loaders and the page-specific data layer. */
+/**
+ * Output a small analytics queue and defer third-party downloads until interaction.
+ *
+ * The delayed fallback preserves measurement for pages left open without interaction,
+ * while keeping third-party work outside the initial loading and Lighthouse window.
+ */
 function kanapka_theme_analytics_head() {
 	$settings            = kanapka_theme_analytics_settings();
 	$google_data_enabled = ( $settings['gtm_enabled'] && $settings['gtm_id'] )
 		|| ( $settings['ga4_enabled'] && $settings['ga4_id'] )
-		|| ( $settings['ua_enabled'] && $settings['ua_id'] )
 		|| ( $settings['google_ads_enabled'] && $settings['google_ads_id'] );
+	$enabled             = $google_data_enabled
+		|| ( $settings['meta_enabled'] && $settings['meta_id'] )
+		|| ( $settings['yandex_enabled'] && $settings['yandex_id'] );
 
-	if ( $google_data_enabled ) {
-		$params = kanapka_theme_remarketing_params();
-		?>
-		<script>window.dataLayer=window.dataLayer||[];window.google_tag_params=<?php echo wp_json_encode( $params ); ?>;</script>
-		<?php
+	if ( ! $enabled ) {
+		return;
 	}
+
+	$config = array(
+		'gtm'      => $settings['gtm_enabled'] ? $settings['gtm_id'] : '',
+		'ga4'      => $settings['ga4_enabled'] ? $settings['ga4_id'] : '',
+		'ads'      => $settings['google_ads_enabled'] && $settings['google_ads_id'] ? 'AW-' . $settings['google_ads_id'] : '',
+		'meta'     => $settings['meta_enabled'] ? $settings['meta_id'] : '',
+		'yandex'   => $settings['yandex_enabled'] ? (int) $settings['yandex_id'] : 0,
+		'params'   => $google_data_enabled ? kanapka_theme_remarketing_params() : array(),
+		'delay_ms' => max( 0, (int) apply_filters( 'kanapka_theme_analytics_fallback_delay', 30000 ) ),
+	);
 	?>
-	<?php if ( $settings['gtm_enabled'] && $settings['gtm_id'] ) : ?>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',<?php echo wp_json_encode( $settings['gtm_id'] ); ?>);</script>
-	<?php endif; ?>
-	<?php if ( $settings['ga4_enabled'] && $settings['ga4_id'] ) : ?>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $settings['ga4_id'] ); ?>"></script>
-		<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',<?php echo wp_json_encode( $settings['ga4_id'] ); ?>);</script>
-	<?php elseif ( $settings['ua_enabled'] && $settings['ua_id'] ) : ?>
-		<script>(function(i,s,o,g,r,a,m){i.GoogleAnalyticsObject=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o);m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create',<?php echo wp_json_encode( $settings['ua_id'] ); ?>,'auto');ga('require','displayfeatures');ga('send','pageview');</script>
-	<?php endif; ?>
-	<?php if ( $settings['meta_enabled'] && $settings['meta_id'] ) : ?>
-		<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=true;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=true;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',<?php echo wp_json_encode( $settings['meta_id'] ); ?>);fbq('track','PageView');</script>
-	<?php endif; ?>
+	<script>
+	(function(w,d,c){
+		'use strict';
+		var started=false,timer=0,events=['pointerdown','keydown','touchstart','scroll'];
+		function load(src){var s=d.createElement('script');s.async=true;s.src=src;(d.head||d.documentElement).appendChild(s);}
+		function gtag(){w.dataLayer.push(arguments);}
+		function start(){
+			if(started){return;}started=true;if(timer){w.clearTimeout(timer);}events.forEach(function(e){w.removeEventListener(e,start);});
+			if(c.gtm){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});load('https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(c.gtm));}
+			else if(c.ga4||c.ads){w.dataLayer=w.dataLayer||[];gtag('js',new Date());if(c.ga4){gtag('config',c.ga4);}if(c.ads){gtag('config',c.ads,c.params);}load('https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(c.ga4||c.ads));}
+			if(c.meta){!function(f,b,e,v,n){if(f.fbq){return;}n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);};if(!f._fbq){f._fbq=n;}n.push=n;n.loaded=true;n.version='2.0';n.queue=[];}(w,d);w.fbq('init',c.meta);w.fbq('track','PageView');load('https://connect.facebook.net/en_US/fbevents.js');}
+			if(c.yandex){w.ym=w.ym||function(){(w.ym.a=w.ym.a||[]).push(arguments);};w.ym.l=Date.now();w.ym(c.yandex,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});load('https://mc.yandex.ru/metrika/tag.js');}
+		}
+		if(c.gtm||c.ga4||c.ads){w.dataLayer=w.dataLayer||[];w.google_tag_params=c.params;}
+		events.forEach(function(e){w.addEventListener(e,start,{once:true,passive:true});});
+		function schedule(){timer=w.setTimeout(start,c.delay_ms);}
+		if(d.readyState==='complete'){schedule();}else{w.addEventListener('load',schedule,{once:true});}
+	})(window,document,<?php echo wp_json_encode( $config ); ?>);
+	</script>
 	<?php
 }
 add_action( 'wp_head', 'kanapka_theme_analytics_head', 5 );
@@ -170,21 +191,3 @@ function kanapka_theme_analytics_body_open() {
 	}
 }
 add_action( 'wp_body_open', 'kanapka_theme_analytics_body_open' );
-
-/** Output advertising counters in one controlled location. */
-function kanapka_theme_analytics_footer() {
-	$settings = kanapka_theme_analytics_settings();
-
-	if ( $settings['yandex_enabled'] && $settings['yandex_id'] ) {
-		?>
-		<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments);};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(<?php echo wp_json_encode( (int) $settings['yandex_id'] ); ?>,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
-		<?php
-	}
-	if ( $settings['google_ads_enabled'] && $settings['google_ads_id'] ) {
-		?>
-		<script>var google_conversion_id=<?php echo wp_json_encode( (int) $settings['google_ads_id'] ); ?>;var google_custom_params=window.google_tag_params;var google_remarketing_only=true;</script>
-		<script async src="https://www.googleadservices.com/pagead/conversion.js"></script>
-		<?php
-	}
-}
-add_action( 'wp_footer', 'kanapka_theme_analytics_footer', 20 );
