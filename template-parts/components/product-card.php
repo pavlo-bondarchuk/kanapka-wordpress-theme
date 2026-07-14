@@ -42,7 +42,7 @@ if ( ! $product instanceof WC_Product || ! $product->is_visible() ) {
 				<?php endif; ?>
 			</div>
 			<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
-				<a class="button product-card__button add_to_cart_button product_type_<?php echo esc_attr( $product->get_type() ); ?>" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-kanapka-add-to-cart rel="nofollow"><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
+				<a class="button product-card__button add_to_cart_button product_type_<?php echo esc_attr( $product->get_type() ); ?>" href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-kanapka-add-to-cart rel="nofollow" aria-label="<?php echo esc_attr( $product->add_to_cart_text() ); ?>"><span class="product-card__button-label"><?php echo esc_html( $product->add_to_cart_text() ); ?></span><span class="product-card__button-icon" aria-hidden="true"><?php echo kanapka_theme_ui_icon( 'cart', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?></span></a>
 			<?php endif; ?>
 		</div>
 	</div>
