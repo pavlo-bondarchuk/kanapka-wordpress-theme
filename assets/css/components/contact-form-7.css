@@ -28,7 +28,7 @@
 }
 
 .wpcf7 label {
-	display: grid;
+	display: flex;
 	gap: var(--space-2);
 	color: var(--color-brand-900);
 	font-size: var(--font-size-sm);
