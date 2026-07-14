@@ -112,8 +112,26 @@ function kanapka_theme_migrate_legacy_options() {
 		update_field( 'field_kanapka_yandex_metrika_id', '27891162', 'option' );
 	}
 
+	if ( $migration_version < 4 ) {
+		$catering_paths = array(
+			'kanapka-kejtering',
+			'kanapka-kejtering/vyezdnoj-furshet',
+			'kanapka-kejtering/vyezdnoj-banket',
+			'kanapka-kejtering/kofe-brejk-kiev',
+			'kanapka-kejtering/barbekyu-kejterin',
+		);
+
+		foreach ( $catering_paths as $catering_path ) {
+			$catering_page = get_page_by_path( $catering_path );
+
+			if ( $catering_page instanceof WP_Post ) {
+				update_post_meta( $catering_page->ID, '_wp_page_template', 'page-templates/catering-service.php' );
+			}
+		}
+	}
+
 	update_option( 'kanapka_theme_scf_migrated', 1, false );
-	update_option( 'kanapka_theme_scf_migration_version', 3, false );
+	update_option( 'kanapka_theme_scf_migration_version', 4, false );
 }
 add_action( 'acf/init', 'kanapka_theme_migrate_legacy_options', 20 );
 

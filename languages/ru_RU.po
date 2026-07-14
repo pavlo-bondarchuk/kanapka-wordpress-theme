@@ -740,3 +740,18 @@ msgstr "Заказать обратный звонок"
 #: header.php:87 header.php:103
 msgid "Could not reach us…"
 msgstr "Не дозвонились…"
+#: page-templates/catering-service.php
+msgid "Learn more"
+msgstr "Подробнее"
+
+#: page-templates/catering-service.php
+msgid "Our catering services"
+msgstr "Наши услуги кейтеринга"
+
+#: page-templates/catering-service.php
+msgid "Ready to organise your perfect event?"
+msgstr "Готовы организовать ваше идеальное мероприятие?"
+
+#: page-templates/catering-service.php
+msgid "Send request"
+msgstr "Отправить заявку"

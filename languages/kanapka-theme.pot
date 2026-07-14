@@ -727,3 +727,18 @@ msgstr ""
 #: header.php:87 header.php:103
 msgid "Could not reach us…"
 msgstr ""
+#: page-templates/catering-service.php
+msgid "Learn more"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Our catering services"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Ready to organise your perfect event?"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Send request"
+msgstr ""

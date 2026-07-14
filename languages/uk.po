@@ -739,3 +739,18 @@ msgstr "Замовити зворотний дзвінок"
 #: header.php:87 header.php:103
 msgid "Could not reach us…"
 msgstr "Не додзвонилися…"
+#: page-templates/catering-service.php
+msgid "Learn more"
+msgstr "Детальніше"
+
+#: page-templates/catering-service.php
+msgid "Our catering services"
+msgstr "Наші послуги кейтерингу"
+
+#: page-templates/catering-service.php
+msgid "Ready to organise your perfect event?"
+msgstr "Готові організувати вашу ідеальну подію?"
+
+#: page-templates/catering-service.php
+msgid "Send request"
+msgstr "Надіслати заявку"
