@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-13 13:08+0000\n"
+"POT-Creation-Date: 2026-07-13 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -37,6 +37,10 @@ msgstr ""
 msgid "18 years on the market"
 msgstr ""
 
+#: template-parts/cart/sidebar-benefits.php:12
+msgid "A manager will contact you to confirm the details"
+msgstr ""
+
 #: inc/home.php:351
 msgid "A wide selection of canapés, appetizers and sets"
 msgstr ""
@@ -49,7 +53,7 @@ msgstr ""
 msgid "Add brand"
 msgstr ""
 
-#: inc/assets.php:321
+#: inc/assets.php:376
 msgid "Added to cart"
 msgstr ""
 
@@ -116,8 +120,12 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: inc/woocommerce.php:113 template-parts/single-product/content.php:106
+#: inc/woocommerce.php:150 template-parts/single-product/content.php:106
 msgid "Categories:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:121
+msgid "Clear cart"
 msgstr ""
 
 #: template-parts/header/cart-link.php:34
@@ -164,19 +172,19 @@ msgstr ""
 msgid "Copy link"
 msgstr ""
 
-#: inc/assets.php:320
+#: inc/assets.php:375
 msgid "Could not load the product."
 msgstr ""
 
-#: inc/woocommerce.php:182 inc/woocommerce.php:192
+#: inc/woocommerce.php:221 inc/woocommerce.php:231
 msgid "Could not update the product quantity."
 msgstr ""
 
-#: template-parts/single-product/content.php:67
+#: inc/woocommerce.php:58 template-parts/single-product/content.php:67
 msgid "Decrease quantity"
 msgstr ""
 
-#: inc/woocommerce.php:57
+#: inc/woocommerce.php:90
 msgid "Default sorting"
 msgstr ""
 
@@ -222,6 +230,10 @@ msgstr ""
 
 #: inc/home.php:177
 msgid "Fast delivery"
+msgstr ""
+
+#: template-parts/cart/sidebar-benefits.php:11
+msgid "Fast order confirmation"
 msgstr ""
 
 #: template-parts/front-page/hero.php:17
@@ -271,6 +283,10 @@ msgstr ""
 msgid "Fresh ingredients"
 msgstr ""
 
+#: template-parts/cart/sidebar-benefits.php:21
+msgid "Fresh products every day"
+msgstr ""
+
 #: template-parts/shop/sidebar.php:62
 msgid "from"
 msgstr ""
@@ -295,7 +311,7 @@ msgstr ""
 msgid "In stock"
 msgstr ""
 
-#: template-parts/single-product/content.php:70
+#: inc/woocommerce.php:58 template-parts/single-product/content.php:70
 msgid "Increase quantity"
 msgstr ""
 
@@ -327,7 +343,7 @@ msgstr ""
 msgid "Link copied"
 msgstr ""
 
-#: inc/assets.php:319 template-parts/components/product-quick-view.php:12
+#: inc/assets.php:374 template-parts/components/product-quick-view.php:12
 msgid "Loading…"
 msgstr ""
 
@@ -339,7 +355,7 @@ msgstr ""
 msgid "Minimum price"
 msgstr ""
 
-#: inc/woocommerce.php:58
+#: inc/woocommerce.php:91
 msgid "Most popular"
 msgstr ""
 
@@ -351,7 +367,7 @@ msgstr ""
 msgid "New products"
 msgstr ""
 
-#: inc/woocommerce.php:60
+#: inc/woocommerce.php:93
 msgid "Newest first"
 msgstr ""
 
@@ -359,6 +375,7 @@ msgstr ""
 msgid "Next clients"
 msgstr ""
 
+#: template-parts/cart/recommendations.php:37
 #: template-parts/front-page/popular-products.php:32
 msgid "Next products"
 msgstr ""
@@ -395,6 +412,10 @@ msgstr ""
 msgid "Open submenu"
 msgstr ""
 
+#: template-parts/cart/assurance.php:16
+msgid "or"
+msgstr ""
+
 #: inc/home.php:225
 msgid ""
 "Order ready-made sets for an office meeting, birthday, buffet or family "
@@ -418,6 +439,10 @@ msgstr ""
 msgid "Out of stock"
 msgstr ""
 
+#: template-parts/cart/sidebar-benefits.php:17
+msgid "Pay by cash, card or bank transfer"
+msgstr ""
+
 #: footer.php:57
 msgid "Payment methods"
 msgstr ""
@@ -438,7 +463,7 @@ msgstr ""
 msgid "Premium quality"
 msgstr ""
 
-#: template-parts/components/product-card.php:20
+#: template-parts/components/product-card.php:22
 #, php-format
 msgid "Preview product: %s"
 msgstr ""
@@ -447,6 +472,7 @@ msgstr ""
 msgid "Previous clients"
 msgstr ""
 
+#: template-parts/cart/recommendations.php:27
 #: template-parts/front-page/popular-products.php:20
 msgid "Previous products"
 msgstr ""
@@ -459,11 +485,11 @@ msgstr ""
 msgid "Previous slide"
 msgstr ""
 
-#: inc/woocommerce.php:62
+#: inc/woocommerce.php:95
 msgid "Price: high to low"
 msgstr ""
 
-#: inc/woocommerce.php:61
+#: inc/woocommerce.php:94
 msgid "Price: low to high"
 msgstr ""
 
@@ -481,7 +507,7 @@ msgstr ""
 msgid "Product categories"
 msgstr ""
 
-#: inc/woocommerce.php:115
+#: inc/woocommerce.php:152
 msgid "Product details"
 msgstr ""
 
@@ -493,15 +519,15 @@ msgstr ""
 msgid "Product images"
 msgstr ""
 
-#: inc/woocommerce.php:86
+#: inc/woocommerce.php:119
 msgid "Product not found."
 msgstr ""
 
-#: inc/woocommerce.php:106 template-parts/single-product/content.php:69
+#: inc/woocommerce.php:141 template-parts/single-product/content.php:69
 msgid "Product quantity"
 msgstr ""
 
-#: inc/woocommerce.php:160 template-parts/components/product-card.php:34
+#: inc/woocommerce.php:198 template-parts/components/product-card.php:39
 #, php-format
 msgid "Product quantity: %s"
 msgstr ""
@@ -519,6 +545,10 @@ msgstr ""
 msgid "Professional team"
 msgstr ""
 
+#: template-parts/cart/assurance.php:14
+msgid "Questions? Call"
+msgstr ""
+
 #: inc/home.php:134
 msgid "Ready-made sets for every celebration"
 msgstr ""
@@ -527,7 +557,7 @@ msgstr ""
 msgid "Related products"
 msgstr ""
 
-#: inc/woocommerce.php:233
+#: inc/woocommerce.php:296
 msgid "Remove"
 msgstr ""
 
@@ -556,7 +586,11 @@ msgstr ""
 msgid "Secondary navigation"
 msgstr ""
 
-#: inc/woocommerce.php:110
+#: template-parts/cart/sidebar-benefits.php:16
+msgid "Secure payment"
+msgstr ""
+
+#: inc/woocommerce.php:147
 msgid "Select options"
 msgstr ""
 
@@ -572,11 +606,11 @@ msgstr ""
 msgid "Show all categories"
 msgstr ""
 
-#: inc/assets.php:135 template-parts/shop/sidebar.php:45
+#: inc/assets.php:143 template-parts/shop/sidebar.php:45
 msgid "Show less"
 msgstr ""
 
-#: inc/assets.php:134 template-parts/front-page/delivery-intro.php:23
+#: inc/assets.php:142 template-parts/front-page/delivery-intro.php:23
 msgid "Show more"
 msgstr ""
 
@@ -632,7 +666,7 @@ msgstr ""
 msgid "Top bar"
 msgstr ""
 
-#: inc/woocommerce.php:59
+#: inc/woocommerce.php:92
 msgid "Top rated"
 msgstr ""
 
@@ -648,12 +682,16 @@ msgstr ""
 msgid "Update brand"
 msgstr ""
 
-#: template-parts/components/product-card.php:22
+#: template-parts/components/product-card.php:24
 msgid "View"
 msgstr ""
 
 #: template-parts/single-product/content.php:44
 msgid "View product image %d"
+msgstr ""
+
+#: template-parts/cart/sidebar-benefits.php:22
+msgid "We guarantee fresh, high-quality dishes"
 msgstr ""
 
 #: template-parts/front-page/services.php:17
@@ -670,4 +708,8 @@ msgstr ""
 
 #: inc/home.php:250
 msgid "Wide selection and competitive prices"
+msgstr ""
+
+#: template-parts/cart/assurance.php:12
+msgid "Your data is protected and is not shared with third parties"
 msgstr ""

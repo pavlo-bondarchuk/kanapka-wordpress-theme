@@ -326,12 +326,12 @@
 	font-size: 1.35rem;
 }
 
-.cart_totals table > tbody {
+.cart_totals table>tbody {
 	display: block;
 	width: 100%;
 }
 
-.cart_totals table > tbody > tr {
+.cart_totals table>tbody>tr {
 	display: grid;
 	grid-template-columns: 44% 56%;
 	width: 100%;
@@ -486,7 +486,7 @@
 	font-size: var(--font-size-xs);
 }
 
-.cart-page > .order-benefits {
+.cart-page>.order-benefits {
 	padding-block: var(--space-6);
 }
 
@@ -504,6 +504,7 @@
 	margin: 0;
 	color: var(--color-muted);
 	font-size: var(--font-size-sm);
+	flex-wrap: wrap;
 }
 
 .cart-assurance svg {
@@ -665,7 +666,7 @@
 		grid-auto-columns: 88%;
 	}
 
-	.cart_totals table > tbody > tr {
+	.cart_totals table>tbody>tr {
 		grid-template-columns: 1fr;
 	}
 

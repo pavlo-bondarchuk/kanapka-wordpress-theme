@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-13 12:47+0000\n"
-"PO-Revision-Date: 2026-07-13 12:48+0000\n"
+"PO-Revision-Date: 2026-07-13 18:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: Українська\n"
 "Language: uk\n"
@@ -207,7 +207,7 @@ msgstr "Відображати у вигляді списку"
 
 #: template-parts/shop/product-loop.php:12
 msgid "Display:"
-msgstr "Дисплей:"
+msgstr "Отображать:"
 
 #: inc/home.php:374
 msgid "Easy online ordering"
@@ -323,7 +323,7 @@ msgstr "Налаштування теми Kanapka"
 msgid "Kyiv"
 msgstr "Київ"
 
-#: template-parts/header/language-switcher.php:35
+#: template-parts/header/language-switcher.php:36
 msgid "Language"
 msgstr "Мова"
 
@@ -530,10 +530,6 @@ msgstr "Вид продукту"
 msgid "Professional team"
 msgstr "Професійна команда"
 
-#: template-parts/components/product-card.php:22
-msgid "Quick view"
-msgstr "Швидкий перегляд"
-
 #: inc/home.php:134
 msgid "Ready-made sets for every celebration"
 msgstr "Готові набори для будь-якого торжества"
@@ -549,6 +545,10 @@ msgstr "Видалити"
 #: template-parts/shop/sidebar.php:71
 msgid "Reset filter"
 msgstr "Скидання фільтра"
+
+#: template-parts/header/language-switcher.php:12
+msgid "Russian"
+msgstr "Русский"
 
 #: template-parts/header/search-popup.php:9
 #: template-parts/header/search-popup.php:21
@@ -652,9 +652,17 @@ msgstr "Найпопулярніші"
 msgid "Try changing the filters or return to all categories."
 msgstr "Спробуйте змінити фільтри або повернутися до всіх категорій."
 
+#: template-parts/header/language-switcher.php:13
+msgid "Ukrainian"
+msgstr "Українська"
+
 #: inc/brands.php:28
 msgid "Update brand"
 msgstr "Оновлення бренду"
+
+#: template-parts/components/product-card.php:22
+msgid "View"
+msgstr "Подивитися"
 
 #: template-parts/single-product/content.php:44
 msgid "View product image %d"

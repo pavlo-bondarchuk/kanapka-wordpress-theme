@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-13 12:47+0000\n"
-"PO-Revision-Date: 2026-07-13 12:48+0000\n"
+"PO-Revision-Date: 2026-07-13 13:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: Українська\n"
 "Language: uk\n"
@@ -19,15 +19,16 @@ msgstr ""
 #: template-parts/front-page/hero.php:25
 #, php-format
 msgid "%1$d of %2$d"
-msgstr ""
+msgstr "%1$d з %2$d"
 
 #. %s is the number of products in the cart.
 #: template-parts/header/cart-link.php:28
 #, php-format
 msgid "%s product"
 msgid_plural "%s products"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s продукт"
+msgstr[1] "%s продукти"
+msgstr[2] ""
 
 #: inc/home.php:362
 msgid "10% discount for collection"
@@ -35,253 +36,260 @@ msgstr ""
 
 #: inc/home.php:368
 msgid "18 years on the market"
-msgstr ""
+msgstr "18 років на ринку"
 
 #: inc/home.php:351
 msgid "A wide selection of canapés, appetizers and sets"
-msgstr ""
+msgstr "Широкий вибір канапе, закусок і сетів"
 
 #: inc/home.php:357
 msgid "Across Kyiv and the region at a convenient time"
-msgstr ""
+msgstr "По Києву і області в зручний для вас час"
 
 #: inc/brands.php:29
 msgid "Add brand"
-msgstr ""
+msgstr "Додати бренд"
 
 #: inc/assets.php:321
 msgid "Added to cart"
-msgstr ""
+msgstr "Додано в кошик"
 
 #: template-parts/header/contact-mega-menu.php:24
 msgid "Address"
-msgstr ""
+msgstr "Адреса"
 
 #: inc/brands.php:26
 msgid "All brands"
-msgstr ""
+msgstr "Всі бренди"
 
 #: template-parts/shop/sidebar.php:28
 #: template-parts/front-page/category-catalogue.php:18
 msgid "All categories"
-msgstr ""
+msgstr "Всі категорії"
 
 #: template-parts/shop/sidebar.php:69
 msgid "Apply"
-msgstr ""
+msgstr "Застосовувати"
 
 #: inc/brands.php:24
 msgid "Brand"
-msgstr ""
+msgstr "Бренд"
 
 #: inc/brands.php:23 inc/brands.php:31
 msgid "Brands"
-msgstr ""
+msgstr "Бренди"
 
 #: inc/home.php:136
 msgid "Browse catalogue"
-msgstr ""
+msgstr "Переглянути каталог"
 
 #: inc/home.php:224
 msgid "Canapé, appetizer and buffet set delivery in Kyiv"
-msgstr ""
+msgstr "Доставка канапе, закусок і шведського столу по Києву"
 
 #: inc/home.php:135
 msgid ""
 "Canapés, appetizers and buffet sets made from fresh ingredients and "
 "delivered at the right time."
 msgstr ""
+"Канапки, закуски та фуршетні набори готуються зі свіжих продуктів і "
+"доставляються в потрібний час."
 
 #: template-parts/front-page/hero.php:17
 msgid "carousel"
-msgstr ""
+msgstr "карусель"
 
 #: template-parts/header/cart-link.php:23
 msgid "Cart"
-msgstr ""
+msgstr "Кошик"
 
 #: template-parts/header/cart-link.php:16
 msgid "Cart, %d products"
-msgstr ""
+msgstr "Кошик, %d товарів"
 
 #: footer.php:23
 msgid "Catalogue"
-msgstr ""
+msgstr "Каталог"
 
 #: template-parts/shop/sidebar.php:17 template-parts/shop/sidebar.php:19
 msgid "Catalogue filters"
-msgstr ""
+msgstr "Фільтри по каталогу"
 
 #: template-parts/shop/sidebar.php:25
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
 #: inc/woocommerce.php:113 template-parts/single-product/content.php:106
 msgid "Categories:"
-msgstr ""
+msgstr "Категорії:"
 
 #: template-parts/header/cart-link.php:34
 msgid "Close cart"
-msgstr ""
+msgstr "Закрити кошик"
 
 #: template-parts/shop/sidebar.php:18
 msgid "Close catalogue filters"
-msgstr ""
+msgstr "Закрити фільтри каталогу"
 
 #: template-parts/components/product-quick-view.php:11
 msgid "Close product preview"
-msgstr ""
+msgstr "Закрити попередній перегляд продукту"
 
 #: template-parts/header/search-popup.php:15
 msgid "Close search"
-msgstr ""
+msgstr "Закрити пошук"
 
 #: inc/assets.php:60
 msgid "Close submenu"
-msgstr ""
+msgstr "Закрити підменю"
 
 #: inc/home.php:363
 msgid "Collect your order and save"
-msgstr ""
+msgstr "Забирайте своє замовлення і заощаджуйте"
 
 #: footer.php:22
 msgid "Company"
-msgstr ""
+msgstr "Компанія"
 
 #: inc/scf.php:98 template-parts/header/contact-mega-menu.php:31
 msgid "Contact form"
-msgstr ""
+msgstr "Контактна форма"
 
 #: template-parts/header/contact-mega-menu.php:16
 msgid "Contact information"
-msgstr ""
+msgstr "Контактна інформація"
 
 #: footer.php:44 inc/scf.php:94 template-parts/header/contact-mega-menu.php:18
 msgid "Contacts"
-msgstr ""
+msgstr "Контакти"
 
 #: template-parts/single-product/content.php:99
 msgid "Copy link"
-msgstr ""
+msgstr "Скопіювати посилання"
 
 #: inc/assets.php:320
 msgid "Could not load the product."
-msgstr ""
+msgstr "Не вдалося завантажити продукт."
 
 #: inc/woocommerce.php:182 inc/woocommerce.php:192
 msgid "Could not update the product quantity."
-msgstr ""
+msgstr "Не вдалося оновити кількість продукту."
 
 #: template-parts/single-product/content.php:67
 msgid "Decrease quantity"
-msgstr ""
+msgstr "Зменшіть кількість"
 
 #: inc/woocommerce.php:57
 msgid "Default sorting"
-msgstr ""
+msgstr "Сортування за замовчуванням"
 
 #: template-parts/front-page/hero.php:80
 msgid "Delivery benefits"
-msgstr ""
+msgstr "Переваги доставки"
 
 #: template-parts/single-product/content.php:116
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: inc/home.php:339
 msgid "Discover the benefits of ordering office buffet catering from us!"
 msgstr ""
+"Відкрийте для себе переваги замовлення офісного харчування по системі "
+"\"шведський стіл\" у нас!"
 
 #: template-parts/shop/product-loop.php:16
 msgid "Display as a grid"
-msgstr ""
+msgstr "Відображати у вигляді сітки"
 
 #: template-parts/shop/product-loop.php:13
 msgid "Display as a list"
-msgstr ""
+msgstr "Відображати у вигляді списку"
 
 #: template-parts/shop/product-loop.php:12
 msgid "Display:"
-msgstr ""
+msgstr "Дисплей:"
 
 #: inc/home.php:374
 msgid "Easy online ordering"
-msgstr ""
+msgstr "Простий онлайн-замовлення"
 
 #: inc/brands.php:27
 msgid "Edit brand"
-msgstr ""
+msgstr "Редагувати бренд"
 
 #: template-parts/single-product/content.php:98
 msgid "Email"
-msgstr ""
+msgstr "Електронна пошта"
 
 #: inc/home.php:369
 msgid "Experience trusted by customers"
-msgstr ""
+msgstr "Досвід, якому довіряють клієнти"
 
 #: inc/home.php:177
 msgid "Fast delivery"
-msgstr ""
+msgstr "Швидка доставка"
 
 #: template-parts/front-page/hero.php:17
 msgid "Featured offers"
-msgstr ""
+msgstr "Рекомендовані пропозиції"
 
 #: template-parts/shop/sidebar.php:54
 msgid "Filter by price"
-msgstr ""
+msgstr "Фільтрувати за ціною"
 
 #: inc/menus.php:18
 msgid "First footer column"
-msgstr ""
+msgstr "Перший нижній колонтитул"
 
 #: footer.php:24
 msgid "For customers"
-msgstr ""
+msgstr "Для клієнтів"
 
 #: inc/home.php:173
 msgid "For orders within Kyiv"
-msgstr ""
+msgstr "Для замовлень в межах Києва"
 
 #: inc/home.php:172
 msgid "Free delivery"
-msgstr ""
+msgstr "Безкоштовна доставка"
 
 #: inc/home.php:356
 msgid "Free delivery on orders over UAH 5,000"
-msgstr ""
+msgstr "Безкоштовна доставка при замовленні понад 5000 гривень"
 
 #: template-parts/front-page/popular-products.php:17
 msgid "Frequently ordered"
-msgstr ""
+msgstr "Часто замовляються"
 
 #: template-parts/shop/hero.php:37
 msgid ""
 "Fresh and delicious dishes for every event. Choose from dozens of categories."
 msgstr ""
+"Свіжі і смачні страви для будь-якого заходу. Вибирайте з десятків категорій."
 
 #: template-parts/shop/hero.php:23
 msgid ""
 "Fresh dishes for buffets, office events and celebrations. Choose a category "
 "and order online."
 msgstr ""
+"Свіжі страви для фуршетів, офісних заходів і урочистостей. Виберіть "
+"категорію і замовте онлайн."
 
 #: inc/home.php:182 inc/home.php:344
 msgid "Fresh ingredients"
-msgstr ""
+msgstr "Свіжі інгредієнти"
 
 #: template-parts/shop/sidebar.php:62
 msgid "from"
-msgstr ""
+msgstr "Від"
 
 #: template-parts/shop/product-loop.php:44
 msgid "Go to catalogue"
-msgstr ""
+msgstr "Перейти до каталогу"
 
 #: template-parts/front-page/hero.php:95
 msgid "Go to slide %d"
-msgstr ""
+msgstr "Перейти до слайда %d"
 
 #. URI of the theme
 msgid "https://kanapka.kiev.ua/"
@@ -289,111 +297,111 @@ msgstr ""
 
 #: inc/home.php:350
 msgid "Impressive selection"
-msgstr ""
+msgstr "Вражаючий вибір"
 
 #: template-parts/single-product/content.php:54
 msgid "In stock"
-msgstr ""
+msgstr "В наявності"
 
 #: template-parts/single-product/content.php:70
 msgid "Increase quantity"
-msgstr ""
+msgstr "Збільште кількість"
 
 #. Author of the theme
 msgid "Kanapka"
-msgstr ""
+msgstr "Kanapka"
 
 #. Name of the theme
 msgid "Kanapka Theme"
-msgstr ""
+msgstr "Тема Канапки"
 
 #: inc/scf.php:20
 msgid "Kanapka theme settings"
-msgstr ""
+msgstr "Налаштування теми Kanapka"
 
 #: inc/scf.php:95 template-parts/header/contact-mega-menu.php:11
 msgid "Kyiv"
-msgstr ""
+msgstr "Київ"
 
-#: template-parts/header/language-switcher.php:35
+#: template-parts/header/language-switcher.php:36
 msgid "Language"
-msgstr ""
+msgstr "Мова"
 
 #. Description of the theme
 msgid "Lightweight modular WooCommerce theme for Kanapka."
-msgstr ""
+msgstr "Легка модульна тема WooCommerce для Kanapka."
 
 #: template-parts/single-product/content.php:83
 msgid "Link copied"
-msgstr ""
+msgstr "Копія посилання"
 
 #: inc/assets.php:319 template-parts/components/product-quick-view.php:12
 msgid "Loading…"
-msgstr ""
+msgstr "Завантаження..."
 
 #: template-parts/shop/sidebar.php:59
 msgid "Maximum price"
-msgstr ""
+msgstr "Максимальна ціна"
 
 #: template-parts/shop/sidebar.php:58
 msgid "Minimum price"
-msgstr ""
+msgstr "Мінімальна ціна"
 
 #: inc/woocommerce.php:58
 msgid "Most popular"
-msgstr ""
+msgstr "Найпопулярніші"
 
 #: inc/brands.php:30
 msgid "New brand name"
-msgstr ""
+msgstr "Нове фірмове найменування"
 
 #: template-parts/shop/sidebar.php:78
 msgid "New products"
-msgstr ""
+msgstr "Нові продукти"
 
 #: inc/woocommerce.php:60
 msgid "Newest first"
-msgstr ""
+msgstr "Самий перший новий"
 
 #: template-parts/front-page/client-brands.php:42
 msgid "Next clients"
-msgstr ""
+msgstr "Такі клієнти"
 
 #: template-parts/front-page/popular-products.php:32
 msgid "Next products"
-msgstr ""
+msgstr "Наступні продукти"
 
 #: template-parts/single-product/related-products.php:37
 msgid "Next related products"
-msgstr ""
+msgstr "Такі супутні товари"
 
 #: template-parts/front-page/hero.php:75
 msgid "Next slide"
-msgstr ""
+msgstr "Наступний слайд"
 
 #: template-parts/shop/product-loop.php:42
 msgid "No products found"
-msgstr ""
+msgstr "Продукти не знайдені"
 
 #: inc/home.php:178
 msgid "On the day of your order"
-msgstr ""
+msgstr "У день вашого замовлення"
 
 #: inc/home.php:240
 msgid "On-time delivery"
-msgstr ""
+msgstr "Своєчасна доставка"
 
 #: inc/home.php:230
 msgid "Only fresh ingredients"
-msgstr ""
+msgstr "Тільки свіжі інгредієнти"
 
 #: template-parts/shop/sidebar.php:18
 msgid "Open catalogue filters"
-msgstr ""
+msgstr "Фільтри відкритого каталогу"
 
 #: inc/assets.php:59
 msgid "Open submenu"
-msgstr ""
+msgstr "Відкрити підменю"
 
 #: inc/home.php:225
 msgid ""
@@ -401,265 +409,277 @@ msgid ""
 "celebration. We prepare dishes shortly before dispatch and deliver them in "
 "presentable packaging."
 msgstr ""
+"Замовте готові набори для зустрічі в офісі, дня народження, фуршету або "
+"сімейного торжества. Ми готуємо страви незадовго до відправки і доставляємо "
+"їх презентабельною упаковці."
 
 #: header.php:79 inc/scf.php:90
 msgid "Order reception"
-msgstr ""
+msgstr "Прийом замовлень"
 
 #: inc/scf.php:97 template-parts/header/contact-mega-menu.php:27
 msgid "Orders are accepted"
-msgstr ""
+msgstr "Замовлення приймаються"
 
 #: template-parts/front-page/client-brands.php:17
 msgid "Our clients"
-msgstr ""
+msgstr "Наші клієнти"
 
 #: template-parts/single-product/content.php:54
 msgid "Out of stock"
-msgstr ""
+msgstr "Немає в наявності"
 
 #: footer.php:57
 msgid "Payment methods"
-msgstr ""
+msgstr "Способи оплати"
 
 #: inc/home.php:235
 msgid "Personal approach"
-msgstr ""
+msgstr "Індивідуальний підхід"
 
 #: inc/home.php:375
 msgid "Place your order online in just a few clicks"
-msgstr ""
+msgstr "Розмістіть своє замовлення онлайн всього за кілька кліків"
 
 #: template-parts/front-page/category-strip.php:14
 msgid "Popular categories"
-msgstr ""
+msgstr "Популярні категорії"
 
 #: inc/home.php:183
 msgid "Premium quality"
-msgstr ""
+msgstr "Преміальна якість"
 
 #: template-parts/components/product-card.php:20
 #, php-format
 msgid "Preview product: %s"
-msgstr ""
+msgstr "Попередній перегляд продукту: %s"
 
 #: template-parts/front-page/client-brands.php:20
 msgid "Previous clients"
-msgstr ""
+msgstr "Попередні клієнти"
 
 #: template-parts/front-page/popular-products.php:20
 msgid "Previous products"
-msgstr ""
+msgstr "Попередні продукти"
 
 #: template-parts/single-product/related-products.php:27
 msgid "Previous related products"
-msgstr ""
+msgstr "Попередні супутні продукти"
 
 #: template-parts/front-page/hero.php:72
 msgid "Previous slide"
-msgstr ""
+msgstr "Попередній слайд"
 
 #: inc/woocommerce.php:62
 msgid "Price: high to low"
-msgstr ""
+msgstr "Ціна: від високої до низької"
 
 #: inc/woocommerce.php:61
 msgid "Price: low to high"
-msgstr ""
+msgstr "Ціна: від низької до високої"
 
 #: inc/accessibility.php:19 inc/menus.php:16
 msgid "Primary navigation"
-msgstr ""
+msgstr "Основна навігація"
 
 #: woocommerce/archive-product.php:16 template-parts/shop/hero.php:11
 #: template-parts/front-page/category-catalogue.php:17
 msgid "Product catalogue"
-msgstr ""
+msgstr "Каталог продукції"
 
 #: template-parts/shop/sidebar.php:26
 #: template-parts/header/category-mega-menu.php:11
 msgid "Product categories"
-msgstr ""
+msgstr "Категорії продуктів"
 
 #: inc/woocommerce.php:115
 msgid "Product details"
-msgstr ""
+msgstr "Детальна інформація про продукт"
 
 #: template-parts/single-product/content.php:31
 msgid "Product gallery"
-msgstr ""
+msgstr "Галерея товарів"
 
 #: template-parts/single-product/content.php:41
 msgid "Product images"
-msgstr ""
+msgstr "Зображення продуктів"
 
 #: inc/woocommerce.php:86
 msgid "Product not found."
-msgstr ""
+msgstr "Товар не знайдений."
 
 #: inc/woocommerce.php:106 template-parts/single-product/content.php:69
 msgid "Product quantity"
-msgstr ""
+msgstr "Кількість продукту"
 
 #: inc/woocommerce.php:160 template-parts/components/product-card.php:34
 #, php-format
 msgid "Product quantity: %s"
-msgstr ""
+msgstr "Кількість продукту: %s"
 
 #: template-parts/header/search-popup.php:14
 #: template-parts/header/search-popup.php:18
 msgid "Product search"
-msgstr ""
+msgstr "Пошук товару"
 
 #: template-parts/shop/product-loop.php:11
 msgid "Product view"
-msgstr ""
+msgstr "Вид продукту"
 
 #: inc/home.php:245
 msgid "Professional team"
-msgstr ""
-
-#: template-parts/components/product-card.php:22
-msgid "Quick view"
-msgstr ""
+msgstr "Професійна команда"
 
 #: inc/home.php:134
 msgid "Ready-made sets for every celebration"
-msgstr ""
+msgstr "Готові набори для будь-якого торжества"
 
 #: template-parts/single-product/related-products.php:24
 msgid "Related products"
-msgstr ""
+msgstr "Супутні товари"
 
 #: inc/woocommerce.php:233
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: template-parts/shop/sidebar.php:71
 msgid "Reset filter"
-msgstr ""
+msgstr "Скидання фільтра"
+
+#: template-parts/header/language-switcher.php:12
+msgid "Russian"
+msgstr "Русский"
 
 #: template-parts/header/search-popup.php:9
 #: template-parts/header/search-popup.php:21
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: inc/brands.php:25
 msgid "Search brands"
-msgstr ""
+msgstr "Пошук брендів"
 
 #: inc/menus.php:19
 msgid "Second footer column"
-msgstr ""
+msgstr "Другий нижній колонтитул"
 
 #: header.php:22
 msgid "Secondary navigation"
-msgstr ""
+msgstr "Вторинна навігація"
 
 #: inc/woocommerce.php:110
 msgid "Select options"
-msgstr ""
+msgstr "Виберіть параметри"
 
 #: template-parts/single-product/content.php:87
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
 #: template-parts/single-product/content.php:90
 msgid "Share product"
-msgstr ""
+msgstr "Поділитися продуктом"
 
 #: template-parts/shop/sidebar.php:45 template-parts/shop/sidebar.php:46
 msgid "Show all categories"
-msgstr ""
+msgstr "Показати всі категорії"
 
 #: inc/assets.php:135 template-parts/shop/sidebar.php:45
 msgid "Show less"
-msgstr ""
+msgstr "Показувати менше"
 
 #: inc/assets.php:134 template-parts/front-page/delivery-intro.php:23
 msgid "Show more"
-msgstr ""
+msgstr "Показати більше"
 
 #: template-parts/front-page/benefits.php:41
 msgid "Show next benefit"
-msgstr ""
+msgstr "Покажіть наступна перевага"
 
 #: template-parts/shop/category-rail.php:44
 #: template-parts/front-page/category-strip.php:23
 msgid "Show next categories"
-msgstr ""
+msgstr "Показати наступні категорії"
 
 #: template-parts/shop/category-grid.php:16
 #, php-format
 msgid "Showing %s category"
 msgid_plural "Showing %s categories"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Відображення категорії %s"
+msgstr[1] "Відображення категорій %s"
+msgstr[2] ""
 
 #: header.php:17
 msgid "Skip to content"
-msgstr ""
+msgstr "Перейти до вмісту"
 
 #: template-parts/front-page/hero.php:25
 msgid "slide"
-msgstr ""
+msgstr "ковзання"
 
 #: template-parts/front-page/hero.php:93
 msgid "Slide selection"
-msgstr ""
+msgstr "Вибір слайда"
 
 #: template-parts/shop/category-rail.php:20
 msgid "Subcategories"
-msgstr ""
+msgstr "Підкатегорії"
 
 #: inc/scf.php:21
 msgid "Theme settings"
-msgstr ""
+msgstr "Параметри теми"
 
 #: inc/menus.php:20
 msgid "Third footer column"
-msgstr ""
+msgstr "Третій нижній колонтитул"
 
 #: template-parts/shop/sidebar.php:66
 msgid "to"
-msgstr ""
+msgstr "Для"
 
 #: header.php:55
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Перемикати навігацію"
 
 #: inc/menus.php:17
 msgid "Top bar"
-msgstr ""
+msgstr "Верхня планка"
 
 #: inc/woocommerce.php:59
 msgid "Top rated"
-msgstr ""
+msgstr "Найпопулярніші"
 
 #: template-parts/shop/product-loop.php:43
 msgid "Try changing the filters or return to all categories."
-msgstr ""
+msgstr "Спробуйте змінити фільтри або повернутися до всіх категорій."
+
+#: template-parts/header/language-switcher.php:13
+msgid "Ukrainian"
+msgstr "Українська"
 
 #: inc/brands.php:28
 msgid "Update brand"
-msgstr ""
+msgstr "Оновлення бренду"
+
+#: template-parts/components/product-card.php:22
+msgid "View"
+msgstr "Подивитися"
 
 #: template-parts/single-product/content.php:44
 msgid "View product image %d"
-msgstr ""
+msgstr "Перегляд зображення продукту %d"
 
 #: template-parts/front-page/services.php:17
 msgid "We organise everything for you"
-msgstr ""
+msgstr "Ми організуємо все для вас"
 
 #: inc/home.php:345
 msgid "We use only fresh, high-quality ingredients"
-msgstr ""
+msgstr "Ми використовуємо тільки свіжі, високоякісні інгредієнти"
 
 #: template-parts/header/search-popup.php:19
 msgid "What are you looking for?"
-msgstr ""
+msgstr "Що ти шукаєш?"
 
 #: inc/home.php:250
 msgid "Wide selection and competitive prices"
-msgstr ""
+msgstr "Широкий вибір конкурентоспроможні ціни і"
