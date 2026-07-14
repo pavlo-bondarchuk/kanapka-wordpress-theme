@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'kanapka_theme_dequeue_woocommerce_styles', 10
  * @return array
  */
 function kanapka_theme_remove_unused_checkout_address_fields( $fields ) {
-	$unused_fields = array( 'country', 'city', 'postcode' );
+	$unused_fields = array( 'country', 'state', 'city', 'postcode' );
 
 	foreach ( array( 'billing', 'shipping' ) as $section ) {
 		foreach ( $unused_fields as $field_name ) {
