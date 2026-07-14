@@ -8,8 +8,9 @@
 $args = wp_parse_args(
 	$args ?? array(),
 	array(
-		'categories_only' => false,
-		'show_all'        => false,
+		'categories_only'        => false,
+		'show_all'               => false,
+		'mobile_category_toggle' => false,
 	)
 );
 
@@ -24,8 +25,8 @@ $selected_max_price = '' !== $max_price ? min( $price_limit, (int) $max_price ) 
 $visible_category_limit = $args['show_all'] ? PHP_INT_MAX : 8;
 ?>
 <aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Catalogue filters', 'kanapka-theme' ); ?>">
-	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php esc_attr_e( 'Open catalogue filters', 'kanapka-theme' ); ?>" data-close-label="<?php esc_attr_e( 'Close catalogue filters', 'kanapka-theme' ); ?>">
-		<span><?php esc_html_e( 'Catalogue filters', 'kanapka-theme' ); ?></span>
+	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php echo esc_attr( $args['mobile_category_toggle'] ? __( 'Show all categories', 'kanapka-theme' ) : __( 'Open catalogue filters', 'kanapka-theme' ) ); ?>" data-close-label="<?php echo esc_attr( $args['mobile_category_toggle'] ? __( 'Show less', 'kanapka-theme' ) : __( 'Close catalogue filters', 'kanapka-theme' ) ); ?>">
+		<span<?php echo $args['mobile_category_toggle'] ? ' data-catalogue-sidebar-toggle-label' : ''; ?>><?php echo esc_html( $args['mobile_category_toggle'] ? __( 'Show all categories', 'kanapka-theme' ) : __( 'Catalogue filters', 'kanapka-theme' ) ); ?></span>
 		<?php echo kanapka_theme_ui_icon( 'chevron-right', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-owned SVG. ?>
 	</button>
 	<div class="catalogue-sidebar__content" id="catalogue-sidebar-content" data-catalogue-sidebar-content>

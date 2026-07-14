@@ -173,4 +173,12 @@
 	.delivery-payment-intro__image {
 		min-height: 13rem;
 	}
+
+	.delivery-payment-page .catalogue-sidebar__category[data-catalogue-category-extra] {
+		display: flex;
+	}
+
+	.delivery-payment-page .catalogue-sidebar__toggle {
+		display: none;
+	}
 }

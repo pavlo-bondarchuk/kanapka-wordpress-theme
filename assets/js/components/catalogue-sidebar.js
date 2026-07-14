@@ -7,6 +7,7 @@
 	document.querySelectorAll( '.catalogue-sidebar' ).forEach( ( sidebar ) => {
 		const toggle = sidebar.querySelector( '[data-catalogue-sidebar-toggle]' );
 		const content = sidebar.querySelector( '[data-catalogue-sidebar-content]' );
+		const label = sidebar.querySelector( '[data-catalogue-sidebar-toggle-label]' );
 
 		if ( ! toggle || ! content ) {
 			return;
@@ -17,6 +18,9 @@
 		const setExpanded = ( isExpanded ) => {
 			toggle.setAttribute( 'aria-expanded', String( isExpanded ) );
 			toggle.setAttribute( 'aria-label', isExpanded ? toggle.dataset.closeLabel : toggle.dataset.openLabel );
+			if ( label ) {
+				label.textContent = isExpanded ? toggle.dataset.closeLabel : toggle.dataset.openLabel;
+			}
 		};
 
 		setExpanded( false );
