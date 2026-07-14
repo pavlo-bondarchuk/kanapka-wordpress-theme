@@ -292,6 +292,7 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/checkout.js' ),
 			true
 		);
+
 	}
 
 	if ( function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'order-received' ) ) {
@@ -459,6 +460,14 @@ function kanapka_theme_enqueue_assets() {
 			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-catering-gallery',
+			get_theme_file_uri( '/assets/js/components/catering-gallery.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/catering-gallery.js' ),
 			true
 		);
 	}

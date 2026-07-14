@@ -148,7 +148,25 @@ while ( have_posts() ) {
 		<?php if ( $field( 'kanapka_catering_gallery_enabled', false ) && $gallery ) : ?>
 			<section class="catering-section section catering-section--soft"><div class="container">
 				<?php if ( $field( 'kanapka_catering_gallery_title', '' ) ) : ?><h2 class="catering-section__title"><?php echo esc_html( $field( 'kanapka_catering_gallery_title' ) ); ?></h2><?php endif; ?>
-				<div class="catering-gallery"><?php foreach ( $gallery as $image_id ) : ?><figure><?php echo wp_get_attachment_image( $image_id, 'kanapka-service', false, array( 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 50vw, 25vw' ) ); ?></figure><?php endforeach; ?></div>
+				<div class="catering-gallery" data-catering-gallery>
+					<?php foreach ( $gallery as $gallery_index => $image_id ) : ?>
+						<?php $large_image_url = wp_get_attachment_image_url( $image_id, 'large' ); $image_alt = (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>
+						<figure>
+							<button type="button" data-catering-gallery-item data-gallery-src="<?php echo esc_url( $large_image_url ); ?>" data-gallery-alt="<?php echo esc_attr( $image_alt ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Open image %1$d of %2$d', 'kanapka-theme' ), $gallery_index + 1, count( $gallery ) ) ); ?>">
+								<?php echo wp_get_attachment_image( $image_id, 'kanapka-catering-gallery', false, array( 'loading' => 'lazy', 'sizes' => '(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw', 'alt' => $image_alt ) ); ?>
+							</button>
+						</figure>
+					<?php endforeach; ?>
+				</div>
+				<div class="catering-lightbox" hidden data-catering-lightbox>
+					<div class="catering-lightbox__backdrop" data-catering-lightbox-close></div>
+					<div class="catering-lightbox__dialog" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Event photos', 'kanapka-theme' ); ?>" tabindex="-1" data-catering-lightbox-dialog>
+						<button class="catering-lightbox__close" type="button" aria-label="<?php esc_attr_e( 'Close gallery', 'kanapka-theme' ); ?>" data-catering-lightbox-close><?php echo kanapka_theme_ui_icon( 'x', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+						<button class="catering-lightbox__arrow catering-lightbox__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous image', 'kanapka-theme' ); ?>" data-catering-lightbox-previous><?php echo kanapka_theme_ui_icon( 'chevron-left', 30 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+						<figure><img src="" alt="" data-catering-lightbox-image><figcaption data-catering-lightbox-counter></figcaption></figure>
+						<button class="catering-lightbox__arrow catering-lightbox__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next image', 'kanapka-theme' ); ?>" data-catering-lightbox-next><?php echo kanapka_theme_ui_icon( 'chevron-right', 30 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+					</div>
+				</div>
 			</div></section>
 		<?php endif; ?>
 

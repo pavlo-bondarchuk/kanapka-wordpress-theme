@@ -18,5 +18,6 @@ function kanapka_theme_register_image_sizes() {
 	add_image_size( 'kanapka-mega-menu', 48, 48, true );
 	add_image_size( 'kanapka-product-card', 640, 480, true );
 	add_image_size( 'kanapka-service', 760, 420, true );
+	add_image_size( 'kanapka-catering-gallery', 640, 460, true );
 }
 add_action( 'after_setup_theme', 'kanapka_theme_register_image_sizes' );
