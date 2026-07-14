@@ -5,14 +5,23 @@
  * @package Kanapka_Theme
  */
 
-$categories = kanapka_theme_get_shop_categories();
-$new_items  = kanapka_theme_get_shop_new_products( 4 );
+$args = wp_parse_args(
+	$args ?? array(),
+	array(
+		'categories_only' => false,
+		'show_all'        => false,
+	)
+);
+
+$categories      = kanapka_theme_get_shop_categories();
+$categories_only = (bool) $args['categories_only'];
+$new_items       = $categories_only ? array() : kanapka_theme_get_shop_new_products( 4 );
 $min_price  = isset( $_GET['min_price'] ) ? wc_format_decimal( wp_unslash( $_GET['min_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $max_price  = isset( $_GET['max_price'] ) ? wc_format_decimal( wp_unslash( $_GET['max_price'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $price_limit = kanapka_theme_get_catalogue_max_price();
 $selected_min_price = '' !== $min_price ? max( 0, (int) $min_price ) : 0;
 $selected_max_price = '' !== $max_price ? min( $price_limit, (int) $max_price ) : $price_limit;
-$visible_category_limit = 8;
+$visible_category_limit = $args['show_all'] ? PHP_INT_MAX : 8;
 ?>
 <aside class="catalogue-sidebar" aria-label="<?php esc_attr_e( 'Catalogue filters', 'kanapka-theme' ); ?>">
 	<button class="catalogue-sidebar__mobile-toggle" type="button" aria-expanded="false" aria-controls="catalogue-sidebar-content" data-catalogue-sidebar-toggle data-open-label="<?php esc_attr_e( 'Open catalogue filters', 'kanapka-theme' ); ?>" data-close-label="<?php esc_attr_e( 'Close catalogue filters', 'kanapka-theme' ); ?>">
@@ -50,6 +59,7 @@ $visible_category_limit = 8;
 		</section>
 	<?php endif; ?>
 
+	<?php if ( ! $categories_only ) : ?>
 	<section class="catalogue-panel">
 		<h2><?php esc_html_e( 'Filter by price', 'kanapka-theme' ); ?></h2>
 		<form class="catalogue-price-filter" method="get" data-price-range-filter>
@@ -72,6 +82,7 @@ $visible_category_limit = 8;
 			<?php endif; ?>
 		</form>
 	</section>
+	<?php endif; ?>
 
 	<?php if ( $new_items ) : ?>
 		<section class="catalogue-panel">

@@ -1,0 +1,142 @@
+{
+    "key": "group_kanapka_delivery_payment",
+    "title": "Доставка та оплата",
+    "fields": [
+        {
+            "key": "field_kanapka_delivery_sections",
+            "label": "Інформаційні блоки",
+            "name": "kanapka_delivery_sections",
+            "type": "repeater",
+            "instructions": "Картки відображаються по дві в ряд на великих екранах.",
+            "required": 0,
+            "layout": "block",
+            "button_label": "Додати блок",
+            "min": 0,
+            "max": 8,
+            "collapsed": "field_kanapka_delivery_section_title",
+            "default_value": [
+                {
+                    "title": "Як зробити замовлення",
+                    "icon": "cart",
+                    "content": "<ul><li>Цілодобово онлайн на сайті.</li><li>За телефонами: (093) 691-72-72, (066) 691-72-72 у робочі дні з 09:00 до 18:00.</li><li><strong>Замовлення приймаються не пізніше ніж за один день до дати доставки. Сьогодні на завтра.</strong></li><li>Замовлення на вихідні та святкові дні приймаються не пізніше ніж за один робочий день до дати доставки.</li><li>Після оформлення замовлення онлайн у вихідний або святковий день менеджер зв’яжеться для підтвердження у найближчий робочий день з 09:00 до 18:00.</li></ul>"
+                },
+                {
+                    "title": "Підтвердження замовлення",
+                    "icon": "circle-check",
+                    "content": "<p>Після оформлення замовлення онлайн менеджер обов’язково зв’яжеться з вами для підтвердження та уточнення деталей доставки.</p><p>Правила доставки діють за умови, що замовлення підтверджене менеджером телефоном.</p><p><strong>Без підтвердження менеджером замовлення не вважається прийнятим до виконання.</strong></p><p>Підтвердження відбувається у будні дні з 09:00 до 18:00.</p><p>Телефони: (093) 691-72-72, (066) 691-72-72.</p>"
+                },
+                {
+                    "title": "Умови доставки",
+                    "icon": "delivery",
+                    "content": "<ul><li>Мінімальна сума замовлення — 2000 грн.</li><li>Доставка по Києву — 350 грн.</li><li><strong>При замовленні від 5000 грн доставка по Києву безкоштовна.</strong></li><li>Самовивіз — знижка 10% на все замовлення.</li><li>Можливість доставки за межі Києва погоджується з менеджером.</li></ul>"
+                },
+                {
+                    "title": "Оплата",
+                    "icon": "credit-card",
+                    "content": "<ul><li>Готівкою кур’єру-водію під час доставки.</li><li>Безготівковий розрахунок для юридичних осіб за виставленим рахунком.</li><li>Доставка за безготівковим розрахунком здійснюється лише після 100% передоплати.</li><li>Безготівковий платіж на банківську картку кур’єра-водія під час доставки.</li><li><strong>Для замовлень від 5000 грн потрібна передоплата у розмірі 50% від суми замовлення.</strong></li></ul>"
+                }
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_kanapka_delivery_section_title",
+                    "label": "Заголовок",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": { "width": "60", "class": "", "id": "" },
+                    "parent_repeater": "field_kanapka_delivery_sections"
+                },
+                {
+                    "key": "field_kanapka_delivery_section_icon",
+                    "label": "Іконка",
+                    "name": "icon",
+                    "type": "select",
+                    "required": 1,
+                    "wrapper": { "width": "40", "class": "", "id": "" },
+                    "choices": {
+                        "cart": "Кошик",
+                        "circle-check": "Підтвердження",
+                        "delivery": "Доставка",
+                        "credit-card": "Оплата",
+                        "info": "Інформація",
+                        "clock": "Час",
+                        "wallet": "Гаманець"
+                    },
+                    "default_value": "info",
+                    "return_format": "value",
+                    "parent_repeater": "field_kanapka_delivery_sections"
+                },
+                {
+                    "key": "field_kanapka_delivery_section_content",
+                    "label": "Текст",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "required": 1,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_kanapka_delivery_sections"
+                }
+            ]
+        },
+        {
+            "key": "field_kanapka_delivery_intro_tab",
+            "label": "Нижній інформаційний блок",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kanapka_delivery_intro_title",
+            "label": "Заголовок",
+            "name": "kanapka_delivery_intro_title",
+            "type": "text",
+            "default_value": "Доставка закусок у Києві",
+            "required": 0
+        },
+        {
+            "key": "field_kanapka_delivery_intro_text",
+            "label": "Текст",
+            "name": "kanapka_delivery_intro_text",
+            "type": "wysiwyg",
+            "default_value": "<p>Доставка готових страв для фуршету в офісі, святкування дня народження або іншої події. У меню представлені канапе, тарталетки, сендвічі, бургери, випічка, фуршетні набори, кава-брейк набори та десерти.</p><p>Доставка здійснюється у спеціальному пакуванні, що зберігає зовнішній вигляд, смак і аромат страв.</p>",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "required": 0
+        },
+        {
+            "key": "field_kanapka_delivery_intro_image",
+            "label": "Зображення",
+            "name": "kanapka_delivery_intro_image",
+            "type": "image",
+            "instructions": "Необов’язкове зображення зліва від тексту.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp,avif"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/delivery-payment.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": "Керований контент сторінки доставки та оплати.",
+    "show_in_rest": 0,
+    "modified": 1784030000
+}

@@ -233,6 +233,7 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/cart.js' ),
 			true
 		);
+
 	}
 
 	if ( function_exists( 'is_checkout' ) && is_checkout() && ( ! function_exists( 'is_wc_endpoint_url' ) || ! is_wc_endpoint_url() ) ) {
@@ -296,6 +297,7 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
 			true
 		);
+
 	}
 
 	if ( function_exists( 'kanapka_theme_is_catalogue_archive' ) && kanapka_theme_is_catalogue_archive() ) {
@@ -368,6 +370,52 @@ function kanapka_theme_enqueue_assets() {
 			get_theme_file_uri( '/assets/js/components/catalogue-view.js' ),
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/catalogue-view.js' ),
+			true
+		);
+	}
+
+	if ( is_page_template( 'page-templates/delivery-payment.php' ) ) {
+		wp_enqueue_style(
+			'kanapka-theme-woocommerce',
+			get_theme_file_uri( '/assets/css/woocommerce/base.css' ),
+			array( 'kanapka-theme-main' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/base.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-shop',
+			get_theme_file_uri( '/assets/css/woocommerce/shop.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-woocommerce' ),
+			kanapka_theme_asset_version( '/assets/css/woocommerce/shop.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/css/components/order-benefits.css' ),
+			array( 'kanapka-theme-main' ),
+			kanapka_theme_asset_version( '/assets/css/components/order-benefits.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-delivery-payment',
+			get_theme_file_uri( '/assets/css/pages/delivery-payment.css' ),
+			array( 'kanapka-theme-shop', 'kanapka-theme-order-benefits' ),
+			kanapka_theme_asset_version( '/assets/css/pages/delivery-payment.css' )
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-order-benefits',
+			get_theme_file_uri( '/assets/js/components/order-benefits.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/order-benefits.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'kanapka-theme-catalogue-sidebar',
+			get_theme_file_uri( '/assets/js/components/catalogue-sidebar.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/catalogue-sidebar.js' ),
 			true
 		);
 	}
