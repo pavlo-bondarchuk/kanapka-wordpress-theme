@@ -1,0 +1,147 @@
+.wpcf7-form {
+	display: grid;
+	gap: var(--space-4);
+}
+
+.wpcf7-form > p,
+.wpcf7-form > div,
+.wpcf7-form-control-wrap {
+	margin: 0;
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+}
+
+.wpcf7 label {
+	display: grid;
+	gap: var(--space-2);
+	color: var(--color-brand-900);
+	font-size: var(--font-size-sm);
+	font-weight: 700;
+}
+
+.wpcf7 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.wpcf7 select,
+.wpcf7 textarea {
+	display: block;
+	width: 100%;
+	min-height: 3rem;
+	padding: 0.75rem 0.875rem;
+	border: 0.0625rem solid var(--color-line);
+	border-radius: var(--radius-sm);
+	background: var(--color-surface);
+	color: var(--color-ink);
+	line-height: 1.35;
+	transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.wpcf7 textarea {
+	min-height: 7rem;
+	resize: vertical;
+}
+
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+	color: var(--color-muted);
+	opacity: 0.8;
+}
+
+.wpcf7 input:not([type="submit"]):focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus {
+	border-color: var(--color-brand-700);
+	box-shadow: 0 0 0 0.1875rem rgb(6 78 181 / 12%);
+	outline: 0;
+}
+
+.wpcf7 input[type="checkbox"],
+.wpcf7 input[type="radio"] {
+	width: 1.125rem;
+	height: 1.125rem;
+	margin: 0;
+	accent-color: var(--color-brand-700);
+}
+
+.wpcf7 .wpcf7-list-item {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+	margin: 0 var(--space-4) var(--space-2) 0;
+}
+
+.wpcf7 .wpcf7-not-valid {
+	border-color: #c62828 !important;
+	box-shadow: 0 0 0 0.1875rem rgb(198 40 40 / 10%);
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+	display: block;
+	margin-top: var(--space-1);
+	color: #b42318;
+	font-size: var(--font-size-xs);
+	font-weight: 650;
+}
+
+.wpcf7 .wpcf7-submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.75rem 1.5rem;
+	border: 0.0625rem solid var(--color-brand-800);
+	border-radius: var(--radius-sm);
+	background: var(--color-brand-800);
+	color: #fff;
+	font-weight: 750;
+	line-height: 1;
+	cursor: pointer;
+	transition: background-color var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.wpcf7 .wpcf7-submit:hover:not(:disabled) {
+	background: var(--color-brand-900);
+	transform: translateY(-0.0625rem);
+}
+
+.wpcf7 .wpcf7-submit:disabled {
+	cursor: wait;
+	opacity: 0.65;
+}
+
+.wpcf7 .wpcf7-spinner {
+	margin: 0 0 0 var(--space-2);
+	vertical-align: middle;
+}
+
+.wpcf7 .wpcf7-response-output {
+	margin: 0;
+	padding: var(--space-3) var(--space-4);
+	border: 0.0625rem solid var(--color-line);
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-soft);
+	font-size: var(--font-size-sm);
+	line-height: 1.45;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+	border-color: var(--color-success);
+	background: rgb(81 170 79 / 10%);
+	color: #286b2c;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+	border-color: var(--color-accent);
+	background: rgb(240 162 11 / 10%);
+	color: #7a4b00;
+}
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output,
+.wpcf7 form.spam .wpcf7-response-output {
+	border-color: #c62828;
+	background: rgb(198 40 40 / 8%);
+	color: #8f1d1d;
+}

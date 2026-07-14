@@ -38,6 +38,13 @@ function kanapka_theme_enqueue_assets() {
 	);
 
 	wp_enqueue_style(
+		'kanapka-theme-contact-form-7',
+		get_theme_file_uri( '/assets/css/components/contact-form-7.css' ),
+		array( 'kanapka-theme-main' ),
+		kanapka_theme_asset_version( '/assets/css/components/contact-form-7.css' )
+	);
+
+	wp_enqueue_style(
 		'kanapka-theme-footer',
 		get_theme_file_uri( '/assets/css/components/footer.css' ),
 		array( 'kanapka-theme-main' ),

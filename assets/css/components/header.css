@@ -525,6 +525,20 @@ body.is-callback-modal-open {
 	cursor: pointer;
 }
 
+@media (max-width: 36rem) {
+	.callback-modal {
+		align-items: end;
+		padding: 0;
+	}
+
+	.callback-modal__dialog {
+		width: 100%;
+		max-height: calc(100dvh - var(--space-4));
+		padding: var(--space-5) var(--container-gutter);
+		border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+	}
+}
+
 .language-switcher {
 	gap: var(--space-1);
 	font-size: var(--font-size-xs);
