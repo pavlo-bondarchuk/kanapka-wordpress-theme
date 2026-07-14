@@ -32,6 +32,29 @@ function kanapka_theme_dequeue_woocommerce_styles() {
 add_action( 'wp_enqueue_scripts', 'kanapka_theme_dequeue_woocommerce_styles', 100 );
 
 /**
+ * Remove address details that are not used by the local checkout flow.
+ *
+ * @param array $fields Checkout field groups.
+ * @return array
+ */
+function kanapka_theme_remove_unused_checkout_address_fields( $fields ) {
+	$unused_fields = array( 'country', 'city', 'postcode' );
+
+	foreach ( array( 'billing', 'shipping' ) as $section ) {
+		foreach ( $unused_fields as $field_name ) {
+			unset( $fields[ $section ][ $section . '_' . $field_name ] );
+		}
+
+		if ( isset( $fields[ $section ] ) && ! $fields[ $section ] ) {
+			unset( $fields[ $section ] );
+		}
+	}
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'kanapka_theme_remove_unused_checkout_address_fields', 999 );
+
+/**
  * Set image dimensions that match the design card ratio.
  *
  * @param array $size Existing image size.
