@@ -762,3 +762,10 @@ msgstr ""
 #: page-templates/catering-service.php
 msgid "Next image"
 msgstr ""
+#: header.php
+msgid "Close phone numbers"
+msgstr ""
+
+#: header.php
+msgid "Phone numbers"
+msgstr ""

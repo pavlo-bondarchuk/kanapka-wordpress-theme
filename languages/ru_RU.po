@@ -775,3 +775,10 @@ msgstr "Предыдущее изображение"
 #: page-templates/catering-service.php
 msgid "Next image"
 msgstr "Следующее изображение"
+#: header.php
+msgid "Close phone numbers"
+msgstr "Закрыть номера телефонов"
+
+#: header.php
+msgid "Phone numbers"
+msgstr "Номера телефонов"

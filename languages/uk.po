@@ -774,3 +774,10 @@ msgstr "Попереднє зображення"
 #: page-templates/catering-service.php
 msgid "Next image"
 msgstr "Наступне зображення"
+#: header.php
+msgid "Close phone numbers"
+msgstr "Закрити номери телефонів"
+
+#: header.php
+msgid "Phone numbers"
+msgstr "Номери телефонів"

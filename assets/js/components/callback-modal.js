@@ -19,6 +19,19 @@
 	};
 
 	const open = (trigger) => {
+		const headerPopup = trigger.closest('[data-header-popup]');
+
+		if (headerPopup) {
+			headerPopup.querySelector('[data-header-popup-button]')?.setAttribute('aria-expanded', 'false');
+			const headerPanel = headerPopup.querySelector('[data-header-popup-panel]');
+
+			if (headerPanel) {
+				headerPanel.hidden = true;
+			}
+
+			headerPopup.removeAttribute('data-open');
+		}
+
 		opener = trigger;
 		modal.hidden = false;
 		document.body.classList.add('is-callback-modal-open');
