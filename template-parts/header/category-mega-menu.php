@@ -21,7 +21,7 @@ $show_image = ! empty( $args['show_image'] );
 				<?php if ( $show_image ) : ?>
 					<?php $thumbnail_id = absint( get_term_meta( $category->term_id, 'thumbnail_id', true ) ); ?>
 					<?php if ( $thumbnail_id ) : ?>
-						<?php echo wp_get_attachment_image( $thumbnail_id, 'thumbnail', false, array( 'loading' => 'lazy', 'sizes' => '64px' ) ); ?>
+						<?php echo wp_get_attachment_image( $thumbnail_id, 'kanapka-mega-menu', false, array( 'loading' => 'lazy', 'sizes' => '48px' ) ); ?>
 					<?php endif; ?>
 				<?php endif; ?>
 				<span><?php echo esc_html( $category->name ); ?></span>
