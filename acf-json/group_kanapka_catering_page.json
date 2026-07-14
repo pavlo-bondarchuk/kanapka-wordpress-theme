@@ -6,7 +6,7 @@
         { "key": "field_kcp_hero_enabled", "label": "Enable section", "name": "kanapka_catering_hero_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
         { "key": "field_kcp_hero_subtitle", "label": "Subtitle", "name": "kanapka_catering_hero_subtitle", "type": "text" },
         { "key": "field_kcp_hero_text", "label": "Intro text", "name": "kanapka_catering_hero_text", "type": "wysiwyg", "tabs": "all", "toolbar": "basic", "media_upload": 0 },
-        { "key": "field_kcp_hero_image", "label": "Hero image", "name": "kanapka_catering_hero_image", "type": "image", "return_format": "id", "preview_size": "medium", "library": "all" },
+        { "key": "field_kcp_hero_image", "label": "Hero images", "name": "kanapka_catering_hero_image", "type": "gallery", "return_format": "id", "preview_size": "medium", "library": "all" },
         {
             "key": "field_kcp_hero_points", "label": "Hero checklist", "name": "kanapka_catering_hero_points", "type": "repeater", "layout": "table", "button_label": "Add item", "max": 8,
             "sub_fields": [
@@ -78,5 +78,5 @@
     "active": true,
     "description": "Reusable modular layout for the catering section.",
     "show_in_rest": 0,
-    "modified": 1784034000
+    "modified": 1784055600
 }

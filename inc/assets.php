@@ -470,6 +470,14 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/catering-gallery.js' ),
 			true
 		);
+
+		wp_enqueue_script(
+			'kanapka-theme-catering-hero-slider',
+			get_theme_file_uri( '/assets/js/components/catering-hero-slider.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/catering-hero-slider.js' ),
+			true
+		);
 	}
 
 	if ( function_exists( 'is_product' ) && is_product() ) {

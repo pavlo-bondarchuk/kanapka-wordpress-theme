@@ -52,7 +52,11 @@ while ( have_posts() ) {
 	$hero_subtitle    = sanitize_text_field( $field( 'kanapka_catering_hero_subtitle', '' ) );
 	$hero_text        = $field( 'kanapka_catering_hero_text', '' );
 	$hero_text        = $hero_text ?: '<p>' . esc_html( $plain_intro( $page_id ) ) . '</p>';
-	$hero_image_id    = absint( $field( 'kanapka_catering_hero_image', 0 ) ) ?: $first_content_image( $page_id );
+	$hero_images      = $field( 'kanapka_catering_hero_image', array() );
+	$hero_images      = is_array( $hero_images ) ? $hero_images : array( $hero_images );
+	$hero_images      = array_values( array_unique( array_filter( array_map( 'absint', $hero_images ) ) ) );
+	$hero_images      = $hero_images ?: array_filter( array( $first_content_image( $page_id ) ) );
+	$has_hero_slider  = count( $hero_images ) > 1;
 	$hero_points      = (array) $field( 'kanapka_catering_hero_points', array() );
 	$features         = (array) $field( 'kanapka_catering_features', array() );
 	$feature_title    = sanitize_text_field( $field( 'kanapka_catering_features_title', '' ) );
@@ -90,7 +94,7 @@ while ( have_posts() ) {
 
 		<?php if ( $hero_enabled ) : ?>
 			<section class="catering-hero section">
-				<div class="container catering-hero__grid<?php echo $hero_image_id ? '' : ' catering-hero__grid--no-image'; ?>">
+				<div class="container catering-hero__grid<?php echo $hero_images ? '' : ' catering-hero__grid--no-image'; ?>">
 					<div class="catering-hero__content">
 						<h1><?php the_title(); ?></h1>
 						<?php if ( $hero_subtitle ) : ?><p class="catering-hero__subtitle"><?php echo esc_html( $hero_subtitle ); ?></p><?php endif; ?>
@@ -103,8 +107,25 @@ while ( have_posts() ) {
 							</ul>
 						<?php endif; ?>
 					</div>
-					<?php if ( $hero_image_id ) : ?>
-						<div class="catering-hero__media"><?php echo wp_get_attachment_image( $hero_image_id, 'large', false, array( 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 780px) 100vw, 50vw' ) ); ?></div>
+					<?php if ( $hero_images ) : ?>
+						<div class="catering-hero__media<?php echo $has_hero_slider ? ' has-slider' : ''; ?>"<?php echo $has_hero_slider ? ' data-catering-hero-slider' : ''; ?>>
+							<div class="catering-hero__track" data-catering-hero-track>
+								<?php foreach ( $hero_images as $hero_index => $hero_image_id ) : ?>
+									<figure class="catering-hero__slide" data-catering-hero-slide aria-hidden="<?php echo 0 === $hero_index ? 'false' : 'true'; ?>">
+										<?php echo wp_get_attachment_image( $hero_image_id, 'large', false, array( 'loading' => 0 === $hero_index ? 'eager' : 'lazy', 'fetchpriority' => 0 === $hero_index ? 'high' : 'auto', 'sizes' => '(max-width: 780px) 100vw, 45vw' ) ); ?>
+									</figure>
+								<?php endforeach; ?>
+							</div>
+							<?php if ( $has_hero_slider ) : ?>
+								<button class="catering-hero__arrow catering-hero__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous image', 'kanapka-theme' ); ?>" data-catering-hero-previous><?php echo kanapka_theme_ui_icon( 'chevron-left', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+								<button class="catering-hero__arrow catering-hero__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next image', 'kanapka-theme' ); ?>" data-catering-hero-next><?php echo kanapka_theme_ui_icon( 'chevron-right', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+								<div class="catering-hero__dots" role="group" aria-label="<?php esc_attr_e( 'Event photos', 'kanapka-theme' ); ?>">
+									<?php foreach ( $hero_images as $hero_index => $hero_image_id ) : ?>
+										<button type="button" aria-label="<?php echo esc_attr( sprintf( __( 'Open image %1$d of %2$d', 'kanapka-theme' ), $hero_index + 1, count( $hero_images ) ) ); ?>" aria-current="<?php echo 0 === $hero_index ? 'true' : 'false'; ?>" data-catering-hero-dot="<?php echo esc_attr( $hero_index ); ?>"></button>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+						</div>
 					<?php endif; ?>
 				</div>
 			</section>
