@@ -350,7 +350,8 @@
 }
 
 .primary-navigation .sub-menu a:hover,
-.primary-navigation .sub-menu a:focus-visible {
+.primary-navigation .sub-menu a:focus-visible,
+.primary-navigation .sub-menu li.current_page_item a {
 	background: var(--color-brand-100);
 	color: var(--color-brand-900);
 }
@@ -468,15 +469,15 @@
 	line-height: 1.35;
 }
 
-.header-order-info > span {
+.header-order-info>span {
 	color: var(--color-muted);
 }
 
-.header-order-info__content > :first-child {
+.header-order-info__content> :first-child {
 	margin-top: 0;
 }
 
-.header-order-info__content > :last-child {
+.header-order-info__content> :last-child {
 	margin-bottom: 0;
 }
 
