@@ -17,6 +17,16 @@ function kanapka_theme_is_catalogue_archive() {
 }
 
 /**
+ * Show more products on each catalogue archive page.
+ *
+ * @return int
+ */
+function kanapka_theme_catalogue_products_per_page() {
+	return 32;
+}
+add_filter( 'loop_shop_per_page', 'kanapka_theme_catalogue_products_per_page', 20 );
+
+/**
  * Get top-level product categories for catalogue navigation.
  *
  * @param int $limit Maximum number of categories, 0 for all.
