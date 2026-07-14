@@ -742,3 +742,23 @@ msgstr ""
 #: page-templates/catering-service.php
 msgid "Send request"
 msgstr ""
+#: page-templates/catering-service.php
+msgid "Close gallery"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Event photos"
+msgstr ""
+
+#: page-templates/catering-service.php
+#, php-format
+msgid "Open image %1$d of %2$d"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Previous image"
+msgstr ""
+
+#: page-templates/catering-service.php
+msgid "Next image"
+msgstr ""

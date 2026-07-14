@@ -754,3 +754,23 @@ msgstr "Готові організувати вашу ідеальну поді
 #: page-templates/catering-service.php
 msgid "Send request"
 msgstr "Надіслати заявку"
+#: page-templates/catering-service.php
+msgid "Close gallery"
+msgstr "Закрити галерею"
+
+#: page-templates/catering-service.php
+msgid "Event photos"
+msgstr "Фото з подій"
+
+#: page-templates/catering-service.php
+#, php-format
+msgid "Open image %1$d of %2$d"
+msgstr "Відкрити зображення %1$d із %2$d"
+
+#: page-templates/catering-service.php
+msgid "Previous image"
+msgstr "Попереднє зображення"
+
+#: page-templates/catering-service.php
+msgid "Next image"
+msgstr "Наступне зображення"

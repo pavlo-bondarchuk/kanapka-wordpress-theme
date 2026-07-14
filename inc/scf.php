@@ -130,8 +130,27 @@ function kanapka_theme_migrate_legacy_options() {
 		}
 	}
 
+	if ( $migration_version < 5 ) {
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+
+		$catering_pages = get_pages(
+			array(
+				'meta_key'   => '_wp_page_template',
+				'meta_value' => 'page-templates/catering-service.php',
+			)
+		);
+
+		foreach ( $catering_pages as $catering_page ) {
+			$gallery_ids = (array) get_field( 'kanapka_catering_gallery_images', $catering_page->ID );
+
+			foreach ( array_filter( array_map( 'absint', $gallery_ids ) ) as $gallery_id ) {
+				wp_update_image_subsizes( $gallery_id );
+			}
+		}
+	}
+
 	update_option( 'kanapka_theme_scf_migrated', 1, false );
-	update_option( 'kanapka_theme_scf_migration_version', 4, false );
+	update_option( 'kanapka_theme_scf_migration_version', 5, false );
 }
 add_action( 'acf/init', 'kanapka_theme_migrate_legacy_options', 20 );
 

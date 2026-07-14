@@ -755,3 +755,23 @@ msgstr "Готовы организовать ваше идеальное мер
 #: page-templates/catering-service.php
 msgid "Send request"
 msgstr "Отправить заявку"
+#: page-templates/catering-service.php
+msgid "Close gallery"
+msgstr "Закрыть галерею"
+
+#: page-templates/catering-service.php
+msgid "Event photos"
+msgstr "Фото с мероприятий"
+
+#: page-templates/catering-service.php
+#, php-format
+msgid "Open image %1$d of %2$d"
+msgstr "Открыть изображение %1$d из %2$d"
+
+#: page-templates/catering-service.php
+msgid "Previous image"
+msgstr "Предыдущее изображение"
+
+#: page-templates/catering-service.php
+msgid "Next image"
+msgstr "Следующее изображение"
