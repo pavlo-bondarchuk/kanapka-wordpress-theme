@@ -81,13 +81,25 @@
 				<?php $phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_one ) ); ?>"><?php echo esc_html( $phone_one ); ?></a>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone_two ) ); ?>"><?php echo esc_html( $phone_two ); ?></a>
-				<?php $work_hours = kanapka_theme_get_multiline_option( 'kanapka_header_work_hours', '' ); ?>
-				<?php if ( $work_hours ) : ?>
-					<small class="header-contact__hours"><?php echo nl2br( esc_html( $work_hours ) ); ?></small>
+				<?php $callback_link = kanapka_theme_get_option( 'kanapka_header_callback_link', array() ); ?>
+				<?php $callback_form_id = absint( kanapka_theme_get_option( 'kanapka_header_callback_form', 0 ) ); ?>
+				<?php $has_callback_form = $callback_form_id && 'wpcf7_contact_form' === get_post_type( $callback_form_id ) && shortcode_exists( 'contact-form-7' ); ?>
+				<?php if ( is_array( $callback_link ) && ! empty( $callback_link['url'] ) && ! empty( $callback_link['title'] ) ) : ?>
+					<a class="header-contact__callback" href="<?php echo esc_url( $callback_link['url'] ); ?>"<?php echo ! empty( $callback_link['target'] ) ? ' target="' . esc_attr( $callback_link['target'] ) . '"' : ''; ?><?php echo $has_callback_form ? ' data-callback-modal-open aria-haspopup="dialog" aria-controls="header-callback-modal"' : ''; ?>><?php echo esc_html( $callback_link['title'] ); ?></a>
 				<?php endif; ?>
 			</div>
+			<?php $order_info = (string) kanapka_theme_get_option( 'kanapka_header_work_hours', '' ); ?>
+			<?php if ( $order_info ) : ?>
+				<div class="header-order-info">
+					<span><?php echo esc_html( kanapka_theme_get_option( 'kanapka_header_order_info_label', __( 'Order reception details', 'kanapka-theme' ) ) ); ?></span>
+					<div class="header-order-info__content"><?php echo wp_kses_post( wpautop( $order_info ) ); ?></div>
+				</div>
+			<?php endif; ?>
 			<?php get_template_part( 'template-parts/header/cart-link' ); ?>
 			<?php get_template_part( 'template-parts/header/search-popup' ); ?>
 		</div>
 	</div>
 </header>
+<?php if ( ! empty( $has_callback_form ) ) : ?>
+	<?php get_template_part( 'template-parts/header/callback-modal', null, array( 'form_id' => $callback_form_id, 'title' => $callback_link['title'] ) ); ?>
+<?php endif; ?>

@@ -77,6 +77,18 @@ function kanapka_theme_enqueue_assets() {
 		true
 	);
 
+	$callback_form_id = absint( kanapka_theme_get_option( 'kanapka_header_callback_form', 0 ) );
+
+	if ( $callback_form_id && 'wpcf7_contact_form' === get_post_type( $callback_form_id ) && shortcode_exists( 'contact-form-7' ) ) {
+		wp_enqueue_script(
+			'kanapka-theme-callback-modal',
+			get_theme_file_uri( '/assets/js/components/callback-modal.js' ),
+			array(),
+			kanapka_theme_asset_version( '/assets/js/components/callback-modal.js' ),
+			true
+		);
+	}
+
 	wp_enqueue_script(
 		'kanapka-theme-quantity-control',
 		get_theme_file_uri( '/assets/js/components/quantity-control.js' ),

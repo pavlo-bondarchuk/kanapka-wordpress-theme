@@ -713,3 +713,14 @@ msgstr ""
 #: template-parts/cart/assurance.php:12
 msgid "Your data is protected and is not shared with third parties"
 msgstr ""
+#: template-parts/header/callback-modal.php:22
+msgid "Close dialog"
+msgstr ""
+
+#: header.php:94
+msgid "Order reception details"
+msgstr ""
+
+#: template-parts/header/callback-modal.php:11
+msgid "Request a callback"
+msgstr ""

@@ -391,6 +391,7 @@
 
 .header-actions,
 .header-contact,
+.header-order-info,
 .language-switcher {
 	display: flex;
 	align-items: center;
@@ -422,6 +423,106 @@
 	color: var(--color-brand-900);
 	font-weight: 750;
 	text-decoration: none;
+}
+
+.header-contact .header-contact__callback {
+	margin-top: var(--space-1);
+	color: var(--color-accent, #e55256);
+	font-size: var(--font-size-xs);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.header-order-info {
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 15rem;
+	font-size: var(--font-size-xs);
+	line-height: 1.35;
+}
+
+.header-order-info > span {
+	color: var(--color-muted);
+}
+
+.header-order-info__content > :first-child {
+	margin-top: 0;
+}
+
+.header-order-info__content > :last-child {
+	margin-bottom: 0;
+}
+
+.header-order-info__content p {
+	margin-block: 0.125rem;
+}
+
+.header-order-info__content a {
+	color: var(--color-accent, #e55256);
+}
+
+body.is-callback-modal-open {
+	overflow: hidden;
+}
+
+.callback-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: grid;
+	place-items: center;
+	padding: var(--container-gutter);
+}
+
+.callback-modal[hidden] {
+	display: none;
+}
+
+.callback-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgb(4 31 75 / 65%);
+	backdrop-filter: blur(0.125rem);
+}
+
+.callback-modal__dialog {
+	position: relative;
+	z-index: 1;
+	width: min(100%, 36rem);
+	max-height: calc(100dvh - (2 * var(--container-gutter)));
+	padding: clamp(1.25rem, 4vw, 2rem);
+	overflow-y: auto;
+	border-radius: var(--radius-lg);
+	background: var(--color-surface);
+	box-shadow: var(--shadow-lg, 0 1.5rem 4rem rgb(0 0 0 / 25%));
+}
+
+.callback-modal__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--space-4);
+	margin-bottom: var(--space-5);
+}
+
+.callback-modal__header h2 {
+	margin: 0;
+	color: var(--color-brand-900);
+}
+
+.callback-modal__close {
+	display: grid;
+	flex: 0 0 auto;
+	width: 2.5rem;
+	height: 2.5rem;
+	place-items: center;
+	padding: 0;
+	border: 0.0625rem solid var(--color-line);
+	border-radius: 50%;
+	background: var(--color-surface-soft);
+	color: var(--color-brand-900);
+	cursor: pointer;
 }
 
 .language-switcher {
@@ -971,6 +1072,10 @@ body.is-navigation-open {
 	}
 
 	.header-contact {
+		display: none;
+	}
+
+	.header-order-info {
 		display: none;
 	}
 

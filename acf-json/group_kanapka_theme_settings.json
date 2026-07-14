@@ -42,12 +42,45 @@
         },
         {
             "key": "field_kanapka_header_work_hours",
-            "label": "Working hours",
+            "label": "Order reception details",
             "name": "kanapka_header_work_hours",
-            "type": "textarea",
-            "rows": 2,
-            "new_lines": "",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
             "default_value": "Прийом замовлень online 24/7\nМенеджером з 9:00 до 18:00"
+        },
+        {
+            "key": "field_kanapka_header_order_info_label",
+            "label": "Order reception details label",
+            "name": "kanapka_header_order_info_label",
+            "type": "text",
+            "default_value": "Приймання замовлень:"
+        },
+        {
+            "key": "field_kanapka_header_callback_link",
+            "label": "Callback link",
+            "name": "kanapka_header_callback_link",
+            "type": "link",
+            "return_format": "array",
+            "default_value": {
+                "title": "Не додзвонилися...",
+                "url": "https://kanapka.kiev.ua/uk/dostavka/#callback-form",
+                "target": ""
+            }
+        },
+        {
+            "key": "field_kanapka_header_callback_form",
+            "label": "Callback form",
+            "name": "kanapka_header_callback_form",
+            "type": "post_object",
+            "post_type": ["wpcf7_contact_form"],
+            "return_format": "id",
+            "ui": 1,
+            "multiple": 0,
+            "allow_null": 1,
+            "instructions": "Choose the Contact Form 7 form displayed in the header callback dialog. The link keeps working as a regular fallback when no form is selected."
         },
         {
             "key": "field_kanapka_contact_email",
@@ -329,5 +362,5 @@
     "active": true,
     "description": "Header and navigation settings for the Kanapka theme.",
     "show_in_rest": 0,
-    "modified": 1783764294
+    "modified": 1784030222
 }
