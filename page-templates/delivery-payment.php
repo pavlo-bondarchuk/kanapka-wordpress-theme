@@ -42,7 +42,7 @@ while ( have_posts() ) {
 		</header>
 
 		<div class="delivery-payment-layout container">
-			<?php get_template_part( 'template-parts/shop/sidebar', null, array( 'categories_only' => true, 'show_all' => true ) ); ?>
+			<?php get_template_part( 'template-parts/shop/sidebar', null, array( 'categories_only' => true ) ); ?>
 
 			<div class="delivery-payment-content">
 				<?php if ( is_array( $sections ) && $sections ) : ?>
