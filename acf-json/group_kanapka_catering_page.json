@@ -1,0 +1,82 @@
+{
+    "key": "group_kanapka_catering_page",
+    "title": "Catering page sections",
+    "fields": [
+        { "key": "field_kcp_hero_tab", "label": "Hero", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_hero_enabled", "label": "Enable section", "name": "kanapka_catering_hero_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_kcp_hero_subtitle", "label": "Subtitle", "name": "kanapka_catering_hero_subtitle", "type": "text" },
+        { "key": "field_kcp_hero_text", "label": "Intro text", "name": "kanapka_catering_hero_text", "type": "wysiwyg", "tabs": "all", "toolbar": "basic", "media_upload": 0 },
+        { "key": "field_kcp_hero_image", "label": "Hero image", "name": "kanapka_catering_hero_image", "type": "image", "return_format": "id", "preview_size": "medium", "library": "all" },
+        {
+            "key": "field_kcp_hero_points", "label": "Hero checklist", "name": "kanapka_catering_hero_points", "type": "repeater", "layout": "table", "button_label": "Add item", "max": 8,
+            "sub_fields": [
+                { "key": "field_kcp_hero_point_text", "label": "Text", "name": "text", "type": "text", "parent_repeater": "field_kcp_hero_points" }
+            ]
+        },
+
+        { "key": "field_kcp_features_tab", "label": "Feature cards", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_features_enabled", "label": "Enable section", "name": "kanapka_catering_features_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_kcp_features_title", "label": "Section title", "name": "kanapka_catering_features_title", "type": "text" },
+        {
+            "key": "field_kcp_features", "label": "Cards", "name": "kanapka_catering_features", "type": "repeater", "layout": "block", "button_label": "Add card", "max": 8, "collapsed": "field_kcp_feature_title",
+            "default_value": [
+                { "icon": "leaf", "title": "Fresh ingredients", "text": "Carefully selected products for every event." },
+                { "icon": "users", "title": "Professional team", "text": "Experienced staff and attentive service." },
+                { "icon": "delivery", "title": "On-time delivery", "text": "Delivery across Kyiv and the surrounding area." },
+                { "icon": "utensils", "title": "Individual menu", "text": "A menu tailored to your format and number of guests." },
+                { "icon": "sparkles", "title": "Full service", "text": "Preparation, presentation and event support." },
+                { "icon": "clock", "title": "Convenient ordering", "text": "We coordinate every detail with you in advance." }
+            ],
+            "sub_fields": [
+                { "key": "field_kcp_feature_icon", "label": "Icon", "name": "icon", "type": "select", "choices": { "leaf": "Leaf", "users": "Users", "delivery": "Delivery", "clock": "Clock", "utensils": "Utensils", "sparkles": "Sparkles", "circle-check": "Check", "briefcase": "Briefcase" }, "default_value": "circle-check", "return_format": "value", "parent_repeater": "field_kcp_features" },
+                { "key": "field_kcp_feature_title", "label": "Title", "name": "title", "type": "text", "parent_repeater": "field_kcp_features" },
+                { "key": "field_kcp_feature_text", "label": "Text", "name": "text", "type": "textarea", "rows": 3, "parent_repeater": "field_kcp_features" }
+            ]
+        },
+
+        { "key": "field_kcp_services_tab", "label": "Internal pages", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_services_enabled", "label": "Enable section", "name": "kanapka_catering_services_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_kcp_services_title", "label": "Section title", "name": "kanapka_catering_services_title", "type": "text" },
+        { "key": "field_kcp_services_auto", "label": "Show child pages automatically", "name": "kanapka_catering_services_auto", "type": "true_false", "ui": 1, "default_value": 1 },
+        {
+            "key": "field_kcp_services", "label": "Manual cards", "name": "kanapka_catering_services", "type": "repeater", "layout": "block", "button_label": "Add service", "max": 8, "collapsed": "field_kcp_service_title",
+            "sub_fields": [
+                { "key": "field_kcp_service_page", "label": "Page", "name": "page", "type": "post_object", "post_type": ["page"], "return_format": "id", "ui": 1, "allow_null": 1, "parent_repeater": "field_kcp_services" },
+                { "key": "field_kcp_service_title", "label": "Custom title", "name": "title", "type": "text", "parent_repeater": "field_kcp_services" },
+                { "key": "field_kcp_service_text", "label": "Description", "name": "text", "type": "textarea", "rows": 3, "parent_repeater": "field_kcp_services" },
+                { "key": "field_kcp_service_image", "label": "Image", "name": "image", "type": "image", "return_format": "id", "preview_size": "thumbnail", "parent_repeater": "field_kcp_services" }
+            ]
+        },
+
+        { "key": "field_kcp_content_tab", "label": "Content", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_content_enabled", "label": "Enable section", "name": "kanapka_catering_content_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_kcp_content_title", "label": "Section title", "name": "kanapka_catering_content_title", "type": "text" },
+        { "key": "field_kcp_content_body", "label": "Content", "name": "kanapka_catering_content_body", "type": "wysiwyg", "tabs": "all", "toolbar": "full", "media_upload": 1, "instructions": "When empty, the template displays the existing page content as a fallback." },
+
+        { "key": "field_kcp_gallery_tab", "label": "Gallery", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_gallery_enabled", "label": "Enable section", "name": "kanapka_catering_gallery_enabled", "type": "true_false", "ui": 1, "default_value": 0 },
+        { "key": "field_kcp_gallery_title", "label": "Section title", "name": "kanapka_catering_gallery_title", "type": "text" },
+        { "key": "field_kcp_gallery_images", "label": "Images", "name": "kanapka_catering_gallery_images", "type": "gallery", "return_format": "id", "preview_size": "thumbnail", "library": "all" },
+
+        { "key": "field_kcp_cta_tab", "label": "Call to action", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_cta_enabled", "label": "Enable section", "name": "kanapka_catering_cta_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_kcp_cta_title", "label": "Title", "name": "kanapka_catering_cta_title", "type": "text" },
+        { "key": "field_kcp_cta_text", "label": "Text", "name": "kanapka_catering_cta_text", "type": "textarea", "rows": 3 },
+        { "key": "field_kcp_cta_link", "label": "Button", "name": "kanapka_catering_cta_link", "type": "link", "return_format": "array" },
+        { "key": "field_kcp_cta_form", "label": "Contact Form 7 form", "name": "kanapka_catering_cta_form", "type": "post_object", "post_type": ["wpcf7_contact_form"], "return_format": "id", "ui": 1, "allow_null": 1 },
+
+        { "key": "field_kcp_benefits_tab", "label": "Shared benefits", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_benefits_enabled", "label": "Enable section", "name": "kanapka_catering_benefits_enabled", "type": "true_false", "ui": 1, "default_value": 1 }
+    ],
+    "location": [[{ "param": "page_template", "operator": "==", "value": "page-templates/catering-service.php" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": "Reusable modular layout for the catering section.",
+    "show_in_rest": 0,
+    "modified": 1784034000
+}
