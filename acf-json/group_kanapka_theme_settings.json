@@ -59,18 +59,6 @@
             "default_value": "Приймання замовлень:"
         },
         {
-            "key": "field_kanapka_header_callback_link",
-            "label": "Callback link",
-            "name": "kanapka_header_callback_link",
-            "type": "link",
-            "return_format": "array",
-            "default_value": {
-                "title": "Не додзвонилися...",
-                "url": "https://kanapka.kiev.ua/uk/dostavka/#callback-form",
-                "target": ""
-            }
-        },
-        {
             "key": "field_kanapka_header_callback_form",
             "label": "Callback form",
             "name": "kanapka_header_callback_form",
@@ -362,5 +350,5 @@
     "active": true,
     "description": "Header and navigation settings for the Kanapka theme.",
     "show_in_rest": 0,
-    "modified": 1784030222
+    "modified": 1784030800
 }

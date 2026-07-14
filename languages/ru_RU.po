@@ -737,3 +737,6 @@ msgstr "Приём заказов:"
 #: template-parts/header/callback-modal.php:11
 msgid "Request a callback"
 msgstr "Заказать обратный звонок"
+#: header.php:87 header.php:103
+msgid "Could not reach us…"
+msgstr "Не дозвонились…"
