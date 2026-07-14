@@ -181,4 +181,10 @@
 	.delivery-payment-page .catalogue-sidebar__toggle {
 		display: none;
 	}
+
+	.delivery-payment-page .catalogue-sidebar__mobile-toggle[aria-expanded="true"] {
+		position: sticky;
+		top: var(--catalogue-mobile-sticky-top, 7rem);
+		z-index: 90;
+	}
 }

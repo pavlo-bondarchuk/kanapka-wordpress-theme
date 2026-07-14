@@ -23,6 +23,23 @@
 			}
 		};
 
+		if ( label ) {
+			const header = document.querySelector( '[data-site-header]' );
+			const adminBar = document.getElementById( 'wpadminbar' );
+			const setStickyOffset = () => {
+				const headerHeight = header ? header.getBoundingClientRect().height : 0;
+				const adminBarHeight = adminBar && window.getComputedStyle( adminBar ).position === 'fixed' ? adminBar.getBoundingClientRect().height : 0;
+
+				sidebar.style.setProperty( '--catalogue-mobile-sticky-top', `${ headerHeight + adminBarHeight + 8 }px` );
+			};
+
+			setStickyOffset();
+			window.addEventListener( 'resize', setStickyOffset, { passive: true } );
+			if ( 'ResizeObserver' in window && header ) {
+				new ResizeObserver( setStickyOffset ).observe( header );
+			}
+		}
+
 		setExpanded( false );
 		toggle.addEventListener( 'click', () => {
 			setExpanded( toggle.getAttribute( 'aria-expanded' ) !== 'true' );
