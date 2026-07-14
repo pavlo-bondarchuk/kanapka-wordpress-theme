@@ -29,7 +29,7 @@ $description = $description ? $description : __( 'Fresh dishes for buffets, offi
 		</figure>
 	<?php endif; ?>
 	<div class="catalogue-hero__content container">
-		<?php woocommerce_breadcrumb(); ?>
+		<?php kanapka_theme_breadcrumb(); ?>
 		<h1 id="catalogue-title"><?php echo esc_html( $title ); ?></h1>
 		<?php if ( $description ) : ?>
 			<p><?php echo esc_html( $description ); ?></p>

@@ -7,19 +7,8 @@
 	gap: var(--space-5);
 }
 
-.single-product-detail__breadcrumbs,
-.single-product-detail__breadcrumbs .woocommerce-breadcrumb {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+.single-product-detail__breadcrumbs {
 	margin: 0;
-	color: var(--color-muted);
-	font-size: var(--font-size-xs);
-}
-
-.single-product-detail__breadcrumbs a {
-	color: var(--color-brand-700);
-	text-decoration: none;
 }
 
 .single-product-detail__title {

@@ -21,7 +21,7 @@ $is_checkout_page  = function_exists( 'is_checkout' ) && is_checkout() && ! $is_
 			<?php get_template_part( 'template-parts/front-page/benefits' ); ?>
 		<?php elseif ( $is_checkout_page ) : ?>
 			<header class="checkout-page__header container">
-				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
+				<?php kanapka_theme_breadcrumb(); ?>
 				<h1><?php the_title(); ?></h1>
 				<p><?php esc_html_e( 'Complete your details and confirm your order. We will contact you to clarify the details.', 'kanapka-theme' ); ?></p>
 			</header>
@@ -33,7 +33,7 @@ $is_checkout_page  = function_exists( 'is_checkout' ) && is_checkout() && ! $is_
 			<?php endif; ?>
 		<?php elseif ( function_exists( 'is_cart' ) && is_cart() ) : ?>
 			<header class="cart-page__header container">
-				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
+				<?php kanapka_theme_breadcrumb(); ?>
 				<h1><?php the_title(); ?></h1>
 			</header>
 			<div class="cart-page__content container">
@@ -46,6 +46,7 @@ $is_checkout_page  = function_exists( 'is_checkout' ) && is_checkout() && ! $is_
 			<?php endif; ?>
 		<?php else : ?>
 			<article <?php post_class( 'content-entry' ); ?>>
+				<?php kanapka_theme_breadcrumb(); ?>
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 			</article>

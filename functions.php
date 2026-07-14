@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 $kanapka_theme_modules = array(
 	'legacy-compat',
 	'icons',
+	'template-tags',
 	'setup',
 	'assets',
 	'menus',

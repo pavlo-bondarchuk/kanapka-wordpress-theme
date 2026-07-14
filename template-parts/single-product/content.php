@@ -23,7 +23,7 @@ $categories = wc_get_product_category_list($product->get_id(), ', ');
 ?>
 <article <?php wc_product_class('single-product-detail container', $product); ?> data-single-product>
 	<div class="single-product-detail__breadcrumbs">
-		<?php woocommerce_breadcrumb(array('delimiter' => '<span aria-hidden="true">/</span>')); ?>
+		<?php kanapka_theme_breadcrumb(); ?>
 	</div>
 	<h1 class="single-product-detail__title"><?php the_title(); ?></h1>
 

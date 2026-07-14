@@ -35,9 +35,7 @@ while ( have_posts() ) {
 	?>
 	<main id="main-content" class="site-main delivery-payment-page">
 		<header class="delivery-payment-page__header container">
-			<?php if ( function_exists( 'woocommerce_breadcrumb' ) ) : ?>
-				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
-			<?php endif; ?>
+			<?php kanapka_theme_breadcrumb(); ?>
 			<h1><?php the_title(); ?></h1>
 		</header>
 

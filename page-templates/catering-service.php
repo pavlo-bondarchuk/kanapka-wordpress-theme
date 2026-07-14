@@ -85,9 +85,7 @@ while ( have_posts() ) {
 	?>
 	<main id="main-content" class="site-main catering-page">
 		<div class="container catering-page__breadcrumbs">
-			<?php if ( function_exists( 'woocommerce_breadcrumb' ) ) : ?>
-				<?php woocommerce_breadcrumb( array( 'delimiter' => '<span aria-hidden="true">/</span>' ) ); ?>
-			<?php endif; ?>
+			<?php kanapka_theme_breadcrumb(); ?>
 		</div>
 
 		<?php if ( $hero_enabled ) : ?>
