@@ -26,7 +26,7 @@
 		foreach ( $footer_menus as $location => $footer_menu ) :
 			?>
 			<nav class="footer-navigation" aria-label="<?php echo esc_attr( $footer_menu['title'] ); ?>">
-				<h2><?php echo esc_html( $footer_menu['title'] ); ?></h2>
+				<p class="site-footer__title"><?php echo esc_html( $footer_menu['title'] ); ?></p>
 				<?php
 				wp_nav_menu(
 					array(
@@ -41,7 +41,7 @@
 			</nav>
 		<?php endforeach; ?>
 		<div class="site-footer__contact">
-			<h2><?php esc_html_e( 'Contacts', 'kanapka-theme' ); ?></h2>
+			<p class="site-footer__title"><?php esc_html_e( 'Contacts', 'kanapka-theme' ); ?></p>
 			<?php $footer_phone_one = kanapka_theme_get_option( 'kanapka_header_phone_one', '(066) 691-72-72' ); ?>
 			<?php $footer_phone_two = kanapka_theme_get_option( 'kanapka_header_phone_two', '(093) 691-72-72' ); ?>
 			<?php $contact_email = kanapka_theme_get_option( 'kanapka_contact_email', get_option( 'admin_email' ) ); ?>
