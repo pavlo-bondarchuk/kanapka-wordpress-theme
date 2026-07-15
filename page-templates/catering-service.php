@@ -119,7 +119,7 @@ while ( have_posts() ) {
 							<div class="catering-hero__track" data-catering-hero-track>
 								<?php foreach ( $hero_images as $hero_index => $hero_image_id ) : ?>
 									<figure class="catering-hero__slide" data-catering-hero-slide aria-hidden="<?php echo 0 === $hero_index ? 'false' : 'true'; ?>">
-										<?php echo wp_get_attachment_image( $hero_image_id, 'large', false, array( 'loading' => 0 === $hero_index ? 'eager' : 'lazy', 'fetchpriority' => 0 === $hero_index ? 'high' : 'auto', 'sizes' => '(max-width: 780px) 100vw, 45vw' ) ); ?>
+										<?php echo wp_get_attachment_image( $hero_image_id, 'kanapka-catering-hero', false, array( 'loading' => 0 === $hero_index ? 'eager' : 'lazy', 'fetchpriority' => 0 === $hero_index ? 'high' : 'auto', 'sizes' => '(max-width: 780px) 100vw, 45vw' ) ); ?>
 									</figure>
 								<?php endforeach; ?>
 							</div>
