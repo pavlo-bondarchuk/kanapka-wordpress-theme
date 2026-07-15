@@ -15,6 +15,7 @@ $kanapka_theme_modules = array(
 	'assets',
 	'menus',
 	'images',
+	'search',
 	'brands',
 	'home',
 	'shop',

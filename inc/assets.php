@@ -124,6 +124,17 @@ function kanapka_theme_enqueue_assets() {
 		)
 	);
 
+	wp_localize_script(
+		'kanapka-theme-header-actions',
+		'kanapkaHeaderSearch',
+		array(
+			'ajaxUrl'        => admin_url( 'admin-ajax.php' ),
+			'nonce'          => wp_create_nonce( 'kanapka_product_search' ),
+			'minimumLength'  => 2,
+			'noResultsLabel' => __( 'No matching products found', 'kanapka-theme' ),
+		)
+	);
+
 	if ( is_front_page() ) {
 		wp_enqueue_style(
 			'kanapka-theme-front-page',
@@ -400,6 +411,15 @@ function kanapka_theme_enqueue_assets() {
 			array(),
 			kanapka_theme_asset_version( '/assets/js/components/catalogue-view.js' ),
 			true
+		);
+	}
+
+	if ( function_exists( 'kanapka_theme_is_product_search' ) && kanapka_theme_is_product_search() ) {
+		wp_enqueue_style(
+			'kanapka-theme-product-search',
+			get_theme_file_uri( '/assets/css/pages/product-search.css' ),
+			array( 'kanapka-theme-main', 'kanapka-theme-shop' ),
+			kanapka_theme_asset_version( '/assets/css/pages/product-search.css' )
 		);
 	}
 

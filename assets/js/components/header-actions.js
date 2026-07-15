@@ -3,8 +3,103 @@
 
 	const popupSelector = '[data-header-popup]';
 	const cartConfig = window.kanapkaCartActions || {};
+	const searchConfig = window.kanapkaHeaderSearch || {};
 	const quantityTimers = new Map();
 	const quantityRequests = new Map();
+	let searchTimer;
+	let searchRequest;
+
+	const clearSearchSuggestions = (suggestions) => {
+		if (!suggestions) {
+			return;
+		}
+
+		suggestions.replaceChildren();
+		suggestions.hidden = true;
+	};
+
+	const renderSearchSuggestions = (suggestions, items) => {
+		if (!suggestions) {
+			return;
+		}
+
+		suggestions.replaceChildren();
+		suggestions.hidden = false;
+
+		if (!items.length) {
+			const empty = document.createElement('p');
+			empty.className = 'header-search__empty';
+			empty.textContent = searchConfig.noResultsLabel || '';
+			suggestions.append(empty);
+			return;
+		}
+
+		const list = document.createElement('div');
+		list.className = 'header-search__suggestion-list';
+
+		items.forEach((item) => {
+			const link = document.createElement('a');
+			const image = document.createElement('img');
+			const content = document.createElement('span');
+			const title = document.createElement('strong');
+			const price = document.createElement('small');
+
+			link.className = 'header-search__suggestion';
+			link.href = item.url;
+			image.src = item.image;
+			image.alt = '';
+			image.width = 56;
+			image.height = 56;
+			image.loading = 'lazy';
+			title.textContent = item.title;
+			price.textContent = item.price;
+
+			content.append(title, price);
+			link.append(image, content);
+			list.append(link);
+		});
+
+		suggestions.append(list);
+	};
+
+	const requestSearchSuggestions = (input, suggestions) => {
+		const term = input.value.trim();
+		const minimumLength = Number.parseInt(searchConfig.minimumLength, 10) || 2;
+
+		window.clearTimeout(searchTimer);
+		searchRequest?.abort();
+
+		if (term.length < minimumLength) {
+			clearSearchSuggestions(suggestions);
+			return;
+		}
+
+		searchTimer = window.setTimeout(() => {
+			searchRequest = new AbortController();
+			const body = new URLSearchParams({
+				action: 'kanapka_product_search_suggestions',
+				nonce: searchConfig.nonce || '',
+				term,
+			});
+
+			window.fetch(searchConfig.ajaxUrl, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+				body,
+				signal: searchRequest.signal,
+			}).then((response) => response.json()).then((result) => {
+				if (!result.success || input.value.trim() !== term) {
+					return;
+				}
+
+				renderSearchSuggestions(suggestions, result.data?.items || []);
+			}).catch((error) => {
+				if (error.name !== 'AbortError') {
+					clearSearchSuggestions(suggestions);
+				}
+			});
+		}, 220);
+	};
 
 	const closePopup = (popup, restoreFocus = false) => {
 		if (!popup) {
@@ -20,6 +115,7 @@
 
 		button.setAttribute('aria-expanded', 'false');
 		panel.hidden = true;
+		clearSearchSuggestions(panel.querySelector('[data-header-search-suggestions]'));
 		popup.removeAttribute('data-open');
 
 		if (restoreFocus) {
@@ -119,6 +215,26 @@
 		if (!event.target.closest(popupSelector)) {
 			closeAll();
 		}
+	});
+
+	document.querySelectorAll('[data-header-search-form]').forEach((form) => {
+		const input = form.querySelector('[data-header-search-input]');
+		const suggestions = form.parentElement?.querySelector('[data-header-search-suggestions]');
+
+		if (!input) {
+			return;
+		}
+
+		form.addEventListener('submit', (event) => {
+			if (input.value.trim()) {
+				return;
+			}
+
+			event.preventDefault();
+			input.focus();
+		});
+
+		input.addEventListener('input', () => requestSearchSuggestions(input, suggestions));
 	});
 
 	document.addEventListener('keydown', (event) => {

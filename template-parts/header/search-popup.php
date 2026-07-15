@@ -14,11 +14,12 @@
 			<strong><?php esc_html_e( 'Product search', 'kanapka-theme' ); ?></strong>
 			<button type="button" aria-label="<?php esc_attr_e( 'Close search', 'kanapka-theme' ); ?>" data-header-popup-close>&times;</button>
 		</div>
-		<form class="header-search__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<form class="header-search__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" data-header-search-form>
 			<label class="screen-reader-text" for="header-product-search"><?php esc_html_e( 'Product search', 'kanapka-theme' ); ?></label>
-			<input id="header-product-search" type="search" name="s" placeholder="<?php esc_attr_e( 'What are you looking for?', 'kanapka-theme' ); ?>" autocomplete="off">
+			<input id="header-product-search" type="search" name="s" placeholder="<?php esc_attr_e( 'What are you looking for?', 'kanapka-theme' ); ?>" autocomplete="off" required minlength="2" data-header-search-input>
 			<input type="hidden" name="post_type" value="product">
-			<button class="button" type="submit"><?php esc_html_e( 'Search', 'kanapka-theme' ); ?></button>
+			<button class="button" type="submit" data-header-search-submit><?php esc_html_e( 'Search', 'kanapka-theme' ); ?></button>
 		</form>
+		<div class="header-search__suggestions" hidden aria-live="polite" data-header-search-suggestions></div>
 	</div>
 </div>

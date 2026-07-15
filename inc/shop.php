@@ -13,7 +13,23 @@ defined( 'ABSPATH' ) || exit;
  * @return bool
  */
 function kanapka_theme_is_catalogue_archive() {
-	return function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() );
+	return function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() || kanapka_theme_is_product_search() );
+}
+
+/**
+ * Determine whether the current request is a product search.
+ *
+ * @return bool
+ */
+function kanapka_theme_is_product_search() {
+	if ( ! is_search() ) {
+		return false;
+	}
+
+	$post_type = get_query_var( 'post_type' );
+	$post_type = is_array( $post_type ) ? reset( $post_type ) : $post_type;
+
+	return 'product' === $post_type;
 }
 
 /**
