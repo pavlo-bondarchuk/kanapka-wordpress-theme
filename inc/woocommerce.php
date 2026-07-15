@@ -186,7 +186,12 @@ add_action( 'wp_ajax_nopriv_kanapka_product_quick_view', 'kanapka_theme_product_
  * Render one reusable quick view dialog on product listing pages.
  */
 function kanapka_theme_product_quick_view_dialog() {
-	if ( ! is_front_page() && ! is_product() && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
+	$is_catering_page = is_page_template( 'page-templates/catering-service.php' )
+		&& function_exists( 'get_field' )
+		&& get_field( 'kanapka_catering_recommended_enabled' )
+		&& get_field( 'kanapka_catering_recommended_products' );
+
+	if ( ! is_front_page() && ! is_product() && ! $is_catering_page && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
 		return;
 	}
 

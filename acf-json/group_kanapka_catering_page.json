@@ -58,6 +58,11 @@
         { "key": "field_kcp_gallery_title", "label": "Section title", "name": "kanapka_catering_gallery_title", "type": "text" },
         { "key": "field_kcp_gallery_images", "label": "Images", "name": "kanapka_catering_gallery_images", "type": "gallery", "return_format": "id", "preview_size": "thumbnail", "library": "all" },
 
+        { "key": "field_kcp_recommended_tab", "label": "Recommended products", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_kcp_recommended_enabled", "label": "Enable section", "name": "kanapka_catering_recommended_enabled", "type": "true_false", "ui": 1, "default_value": 0 },
+        { "key": "field_kcp_recommended_title", "label": "Section title", "name": "kanapka_catering_recommended_title", "type": "text" },
+        { "key": "field_kcp_recommended_products", "label": "Products", "name": "kanapka_catering_recommended_products", "type": "post_object", "post_type": ["product"], "post_status": ["publish"], "return_format": "id", "multiple": 1, "ui": 1, "allow_null": 1 },
+
         { "key": "field_kcp_cta_tab", "label": "Call to action", "name": "", "type": "tab", "placement": "top" },
         { "key": "field_kcp_cta_enabled", "label": "Enable section", "name": "kanapka_catering_cta_enabled", "type": "true_false", "ui": 1, "default_value": 1 },
         { "key": "field_kcp_cta_title", "label": "Title", "name": "kanapka_catering_cta_title", "type": "text" },
@@ -78,5 +83,5 @@
     "active": true,
     "description": "Reusable modular layout for the catering section.",
     "show_in_rest": 0,
-    "modified": 1784055600
+    "modified": 1784116800
 }

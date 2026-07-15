@@ -83,9 +83,16 @@ while ( have_posts() ) {
 	$legacy_body  = preg_replace( '/<!-- wp:heading[^>]*-->\s*<h1[^>]*>.*?<\/h1>\s*<!-- \/wp:heading -->/is', '', $legacy_body );
 	$legacy_body  = preg_replace( '/<h1[^>]*>.*?<\/h1>/is', '', $legacy_body );
 	$legacy_body  = preg_replace( '/\[(?:ngg|nggallery)[^\]]*\]/i', '', $legacy_body );
-	$gallery      = array_filter( array_map( 'absint', (array) $field( 'kanapka_catering_gallery_images', array() ) ) );
-	$cta_link     = $field( 'kanapka_catering_cta_link', array() );
-	$cta_form_id  = absint( $field( 'kanapka_catering_cta_form', 0 ) );
+	$gallery             = array_filter( array_map( 'absint', (array) $field( 'kanapka_catering_gallery_images', array() ) ) );
+	$recommended_ids     = array_filter( array_map( 'absint', (array) $field( 'kanapka_catering_recommended_products', array() ) ) );
+	$recommended_products = function_exists( 'wc_get_product' ) ? array_values(
+		array_filter(
+			array_map( 'wc_get_product', $recommended_ids ),
+			static fn( $product ) => $product instanceof WC_Product && $product->is_visible()
+		)
+	) : array();
+	$cta_link            = $field( 'kanapka_catering_cta_link', array() );
+	$cta_form_id         = absint( $field( 'kanapka_catering_cta_form', 0 ) );
 	?>
 	<main id="main-content" class="site-main catering-page">
 		<div class="container catering-page__breadcrumbs">
@@ -187,6 +194,28 @@ while ( have_posts() ) {
 					</div>
 				</div>
 			</div></section>
+		<?php endif; ?>
+
+		<?php if ( $field( 'kanapka_catering_recommended_enabled', false ) && $recommended_products ) : ?>
+			<?php $recommended_title_id = 'catering-recommended-title-' . $page_id; ?>
+			<section class="home-section section popular-products catering-recommended-products" aria-labelledby="<?php echo esc_attr( $recommended_title_id ); ?>" data-product-slider>
+				<div class="container">
+					<div class="section-heading">
+						<h2 id="<?php echo esc_attr( $recommended_title_id ); ?>"><?php echo esc_html( $field( 'kanapka_catering_recommended_title', __( 'Recommended', 'woocommerce' ) ) ); ?></h2>
+					</div>
+					<div class="popular-products__carousel">
+						<button class="popular-products__arrow popular-products__arrow--previous" type="button" aria-label="<?php esc_attr_e( 'Previous products', 'kanapka-theme' ); ?>" data-product-slider-previous><?php echo kanapka_theme_ui_icon( 'chevron-left', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+						<div class="popular-products__viewport">
+							<div class="product-card-grid" data-product-slider-track>
+								<?php foreach ( $recommended_products as $recommended_product ) : ?>
+									<?php get_template_part( 'template-parts/components/product-card', null, array( 'product' => $recommended_product, 'show_quantity' => true ) ); ?>
+								<?php endforeach; ?>
+							</div>
+						</div>
+						<button class="popular-products__arrow popular-products__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next products', 'kanapka-theme' ); ?>" data-product-slider-next><?php echo kanapka_theme_ui_icon( 'chevron-right', 34 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></button>
+					</div>
+				</div>
+			</section>
 		<?php endif; ?>
 
 		<?php if ( $field( 'kanapka_catering_cta_enabled', true ) ) : ?>

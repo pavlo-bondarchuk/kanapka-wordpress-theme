@@ -441,6 +441,24 @@ function kanapka_theme_enqueue_assets() {
 	}
 
 	if ( is_page_template( 'page-templates/catering-service.php' ) ) {
+		$has_catering_products = function_exists( 'get_field' ) && get_field( 'kanapka_catering_recommended_enabled' ) && get_field( 'kanapka_catering_recommended_products' );
+
+		if ( $has_catering_products ) {
+			wp_enqueue_style(
+				'kanapka-theme-front-page',
+				get_theme_file_uri( '/assets/css/pages/front-page.css' ),
+				array( 'kanapka-theme-main' ),
+				kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
+			);
+
+			wp_enqueue_style(
+				'kanapka-theme-product-quick-view',
+				get_theme_file_uri( '/assets/css/components/product-quick-view.css' ),
+				array( 'kanapka-theme-front-page' ),
+				kanapka_theme_asset_version( '/assets/css/components/product-quick-view.css' )
+			);
+		}
+
 		wp_enqueue_style(
 			'kanapka-theme-order-benefits',
 			get_theme_file_uri( '/assets/css/components/order-benefits.css' ),
@@ -478,6 +496,25 @@ function kanapka_theme_enqueue_assets() {
 			kanapka_theme_asset_version( '/assets/js/components/catering-hero-slider.js' ),
 			true
 		);
+
+		if ( $has_catering_products ) {
+			wp_enqueue_script(
+				'kanapka-theme-product-slider',
+				get_theme_file_uri( '/assets/js/components/product-slider.js' ),
+				array(),
+				kanapka_theme_asset_version( '/assets/js/components/product-slider.js' ),
+				true
+			);
+
+			wp_enqueue_script(
+				'kanapka-theme-product-quick-view',
+				get_theme_file_uri( '/assets/js/components/product-quick-view.js' ),
+				array(),
+				kanapka_theme_asset_version( '/assets/js/components/product-quick-view.js' ),
+				true
+			);
+			wp_localize_script( 'kanapka-theme-product-quick-view', 'kanapkaQuickView', kanapka_theme_quick_view_script_data() );
+		}
 	}
 
 	if ( function_exists( 'is_product' ) && is_product() ) {
