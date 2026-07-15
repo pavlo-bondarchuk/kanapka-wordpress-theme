@@ -100,6 +100,42 @@
 	font-weight: 700;
 }
 
+/* WordPress editor image alignment classes. */
+.simple-information-content__body::after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.simple-information-content :is(img, figure.wp-block-image).alignleft,
+.simple-information-content :is(img, figure.wp-block-image).alignright {
+	max-width: min(44%, 23rem);
+	height: auto;
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-3);
+}
+
+.simple-information-content :is(img, figure.wp-block-image).alignleft {
+	float: left;
+	margin-right: var(--space-4);
+}
+
+.simple-information-content :is(img, figure.wp-block-image).alignright {
+	float: right;
+	margin-left: var(--space-4);
+}
+
+.simple-information-content :is(img, figure.wp-block-image).aligncenter {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: var(--space-4) auto;
+}
+
+.simple-information-content :is(h2, h3) {
+	clear: both;
+}
+
 .simple-information-gallery {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -291,6 +327,13 @@ body.is-catering-lightbox-open {
 
 	.simple-information-content {
 		padding: var(--space-5);
+	}
+
+	.simple-information-content :is(img, figure.wp-block-image).alignleft,
+	.simple-information-content :is(img, figure.wp-block-image).alignright {
+		float: none;
+		max-width: 100%;
+		margin: var(--space-4) auto;
 	}
 
 	.catering-lightbox__dialog {
