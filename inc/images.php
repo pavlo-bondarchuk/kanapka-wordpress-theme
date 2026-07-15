@@ -15,6 +15,7 @@ function kanapka_theme_register_image_sizes() {
 	add_image_size( 'kanapka-hero-mobile', 414, 640, true );
 	add_image_size( 'kanapka-hero-mobile-retina', 582, 900, true );
 	add_image_size( 'kanapka-category', 480, 360, true );
+	add_image_size( 'kanapka-category-hero', 720, 720, true );
 	add_image_size( 'kanapka-mega-menu', 48, 48, true );
 	add_image_size( 'kanapka-product-card', 640, 480, true );
 	add_image_size( 'kanapka-service', 760, 420, true );

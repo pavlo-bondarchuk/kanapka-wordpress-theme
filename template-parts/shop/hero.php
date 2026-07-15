@@ -25,7 +25,7 @@ $description = $description ? $description : __( 'Fresh dishes for buffets, offi
 <section class="catalogue-hero" aria-labelledby="catalogue-title">
 	<?php if ( $hero_image_id ) : ?>
 		<figure class="catalogue-hero__media">
-			<?php echo wp_get_attachment_image( $hero_image_id, 'large', false, array( 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '100vw' ) ); ?>
+			<?php echo wp_get_attachment_image( $hero_image_id, 'kanapka-category-hero', false, array( 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 48rem) 100vw, 45vw' ) ); ?>
 		</figure>
 	<?php endif; ?>
 	<div class="catalogue-hero__content container">
