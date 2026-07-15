@@ -190,8 +190,11 @@ function kanapka_theme_product_quick_view_dialog() {
 		&& function_exists( 'get_field' )
 		&& get_field( 'kanapka_catering_recommended_enabled' )
 		&& get_field( 'kanapka_catering_recommended_products' );
+	$is_simple_page = is_page_template( 'page-templates/simple-information.php' )
+		&& function_exists( 'get_field' )
+		&& get_field( 'kanapka_simple_page_products_enabled' );
 
-	if ( ! is_front_page() && ! is_product() && ! $is_catering_page && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
+	if ( ! is_front_page() && ! is_product() && ! $is_catering_page && ! $is_simple_page && ( ! function_exists( 'kanapka_theme_is_catalogue_archive' ) || ! kanapka_theme_is_catalogue_archive() ) ) {
 		return;
 	}
 

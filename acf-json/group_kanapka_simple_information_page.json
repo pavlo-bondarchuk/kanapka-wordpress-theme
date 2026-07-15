@@ -1,0 +1,60 @@
+{
+    "key": "group_kanapka_simple_information_page",
+    "title": "Simple information page",
+    "fields": [
+        { "key": "field_ksip_content_tab", "label": "Content", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_ksip_hero_image", "label": "Hero image", "name": "kanapka_simple_page_hero_image", "type": "image", "instructions": "Use a wide image. The frontend crops it to 16:7.", "return_format": "id", "preview_size": "large", "library": "all", "mime_types": "jpg,jpeg,png,webp,avif" },
+        { "key": "field_ksip_intro", "label": "Introduction", "name": "kanapka_simple_page_intro", "type": "wysiwyg", "instructions": "Optional highlighted introduction above the main content.", "tabs": "all", "toolbar": "basic", "media_upload": 0, "delay": 0 },
+        { "key": "field_ksip_content", "label": "Main content", "name": "kanapka_simple_page_content", "type": "wysiwyg", "instructions": "Use headings, paragraphs, lists and inline links. Keep images and product shortcodes out of this editor.", "tabs": "all", "toolbar": "full", "media_upload": 0, "delay": 0 },
+
+        { "key": "field_ksip_gallery_tab", "label": "Gallery", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_ksip_gallery_enabled", "label": "Enable gallery", "name": "kanapka_simple_page_gallery_enabled", "type": "true_false", "default_value": 0, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" },
+        { "key": "field_ksip_gallery_title", "label": "Gallery title", "name": "kanapka_simple_page_gallery_title", "type": "text", "default_value": "Event photos", "conditional_logic": [[{ "field": "field_ksip_gallery_enabled", "operator": "==", "value": "1" }]] },
+        { "key": "field_ksip_gallery", "label": "Gallery images", "name": "kanapka_simple_page_gallery", "type": "gallery", "instructions": "Preview images use a consistent 4:3 crop and open in a lightbox slider.", "return_format": "id", "preview_size": "medium", "insert": "append", "library": "all", "mime_types": "jpg,jpeg,png,webp,avif", "conditional_logic": [[{ "field": "field_ksip_gallery_enabled", "operator": "==", "value": "1" }]] },
+
+        { "key": "field_ksip_cta_tab", "label": "Call to action", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_ksip_cta_enabled", "label": "Enable call to action", "name": "kanapka_simple_page_cta_enabled", "type": "true_false", "default_value": 0, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" },
+        { "key": "field_ksip_cta_title", "label": "Title", "name": "kanapka_simple_page_cta_title", "type": "text", "conditional_logic": [[{ "field": "field_ksip_cta_enabled", "operator": "==", "value": "1" }]] },
+        { "key": "field_ksip_cta_text", "label": "Text", "name": "kanapka_simple_page_cta_text", "type": "wysiwyg", "tabs": "all", "toolbar": "basic", "media_upload": 0, "delay": 0, "conditional_logic": [[{ "field": "field_ksip_cta_enabled", "operator": "==", "value": "1" }]] },
+        {
+            "key": "field_ksip_cta_buttons",
+            "label": "Buttons",
+            "name": "kanapka_simple_page_cta_buttons",
+            "type": "repeater",
+            "instructions": "Add up to two buttons. The Link field controls text, URL and whether it opens in a new tab.",
+            "layout": "table",
+            "button_label": "Add button",
+            "min": 0,
+            "max": 2,
+            "conditional_logic": [[{ "field": "field_ksip_cta_enabled", "operator": "==", "value": "1" }]],
+            "sub_fields": [
+                { "key": "field_ksip_cta_button_link", "label": "Link", "name": "link", "type": "link", "required": 1, "return_format": "array", "wrapper": { "width": "70", "class": "", "id": "" }, "parent_repeater": "field_ksip_cta_buttons" },
+                { "key": "field_ksip_cta_button_style", "label": "Style", "name": "style", "type": "select", "choices": { "primary": "Primary", "secondary": "Secondary" }, "default_value": "primary", "return_format": "value", "wrapper": { "width": "30", "class": "", "id": "" }, "parent_repeater": "field_ksip_cta_buttons" }
+            ]
+        },
+
+        { "key": "field_ksip_products_tab", "label": "Products", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_ksip_products_enabled", "label": "Enable products", "name": "kanapka_simple_page_products_enabled", "type": "true_false", "default_value": 0, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" },
+        { "key": "field_ksip_products_title", "label": "Section title", "name": "kanapka_simple_page_products_title", "type": "text", "default_value": "Frequently ordered", "conditional_logic": [[{ "field": "field_ksip_products_enabled", "operator": "==", "value": "1" }]] },
+        { "key": "field_ksip_products_source", "label": "Product source", "name": "kanapka_simple_page_products_source", "type": "select", "choices": { "manual": "Manual selection", "category": "Product category", "featured": "Featured products", "related": "Related products" }, "default_value": "manual", "return_format": "value", "conditional_logic": [[{ "field": "field_ksip_products_enabled", "operator": "==", "value": "1" }]] },
+        { "key": "field_ksip_products", "label": "Products", "name": "kanapka_simple_page_products", "type": "relationship", "post_type": ["product"], "filters": ["search", "taxonomy"], "return_format": "id", "conditional_logic": [[{ "field": "field_ksip_products_source", "operator": "==", "value": "manual" }]] },
+        { "key": "field_ksip_products_category", "label": "Product category", "name": "kanapka_simple_page_products_category", "type": "taxonomy", "taxonomy": "product_cat", "field_type": "select", "allow_null": 1, "add_term": 0, "save_terms": 0, "load_terms": 0, "return_format": "id", "conditional_logic": [[{ "field": "field_ksip_products_source", "operator": "==", "value": "category" }]] },
+        { "key": "field_ksip_related_product", "label": "Reference product", "name": "kanapka_simple_page_related_product", "type": "post_object", "instructions": "Products related to this item will be displayed.", "post_type": ["product"], "return_format": "id", "allow_null": 1, "conditional_logic": [[{ "field": "field_ksip_products_source", "operator": "==", "value": "related" }]] },
+        { "key": "field_ksip_products_count", "label": "Number of products", "name": "kanapka_simple_page_products_count", "type": "number", "default_value": 8, "min": 1, "max": 20, "step": 1, "wrapper": { "width": "30", "class": "", "id": "" }, "conditional_logic": [[{ "field": "field_ksip_products_enabled", "operator": "==", "value": "1" }]] },
+        { "key": "field_ksip_products_link", "label": "View all link", "name": "kanapka_simple_page_products_link", "type": "link", "return_format": "array", "wrapper": { "width": "70", "class": "", "id": "" }, "conditional_logic": [[{ "field": "field_ksip_products_enabled", "operator": "==", "value": "1" }]] },
+
+        { "key": "field_ksip_options_tab", "label": "Options", "name": "", "type": "tab", "placement": "top" },
+        { "key": "field_ksip_benefits_enabled", "label": "Show shared benefits", "name": "kanapka_simple_page_benefits_enabled", "type": "true_false", "default_value": 1, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" }
+    ],
+    "location": [[{ "param": "page_template", "operator": "==", "value": "page-templates/simple-information.php" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content", "featured_image"],
+    "active": true,
+    "description": "Reusable structured layout for simple SEO and information pages.",
+    "show_in_rest": 0,
+    "modified": 1784160000
+}
