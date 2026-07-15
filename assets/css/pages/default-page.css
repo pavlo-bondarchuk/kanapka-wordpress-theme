@@ -1,0 +1,124 @@
+.default-page {
+	padding: var(--space-6) 0 0;
+}
+
+.default-page__breadcrumbs .site-breadcrumb {
+	margin: 0;
+}
+
+.default-page__header {
+	margin-top: var(--space-4);
+}
+
+.default-page__header h1 {
+	max-width: 68rem;
+	margin: 0;
+	color: var(--color-brand-900);
+	font-size: clamp(2rem, 4.5vw, 3.5rem);
+	line-height: 1.08;
+}
+
+.default-page__content {
+	max-width: 68rem;
+	margin-top: var(--space-5);
+	padding: clamp(var(--space-5), 4vw, var(--space-7));
+	border: 0.0625rem solid var(--color-line);
+	border-radius: var(--radius-md);
+	background: #fff;
+	font-size: clamp(1.0625rem, 1.3vw, 1.125rem);
+	line-height: 1.72;
+	box-shadow: var(--shadow-sm);
+}
+
+.default-page__content::after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.default-page__content :is(h2, h3) {
+	clear: both;
+	color: var(--color-brand-900);
+	line-height: 1.2;
+}
+
+.default-page__content h2 {
+	margin: var(--space-6) 0 var(--space-3);
+	font-size: clamp(1.75rem, 3vw, 2.125rem);
+}
+
+.default-page__content h3 {
+	margin: var(--space-5) 0 var(--space-3);
+	font-size: clamp(1.35rem, 2.2vw, 1.625rem);
+}
+
+.default-page__content :is(p, ul, ol, figure, .wp-caption) {
+	margin: 0 0 var(--space-4);
+}
+
+.default-page__content :is(ul, ol) {
+	padding-left: 1.5rem;
+}
+
+.default-page__content li + li {
+	margin-top: var(--space-2);
+}
+
+.default-page__content a {
+	color: var(--color-brand-700);
+	font-weight: 700;
+}
+
+.default-page__content img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius-sm);
+}
+
+.default-page__content :is(img, figure.wp-block-image).alignleft,
+.default-page__content :is(img, figure.wp-block-image).alignright {
+	max-width: min(44%, 23rem);
+	height: auto;
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-3);
+}
+
+.default-page__content :is(img, figure.wp-block-image).alignleft {
+	float: left;
+	margin-right: var(--space-4);
+}
+
+.default-page__content :is(img, figure.wp-block-image).alignright {
+	float: right;
+	margin-left: var(--space-4);
+}
+
+.default-page__content :is(img, figure.wp-block-image).aligncenter,
+.default-page__content .wp-caption.aligncenter {
+	display: block;
+	max-width: 100%;
+	margin: var(--space-4) auto;
+}
+
+.default-page__content .wp-caption-text {
+	margin-top: var(--space-2);
+	color: var(--color-muted);
+	font-size: var(--font-size-sm);
+}
+
+@media (max-width: 48rem) {
+	.default-page {
+		padding-top: var(--space-5);
+	}
+
+	.default-page__content {
+		padding: var(--space-5);
+	}
+
+	.default-page__content :is(img, figure.wp-block-image).alignleft,
+	.default-page__content :is(img, figure.wp-block-image).alignright {
+		float: none;
+		max-width: 100%;
+		margin: var(--space-4) auto;
+	}
+}

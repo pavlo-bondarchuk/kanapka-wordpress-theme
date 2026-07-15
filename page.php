@@ -10,8 +10,9 @@ get_header();
 <?php
 $is_order_received = function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'order-received' );
 $is_checkout_page  = function_exists( 'is_checkout' ) && is_checkout() && ! $is_order_received && ( ! function_exists( 'is_wc_endpoint_url' ) || ! is_wc_endpoint_url() );
+$main_class        = function_exists( 'is_cart' ) && is_cart() ? ' cart-page' : ( $is_checkout_page ? ' checkout-page' : ( $is_order_received ? ' order-received-shell' : ' default-page' ) );
 ?>
-<main id="main-content" class="site-main<?php echo function_exists( 'is_cart' ) && is_cart() ? ' cart-page' : ( $is_checkout_page ? ' checkout-page' : ( $is_order_received ? ' order-received-shell' : ' container' ) ); ?>">
+<main id="main-content" class="site-main<?php echo esc_attr( $main_class ); ?>">
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
 		<?php if ( $is_order_received ) : ?>
@@ -45,10 +46,10 @@ $is_checkout_page  = function_exists( 'is_checkout' ) && is_checkout() && ! $is_
 				<?php get_template_part( 'template-parts/cart/assurance' ); ?>
 			<?php endif; ?>
 		<?php else : ?>
-			<article <?php post_class( 'content-entry' ); ?>>
-				<?php kanapka_theme_breadcrumb(); ?>
-				<h1><?php the_title(); ?></h1>
-				<?php the_content(); ?>
+			<article <?php post_class( 'container default-page__entry content-entry' ); ?>>
+				<div class="default-page__breadcrumbs"><?php kanapka_theme_breadcrumb(); ?></div>
+				<header class="default-page__header"><h1><?php the_title(); ?></h1></header>
+				<div class="default-page__content"><?php the_content(); ?></div>
 			</article>
 		<?php endif; ?>
 	<?php endwhile; ?>

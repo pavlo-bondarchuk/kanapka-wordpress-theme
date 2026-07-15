@@ -104,6 +104,15 @@ function kanapka_theme_enqueue_assets() {
 		true
 	);
 
+	if ( is_page() && ! is_page_template() ) {
+		wp_enqueue_style(
+			'kanapka-theme-default-page',
+			get_theme_file_uri( '/assets/css/pages/default-page.css' ),
+			array( 'kanapka-theme-main' ),
+			kanapka_theme_asset_version( '/assets/css/pages/default-page.css' )
+		);
+	}
+
 	wp_localize_script(
 		'kanapka-theme-header-actions',
 		'kanapkaCartActions',
