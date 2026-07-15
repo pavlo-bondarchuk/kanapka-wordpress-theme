@@ -36,6 +36,10 @@
 	content: "";
 }
 
+.default-page__content .wpcf7 {
+	width: min(100%, 46rem);
+}
+
 .default-page__content :is(h2, h3) {
 	clear: both;
 	color: var(--color-brand-900);
