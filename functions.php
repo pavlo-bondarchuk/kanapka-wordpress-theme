@@ -21,6 +21,7 @@ $kanapka_theme_modules = array(
 	'accessibility',
 	'seo',
 	'woocommerce',
+	'reviews',
 	'scf',
 	'analytics',
 );

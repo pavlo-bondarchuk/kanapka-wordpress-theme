@@ -1,0 +1,21 @@
+{
+    "key": "group_kanapka_reviews_page",
+    "title": "Reviews page",
+    "fields": [
+        { "key": "field_krp_intro", "label": "Introduction", "name": "kanapka_reviews_intro", "type": "text", "instructions": "Leave empty to use the translated default text." },
+        { "key": "field_krp_per_page", "label": "Reviews per page", "name": "kanapka_reviews_per_page", "type": "number", "default_value": 8, "min": 1, "max": 20, "step": 1 },
+        { "key": "field_krp_form_enabled", "label": "Show review form", "name": "kanapka_reviews_form_enabled", "type": "true_false", "default_value": 1, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" },
+        { "key": "field_krp_benefits_enabled", "label": "Show shared benefits", "name": "kanapka_reviews_benefits_enabled", "type": "true_false", "default_value": 1, "ui": 1, "ui_on_text": "Yes", "ui_off_text": "No" }
+    ],
+    "location": [[{ "param": "page_template", "operator": "==", "value": "page-templates/reviews.php" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content", "featured_image"],
+    "active": true,
+    "description": "Settings for the reviews archive and submission form.",
+    "show_in_rest": 0,
+    "modified": 1784163600
+}
