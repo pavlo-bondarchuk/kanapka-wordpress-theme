@@ -1,0 +1,137 @@
+{
+    "key": "group_kanapka_promotions_page",
+    "title": "Promotions page",
+    "fields": [
+        {
+            "key": "field_kpp_promotions",
+            "label": "Promotions",
+            "name": "kanapka_promotions",
+            "type": "repeater",
+            "instructions": "Add and reorder promotion cards.",
+            "required": 0,
+            "layout": "block",
+            "button_label": "Add promotion",
+            "collapsed": "field_kpp_promotion_title",
+            "sub_fields": [
+                {
+                    "key": "field_kpp_promotion_image",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp,avif",
+                    "wrapper": { "width": "35", "class": "", "id": "" },
+                    "parent_repeater": "field_kpp_promotions"
+                },
+                {
+                    "key": "field_kpp_promotion_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": { "width": "65", "class": "", "id": "" },
+                    "parent_repeater": "field_kpp_promotions"
+                },
+                {
+                    "key": "field_kpp_promotion_content",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "Use paragraphs, headings, lists and inline links as needed.",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_kpp_promotions"
+                },
+                {
+                    "key": "field_kpp_promotion_link",
+                    "label": "Button link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_kpp_promotions"
+                },
+                {
+                    "key": "field_kpp_promotion_items",
+                    "label": "Icon list",
+                    "name": "items",
+                    "type": "repeater",
+                    "instructions": "Optional list displayed below the editor content.",
+                    "layout": "table",
+                    "button_label": "Add list item",
+                    "parent_repeater": "field_kpp_promotions",
+                    "sub_fields": [
+                        {
+                            "key": "field_kpp_item_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "type": "select",
+                            "choices": {
+                                "circle-check": "Check",
+                                "delivery": "Delivery",
+                                "clock": "Clock",
+                                "leaf": "Leaf",
+                                "users": "Users",
+                                "sparkles": "Sparkles",
+                                "utensils": "Utensils",
+                                "briefcase": "Briefcase"
+                            },
+                            "default_value": "circle-check",
+                            "return_format": "value",
+                            "wrapper": { "width": "30", "class": "", "id": "" },
+                            "parent_repeater": "field_kpp_promotion_items"
+                        },
+                        {
+                            "key": "field_kpp_item_text",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "required": 1,
+                            "wrapper": { "width": "70", "class": "", "id": "" },
+                            "parent_repeater": "field_kpp_promotion_items"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_kpp_options_tab",
+            "label": "Options",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kpp_benefits_enabled",
+            "label": "Show shared benefits",
+            "name": "kanapka_promotions_benefits_enabled",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/promotions.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": "Structured content for the promotions page.",
+    "show_in_rest": 0,
+    "modified": 1784073600
+}
