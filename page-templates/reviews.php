@@ -86,7 +86,7 @@ while ( have_posts() ) {
 						<div><strong><?php echo esc_html( $review->comment_author ); ?></strong><time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C, $review ) ); ?>"><?php echo esc_html( get_comment_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $review ) ); ?></time><?php echo kanapka_theme_review_stars( kanapka_theme_review_rating( $review->comment_ID ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 					</div>
 					<div class="review-card__content"><?php echo wp_kses_post( wpautop( $review->comment_content ) ); ?></div>
-					<div class="review-card__action"><?php comment_reply_link( array( 'reply_text' => __( 'Reply', 'kanapka-theme' ), 'depth' => 1, 'max_depth' => 2 ), $review ); ?></div>
+					<div class="review-card__action"><?php comment_reply_link( array( 'reply_text' => __( 'Reply', 'kanapka-theme' ), 'reply_to_text' => __( 'Reply to %s', 'kanapka-theme' ), 'depth' => 1, 'max_depth' => 2 ), $review ); ?></div>
 
 					<?php foreach ( $replies as $reply ) : ?>
 						<div class="review-reply" id="comment-<?php echo esc_attr( $reply->comment_ID ); ?>">
@@ -99,7 +99,21 @@ while ( have_posts() ) {
 		</section>
 
 		<?php if ( $total_reviews > $per_page ) : ?>
-			<nav class="container reviews-pagination" aria-label="<?php esc_attr_e( 'Reviews pagination', 'kanapka-theme' ); ?>"><?php echo wp_kses_post( paginate_comments_links( array( 'total' => (int) ceil( $total_reviews / $per_page ), 'current' => $current_page, 'echo' => false, 'prev_text' => kanapka_theme_ui_icon( 'chevron-left', 18 ), 'next_text' => kanapka_theme_ui_icon( 'chevron-right', 18 ), 'type' => 'list' ) ) ); ?></nav>
+			<nav class="container reviews-pagination" aria-label="<?php esc_attr_e( 'Reviews pagination', 'kanapka-theme' ); ?>">
+				<?php
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WordPress-generated pagination with theme-owned SVG icons.
+				echo paginate_comments_links(
+					array(
+						'total'     => (int) ceil( $total_reviews / $per_page ),
+						'current'   => $current_page,
+						'echo'      => false,
+						'prev_text' => kanapka_theme_ui_icon( 'chevron-left', 18 ),
+						'next_text' => kanapka_theme_ui_icon( 'chevron-right', 18 ),
+						'type'      => 'list',
+					)
+				);
+				?>
+			</nav>
 		<?php endif; ?>
 
 		<?php if ( $form_enabled && comments_open() ) : ?>
@@ -110,6 +124,17 @@ while ( have_posts() ) {
 					$rating_field .= '<input type="radio" id="review-rating-' . $rating . '" name="kanapka_review_rating" value="' . $rating . '"' . checked( 5, $rating, false ) . '><label for="review-rating-' . $rating . '" aria-label="' . esc_attr( sprintf( __( '%d stars', 'kanapka-theme' ), $rating ) ) . '">★</label>';
 				}
 				$rating_field .= '</div></fieldset>';
+				$current_user = wp_get_current_user();
+				$logged_in_as = sprintf(
+					wp_kses(
+						__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>', 'kanapka-theme' ),
+						array( 'a' => array( 'href' => array() ) )
+					),
+					esc_html( $current_user->display_name ),
+					esc_url( get_edit_user_link() ),
+					esc_url( wp_logout_url( get_permalink( $page_id ) ) )
+				);
+				$logged_in_as .= ' <span class="required-note">' . esc_html__( 'Required fields are marked *', 'kanapka-theme' ) . '</span>';
 
 				comment_form(
 					array(
@@ -119,9 +144,10 @@ while ( have_posts() ) {
 						'label_submit'         => __( 'Submit review', 'kanapka-theme' ),
 						'comment_notes_before' => '<p class="comment-notes">' . esc_html__( 'Your review helps us improve.', 'kanapka-theme' ) . '</p>',
 						'comment_notes_after'  => '',
+						'logged_in_as'         => '<p class="logged-in-as">' . $logged_in_as . '</p>', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped placeholders and allowlisted anchor tags above.
 						'fields'               => array(
-							'author'  => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'kanapka-theme' ) . ' *</label><input id="author" name="author" type="text" autocomplete="name" required></p>',
-							'email'   => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email' ) . ' *</label><input id="email" name="email" type="email" autocomplete="email" required></p>',
+						'author'  => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'kanapka-theme' ) . ' *</label><input id="author" name="author" type="text" autocomplete="name" required></p>',
+						'email'   => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'kanapka-theme' ) . ' *</label><input id="email" name="email" type="email" autocomplete="email" required></p>',
 							'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">' . esc_html__( 'Save my details for the next review.', 'kanapka-theme' ) . '</label></p>',
 						),
 						'comment_field'        => $rating_field . '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'kanapka-theme' ) . ' *</label><textarea id="comment" name="comment" rows="6" required></textarea></p>',

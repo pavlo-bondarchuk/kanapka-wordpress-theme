@@ -21,6 +21,20 @@ function kanapka_theme_disable_woocommerce_styles( $styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'kanapka_theme_disable_woocommerce_styles' );
 
 /**
+ * Use the theme's shared SVG controls for catalogue pagination.
+ *
+ * @param array $args Pagination arguments.
+ * @return array
+ */
+function kanapka_theme_woocommerce_pagination_args( $args ) {
+	$args['prev_text'] = kanapka_theme_ui_icon( 'chevron-left', 18 );
+	$args['next_text'] = kanapka_theme_ui_icon( 'chevron-right', 18 );
+
+	return $args;
+}
+add_filter( 'woocommerce_pagination_args', 'kanapka_theme_woocommerce_pagination_args' );
+
+/**
  * Remove WooCommerce styles that may still be enqueued by extensions.
  */
 function kanapka_theme_dequeue_woocommerce_styles() {

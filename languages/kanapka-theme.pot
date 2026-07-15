@@ -746,6 +746,15 @@ msgid "Cancel reply"
 msgstr ""
 
 #: page-templates/reviews.php
+#, php-format
+msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
+msgstr ""
+
+#: page-templates/reviews.php
+msgid "Required fields are marked *"
+msgstr ""
+
+#: page-templates/reviews.php
 msgid "Name"
 msgstr ""
 

@@ -130,6 +130,15 @@ msgstr ""
 msgid "Cancel reply"
 msgstr "Отменить ответ"
 
+#: page-templates/reviews.php
+#, php-format
+msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
+msgstr "Вы вошли как %1$s. <a href=\"%2$s\">Изменить профиль</a>. <a href=\"%3$s\">Выйти?</a>"
+
+#: page-templates/reviews.php
+msgid "Required fields are marked *"
+msgstr "Поля, обязательные для заполнения, отмечены *"
+
 #: template-parts/front-page/hero.php:17
 msgid "carousel"
 msgstr "карусель"
