@@ -302,12 +302,13 @@
 }
 
 .category-card__title {
-	display: grid;
-	min-height: 3.5rem;
-	place-items: center;
-	padding: var(--space-3);
+	display: flex;
+	min-height: fit-content;
+	padding: 10px;
 	font-size: var(--font-size-sm);
 	font-weight: 700;
+	align-items: center;
+	justify-content: center;
 }
 
 .category-card--compact {
@@ -1180,5 +1181,9 @@
 	.section-heading {
 		align-items: flex-start;
 		flex-direction: column;
+	}
+
+	.category-card--compact {
+		grid-template-rows: 180px 1fr;
 	}
 }
