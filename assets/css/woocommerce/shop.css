@@ -53,7 +53,7 @@
 .catalogue-hero__media img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	object-position: center right;
 }
 
@@ -106,13 +106,13 @@
 	display: grid;
 	min-height: 12rem;
 	place-items: center;
-	padding: var(--space-3);
+	padding: 0;
 }
 
 .catalogue-category-rail__media img {
 	width: 100%;
-	height: 11rem;
-	object-fit: contain;
+	height: 12rem;
+	object-fit: cover;
 }
 
 .catalogue-category-rail__body {
@@ -498,8 +498,8 @@
 
 .catalogue-category-card__media img {
 	width: 100%;
-	height: 9rem;
-	object-fit: contain;
+	height: 11rem;
+	object-fit: cover;
 }
 
 .catalogue-category-card__body {
@@ -1127,7 +1127,7 @@
 		max-height: 9rem;
 	}
 
-	.catalogue-product-grid[data-view="list"] .product-card__media > a {
+	.catalogue-product-grid[data-view="list"] .product-card__media>a {
 		display: grid;
 		height: 100%;
 		place-items: center;

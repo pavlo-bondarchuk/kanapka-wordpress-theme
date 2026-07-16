@@ -65,7 +65,6 @@
 .simple-information-content__intro {
 	margin-bottom: var(--space-5);
 	color: var(--color-brand-900);
-	font-weight: 650;
 }
 
 .simple-information-content :is(h2, h3) {
@@ -91,7 +90,7 @@
 	padding-left: 1.5rem;
 }
 
-.simple-information-content li + li {
+.simple-information-content li+li {
 	margin-top: var(--space-2);
 }
 
@@ -253,8 +252,13 @@ body.is-catering-lightbox-open {
 	z-index: 2;
 }
 
-.catering-lightbox__arrow--previous { margin-right: var(--space-4); }
-.catering-lightbox__arrow--next { margin-left: var(--space-4); }
+.catering-lightbox__arrow--previous {
+	margin-right: var(--space-4);
+}
+
+.catering-lightbox__arrow--next {
+	margin-left: var(--space-4);
+}
 
 .simple-information-cta {
 	display: grid;
@@ -304,7 +308,7 @@ body.is-catering-lightbox-open {
 	font-weight: 800;
 }
 
-.simple-information-page > .order-benefits {
+.simple-information-page>.order-benefits {
 	padding: var(--space-7) 0;
 	border-top: 0.0625rem solid var(--color-line);
 }
@@ -345,8 +349,15 @@ body.is-catering-lightbox-open {
 		z-index: 2;
 	}
 
-	.catering-lightbox__arrow--previous { left: 0; margin: 0; }
-	.catering-lightbox__arrow--next { right: 0; margin: 0; }
+	.catering-lightbox__arrow--previous {
+		left: 0;
+		margin: 0;
+	}
+
+	.catering-lightbox__arrow--next {
+		right: 0;
+		margin: 0;
+	}
 }
 
 @media (max-width: 30rem) {
