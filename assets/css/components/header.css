@@ -749,7 +749,7 @@ body.is-callback-modal-open {
 }
 
 .header-mini-cart .woocommerce-mini-cart {
-	max-height: min(52vh, 31rem);
+	max-height: min(42vh, 21rem);
 	margin: 0;
 	padding: 0 var(--space-5);
 	list-style: none;
