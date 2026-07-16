@@ -27,10 +27,11 @@ $weglot_switcher = '';
 
 if (shortcode_exists('weglot_switcher')) {
 	add_filter('weglot_get_name_with_language_entry', $shorten_weglot_name, 10, 2);
-	add_filter('weglot_change_open_close_tag_switcher', '__return_true');
 	$weglot_switcher = do_shortcode('[weglot_switcher]');
 	remove_filter('weglot_get_name_with_language_entry', $shorten_weglot_name, 10);
-	remove_filter('weglot_change_open_close_tag_switcher', '__return_true');
+
+	// Weglot duplicates option roles across nested elements without a valid listbox structure.
+	$weglot_switcher = str_replace(array(' role="option"', ' role="none"'), '', $weglot_switcher);
 }
 
 $languages = apply_filters('wpml_active_languages', null, array('skip_missing' => 0));
