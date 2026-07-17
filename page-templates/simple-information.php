@@ -75,7 +75,18 @@ while ( have_posts() ) {
 
 		<?php if ( $hero_image_id ) : ?>
 			<div class="container simple-information-page__hero">
-				<?php echo wp_get_attachment_image( $hero_image_id, 'kanapka-hero', false, array( 'fetchpriority' => 'high', 'sizes' => '(max-width: 80rem) 100vw, 80rem' ) ); ?>
+				<?php
+				echo wp_get_attachment_image(
+					$hero_image_id,
+					'large',
+					false,
+					array(
+						'fetchpriority' => 'high',
+						'loading'       => 'eager',
+						'sizes'         => '(max-width: 25rem) calc(100vw - 2rem), (max-width: 50rem) 92vw, (max-width: 78rem) calc(100vw - 4rem), 74rem',
+					)
+				);
+				?>
 			</div>
 		<?php endif; ?>
 
