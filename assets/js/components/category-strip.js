@@ -12,6 +12,10 @@
 			return;
 		}
 
+		track.addEventListener( 'pointerdown', () => {
+			track.classList.add( 'has-scroll-snap' );
+		}, { once: true, passive: true } );
+
 		next.addEventListener( 'click', () => {
 			const maxScroll = track.scrollWidth - track.clientWidth;
 			const isAtEnd = track.scrollLeft >= maxScroll - 8;

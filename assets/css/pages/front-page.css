@@ -227,6 +227,9 @@
 	overflow-x: auto;
 	scrollbar-width: none;
 	scroll-behavior: smooth;
+}
+
+.category-strip__track.has-scroll-snap {
 	scroll-snap-type: x proximity;
 }
 
