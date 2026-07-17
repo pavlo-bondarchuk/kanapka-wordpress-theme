@@ -33,15 +33,13 @@
 	.error-contact__phones a { display: block; color: inherit; font-size: 0.91rem; font-weight: 750; line-height: 1.45; text-decoration: none; }
 	.error-contact__email { font-size: 0.86rem; font-weight: 700; text-decoration: none; }
 	.error-contact .button { white-space: nowrap; text-decoration: none; }
-	.error-assurances { border-block: 1px solid #eee9e1; background: #fffdf9; }
-	.error-assurances__inner { display: grid; grid-template-columns: repeat(4, 1fr); padding-block: 0.9rem; }
-	.error-assurance { display: flex; align-items: center; gap: 0.85rem; min-width: 0; padding-inline: 1.5rem; border-right: 1px solid #e3d5c1; }
-	.error-assurance:first-child { padding-left: 0; }
-	.error-assurance:last-child { border: 0; }
-	.error-assurance > span { color: #a87318; }
+	.error-assurances { padding-block: 1.25rem; background: #fff; }
+	.error-assurances__inner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(0.5rem, 2vw, var(--space-5)); padding: var(--space-4) var(--space-5); border: 0.0625rem solid rgb(255 255 255 / 70%); border-radius: var(--radius-md); background: rgb(255 255 255 / 84%); box-shadow: var(--shadow-sm); }
+	.error-assurance { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-3); min-width: 0; }
+	.error-assurance > span { display: grid; width: 3rem; height: 3rem; place-items: center; color: var(--color-brand-700); }
 	.error-assurance strong, .error-assurance small { display: block; }
-	.error-assurance strong { color: var(--color-brand-900); font-size: 0.85rem; }
-	.error-assurance small { color: var(--color-muted); font-size: 0.7rem; line-height: 1.25; }
+	.error-assurance strong { color: var(--color-brand-900); font-size: var(--font-size-sm); line-height: 1.25; }
+	.error-assurance small { margin-top: var(--space-1); color: var(--color-muted); font-size: var(--font-size-xs); line-height: 1.25; }
 }
 
 @media (max-width: 68rem) {
@@ -62,7 +60,7 @@
 	.error-contact__phones, .error-contact .button { grid-column: 2; }
 	.error-contact .button { justify-self: start; }
 	.error-assurances__inner { grid-template-columns: repeat(2, 1fr); gap: 1rem 0; }
-	.error-assurance:nth-child(2) { border-right: 0; }
+	.error-assurance { padding-inline: var(--space-3); }
 }
 
 @media (max-width: 34rem) {
@@ -76,5 +74,5 @@
 	.error-contact__icon { align-self: start; }
 	.error-contact__phones, .error-contact .button { grid-column: 1 / -1; }
 	.error-assurances__inner { grid-template-columns: 1fr; }
-	.error-assurance { padding-inline: 0; border-right: 0; }
+	.error-assurance { padding-inline: 0; }
 }
