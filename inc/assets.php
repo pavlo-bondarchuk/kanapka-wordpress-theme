@@ -20,6 +20,65 @@ function kanapka_theme_asset_version( $relative_path ) {
 }
 
 /**
+ * Preload the responsive image used by the first homepage hero slide.
+ *
+ * @param array $resources Preload resources.
+ * @return array
+ */
+function kanapka_theme_preload_home_hero_image( $resources ) {
+	if ( ! is_front_page() ) {
+		return $resources;
+	}
+
+	$slides   = kanapka_theme_get_home_hero_slides();
+	$image_id = absint( $slides[0]['image_id'] ?? 0 );
+
+	if ( ! $image_id ) {
+		return $resources;
+	}
+
+	$mobile_image   = wp_get_attachment_image_src( $image_id, 'kanapka-hero-mobile' );
+	$mobile_srcset  = wp_get_attachment_image_srcset( $image_id, 'kanapka-hero-mobile' );
+	$desktop_image  = wp_get_attachment_image_src( $image_id, 'kanapka-hero' );
+	$desktop_srcset = wp_get_attachment_image_srcset( $image_id, 'kanapka-hero' );
+
+	if ( $mobile_image ) {
+		$mobile_resource = array(
+			'href'          => $mobile_image[0],
+			'as'            => 'image',
+			'media'         => '(max-width: 48rem)',
+			'fetchpriority' => 'high',
+		);
+
+		if ( $mobile_srcset ) {
+			$mobile_resource['imagesrcset'] = $mobile_srcset;
+			$mobile_resource['imagesizes']  = '100vw';
+		}
+
+		$resources[] = $mobile_resource;
+	}
+
+	if ( $desktop_image ) {
+		$desktop_resource = array(
+			'href'          => $desktop_image[0],
+			'as'            => 'image',
+			'media'         => '(min-width: 48.0625rem)',
+			'fetchpriority' => 'high',
+		);
+
+		if ( $desktop_srcset ) {
+			$desktop_resource['imagesrcset'] = $desktop_srcset;
+			$desktop_resource['imagesizes']  = '100vw';
+		}
+
+		$resources[] = $desktop_resource;
+	}
+
+	return $resources;
+}
+add_filter( 'wp_preload_resources', 'kanapka_theme_preload_home_hero_image' );
+
+/**
  * Enqueue only the assets required by the current view.
  */
 function kanapka_theme_enqueue_assets() {
