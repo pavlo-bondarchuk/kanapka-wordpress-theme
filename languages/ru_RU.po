@@ -620,6 +620,82 @@ msgstr "Разместите свой заказ онлайн всего за н
 msgid "Popular categories"
 msgstr "Популярные категории"
 
+#: 404.php
+msgid "404 — Page not found"
+msgstr "404 — Страница не найдена"
+
+#: 404.php
+msgid "It looks like the page was moved or the link is outdated. We still have plenty of delicious ideas for your event!"
+msgstr "Похоже, страница была перемещена или ссылка устарела. Но у нас ещё много вкусных идей для вашего события!"
+
+#: 404.php
+msgid "We suggest returning to the home page or browsing the catalogue."
+msgstr "Предлагаем вернуться на главную или посмотреть каталог."
+
+#: 404.php
+msgid "Back to home"
+msgstr "На главную"
+
+#: 404.php
+msgid "Helpful links"
+msgstr "Полезные ссылки"
+
+#: 404.php
+msgid "Ready-made sets"
+msgstr "Готовые наборы"
+
+#: 404.php
+msgid "Selected solutions for any event"
+msgstr "Подобранные решения для любого события"
+
+#: 404.php
+msgid "Turnkey catering"
+msgstr "Кейтеринг под ключ"
+
+#: 404.php
+msgid "Event organization in any format"
+msgstr "Организация мероприятий любого формата"
+
+#: 404.php
+msgid "Offers and news"
+msgstr "Акции и новинки"
+
+#: 404.php
+msgid "Special offers and new flavours"
+msgstr "Специальные предложения и новые вкусы"
+
+#: 404.php
+msgid "Need help?"
+msgstr "Нужна помощь?"
+
+#: 404.php
+msgid "We are here to help with your order"
+msgstr "Мы на связи и с радостью поможем"
+
+#: 404.php
+msgid "Did not find what you need?"
+msgstr "Не нашли нужное?"
+
+#: 404.php
+msgid "Tell us about your event and we will help you choose the perfect menu."
+msgstr "Расскажите нам о вашем мероприятии — подберём идеальное меню и позаботимся о деталях."
+
+#: 404.php
+msgid "Contact us"
+msgstr "Связаться с нами"
+
+#: 404.php
+msgid "Our advantages"
+msgstr "Наши преимущества"
+
+#: 404.php
+msgid "Quality guarantee"
+msgstr "Гарантия качества"
+
+#: 404.php
+msgid "Controlled at every stage"
+msgstr "Контроль на всех этапах"
+
 #: inc/home.php:183
 msgid "Premium quality"
 msgstr "Премиальное качество"

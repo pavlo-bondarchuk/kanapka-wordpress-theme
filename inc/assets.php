@@ -110,6 +110,22 @@ function kanapka_theme_enqueue_assets() {
 		kanapka_theme_asset_version( '/assets/css/components/footer.css' )
 	);
 
+	if ( is_404() ) {
+		wp_enqueue_style(
+			'kanapka-theme-front-page',
+			get_theme_file_uri( '/assets/css/pages/front-page.css' ),
+			array( 'kanapka-theme-main' ),
+			kanapka_theme_asset_version( '/assets/css/pages/front-page.css' )
+		);
+
+		wp_enqueue_style(
+			'kanapka-theme-404',
+			get_theme_file_uri( '/assets/css/pages/404.css' ),
+			array( 'kanapka-theme-front-page' ),
+			kanapka_theme_asset_version( '/assets/css/pages/404.css' )
+		);
+	}
+
 	wp_enqueue_script(
 		'kanapka-theme-navigation',
 		get_theme_file_uri( '/assets/js/components/navigation.js' ),
