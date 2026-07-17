@@ -23,15 +23,12 @@ if ( is_wp_error( $link ) ) {
 	<span class="category-card__media">
 		<?php
 		if ( $thumbnail_id ) {
-			$image_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
-			$image_alt = '' !== $image_alt ? $image_alt : $category->name;
-
 			echo wp_get_attachment_image(
 				$thumbnail_id,
 				'kanapka-category',
 				false,
 				array(
-					'alt'     => $image_alt,
+					'alt'     => '',
 					'loading' => 'lazy',
 					'sizes'   => $compact ? '140px' : '(max-width: 640px) 50vw, 200px',
 				)
