@@ -178,6 +178,18 @@
 	margin-top: var(--space-5);
 }
 
+.checkout-delivery-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--space-4);
+	margin-top: var(--space-5);
+	clear: both;
+}
+
+.checkout-delivery-fields .form-row {
+	min-width: 0;
+}
+
 #ship-to-different-address {
 	margin: 0;
 }
@@ -197,6 +209,12 @@
 
 .checkout-payment-slot {
 	margin-top: var(--space-6);
+}
+
+@media (max-width: 40rem) {
+	.checkout-delivery-fields {
+		grid-template-columns: 1fr;
+	}
 }
 
 .checkout-payment-slot__heading {

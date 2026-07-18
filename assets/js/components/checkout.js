@@ -13,6 +13,43 @@
 		}
 	};
 
+	const setupDeliveryFields = () => {
+		const fields = document.querySelector( '[data-delivery-schedule]' );
+		const dateField = fields?.querySelector( '#wcd_dd' );
+		const timeField = fields?.querySelector( '#wcd_dt' );
+
+		if ( ! fields || ! dateField || ! timeField ) {
+			return;
+		}
+
+		let schedule = {};
+		try {
+			schedule = JSON.parse( fields.dataset.deliverySchedule );
+		} catch ( error ) {
+			return;
+		}
+
+		const updateTimes = () => {
+			const selectedTime = timeField.value;
+			const placeholder = timeField.options[ 0 ]?.textContent || '';
+			const times = schedule[ dateField.value ] || [];
+
+			timeField.replaceChildren( new Option( placeholder, '' ) );
+			times.forEach( ( time ) => timeField.add( new Option( time, time, false, time === selectedTime ) ) );
+		};
+
+		if ( dateField.dataset.deliveryReady !== 'true' ) {
+			dateField.addEventListener( 'change', updateTimes );
+			dateField.dataset.deliveryReady = 'true';
+		}
+
+		updateTimes();
+	};
+
 	placePayment();
-	$( document.body ).on( 'updated_checkout', placePayment );
+	setupDeliveryFields();
+	$( document.body ).on( 'updated_checkout', () => {
+		placePayment();
+		setupDeliveryFields();
+	} );
 }( jQuery ) );

@@ -1039,3 +1039,23 @@ msgstr "Ваш отзыв"
 #: page-templates/reviews.php:120
 msgid "Your review helps us improve."
 msgstr "Ваш отзыв помогает нам становиться лучше."
+
+#: inc/delivery-date.php
+msgid "Delivery"
+msgstr "Доставка"
+
+#: inc/delivery-date.php
+msgid "Delivery date"
+msgstr "Дата доставки"
+
+#: inc/delivery-date.php
+msgid "Delivery time"
+msgstr "Время доставки"
+
+#: inc/delivery-date.php
+msgid "Please select a valid delivery date."
+msgstr "Пожалуйста, выберите доступную дату доставки."
+
+#: inc/delivery-date.php
+msgid "Please select a valid delivery time."
+msgstr "Пожалуйста, выберите доступное время доставки."

@@ -946,3 +946,23 @@ msgstr ""
 #: page-templates/reviews.php:120
 msgid "Your review helps us improve."
 msgstr ""
+
+#: inc/delivery-date.php
+msgid "Delivery"
+msgstr ""
+
+#: inc/delivery-date.php
+msgid "Delivery date"
+msgstr ""
+
+#: inc/delivery-date.php
+msgid "Delivery time"
+msgstr ""
+
+#: inc/delivery-date.php
+msgid "Please select a valid delivery date."
+msgstr ""
+
+#: inc/delivery-date.php
+msgid "Please select a valid delivery time."
+msgstr ""
