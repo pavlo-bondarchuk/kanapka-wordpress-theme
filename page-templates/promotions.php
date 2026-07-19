@@ -39,21 +39,6 @@ while ( have_posts() ) {
 								<?php if ( $title ) : ?><h2><?php echo esc_html( $title ); ?></h2><?php endif; ?>
 								<?php if ( $content ) : ?><div class="promotion-card__editor"><?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div><?php endif; ?>
 
-								<?php if ( $items ) : ?>
-									<ul class="promotion-card__items">
-										<?php foreach ( $items as $item ) : ?>
-											<?php
-											$item_text = sanitize_text_field( $item['text'] ?? '' );
-											$item_icon = sanitize_key( $item['icon'] ?? 'circle-check' );
-											if ( ! $item_text ) {
-												continue;
-											}
-											?>
-											<li><span class="promotion-card__item-icon"><?php echo kanapka_theme_ui_icon( $item_icon, 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><span><?php echo esc_html( $item_text ); ?></span></li>
-										<?php endforeach; ?>
-									</ul>
-								<?php endif; ?>
-
 								<?php if ( ! empty( $link['url'] ) ) : ?>
 									<?php
 									$link_target = '_blank' === ( $link['target'] ?? '' ) ? '_blank' : '';
@@ -69,6 +54,21 @@ while ( have_posts() ) {
 								</div>
 							<?php endif; ?>
 						</div>
+
+						<?php if ( $items ) : ?>
+							<ul class="promotion-card__items">
+								<?php foreach ( $items as $item ) : ?>
+									<?php
+									$item_text = sanitize_text_field( $item['text'] ?? '' );
+									$item_icon = sanitize_key( $item['icon'] ?? 'circle-check' );
+									if ( ! $item_text ) {
+										continue;
+									}
+									?>
+									<li><span class="promotion-card__item-icon"><?php echo kanapka_theme_ui_icon( $item_icon, 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><span><?php echo esc_html( $item_text ); ?></span></li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
 					</article>
 				<?php endforeach; ?>
 			<?php else : ?>
