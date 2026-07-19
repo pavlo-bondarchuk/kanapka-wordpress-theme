@@ -31,9 +31,15 @@ while ( have_posts() ) {
 					$content  = wp_kses_post( $promotion['content'] ?? '' );
 					$link     = is_array( $promotion['link'] ?? null ) ? $promotion['link'] : array();
 					$items    = is_array( $promotion['items'] ?? null ) ? $promotion['items'] : array();
-					$classes  = 'promotion-card' . ( $index % 2 ? ' promotion-card--soft' : '' );
+					$classes  = 'promotion-card' . ( $index % 2 ? ' promotion-card--soft' : '' ) . ( $image_id ? ' promotion-card--has-image' : '' );
 					?>
 					<article class="<?php echo esc_attr( $classes ); ?>">
+						<?php if ( $image_id ) : ?>
+							<div class="promotion-card__media" aria-hidden="true">
+								<?php echo wp_get_attachment_image( $image_id, 'full', false, array( 'alt' => '', 'loading' => 'lazy', 'sizes' => '(max-width: 48rem) 100vw, 90vw' ) ); ?>
+							</div>
+						<?php endif; ?>
+
 						<div class="promotion-card__grid">
 							<div class="promotion-card__content">
 								<?php if ( $title ) : ?><h2><?php echo esc_html( $title ); ?></h2><?php endif; ?>
@@ -47,12 +53,6 @@ while ( have_posts() ) {
 									<a class="promotion-card__link" href="<?php echo esc_url( $link['url'] ); ?>"<?php echo $link_target ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>><?php echo esc_html( $link_title ); ?></a>
 								<?php endif; ?>
 							</div>
-
-							<?php if ( $image_id ) : ?>
-								<div class="promotion-card__media">
-									<?php echo wp_get_attachment_image( $image_id, 'large', false, array( 'loading' => 'lazy', 'sizes' => '(max-width: 48rem) 100vw, 60vw' ) ); ?>
-								</div>
-							<?php endif; ?>
 						</div>
 
 						<?php if ( $items ) : ?>

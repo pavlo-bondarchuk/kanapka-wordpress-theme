@@ -18,9 +18,16 @@
 }
 
 .promotion-card {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
 	padding: clamp(var(--space-4), 3vw, var(--space-6));
 	border: 0.0625rem solid transparent;
 	border-radius: var(--radius-md);
+}
+
+.promotion-card--has-image {
+	min-height: clamp(18rem, 28vw, 25rem);
 }
 
 .promotion-card--soft {
@@ -30,10 +37,20 @@
 }
 
 .promotion-card__grid {
+	position: relative;
+	z-index: 1;
 	display: grid;
-	grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.45fr);
-	gap: clamp(var(--space-5), 5vw, var(--space-8));
+	grid-template-columns: minmax(0, 34rem);
 	align-items: flex-start;
+}
+
+.promotion-card--has-image .promotion-card__content {
+	padding: clamp(var(--space-3), 2.5vw, var(--space-5));
+	border: 0.0625rem solid rgb(255 255 255 / 55%);
+	border-radius: var(--radius-md);
+	background: rgb(255 255 255 / 84%);
+	box-shadow: var(--shadow-sm);
+	backdrop-filter: blur(0.25rem);
 }
 
 .promotion-card__content h2 {
@@ -72,25 +89,21 @@
 }
 
 .promotion-card__media {
-	display: grid;
-	min-width: 0;
-	aspect-ratio: 3 / 1;
-	place-items: center;
-	overflow: hidden;
-	border: 0.0625rem solid var(--color-line);
-	border-radius: var(--radius-md);
-	background: #fff;
-	box-shadow: var(--shadow-sm);
+	position: absolute;
+	z-index: 0;
+	inset: 0;
 }
 
 .promotion-card__media img {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
+	object-fit: cover;
 }
 
 .promotion-card__items {
+	position: relative;
+	z-index: 1;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 	gap: var(--space-3) var(--space-4);
@@ -98,6 +111,15 @@
 	margin: var(--space-5) 0 0;
 	padding: 0;
 	list-style: none;
+}
+
+.promotion-card--has-image .promotion-card__items {
+	padding: var(--space-4);
+	border: 0.0625rem solid rgb(255 255 255 / 55%);
+	border-radius: var(--radius-md);
+	background: rgb(255 255 255 / 84%);
+	box-shadow: var(--shadow-sm);
+	backdrop-filter: blur(0.25rem);
 }
 
 .promotion-card__items li {
@@ -150,12 +172,6 @@
 
 	.promotion-card__grid {
 		grid-template-columns: 1fr;
-		gap: var(--space-4);
-	}
-
-	.promotion-card__media {
-		grid-row: 1;
-		aspect-ratio: 16 / 7;
 	}
 
 	.promotion-card__items {
@@ -166,9 +182,5 @@
 @media (max-width: 30rem) {
 	.promotion-card {
 		padding: var(--space-3);
-	}
-
-	.promotion-card__media {
-		aspect-ratio: 16 / 8;
 	}
 }
