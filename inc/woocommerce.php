@@ -52,7 +52,7 @@ add_action( 'wp_enqueue_scripts', 'kanapka_theme_dequeue_woocommerce_styles', 10
  * @return array
  */
 function kanapka_theme_remove_unused_checkout_address_fields( $fields ) {
-	$unused_fields = array( 'last_name', 'country', 'state', 'city', 'postcode' );
+	$unused_fields = array( 'last_name', 'state', 'postcode' );
 
 	foreach ( array( 'billing', 'shipping' ) as $section ) {
 		foreach ( $unused_fields as $field_name ) {
@@ -63,13 +63,22 @@ function kanapka_theme_remove_unused_checkout_address_fields( $fields ) {
 			$fields[ $section ][ $section . '_first_name' ]['class'] = array( 'form-row-wide' );
 		}
 
-		if ( isset( $fields[ $section ] ) && ! $fields[ $section ] ) {
-			unset( $fields[ $section ] );
-		}
+		$fields[ $section ][ $section . '_country' ] = array(
+			'type'     => 'hidden',
+			'default'  => 'UA',
+			'required' => true,
+		);
+
+		$fields[ $section ][ $section . '_city' ] = array(
+			'type'     => 'hidden',
+			'default'  => 'Київ',
+			'required' => true,
+		);
 	}
 
 	return $fields;
 }
+
 add_filter( 'woocommerce_checkout_fields', 'kanapka_theme_remove_unused_checkout_address_fields', 999 );
 
 /**

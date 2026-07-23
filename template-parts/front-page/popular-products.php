@@ -5,7 +5,7 @@
  * @package Kanapka_Theme
  */
 
-$products = kanapka_theme_get_popular_products( 12 );
+$products = kanapka_theme_get_popular_products( 12, true );
 
 if ( ! $products ) {
 	return;

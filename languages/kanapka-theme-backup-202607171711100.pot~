@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 15:40+0000\n"
+"POT-Creation-Date: 2026-07-15 10:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "%d out of 5 stars"
 msgstr ""
 
-#: page-templates/reviews.php:124
+#: page-templates/reviews.php:110
 msgid "%d stars"
 msgstr ""
 
@@ -43,10 +43,6 @@ msgstr ""
 
 #: inc/home.php:368
 msgid "18 years on the market"
-msgstr ""
-
-#: 404.php:55
-msgid "404 — Page not found"
 msgstr ""
 
 #: woocommerce/checkout/thankyou.php:60
@@ -73,7 +69,7 @@ msgstr ""
 msgid "Add brand"
 msgstr ""
 
-#: inc/assets.php:763
+#: inc/assets.php:658
 msgid "Added to cart"
 msgstr ""
 
@@ -85,8 +81,8 @@ msgstr ""
 msgid "All brands"
 msgstr ""
 
-#: template-parts/front-page/category-catalogue.php:18
 #: template-parts/shop/sidebar.php:38
+#: template-parts/front-page/category-catalogue.php:18
 msgid "All categories"
 msgstr ""
 
@@ -96,10 +92,6 @@ msgstr ""
 
 #: page-templates/reviews.php:62 page-templates/reviews.php:65
 msgid "Average rating"
-msgstr ""
-
-#: 404.php:59
-msgid "Back to home"
 msgstr ""
 
 #: page-templates/reviews.php:65
@@ -116,7 +108,7 @@ msgstr ""
 msgid "Brands"
 msgstr ""
 
-#: 404.php:60 404.php:80 inc/home.php:136
+#: inc/home.php:136
 msgid "Browse catalogue"
 msgstr ""
 
@@ -128,10 +120,6 @@ msgstr ""
 msgid ""
 "Canapés, appetizers and buffet sets made from fresh ingredients and "
 "delivered at the right time."
-msgstr ""
-
-#: page-templates/reviews.php:143
-msgid "Cancel reply"
 msgstr ""
 
 #: template-parts/front-page/hero.php:17
@@ -158,7 +146,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: inc/woocommerce.php:191 template-parts/single-product/content.php:106
+#: inc/woocommerce.php:173 template-parts/single-product/content.php:106
 msgid "Categories:"
 msgstr ""
 
@@ -187,12 +175,12 @@ msgstr ""
 msgid "Close dialog"
 msgstr ""
 
+#: page-templates/simple-information.php:103
 #: page-templates/catering-service.php:190
-#: page-templates/simple-information.php:114
 msgid "Close gallery"
 msgstr ""
 
-#: header.php:100
+#: header.php:95
 msgid "Close phone numbers"
 msgstr ""
 
@@ -204,7 +192,7 @@ msgstr ""
 msgid "Close search"
 msgstr ""
 
-#: inc/assets.php:142
+#: inc/assets.php:67
 msgid "Close submenu"
 msgstr ""
 
@@ -216,7 +204,7 @@ msgstr ""
 msgid "Company"
 msgstr ""
 
-#: page.php:27
+#: page.php:26
 msgid ""
 "Complete your details and confirm your order. We will contact you to clarify "
 "the details."
@@ -230,31 +218,23 @@ msgstr ""
 msgid "Contact information"
 msgstr ""
 
-#: 404.php:96
-msgid "Contact us"
-msgstr ""
-
 #: footer.php:44 inc/scf.php:94 template-parts/header/contact-mega-menu.php:18
 msgid "Contacts"
-msgstr ""
-
-#: 404.php:105
-msgid "Controlled at every stage"
 msgstr ""
 
 #: template-parts/single-product/content.php:99
 msgid "Copy link"
 msgstr ""
 
-#: inc/assets.php:762
+#: inc/assets.php:657
 msgid "Could not load the product."
 msgstr ""
 
-#: header.php:90 header.php:106 header.php:122
+#: header.php:86 header.php:100 header.php:117
 msgid "Could not reach us…"
 msgstr ""
 
-#: inc/woocommerce.php:270 inc/woocommerce.php:280
+#: inc/woocommerce.php:252 inc/woocommerce.php:262
 msgid "Could not update the product quantity."
 msgstr ""
 
@@ -262,16 +242,12 @@ msgstr ""
 msgid "Customer reviews"
 msgstr ""
 
-#: inc/woocommerce.php:99 template-parts/single-product/content.php:67
+#: inc/woocommerce.php:81 template-parts/single-product/content.php:67
 msgid "Decrease quantity"
 msgstr ""
 
-#: inc/woocommerce.php:131
+#: inc/woocommerce.php:113
 msgid "Default sorting"
-msgstr ""
-
-#: inc/delivery-date.php:203 inc/delivery-date.php:222
-msgid "Delivery"
 msgstr ""
 
 #. Name of the template
@@ -283,20 +259,8 @@ msgstr ""
 msgid "Delivery benefits"
 msgstr ""
 
-#: inc/delivery-date.php:103 inc/delivery-date.php:174
-msgid "Delivery date"
-msgstr ""
-
-#: inc/delivery-date.php:115 inc/delivery-date.php:181
-msgid "Delivery time"
-msgstr ""
-
 #: template-parts/single-product/content.php:116
 msgid "Description"
-msgstr ""
-
-#: 404.php:88
-msgid "Did not find what you need?"
 msgstr ""
 
 #: inc/home.php:339
@@ -323,18 +287,14 @@ msgstr ""
 msgid "Edit brand"
 msgstr ""
 
-#: page-templates/reviews.php:150 template-parts/single-product/content.php:98
+#: template-parts/single-product/content.php:98
 msgid "Email"
 msgstr ""
 
-#: 404.php:27
-msgid "Event organization in any format"
-msgstr ""
-
+#: page-templates/simple-information.php:22
+#: page-templates/simple-information.php:102
 #: page-templates/catering-service.php:129
 #: page-templates/catering-service.php:189
-#: page-templates/simple-information.php:22
-#: page-templates/simple-information.php:113
 msgid "Event photos"
 msgstr ""
 
@@ -383,12 +343,12 @@ msgstr ""
 msgid "Frequently ordered"
 msgstr ""
 
-#: template-parts/shop/hero.php:38
+#: template-parts/shop/hero.php:37
 msgid ""
 "Fresh and delicious dishes for every event. Choose from dozens of categories."
 msgstr ""
 
-#: template-parts/shop/hero.php:24
+#: template-parts/shop/hero.php:23
 msgid ""
 "Fresh dishes for buffets, office events and celebrations. Choose a category "
 "and order online."
@@ -398,8 +358,8 @@ msgstr ""
 msgid "Fresh ingredients"
 msgstr ""
 
-#: template-parts/cart/sidebar-benefits.php:21
 #: woocommerce/checkout/thankyou.php:57
+#: template-parts/cart/sidebar-benefits.php:21
 msgid "Fresh products every day"
 msgstr ""
 
@@ -419,8 +379,8 @@ msgstr ""
 msgid "Go to slide %d"
 msgstr ""
 
-#: 404.php:67
-msgid "Helpful links"
+#. URI of the theme
+msgid "https://kanapka.kiev.ua/"
 msgstr ""
 
 #: inc/home.php:350
@@ -431,14 +391,8 @@ msgstr ""
 msgid "In stock"
 msgstr ""
 
-#: inc/woocommerce.php:99 template-parts/single-product/content.php:70
+#: inc/woocommerce.php:81 template-parts/single-product/content.php:70
 msgid "Increase quantity"
-msgstr ""
-
-#: 404.php:56
-msgid ""
-"It looks like the page was moved or the link is outdated. We still have "
-"plenty of delicious ideas for your event!"
 msgstr ""
 
 #. Author of the theme
@@ -457,17 +411,17 @@ msgstr ""
 msgid "Kyiv"
 msgstr ""
 
-#: template-parts/header/language-switcher.php:39
+#: template-parts/header/language-switcher.php:36
 msgid "Language"
 msgstr ""
 
-#: page-templates/catering-service.php:160 page-templates/promotions.php:51
+#: page-templates/simple-information.php:120
 #: page-templates/simple-information.php:131
-#: page-templates/simple-information.php:142
+#: page-templates/catering-service.php:160 page-templates/promotions.php:60
 msgid "Learn more"
 msgstr ""
 
-#: page-templates/reviews.php:141
+#: page-templates/reviews.php:116
 msgid "Leave a review"
 msgstr ""
 
@@ -479,15 +433,8 @@ msgstr ""
 msgid "Link copied"
 msgstr ""
 
-#: inc/assets.php:761 template-parts/components/product-quick-view.php:12
+#: inc/assets.php:656 template-parts/components/product-quick-view.php:12
 msgid "Loading…"
-msgstr ""
-
-#: page-templates/reviews.php:130
-#, php-format
-msgid ""
-"Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">"
-"Log out?</a>"
 msgstr ""
 
 #: template-parts/shop/sidebar.php:70
@@ -498,16 +445,8 @@ msgstr ""
 msgid "Minimum price"
 msgstr ""
 
-#: inc/woocommerce.php:132
+#: inc/woocommerce.php:114
 msgid "Most popular"
-msgstr ""
-
-#: page-templates/reviews.php:149
-msgid "Name"
-msgstr ""
-
-#: 404.php:38
-msgid "Need help?"
 msgstr ""
 
 #: inc/brands.php:30
@@ -518,7 +457,7 @@ msgstr ""
 msgid "New products"
 msgstr ""
 
-#: inc/woocommerce.php:134
+#: inc/woocommerce.php:116
 msgid "Newest first"
 msgstr ""
 
@@ -526,16 +465,16 @@ msgstr ""
 msgid "Next clients"
 msgstr ""
 
+#: page-templates/simple-information.php:106
 #: page-templates/catering-service.php:128
 #: page-templates/catering-service.php:193
-#: page-templates/simple-information.php:117
 msgid "Next image"
 msgstr ""
 
+#: page-templates/simple-information.php:136
 #: page-templates/catering-service.php:215
-#: page-templates/simple-information.php:147
-#: template-parts/front-page/popular-products.php:32
 #: template-parts/cart/recommendations.php:37
+#: template-parts/front-page/popular-products.php:32
 msgid "Next products"
 msgstr ""
 
@@ -551,16 +490,8 @@ msgstr ""
 msgid "Next steps"
 msgstr ""
 
-#: inc/assets.php:209
-msgid "No matching products found"
-msgstr ""
-
 #: template-parts/shop/product-loop.php:42
 msgid "No products found"
-msgstr ""
-
-#: 404.php:32
-msgid "Offers and news"
 msgstr ""
 
 #: inc/home.php:178
@@ -579,14 +510,14 @@ msgstr ""
 msgid "Open catalogue filters"
 msgstr ""
 
+#: page-templates/simple-information.php:97
 #: page-templates/catering-service.php:131
 #: page-templates/catering-service.php:181
-#: page-templates/simple-information.php:108
 #, php-format
 msgid "Open image %1$d of %2$d"
 msgstr ""
 
-#: inc/assets.php:141
+#: inc/assets.php:66
 msgid "Open submenu"
 msgstr ""
 
@@ -605,16 +536,16 @@ msgid ""
 "presentable packaging."
 msgstr ""
 
-#: header.php:87 header.php:99 inc/scf.php:90
+#: header.php:83 header.php:94 inc/scf.php:90
 msgid "Order reception"
+msgstr ""
+
+#: header.php:107
+msgid "Order reception details"
 msgstr ""
 
 #: inc/scf.php:97 template-parts/header/contact-mega-menu.php:27
 msgid "Orders are accepted"
-msgstr ""
-
-#: 404.php:100
-msgid "Our advantages"
 msgstr ""
 
 #: page-templates/catering-service.php:154
@@ -645,7 +576,7 @@ msgstr ""
 msgid "Personal approach"
 msgstr ""
 
-#: header.php:93
+#: header.php:89
 msgid "Phone numbers"
 msgstr ""
 
@@ -653,15 +584,7 @@ msgstr ""
 msgid "Place your order online in just a few clicks"
 msgstr ""
 
-#: inc/delivery-date.php:132
-msgid "Please select a valid delivery date."
-msgstr ""
-
-#: inc/delivery-date.php:136
-msgid "Please select a valid delivery time."
-msgstr ""
-
-#: 404.php:79 template-parts/front-page/category-strip.php:14
+#: template-parts/front-page/category-strip.php:14
 msgid "Popular categories"
 msgstr ""
 
@@ -678,16 +601,16 @@ msgstr ""
 msgid "Previous clients"
 msgstr ""
 
+#: page-templates/simple-information.php:104
 #: page-templates/catering-service.php:127
 #: page-templates/catering-service.php:191
-#: page-templates/simple-information.php:115
 msgid "Previous image"
 msgstr ""
 
+#: page-templates/simple-information.php:134
 #: page-templates/catering-service.php:207
-#: page-templates/simple-information.php:145
-#: template-parts/front-page/popular-products.php:20
 #: template-parts/cart/recommendations.php:27
+#: template-parts/front-page/popular-products.php:20
 msgid "Previous products"
 msgstr ""
 
@@ -699,21 +622,20 @@ msgstr ""
 msgid "Previous slide"
 msgstr ""
 
-#: inc/woocommerce.php:136
+#: inc/woocommerce.php:118
 msgid "Price: high to low"
 msgstr ""
 
-#: inc/woocommerce.php:135
+#: inc/woocommerce.php:117
 msgid "Price: low to high"
 msgstr ""
 
-#: inc/menus.php:16 inc/accessibility.php:19
+#: inc/accessibility.php:19 inc/menus.php:16
 msgid "Primary navigation"
 msgstr ""
 
-#: woocommerce/archive-product.php:19
+#: woocommerce/archive-product.php:16 template-parts/shop/hero.php:11
 #: template-parts/front-page/category-catalogue.php:17
-#: template-parts/shop/hero.php:12
 msgid "Product catalogue"
 msgstr ""
 
@@ -722,7 +644,7 @@ msgstr ""
 msgid "Product categories"
 msgstr ""
 
-#: inc/woocommerce.php:193
+#: inc/woocommerce.php:175
 msgid "Product details"
 msgstr ""
 
@@ -734,21 +656,19 @@ msgstr ""
 msgid "Product images"
 msgstr ""
 
-#: inc/woocommerce.php:160
+#: inc/woocommerce.php:142
 msgid "Product not found."
 msgstr ""
 
-#: inc/woocommerce.php:182 template-parts/single-product/content.php:69
+#: inc/woocommerce.php:164 template-parts/single-product/content.php:69
 msgid "Product quantity"
 msgstr ""
 
-#: inc/woocommerce.php:247 template-parts/components/product-card.php:39
+#: inc/woocommerce.php:229 template-parts/components/product-card.php:39
 #, php-format
 msgid "Product quantity: %s"
 msgstr ""
 
-#: template-parts/shop/search-results.php:14
-#: template-parts/shop/search-results.php:21
 #: template-parts/header/search-popup.php:14
 #: template-parts/header/search-popup.php:18
 msgid "Product search"
@@ -767,20 +687,12 @@ msgstr ""
 msgid "Promotions"
 msgstr ""
 
-#: 404.php:105
-msgid "Quality guarantee"
-msgstr ""
-
 #: template-parts/cart/assurance.php:14
 msgid "Questions? Call"
 msgstr ""
 
 #: page-templates/catering-service.php:223
 msgid "Ready to organise your perfect event?"
-msgstr ""
-
-#: 404.php:20
-msgid "Ready-made sets"
 msgstr ""
 
 #: inc/home.php:134
@@ -791,34 +703,16 @@ msgstr ""
 msgid "Related products"
 msgstr ""
 
-#: inc/woocommerce.php:345
+#: inc/woocommerce.php:327
 msgid "Remove"
-msgstr ""
-
-#: page-templates/reviews.php:89
-msgid "Reply"
-msgstr ""
-
-#: page-templates/reviews.php:89 page-templates/reviews.php:142
-#, php-format
-msgid "Reply to %s"
 msgstr ""
 
 #: template-parts/header/callback-modal.php:11
 msgid "Request a callback"
 msgstr ""
 
-#: page-templates/reviews.php:137
-msgid "Required fields are marked *"
-msgstr ""
-
 #: template-parts/shop/sidebar.php:82
 msgid "Reset filter"
-msgstr ""
-
-#: template-parts/shop/search-results.php:17
-#, php-format
-msgid "Results for “%s”"
 msgstr ""
 
 #. Name of the template
@@ -834,11 +728,36 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: page-templates/reviews.php:151
+#: page-templates/reviews.php:125
 msgid "Save my details for the next review."
 msgstr ""
 
-#: template-parts/shop/search-results.php:24
+#: page-templates/reviews.php
+msgid "Reply"
+msgstr ""
+
+#: page-templates/reviews.php
+#, php-format
+msgid "Reply to %s"
+msgstr ""
+
+#: page-templates/reviews.php
+msgid "Cancel reply"
+msgstr ""
+
+#: page-templates/reviews.php
+#, php-format
+msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
+msgstr ""
+
+#: page-templates/reviews.php
+msgid "Required fields are marked *"
+msgstr ""
+
+#: page-templates/reviews.php
+msgid "Name"
+msgstr ""
+
 #: template-parts/header/search-popup.php:9
 #: template-parts/header/search-popup.php:21
 msgid "Search"
@@ -848,34 +767,21 @@ msgstr ""
 msgid "Search brands"
 msgstr ""
 
-#: template-parts/shop/search-results.php:22
-msgid "Search products"
-msgstr ""
-
-#: template-parts/shop/search-results.php:15
-#: template-parts/shop/search-results.php:29
-msgid "Search results"
-msgstr ""
-
 #: inc/menus.php:19
 msgid "Second footer column"
 msgstr ""
 
-#: header.php:26
+#: header.php:22
 msgid "Secondary navigation"
 msgstr ""
 
-#: template-parts/cart/sidebar-benefits.php:16
 #: woocommerce/checkout/thankyou.php:56
+#: template-parts/cart/sidebar-benefits.php:16
 msgid "Secure payment"
 msgstr ""
 
-#: inc/woocommerce.php:188
+#: inc/woocommerce.php:170
 msgid "Select options"
-msgstr ""
-
-#: 404.php:21
-msgid "Selected solutions for any event"
 msgstr ""
 
 #: page-templates/catering-service.php:225
@@ -895,12 +801,12 @@ msgstr ""
 msgid "Show all categories"
 msgstr ""
 
-#: inc/assets.php:257 template-parts/shop/sidebar.php:28
+#: inc/assets.php:162 template-parts/shop/sidebar.php:28
 #: template-parts/shop/sidebar.php:55
 msgid "Show less"
 msgstr ""
 
-#: inc/assets.php:256 template-parts/front-page/delivery-intro.php:23
+#: inc/assets.php:161 template-parts/front-page/delivery-intro.php:23
 msgid "Show more"
 msgstr ""
 
@@ -908,8 +814,8 @@ msgstr ""
 msgid "Show next benefit"
 msgstr ""
 
-#: template-parts/front-page/category-strip.php:23
 #: template-parts/shop/category-rail.php:44
+#: template-parts/front-page/category-strip.php:23
 msgid "Show next categories"
 msgstr ""
 
@@ -925,7 +831,7 @@ msgstr[1] ""
 msgid "Simple information page"
 msgstr ""
 
-#: header.php:21
+#: header.php:17
 msgid "Skip to content"
 msgstr ""
 
@@ -937,20 +843,12 @@ msgstr ""
 msgid "Slide selection"
 msgstr ""
 
-#: 404.php:33
-msgid "Special offers and new flavours"
-msgstr ""
-
 #: template-parts/shop/category-rail.php:20
 msgid "Subcategories"
 msgstr ""
 
-#: page-templates/reviews.php:144
+#: page-templates/reviews.php:119
 msgid "Submit review"
-msgstr ""
-
-#: 404.php:89
-msgid "Tell us about your event and we will help you choose the perfect menu."
 msgstr ""
 
 #: inc/scf.php:21
@@ -965,7 +863,7 @@ msgstr ""
 msgid "to"
 msgstr ""
 
-#: header.php:59
+#: header.php:55
 msgid "Toggle navigation"
 msgstr ""
 
@@ -973,16 +871,12 @@ msgstr ""
 msgid "Top bar"
 msgstr ""
 
-#: inc/woocommerce.php:133
+#: inc/woocommerce.php:115
 msgid "Top rated"
 msgstr ""
 
 #: template-parts/shop/product-loop.php:43
 msgid "Try changing the filters or return to all categories."
-msgstr ""
-
-#: 404.php:26
-msgid "Turnkey catering"
 msgstr ""
 
 #: template-parts/header/language-switcher.php:13
@@ -1001,10 +895,6 @@ msgstr ""
 msgid "View product image %d"
 msgstr ""
 
-#: 404.php:39
-msgid "We are here to help with your order"
-msgstr ""
-
 #: template-parts/cart/sidebar-benefits.php:22
 msgid "We guarantee fresh, high-quality dishes"
 msgstr ""
@@ -1015,10 +905,6 @@ msgstr ""
 
 #: woocommerce/checkout/thankyou.php:57
 msgid "We prepare your order using fresh ingredients."
-msgstr ""
-
-#: 404.php:57
-msgid "We suggest returning to the home page or browsing the catalogue."
 msgstr ""
 
 #: inc/home.php:345
@@ -1049,14 +935,14 @@ msgstr ""
 msgid "Your feedback helps us improve. Thank you for choosing Kanapka!"
 msgstr ""
 
-#: page-templates/reviews.php:122
+#: page-templates/reviews.php:108
 msgid "Your rating"
 msgstr ""
 
-#: page-templates/reviews.php:153
+#: page-templates/reviews.php:127
 msgid "Your review"
 msgstr ""
 
-#: page-templates/reviews.php:145
+#: page-templates/reviews.php:120
 msgid "Your review helps us improve."
 msgstr ""

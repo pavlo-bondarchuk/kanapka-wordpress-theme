@@ -131,7 +131,7 @@
 
 .site-header__inner {
 	display: grid;
-	grid-template-columns: minmax(10rem, 12rem) 1fr auto;
+	grid-template-columns: minmax(10rem, 14rem) 1fr auto;
 	align-items: center;
 	gap: clamp(1rem, 3vw, 2.5rem);
 	width: min(100% - (2 * var(--container-gutter)), var(--header-container));
@@ -960,7 +960,6 @@ body.is-callback-modal-open {
 	color: var(--color-ink);
 	font-size: var(--font-size-md);
 	font-weight: 700;
-	border-top: 1px solid #dfe5ee;
 }
 
 .header-mini-cart .woocommerce-mini-cart__total strong {

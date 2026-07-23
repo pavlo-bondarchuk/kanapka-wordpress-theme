@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Theme bootstrap.
  *
  * @package Kanapka_Theme
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 $kanapka_theme_modules = array(
 	'legacy-compat',
@@ -22,12 +23,12 @@ $kanapka_theme_modules = array(
 	'accessibility',
 	'seo',
 	'woocommerce',
-	'delivery-date',
+	// 'delivery-date',
 	'reviews',
 	'scf',
 	'analytics',
 );
 
-foreach ( $kanapka_theme_modules as $kanapka_theme_module ) {
-	require_once get_theme_file_path( '/inc/' . $kanapka_theme_module . '.php' );
+foreach ($kanapka_theme_modules as $kanapka_theme_module) {
+	require_once get_theme_file_path('/inc/' . $kanapka_theme_module . '.php');
 }

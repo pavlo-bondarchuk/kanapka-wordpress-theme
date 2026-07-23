@@ -24,10 +24,16 @@
 	padding: clamp(var(--space-4), 3vw, var(--space-6));
 	border: 0.0625rem solid transparent;
 	border-radius: var(--radius-md);
+	display: flex;
+	flex-direction: column;
 }
 
 .promotion-card--has-image {
 	min-height: clamp(18rem, 28vw, 25rem);
+}
+
+.promotion-card--has-image .promotion-card__grid {
+	justify-content: flex-end;
 }
 
 .promotion-card--soft {
@@ -120,6 +126,7 @@
 	background: rgb(255 255 255 / 84%);
 	box-shadow: var(--shadow-sm);
 	backdrop-filter: blur(0.25rem);
+	margin: auto 0 0;
 }
 
 .promotion-card__items li {
@@ -182,5 +189,7 @@
 @media (max-width: 30rem) {
 	.promotion-card {
 		padding: var(--space-3);
+		min-height: fit-content;
+		gap: 20px;
 	}
 }

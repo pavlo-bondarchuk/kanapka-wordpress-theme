@@ -249,7 +249,7 @@ body.has-product-quick-view {
 	.product-card__quick-view {
 		top: auto;
 		right: var(--space-2);
-		bottom: var(--space-2);
+		bottom: var(--space-3);
 		left: auto;
 		width: 2.5rem;
 		min-height: 2.5rem;

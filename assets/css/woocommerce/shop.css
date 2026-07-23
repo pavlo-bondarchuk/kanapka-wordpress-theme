@@ -796,7 +796,7 @@
 
 .service-card__image {
 	position: absolute;
-	left: 50%;
+	left: 0;
 	z-index: -2;
 	width: 100%;
 	height: 100%;
@@ -978,6 +978,25 @@
 }
 
 @media (max-width: 48rem) {
+	.catalogue-view-switcher {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.catalogue-view-switcher button {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.catalogue-view-switcher button:last-child {
+		margin-left: 0;
+	}
+
+	form.woocommerce-ordering {
+		display: block;
+		width: 100%;
+	}
+
 	.catalogue-sidebar {
 		display: block;
 	}
@@ -1143,21 +1162,17 @@
 	}
 
 	.catalogue-product-grid[data-view="list"] .product-card__meta {
-		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-columns: 1fr;
 		align-items: end;
 		gap: var(--space-2);
 	}
 
 	.catalogue-product-grid[data-view="list"] .product-card__button {
-		width: 2.5rem;
+		width: 100%;
 		min-width: 2.5rem;
 		height: 2.5rem;
 		min-height: 2.5rem;
 		padding: 0;
-	}
-
-	.catalogue-product-grid[data-view="list"] .product-card__button-label {
-		display: none;
 	}
 
 	.catalogue-product-grid[data-view="list"] .product-card__button-icon {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kanapka Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 15:40+0000\n"
+"POT-Creation-Date: 2026-07-17 17:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -270,10 +270,6 @@ msgstr ""
 msgid "Default sorting"
 msgstr ""
 
-#: inc/delivery-date.php:203 inc/delivery-date.php:222
-msgid "Delivery"
-msgstr ""
-
 #. Name of the template
 #: page-templates/delivery-payment.php:2
 msgid "Delivery and payment"
@@ -281,14 +277,6 @@ msgstr ""
 
 #: template-parts/front-page/hero.php:80
 msgid "Delivery benefits"
-msgstr ""
-
-#: inc/delivery-date.php:103 inc/delivery-date.php:174
-msgid "Delivery date"
-msgstr ""
-
-#: inc/delivery-date.php:115 inc/delivery-date.php:181
-msgid "Delivery time"
 msgstr ""
 
 #: template-parts/single-product/content.php:116
@@ -461,7 +449,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: page-templates/catering-service.php:160 page-templates/promotions.php:51
+#: page-templates/catering-service.php:160 page-templates/promotions.php:60
 #: page-templates/simple-information.php:131
 #: page-templates/simple-information.php:142
 msgid "Learn more"
@@ -651,14 +639,6 @@ msgstr ""
 
 #: inc/home.php:375
 msgid "Place your order online in just a few clicks"
-msgstr ""
-
-#: inc/delivery-date.php:132
-msgid "Please select a valid delivery date."
-msgstr ""
-
-#: inc/delivery-date.php:136
-msgid "Please select a valid delivery time."
 msgstr ""
 
 #: 404.php:79 template-parts/front-page/category-strip.php:14

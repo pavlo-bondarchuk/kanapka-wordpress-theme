@@ -58,18 +58,72 @@ function kanapka_theme_get_home_categories( $limit = 18 ) {
 /**
  * Get popular products using WooCommerce's visibility rules.
  *
- * @param int $limit Maximum number of products.
+ * Homepage settings are only applied when explicitly requested so other
+ * recommendation blocks can keep using the automatic popularity query.
+ *
+ * @param int  $limit             Maximum number of products.
+ * @param bool $use_home_settings Whether to use the homepage product source.
  * @return array
  */
-function kanapka_theme_get_popular_products( $limit = 5 ) {
+function kanapka_theme_get_popular_products( $limit = 5, $use_home_settings = false ) {
 	if ( ! function_exists( 'wc_get_products' ) ) {
 		return array();
+	}
+
+	$limit = absint( $limit );
+
+	if ( ! $limit ) {
+		return array();
+	}
+
+	if ( $use_home_settings ) {
+		$front_page_id = absint( get_option( 'page_on_front' ) );
+
+		if ( $front_page_id && function_exists( 'get_field' ) ) {
+			$enabled = metadata_exists( 'post', $front_page_id, 'kanapka_home_popular_enabled' )
+				? (bool) get_field( 'kanapka_home_popular_enabled', $front_page_id )
+				: true;
+
+			if ( ! $enabled ) {
+				return array();
+			}
+
+			$source = (string) get_field( 'kanapka_home_popular_source', $front_page_id );
+
+			if ( 'manual' === $source ) {
+				$selected = get_field( 'kanapka_home_popular_products', $front_page_id );
+				$products = array();
+
+				foreach ( is_array( $selected ) ? $selected : array() as $selected_product ) {
+					if ( $selected_product instanceof WC_Product ) {
+						$product = $selected_product;
+					} else {
+						$product_id = $selected_product instanceof WP_Post
+							? $selected_product->ID
+							: absint( $selected_product );
+						$product    = wc_get_product( $product_id );
+					}
+
+					if ( ! $product || 'publish' !== $product->get_status() || ! $product->is_visible() ) {
+						continue;
+					}
+
+					$products[] = $product;
+
+					if ( count( $products ) >= $limit ) {
+						break;
+					}
+				}
+
+				return $products;
+			}
+		}
 	}
 
 	return wc_get_products(
 		array(
 			'status'  => 'publish',
-			'limit'   => absint( $limit ),
+			'limit'   => $limit,
 			'orderby' => 'popularity',
 			'order'   => 'DESC',
 			'return'  => 'objects',
